@@ -10,6 +10,13 @@ export const SITE = {
   email: 'anfragen@easyb2b.de',
   phone: '+49 40 123456',
   address: 'Grindelberg 20, Hamburg, 20144 Deutschland',
+  jan: {
+    name: 'Jan Thomsen',
+    role: 'Gründer & Matchmaker',
+    bio: 'In Dänemark aufgewachsen, seit vielen Jahren in Deutschland. Jan kennt beide Kulturen und nutzt diese Erfahrung um echte, nachhaltige Partnerschaften zu vermitteln.',
+    linkedin: 'https://linkedin.com/in/janthomsen',
+    linkedinLabel: 'LinkedIn-Profil',
+  },
 }
 
 // ── PROZESS FÜR SUCHENDE (4 Schritte) ──
@@ -296,3 +303,86 @@ export function filterAnfragen(
     return true
   })
 }
+
+// ── ARCHIVIERTE DATEN FÜR ALT-ROUTES (Kompatibilität) ──
+// Diese Daten wurden durch die neue Matchmaking-Struktur ersetzt
+// Die alte Routes bleiben aber als Archiv erhalten
+
+export const BEISPIELE = [
+  {
+    titel: 'Logistik-Partnerschaft',
+    richtung: '🇩🇪 → 🇩🇰',
+    icon: '🚛',
+    situation: 'Deutsches Logistik-Unternehmen suchte zuverlässigen Partner für regelmäßige Transporte nach Dänemark',
+    ergebnis: 'Gefunden und aufgebaut eine stabile Geschäftsbeziehung über 3+ Jahre',
+    tags: ['Logistik', 'Transport', 'B2B'],
+  },
+  {
+    titel: 'Tech-Integration',
+    richtung: '🇩🇰 → 🇩🇪',
+    icon: '💻',
+    situation: 'Dänisches SaaS-Unternehmen brauchte qualifizierten Vertriebspartner in Deutschland',
+    ergebnis: 'Erfolgreich 15+ Kunden gewonnen in Q1 nach Partnership-Launch',
+    tags: ['Software', 'Vertrieb', 'Deutschland'],
+  },
+]
+
+export const USE_CASES = [
+  {
+    title: 'Export nach Dänemark',
+    icon: '📤',
+    desc: 'Wenn du als deutsches Unternehmen Produkte oder Dienstleistungen nach Dänemark bringen möchtest',
+    beispiel: 'Handwerk, Technologie, Services',
+  },
+  {
+    title: 'Import aus Dänemark',
+    icon: '📥',
+    desc: 'Wenn du als dänisches Unternehmen auf dem deutschen Markt Fuß fassen möchtest',
+    beispiel: 'Design, Food, Technologie',
+  },
+]
+
+export const GRENZSITUATIONEN = [
+  {
+    titel: 'Entscheidungsgeschwindigkeit',
+    phase: 'projekt',
+    de: 'In Deutschland wird oft lange debattiert, bevor die finale Entscheidung fällt.',
+    dk: 'In Dänemark wird schneller entschieden, dafür werden auch schneller Anpassungen vorgenommen.',
+    erkenntnis: 'Beide Ansätze haben ihre Vorteile. Im deutsch-dänischen Geschäft braucht es gegenseitiges Verständnis.',
+    tipp: 'Kläre vorher ab, welche Entscheidungsstrukturen du erwartest. Das spart Zeit.',
+  },
+  {
+    titel: 'Formalität & Hierarchie',
+    phase: 'kontakt',
+    de: 'Strukturen sind wichtig. Klar definierte Rollen und Prozesse geben Sicherheit.',
+    dk: 'Flache Hierarchien sind die Norm. Auch der CEO sitzt nicht in separatem Büro.',
+    erkenntnis: 'Was in einem Land als „zu formell" wirkt, ist im anderen „professionelle Struktur".',
+    tipp: 'Sei offen für beide Stile. Die beste Partnerschaft passt sich an.',
+  },
+  {
+    titel: 'Direkte Kommunikation',
+    phase: 'treffen',
+    de: 'Höflichkeit ist wichtig. Kritik wird verpackt, damit sie nicht verletzt.',
+    dk: 'Sag, was du denkst. Direkte, ehrliche Kommunikation ist respektvoll.',
+    erkenntnis: 'Was Dänen als „ehrlich" empfinden, kann Deutsche verletzen. Und umgekehrt wirkt Höflichkeit als unaufrichtig.',
+    tipp: 'Erkläre deinen Kommunikationsstil. Dann entstehen keine Missverständnisse.',
+  },
+]
+
+export const WERTE = [
+  {
+    title: 'Persönlich',
+    icon: '🤝',
+    text: 'Keine Automatik. Jede Vermittlung ist persönlich geprüft.',
+  },
+  {
+    title: 'Konkret',
+    icon: '🎯',
+    text: 'Wir arbeiten mit realen Anfragen, nicht mit Idealen.',
+  },
+  {
+    title: 'Zuverlässig',
+    icon: '✅',
+    text: 'Was wir zusagen, halten wir. Auch in schwierigen Zeiten.',
+  },
+]
