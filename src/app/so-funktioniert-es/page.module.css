@@ -1,0 +1,129 @@
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
+  padding: 60px 48px;
+  color: white;
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 48px);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: 60px 48px;
+  background: white;
+  border-bottom: 1px solid #e0dcd4;
+}
+
+.section.sectionAlt {
+  background: #f7f5f0;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.intro {
+  font-size: 15px;
+  color: #4a4845;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* ── FAQ ── */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── PRIVACY ── */
+.privacyList {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.privacyList li {
+  font-size: 14px;
+  color: #4a4845;
+  line-height: 1.6;
+  padding-left: 28px;
+  position: relative;
+}
+
+.privacyList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #2ecc8a;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.linkNote {
+  font-size: 14px;
+  color: #4a4845;
+  margin-top: 24px;
+}
+
+.link {
+  color: #e8a020;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #0a3d2e;
+  text-decoration: underline;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero,
+  .section {
+    padding: 40px 24px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .privacyList li {
+    padding-left: 24px;
+  }
+}
