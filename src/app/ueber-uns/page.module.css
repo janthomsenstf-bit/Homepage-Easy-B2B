@@ -1,0 +1,82 @@
+.hero {
+  background: var(--navy);
+  padding: 64px 48px;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4vw, 44px);
+  color: #e8f0f8;
+  font-weight: 400;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.hero p { font-size: 17px; color: #6a92b0; max-width: 560px; line-height: 1.7; font-weight: 300; }
+
+.section { padding: 64px 48px; }
+
+.janCard {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  max-width: 660px;
+  background: var(--off);
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+}
+.janAv {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-size: 20px; color: var(--amber-light);
+  flex-shrink: 0;
+}
+.janName { font-size: 18px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+.janRole { font-size: 13px; color: var(--t3); margin-bottom: 14px; }
+.janBio { font-size: 14px; color: var(--t2); line-height: 1.75; margin-bottom: 14px; font-weight: 300; }
+.janLinks { display: flex; gap: 16px; flex-wrap: wrap; }
+.janLi { font-size: 13px; color: var(--amber); font-weight: 500; text-decoration: none; }
+
+.werteGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.werteCard {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+.werteNr {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--navy);
+  color: var(--amber-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 500;
+  margin-bottom: 14px;
+}
+.werteTitle { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+.werteText { font-size: 13px; color: var(--t2); line-height: 1.6; font-weight: 300; }
+
+.partnerBox {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background: var(--off);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  max-width: 680px;
+}
+.partnerCol { display: flex; flex-direction: column; gap: 12px; flex: 1; min-width: 240px; }
+.partnerFeature { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--t1); line-height: 1.5; }
+.partnerIcon { color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.partnerNote { font-size: 12px; color: var(--t3); margin-top: 8px; }
+
+@media (max-width: 768px) {
+  .hero { padding: 48px 24px; }
+  .section { padding: 48px 24px; }
+  .janCard { flex-direction: column; }
+}

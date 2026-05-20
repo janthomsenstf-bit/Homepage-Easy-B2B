@@ -1,0 +1,88 @@
+.hero {
+  background: var(--white);
+  padding: 72px 48px 56px;
+  border-bottom: 0.5px solid var(--border);
+  text-align: center;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--navy);
+  font-weight: 400;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.hero p { font-size: 16px; color: var(--t2); line-height: 1.7; max-width: 560px; margin: 0 auto 10px; font-weight: 300; }
+.heroBridge { font-size: 14px !important; color: var(--amber) !important; font-weight: 500 !important; }
+
+.tabBar {
+  background: var(--white);
+  border-bottom: 0.5px solid var(--border);
+  padding: 0 48px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+.tab {
+  font-size: 13px;
+  color: var(--t3);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+.tab:hover { color: var(--navy); }
+.tabActive { color: var(--amber) !important; border-bottom-color: var(--amber) !important; font-weight: 500; }
+
+.section { padding: 64px 48px; }
+
+.sitGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.sitCard { background: var(--white); border: 0.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+.sitHead {
+  background: var(--navy);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sitTitle { font-size: 13px; font-weight: 500; color: #e8f0f8; }
+.sitBody { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+.sitSide { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.55; color: var(--t1); }
+.sitFlag { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+.sitDivider { height: 0.5px; background: var(--border); }
+
+.kernBlock {
+  background: var(--amber-pale);
+  border-left: 3px solid var(--amber-light);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+}
+.kernLabel { font-size: 10px; font-weight: 500; color: var(--amber); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.kernText { font-size: 13px; color: #7a4a0a; line-height: 1.6; }
+
+.tippBlock { display: flex; gap: 10px; align-items: flex-start; }
+.tippIcon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+.tippLabel { font-size: 10px; font-weight: 500; color: var(--t3); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.tippText { font-size: 13px; color: var(--t2); line-height: 1.55; }
+
+/* WARUM */
+.warumGrid { display: flex; flex-direction: column; gap: 20px; max-width: 620px; margin-bottom: 20px; }
+.warumItem { display: flex; gap: 16px; align-items: flex-start; }
+.warumIcon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.warumTitle { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 5px; }
+.warumText { font-size: 13px; color: var(--t2); line-height: 1.65; font-weight: 300; }
+
+@media (max-width: 768px) {
+  .hero { padding: 48px 24px 40px; }
+  .tabBar { padding: 0 20px; }
+  .section { padding: 48px 24px; }
+}
