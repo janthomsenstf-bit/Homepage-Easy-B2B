@@ -1,0 +1,274 @@
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
+  padding: 60px 48px;
+  color: white;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: 60px 48px;
+  background: white;
+  border-bottom: 1px solid #e0dcd4;
+}
+
+.section.sectionAlt {
+  background: #f7f5f0;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+}
+
+/* ── BEISPIELE GRID ── */
+.beispieleGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.beispielCard {
+  background: white;
+  border: 2px solid #e0dcd4;
+  border-radius: 12px;
+  padding: 36px;
+  transition: all 0.3s ease;
+}
+
+.beispielCard:hover {
+  border-color: #e8a020;
+  box-shadow: 0 12px 32px rgba(232, 160, 32, 0.08);
+}
+
+.beispielHeader {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #e0dcd4;
+}
+
+.beispielIcon {
+  font-size: 48px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.kategorie {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e8a020;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.beispielTitle {
+  font-size: 22px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.intro {
+  font-size: 15px;
+  color: #1a1a1a;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+/* ── CONTENT BLOCKS ── */
+.contentBlock {
+  margin-bottom: 24px;
+}
+
+.blockTitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a8780;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contentBlock p {
+  font-size: 14px;
+  color: #4a4845;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── EXAMPLE LIST ── */
+.exampleList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exampleList li {
+  font-size: 14px;
+  color: #4a4845;
+  line-height: 1.6;
+  padding-left: 24px;
+  position: relative;
+}
+
+.exampleList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #e8a020;
+  font-weight: bold;
+}
+
+/* ── NUTZEN BLOCK ── */
+.nutzenBlock {
+  background: linear-gradient(135deg, #f7f5f0 0%, #f0ede8 100%);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+
+.nutzenGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.nutzenItem {
+  font-size: 13px;
+  color: #1a1a1a;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checkmark {
+  color: #2ecc8a;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* ── CTA SECTION ── */
+.ctaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.ctaCard {
+  background: white;
+  border: 1px solid #e0dcd4;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ctaCard:hover {
+  border-color: #e8a020;
+  box-shadow: 0 8px 20px rgba(232, 160, 32, 0.1);
+}
+
+.ctaCard h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.ctaCard p {
+  font-size: 13px;
+  color: #4a4845;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.ctaCard :global(.btn-primary),
+.ctaCard :global(.btn-outline) {
+  display: inline-block;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 24px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .section {
+    padding: 40px 24px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .beispielCard {
+    padding: 24px;
+  }
+
+  .beispielHeader {
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .beispielIcon {
+    font-size: 36px;
+  }
+
+  .beispielTitle {
+    font-size: 18px;
+  }
+
+  .nutzenGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaGrid {
+    grid-template-columns: 1fr;
+  }
+}

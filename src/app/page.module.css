@@ -218,6 +218,83 @@
   line-height: 1.6;
 }
 
+/* ── KOOPERATIONEN ZUM ANFASSEN ── */
+.introText {
+  font-size: 16px;
+  color: #4a4845;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.cooperationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.cooperationCard {
+  background: white;
+  border: 1px solid #e0dcd4;
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cooperationCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e8a020, #0a3d2e);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.cooperationCard:hover {
+  border-color: #e8a020;
+  box-shadow: 0 8px 20px rgba(232, 160, 32, 0.1);
+  transform: translateY(-4px);
+}
+
+.cooperationCard:hover::before {
+  transform: scaleX(1);
+}
+
+.coopIcon {
+  font-size: 44px;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.coopTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.coopDesc {
+  font-size: 13px;
+  color: #4a4845;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cooperationCta {
+  text-align: center;
+  margin-top: 44px;
+}
+
 /* ── CTA BANNER ── */
 .ctaBanner {
   background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
@@ -288,7 +365,8 @@
     grid-template-columns: 1fr;
   }
 
-  .whyGrid {
+  .whyGrid,
+  .cooperationGrid {
     grid-template-columns: 1fr;
   }
 }

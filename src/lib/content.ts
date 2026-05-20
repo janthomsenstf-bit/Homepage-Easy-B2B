@@ -386,3 +386,143 @@ export const WERTE = [
     text: 'Was wir zusagen, halten wir. Auch in schwierigen Zeiten.',
   },
 ]
+
+// ── KOOPERATIONSBEISPIELE FÜR STARTSEITE (Teaser) ──
+export const KOOPERATIONS_TEASER = [
+  {
+    id: 1,
+    titel: 'Hersteller sucht Vertrieb',
+    icon: '📦',
+    kurzbeschreibung: 'Dänischer Hersteller sucht einen deutschen Vertriebspartner für den lokalen Markt.',
+    beschreibung: 'Perfekt für etablierte Handelsunternehmen oder Distributoren, die ein neues Produktportfolio ins Sortiment nehmen möchten.',
+  },
+  {
+    id: 2,
+    titel: 'Firma sucht Produkte',
+    icon: '🏪',
+    kurzbeschreibung: 'Deutsche Firma sucht skandinavische Produkte oder Dienstleistungen für ihr Portfolio.',
+    beschreibung: 'Einzelhandelsketten, Großhändler und E-Commerce-Plattformen finden hier exklusive Produktkooperationen.',
+  },
+  {
+    id: 3,
+    titel: 'IT-Pilotkunden',
+    icon: '💻',
+    kurzbeschreibung: 'IT-Unternehmen sucht Pilotkunden für neue Technologien oder SaaS-Lösungen.',
+    beschreibung: 'Tech-Startups und etablierte Software-Anbieter finden hier Early Adopter für Markttests.',
+  },
+  {
+    id: 4,
+    titel: 'Projektpartner',
+    icon: '🤝',
+    kurzbeschreibung: 'Konkrete Ausschreibungen brauchen spezialisierte Projektpartner für Umsetzung.',
+    beschreibung: 'Consulting, Handwerk, Produktion – hier treffen Auftraggeber auf spezialisierte Umsetzer.',
+  },
+  {
+    id: 5,
+    titel: 'White-Label Produkte',
+    icon: '⚙️',
+    kurzbeschreibung: 'White-Label Lösungen aus Dänemark für deine eigene Marke anpassen.',
+    beschreibung: 'Maßgeschneiderte Produktlösungen ohne eigene Produktion – perfekt für Markenaufbau.',
+  },
+  {
+    id: 6,
+    titel: 'Ungewöhnliche Vertriebe',
+    icon: '✨',
+    kurzbeschreibung: 'Concept Stores, spezialisierte Fachhandelskonzepte oder regionale Spezialhändler.',
+    beschreibung: 'Dänische Designprodukte, Juweliere, Premium-Läden und Nischenhändler finden hier Partner.',
+  },
+]
+
+// ── DETAILLIERTE KOOPERATIONSBEISPIELE ──
+export const KOOPERATIONSBEISPIELE_DETAILS = [
+  {
+    id: 'hersteller-vertrieb',
+    kategorie: 'Ich suche einen Partner',
+    titel: 'Hersteller sucht Vertrieb',
+    icon: '📦',
+    intro: 'Du produzierst hochwertige Waren oder bietet spezialisierte Dienstleistungen – brauchst aber Zugang zum deutschen oder dänischen Markt.',
+    situation: 'Als mittelständischer Hersteller kennst du dein Handwerk perfekt. Aber der Aufbau eines Vertriebsnetzwerks im Ausland kostet Zeit, Kontakte und Geld.',
+    loesung: 'EasyB2B vermittelt dich mit etablierten Distributoren, Großhändlern und Einzelhandelsketten, die aktiv nach neuen Produkten suchen.',
+    beispiele: [
+      'Dänischer Möbelhersteller sucht deutschen Möbel-Großhändler',
+      'Deutsche Brauerei sucht dänische Gastronomiepartner',
+      'Skandinavischer Premium-Kosmetik-Hersteller sucht Beauty-Retailer',
+    ],
+    nutzen: ['Schneller Markteintritt', 'Bewährte Distributionskanäle', 'Keine Neugründung nötig', 'Vertrauenswürdige Partner'],
+  },
+  {
+    id: 'firma-produkte',
+    kategorie: 'Ich suche einen Partner',
+    titel: 'Firma sucht neue Produkte',
+    icon: '🏪',
+    intro: 'Du hast einen etablierten Handel oder E-Commerce Business und möchtest dein Sortiment erweitern – mit neuen, interessanten Produkten.',
+    situation: 'Dein Geschäft läuft gut. Aber der Markt verlangt ständig nach Neuem. Skandinavische Produkte sind beliebt und erfolgreich – nur: Wie kommst du an die richtigen Hersteller?',
+    loesung: 'EasyB2B bringt dich in Kontakt mit Herstellern, die exakt zu deinem Sortiment passen – von Design bis Lebensmittel bis Technik.',
+    beispiele: [
+      'Deutsches Möbel-Portal sucht dänische Designer',
+      'Online-Lebensmittelhändler sucht skandinavische Spezialitäten',
+      'Deutscher Elektronik-Distributor sucht dänische Tech-Innovationen',
+    ],
+    nutzen: ['Direkt vom Hersteller', 'Exklusive Sortimente', 'Bessere Margen', 'Unterscheidung vom Wettbewerb'],
+  },
+  {
+    id: 'it-pilotkunden',
+    kategorie: 'Ich bin ein Unternehmen',
+    titel: 'IT-Unternehmen sucht Pilotkunden',
+    icon: '💻',
+    intro: 'Du hast eine innovative Softwarelösung entwickelt – und brauchst jetzt echte Pilotkunden, um sie zu testen und zu verbessern.',
+    situation: 'Technologien sind nur gut, wenn sie in der Praxis funktionieren. Aber echte Pilotkunden zu finden, die dich ausprobieren, ist schwer.',
+    loesung: 'EasyB2B verbindet dich mit Early Adopters, Innovation-freundlichen Unternehmen und Testpartnern aus deiner Zielbranche.',
+    beispiele: [
+      'Dänisches SaaS-Startup sucht deutsche Einzelhandelsketten für KI-Kassensystem',
+      'Deutsche Logistik-Software sucht Pilottransporteur in Dänemark',
+      'Dänisches HR-Tool sucht dänische und deutsche Testunternehmen',
+    ],
+    nutzen: ['Schnelles Feedback', 'Echte Marktdaten', 'Testimonials & Case Studies', 'Verbesserte Produkt-Market Fit'],
+  },
+  {
+    id: 'projektpartner',
+    kategorie: 'Ich suche einen Partner',
+    titel: 'Konkrete Ausschreibungen brauchen Projektpartner',
+    icon: '🤝',
+    intro: 'Du hast eine Ausschreibung oder ein großes Projekt – brauchst aber spezialisierte Umsetzer, die du noch nicht im Netzwerk hast.',
+    situation: 'Großprojekte erfordern oft ein breites Netzwerk: Subunternehmer, Spezialisten, lokale Partner. Diese zu finden, kostet Zeit.',
+    loesung: 'EasyB2B vermittelt spezialisierte Handwerksbetriebe, Consultants, Produktionsfirmen und Projektpartner – schnell, verlässlich und persönlich geprüft.',
+    beispiele: [
+      'Deutsche Maschinenbaufirma sucht dänischen Produktionspartner für Teilefertigung',
+      'Dänisches Bauunternehmen sucht deutsche Subunternehmer für große Baustelle',
+      'IT-Consultant sucht spezialisierte Developer aus beiden Ländern',
+    ],
+    nutzen: ['Bewährte Fachkräfte', 'Keine Neugründung', 'Flexible Zusammenarbeit', 'Qualität sichergestellt'],
+  },
+  {
+    id: 'white-label',
+    kategorie: 'Ich suche einen Partner',
+    titel: 'White-Label Produkte aus Dänemark',
+    icon: '⚙️',
+    intro: 'Du möchtest eine Marke aufbauen – aber nicht selbst produzieren. White-Label Partnerschaften ermöglichen dir genau das.',
+    situation: 'Viele Gründer und etablierte Marken haben Markenideen, aber keine Produktionsfähigkeit. White-Label Hersteller sind die Lösung.',
+    loesung: 'EasyB2B findet für dich zuverlässige Hersteller in Skandinavien, die qualitativ hochwertig nach deinen Vorgaben produzieren.',
+    beispiele: [
+      'Deutsche Marke für Öko-Mode braucht skandinavischen Produzenten',
+      'Deutsches Beauty-Label sucht dänischen Kosmetik-Hersteller',
+      'Startup-Marke für Smart-Home braucht Fertigungspartner',
+    ],
+    nutzen: ['Keine Investition in Produktion', 'Markenaufbau möglich', 'Schnelle Skalierbarkeit', 'Fokus auf Marketing & Vertrieb'],
+  },
+  {
+    id: 'nischenspezialist',
+    kategorie: 'Ich bin ein Unternehmen',
+    titel: 'Nischenspezialist trifft Premium-Hersteller',
+    icon: '✨',
+    intro: 'Du betreibst einen Concept Store, Juwelier, Designshop oder Spezialhändler – und suchst exklusive Lieferanten aus Skandinavien.',
+    situation: 'Premium und Niche sind schwer zu skalieren. Du brauchst Partner, die deine hohen Standards verstehen und teilen.',
+    loesung: 'EasyB2B versteht Nischenmärkte. Wir verbinden dich mit Herstellern, Designern und Craftspeople, die auf deine Spezialität passen.',
+    beispiele: [
+      'Berliner Concept Store für nachhaltiges Design sucht dänische Designer und Handwerker',
+      'Münchner Juwelier sucht dänische Schmuck-Designer mit eigener Werkstatt',
+      'Hamburg-Boutique sucht skandinavische Textil-Marken',
+    ],
+    nutzen: ['Authentische Partnerschaften', 'Exklusivität', 'Differenzierung', 'Geteilte Wertvorstellungen'],
+  },
+]

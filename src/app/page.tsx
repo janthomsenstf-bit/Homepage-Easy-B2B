@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import ProcessSteps from '@/components/ProcessSteps'
 import AnzeigeCard from '@/components/AnzeigeCard'
-import FAQItem from '@/components/FAQItem'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
-import { SITE, STATS, DEMO_ANFRAGEN, PROZESS_SUCHENDE } from '@/lib/content'
+import { SITE, STATS, DEMO_ANFRAGEN, KOOPERATIONS_TEASER } from '@/lib/content'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -107,32 +106,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WARUM EASYB2B ── */}
+      {/* ── KOOPERATIONEN ZUM ANFASSEN ── */}
       <section className={styles.section}>
         <div className={styles.sectionContent}>
-          <h2>Warum EasyB2B?</h2>
-          <div className={styles.whyGrid}>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}>🛡️</span>
-              <div className={styles.whyTitle}>Persönlich geprüft</div>
-              <div className={styles.whyText}>
-                Jede Anfrage und jeder Interessent wird persönlich überprüft. Keine Automatik.
+          <h2>Kooperationen zum Anfassen</h2>
+          <p className={styles.introText}>
+            Schau dir an, welche Arten von Partnerschaften über EasyB2B möglich sind.
+          </p>
+          <div className={styles.cooperationGrid}>
+            {KOOPERATIONS_TEASER.map((coop) => (
+              <div key={coop.id} className={styles.cooperationCard}>
+                <div className={styles.coopIcon}>{coop.icon}</div>
+                <h3 className={styles.coopTitle}>{coop.titel}</h3>
+                <p className={styles.coopDesc}>{coop.kurzbeschreibung}</p>
               </div>
-            </div>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}>🔒</span>
-              <div className={styles.whyTitle}>DSGVO-konform</div>
-              <div className={styles.whyText}>
-                Deine Daten sind sicher. Du bestimmst wer sieht was.
-              </div>
-            </div>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}>⚡</span>
-              <div className={styles.whyTitle}>Schnelle Matches</div>
-              <div className={styles.whyText}>
-                Im Durchschnitt 10-14 Tage zum ersten Match.
-              </div>
-            </div>
+            ))}
+          </div>
+          <div className={styles.cooperationCta}>
+            <Link href="/kooperationsbeispiele" className="btn-primary">
+              Mehr Kooperationsbeispiele ansehen →
+            </Link>
           </div>
         </div>
       </section>
