@@ -3,142 +3,152 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
-import InterestForm from '@/components/forms/InterestForm'
-import { DEMO_GESUCHE, CHARAKTERFRAGEN } from '@/lib/content'
+import AnzeigeCard from '@/components/AnzeigeCard'
+import { DEMO_ANFRAGEN, BRANCHEN, filterAnfragen } from '@/lib/content'
 import styles from './page.module.css'
 
-const FILTER = [
-  { key: 'alle',   label: 'Alle anzeigen' },
-  { key: 'dk-de',  label: '🇩🇰 → 🇩🇪 Dänen suchen DE-Partner' },
-  { key: 'de-dk',  label: '🇩🇪 → 🇩🇰 Deutsche suchen DK-Partner' },
-  { key: 'tech',   label: 'Technologie' },
-  { key: 'food',   label: 'Lebensmittel' },
-  { key: 'handel', label: 'Handel & Vertrieb' },
-  { key: 'bau',    label: 'Bau & Industrie' },
-]
-
-const REIFEGRAD_COLOR: Record<string, string> = {
-  'Startbereit':       '#1D9E75',
-  'In Vorbereitung':   '#EF9F27',
-}
-
 export default function Marktplatz() {
-  const [selectedGesuch, setSelectedGesuch] = useState<{id: string; title: string} | null>(null)
+  // Filter State
+  const [richtung, setRichtung] = useState<string | null>(null)
+  const [branche, setBranche] = useState<string | null>(null)
+  const [reifegrad, setReifegrad] = useState<string | null>(null)
 
-  const handleInterest = (id: string, title: string) => {
-    setSelectedGesuch({ id, title })
+  // Gefilterte Anfragen
+  const filteredAnfragen = filterAnfragen(
+    richtung || undefined,
+    branche || undefined,
+    reifegrad || undefined,
+  )
+
+  const handleClearFilters = () => {
+    setRichtung(null)
+    setBranche(null)
+    setReifegrad(null)
   }
 
-  const closeModal = () => {
-    setSelectedGesuch(null)
-  }
+  const activeFilters = [richtung, branche, reifegrad].filter(Boolean).length
 
   return (
     <>
       <Nav />
 
       {/* ── HERO ── */}
-      <div className={styles.hero}>
-        <p className="eyebrow eyebrow-amber">Netzwerk</p>
-        <h1>Aktuelle Gesuche.</h1>
-        <p>Kuratiert, geprüft, konkret. Du siehst einen Teaser – wer Interesse hat, stellt sich vor.</p>
-      </div>
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <h1>Marktplatz</h1>
+          <p>Aktuelle B2B-Anfragen – kuratiert und persönlich geprüft.</p>
+        </div>
+      </section>
 
       {/* ── FILTER ── */}
       <div className={styles.filterBar}>
-        <span className={styles.filterLabel}>Filtern:</span>
-        {FILTER.map((f) => (
-          <button key={f.key} className={`${styles.filterBtn} ${f.key === 'alle' ? styles.filterActive : ''}`}>
-            {f.label}
-          </button>
-        ))}
+        <div className={styles.filterContent}>
+          <div className={styles.filterGroup}>
+            <label className={styles.filterLabel}>Richtung</label>
+            <select
+              value={richtung || ''}
+              onChange={(e) => setRichtung(e.target.value || null)}
+              className={styles.filterSelect}
+            >
+              <option value="">Alle</option>
+              <option value="DE→DK">🇩🇪 → 🇩🇰 Deutschland → Dänemark</option>
+              <option value="DK→DE">🇩🇰 → 🇩🇪 Dänemark → Deutschland</option>
+            </select>
+          </div>
+
+          <div className={styles.filterGroup}>
+            <label className={styles.filterLabel}>Branche</label>
+            <select
+              value={branche || ''}
+              onChange={(e) => setBranche(e.target.value || null)}
+              className={styles.filterSelect}
+            >
+              <option value="">Alle</option>
+              {BRANCHEN.map((b) => (
+                <option key={b} value={b}>
+                  {b}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className={styles.filterGroup}>
+            <label className={styles.filterLabel}>Reifegrad</label>
+            <select
+              value={reifegrad || ''}
+              onChange={(e) => setReifegrad(e.target.value || null)}
+              className={styles.filterSelect}
+            >
+              <option value="">Alle</option>
+              <option value="Idee">Idee</option>
+              <option value="Konzept">Konzept</option>
+              <option value="Bereit">Bereit</option>
+              <option value="Sofort">Sofort</option>
+            </select>
+          </div>
+
+          {activeFilters > 0 && (
+            <button
+              onClick={handleClearFilters}
+              className={styles.clearFiltersBtn}
+            >
+              Filter löschen ({activeFilters})
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* ── GESUCHE ── */}
-      <section className={`sec sec-off ${styles.section}`}>
-        <div className={styles.gGrid}>
-          {DEMO_GESUCHE.map((g) => (
-            <div key={g.id} className={styles.gCard}>
-              <div className={styles.gTop}>
-                <div className={styles.gBranche}>{g.branche}</div>
-                <div className={styles.gDir}>{g.richtung}</div>
-              </div>
-              <p className={styles.gText}>{g.teaser}</p>
-              <div className={styles.gBottom}>
-                <div className={styles.gRg}>
-                  <div
-                    className={styles.gRgDot}
-                    style={{ background: REIFEGRAD_COLOR[g.reiferadLabel] ?? '#aaa' }}
-                  />
-                  Reifegrad {g.reifegrad}/10
-                </div>
-                <button className={styles.gBtn} onClick={() => handleInterest(g.id, g.teaser)}>
-                  Interesse bekunden →
-                </button>
-              </div>
-              <p className={styles.gHint}>Jan prüft deine Anfrage – du wirst nicht direkt weitergeleitet.</p>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA für Einreicher */}
-        <div className={styles.einreicherCta}>
-          <div>
-            <div className={styles.einreicherTitle}>Du hast selbst etwas anzubieten?</div>
-            <p className={styles.einreicherDesc}>
-              Reich dein Gesuch ein – wir prüfen es persönlich und leiten es nur weiter wenn es wirklich passt.
+      {/* ── ERGEBNISSE ── */}
+      <section className={styles.section}>
+        <div className={styles.sectionContent}>
+          <div className={styles.resultHeader}>
+            <h2>
+              {filteredAnfragen.length} Anfrage{filteredAnfragen.length !== 1 ? 'n' : ''}
+            </h2>
+            <p className={styles.resultInfo}>
+              {activeFilters > 0 ? `${activeFilters} Filter aktiv` : 'Alle Anfragen'}
             </p>
           </div>
-          <Link href="#einreichen" className="btn-primary">
-            Eigenes Gesuch einreichen →
+
+          {filteredAnfragen.length > 0 ? (
+            <div className={styles.anzeigeGrid}>
+              {filteredAnfragen.map((anzeige) => (
+                <AnzeigeCard
+                  key={anzeige.id}
+                  id={anzeige.id}
+                  richtung={anzeige.richtung}
+                  branche={anzeige.branche}
+                  beschreibung={anzeige.beschreibung}
+                  reifegrad={anzeige.reifegrad}
+                  gueltigBis={anzeige.gueltigBis}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className={styles.emptyState}>
+              <div className={styles.emptyIcon}>🔍</div>
+              <h3>Keine Anfragen gefunden</h3>
+              <p>Versuche andere Filter oder schau später wieder vorbei.</p>
+              <button onClick={handleClearFilters} className="btn-primary">
+                Alle Anfragen anzeigen
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── CTA: SELBST ANFRAGE EINREICHEN ── */}
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaContent}>
+          <h2>Du hast selbst etwas anzubieten?</h2>
+          <p>Reiche deine Anfrage ein und finde qualifizierte Partner.</p>
+          <Link href="/anfrage-einreichen" className="btn-primary">
+            Anfrage einreichen →
           </Link>
         </div>
       </section>
 
-      {/* ── EINREICHEN ── */}
-      <section className={`sec sec-white ${styles.section}`} id="einreichen">
-        <p className="eyebrow">Mitmachen</p>
-        <h2>Wir fangen nicht mit Zahlen an.</h2>
-        <p className="sec-intro">
-          Unser Formular beginnt mit drei kurzen Szenarien. Wer du bist – das zählt mehr als dein Umsatz.
-        </p>
-        <div className={styles.charCards}>
-          {CHARAKTERFRAGEN.map((f) => (
-            <div key={f.nr} className={styles.charCard}>
-              <div className={styles.charNr}>Frage {f.nr} · {f.thema}</div>
-              <div className={styles.charQ}>{f.frage}</div>
-            </div>
-          ))}
-        </div>
-        <div className={styles.charCta}>
-          {/* Tally-Formular URL hier eintragen wenn verfügbar */}
-          <a href="https://tally.so" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Gesuch einreichen →
-          </a>
-          <span className={styles.charTime}>8 Minuten · kostenlos · persönlich geprüft</span>
-        </div>
-      </section>
-
-      {/* ── ABSCHLUSS ── */}
-      <section className={`sec sec-navy ${styles.section}`}>
-        <h2>Qualität vor Quantität – das ist unser Versprechen.</h2>
-        <p className="sec-intro">
-          Jede Anfrage die du hier siehst wurde persönlich geprüft. Viele Verbindungen entstehen
-          im Hintergrund – ohne dass sie je öffentlich werden. Wenn du dein eigenes Gesuch
-          einreichen möchtest, freuen wir uns darauf.
-        </p>
-        <Link href="#einreichen" className="btn-amber">Jetzt Gesuch einreichen →</Link>
-      </section>
-
       <Footer />
-
-      {selectedGesuch && (
-        <InterestForm
-          gesuchId={selectedGesuch.id}
-          gesuchTitle={selectedGesuch.title}
-          onClose={closeModal}
-        />
-      )}
     </>
   )
 }
