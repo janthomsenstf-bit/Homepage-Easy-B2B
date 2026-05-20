@@ -69,12 +69,56 @@ export const PROZESS_HOMEPAGE = [
   },
 ]
 
-// ── TYPISCHE HOMEPAGE-BEISPIELE ──
-export const BEISPIELE_HOMEPAGE = [
-  'Dänischer Hersteller sucht Vertrieb in Hamburg',
-  'Deutsche Firma sucht skandinavische Produkte',
-  'IT-Unternehmen sucht Pilotkunden',
-  'Projektpartner für Ausschreibungen gesucht',
+// ── TYPISCHE HOMEPAGE-BEISPIELE (erweitert) ──
+export const BEISPIELE_KATEGORIEN = [
+  {
+    kategorie: 'Du brauchst einen Vertriebspartner',
+    beispiele: [
+      'Dänischer **Möbelhersteller** sucht **Großhändler** in Hamburg',
+      'Deutsche **Brauerei** sucht **Gastronomiepartner** in Kopenhagen',
+      'Skandinavisches **SaaS-Unternehmen** sucht **Sales-Partner** in München',
+    ],
+  },
+  {
+    kategorie: 'Du suchst neue Produkte oder Lieferanten',
+    beispiele: [
+      'Deutscher **E-Commerce** sucht **skandinavische Designer-Produkte**',
+      'Berliner **Concept Store** sucht **dänische Handwerker**',
+      'Deutsche **Lebensmittel-Kette** sucht **nordische Spezialitäten**',
+    ],
+  },
+  {
+    kategorie: 'Du brauchst spezialisierte Projektpartner',
+    beispiele: [
+      'Deutsche **Maschinenbaufirma** sucht **dänischen Produktionspartner**',
+      'Dänisches **Bauunternehmen** sucht **deutsche Subunternehmer**',
+      '**IT-Ausschreibung** braucht **erfahrene Developer** aus beiden Ländern',
+    ],
+  },
+  {
+    kategorie: 'Du willst neue Märkte erschließen',
+    beispiele: [
+      '**Deutsche Marke** sucht **Vertrieb in Dänemark**',
+      '**Dänisches Startup** braucht **Markteintritt in Deutschland**',
+      '**Premium-Produkt** sucht **Partner im Nachbarland**',
+    ],
+  },
+  {
+    kategorie: 'Du suchst Pilotkunden oder Test-Partner',
+    beispiele: [
+      '**Neue SaaS-Lösung** braucht **Beta-Tester** mit echten Use Cases',
+      '**Innovative Technologie** sucht **Early Adopter** für Marktest',
+      '**Digitales Produkt** sucht **Pilotunternehmen** für Feedback',
+    ],
+  },
+  {
+    kategorie: 'Du brauchst White-Label oder Produktion',
+    beispiele: [
+      '**Mode-Startup** braucht **skandinavischen Hersteller**',
+      '**Beauty-Label** sucht **dänische Kosmetik-Manufaktur**',
+      '**Eigenmarke** braucht **zuverlässigen Produzenten**',
+    ],
+  },
 ]
 
 // ── PROZESS FÜR INTERESSENTEN (4 Schritte) ──

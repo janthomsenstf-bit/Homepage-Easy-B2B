@@ -2,7 +2,7 @@ import Link from 'next/link'
 import AnzeigeCard from '@/components/AnzeigeCard'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
-import { SITE, STATS, DEMO_ANFRAGEN, KOOPERATIONS_TEASER, PROZESS_HOMEPAGE, BEISPIELE_HOMEPAGE } from '@/lib/content'
+import { SITE, STATS, DEMO_ANFRAGEN, KOOPERATIONS_TEASER, PROZESS_HOMEPAGE, BEISPIELE_KATEGORIEN } from '@/lib/content'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -78,12 +78,20 @@ export default function Home() {
           </div>
 
           <div className={styles.typischeGesuche}>
-            <h3 className={styles.gesuchwTitle}>Typische Gesuche können sein:</h3>
-            <div className={styles.gesuchwGrid}>
-              {BEISPIELE_HOMEPAGE.map((beispiel, idx) => (
-                <div key={idx} className={styles.gesuchwCard}>
-                  <span className={styles.gesuchwBullet}>→</span>
-                  {beispiel}
+            <h3 className={styles.gesuchwTitle}>Das ist möglich über Easy-B2B:</h3>
+            <div className={styles.kategorienGrid}>
+              {BEISPIELE_KATEGORIEN.map((kategorie, idx) => (
+                <div key={idx} className={styles.kategorieBlock}>
+                  <h4 className={styles.kategorieTitle}>{kategorie.kategorie}</h4>
+                  <ul className={styles.kategorieList}>
+                    {kategorie.beispiele.map((beispiel, bidx) => (
+                      <li
+                        key={bidx}
+                        className={styles.kategorieItem}
+                        dangerouslySetInnerHTML={{ __html: beispiel.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}
+                      />
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
