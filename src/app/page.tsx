@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
+import NewsletterForm from '@/components/forms/NewsletterForm'
 import {
   TEASER_KARTEN, BEISPIELE, PROZESS,
   WERTE, REIFEGRAD, SITE
@@ -218,22 +219,7 @@ export default function Home() {
         <p className="sec-intro">
           Du wählst deine Branchen – wir schicken einen Teaser wenn etwas Passendes erscheint.
         </p>
-        <div className={styles.nlForm}>
-          <div className={styles.nlField}>
-            <label className={styles.nlLabel}>Deine E-Mail</label>
-            <input className={styles.nlInput} type="email" placeholder="du@firma.de" />
-          </div>
-          <div className={`${styles.nlField} ${styles.nlFieldSmall}`}>
-            <label className={styles.nlLabel}>Häufigkeit</label>
-            <select className={styles.nlInput}>
-              <option>Sofort-Alert</option>
-              <option>Wöchentlicher Digest</option>
-            </select>
-          </div>
-          <button className="btn-amber" style={{ alignSelf: 'flex-end' }}>
-            Anmelden
-          </button>
-        </div>
+        <NewsletterForm />
         <p className={styles.nlNote}>
           DSGVO-konform · Jederzeit abmeldbar · Ein Alert ist kein Zugang.
         </p>

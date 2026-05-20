@@ -1,13 +1,11 @@
+'use client'
+import { useState } from 'react'
 import Link from 'next/link'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
+import InterestForm from '@/components/forms/InterestForm'
 import { DEMO_GESUCHE, CHARAKTERFRAGEN } from '@/lib/content'
 import styles from './page.module.css'
-
-export const metadata = {
-  title: 'Marktplatz – Easy-B2B',
-  description: 'Aktuelle Kooperationsgesuche – kuratiert, geprüft, persönlich begleitet.',
-}
 
 const FILTER = [
   { key: 'alle',   label: 'Alle anzeigen' },
@@ -25,6 +23,16 @@ const REIFEGRAD_COLOR: Record<string, string> = {
 }
 
 export default function Marktplatz() {
+  const [selectedGesuch, setSelectedGesuch] = useState<{id: string; title: string} | null>(null)
+
+  const handleInterest = (id: string, title: string) => {
+    setSelectedGesuch({ id, title })
+  }
+
+  const closeModal = () => {
+    setSelectedGesuch(null)
+  }
+
   return (
     <>
       <Nav />
@@ -64,7 +72,9 @@ export default function Marktplatz() {
                   />
                   Reifegrad {g.reifegrad}/10
                 </div>
-                <button className={styles.gBtn}>Interesse bekunden →</button>
+                <button className={styles.gBtn} onClick={() => handleInterest(g.id, g.teaser)}>
+                  Interesse bekunden →
+                </button>
               </div>
               <p className={styles.gHint}>Jan prüft deine Anfrage – du wirst nicht direkt weitergeleitet.</p>
             </div>
@@ -121,6 +131,14 @@ export default function Marktplatz() {
       </section>
 
       <Footer />
+
+      {selectedGesuch && (
+        <InterestForm
+          gesuchId={selectedGesuch.id}
+          gesuchTitle={selectedGesuch.title}
+          onClose={closeModal}
+        />
+      )}
     </>
   )
 }
