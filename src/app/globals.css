@@ -1,28 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Farben - Modern & Fresh */
-  --navy:        #0d1f35;
-  --navy-deep:   #050f1f;
-  --navy-light:  #1a3a5c;
-  --amber:       #d4900a;
-  --amber-light: #FAC775;
-  --amber-pale:  #fff3d6;
-  --teal:        #1D9E75;
-  --teal-light:  #eaf7f1;
-  --red:         #E24B4A;
-  --orange:      #EF9F27;
+  /* Primärfarben — EasyB2B Brand */
+  --color-dk:           #0a3d2e;        /* Dänemark Grün */
+  --color-de:           #1a1a2e;        /* Deutschland Blau */
+  --color-accent:       #e8a020;        /* Gold — CTAs & Akzente */
+  --color-accent-green: #2ecc8a;        /* Grün — Erfolg */
+
+  /* Hintergründe */
+  --color-bg:     #f7f5f0;              /* Warmes Off-White */
+  --color-card:   #ffffff;              /* Weiß */
+  --color-surface: #f0ede8;             /* Leicht getönt */
+
+  /* Text */
+  --color-text-primary:   #1a1a1a;
+  --color-text-secondary: #4a4845;
+  --color-text-muted:     #8a8780;
+
+  /* Borders */
+  --color-border:       #e0dcd4;
+  --color-border-light: #ede9e2;
+
+  /* Status-Farben */
+  --status-idee:     #94a3b8;           /* Grau */
+  --status-konzept:  #f59e0b;           /* Amber */
+  --status-bereit:   #3b82f6;           /* Blau */
+  --status-sofort:   #10b981;           /* Grün */
+
+  /* Legacy Kompatibilität (für bestehende Komponenten) */
+  --navy:        var(--color-de);
+  --navy-deep:   #0f1e30;
+  --navy-light:  #2d3d52;
+  --amber:       var(--color-accent);
+  --amber-light: #f4c65b;
+  --amber-pale:  #fef3d0;
+  --teal:        var(--color-accent-green);
   --white:       #ffffff;
-  --off:         #f8f7f4;
+  --off:         var(--color-bg);
   --off-dark:    #ede9e0;
-  --border:      #ddd9d0;
-  --t1:          #0d1f35;
-  --t2:          #5a6a7a;
-  --t3:          #999999;
-  --success:     #1D9E75;
-  --error:       #E24B4A;
+  --border:      var(--color-border);
+  --t1:          var(--color-text-primary);
+  --t2:          var(--color-text-secondary);
+  --t3:          var(--color-text-muted);
+  --success:     var(--color-accent-green);
+  --error:       #e24b4a;
 
   /* Spacing */
   --gap-xs:      4px;
@@ -34,7 +57,7 @@
   --gap-3xl:     64px;
 
   /* Schriften */
-  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans:  'DM Sans', system-ui, sans-serif;
 }
 

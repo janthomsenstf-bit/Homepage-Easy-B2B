@@ -1,0 +1,120 @@
+.container {
+  width: 100%;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  color: #1a1a1a;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.steps {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.steps.vertical {
+  flex-direction: column;
+  gap: 24px;
+}
+
+.steps.horizontal {
+  flex-wrap: wrap;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.steps.vertical .step {
+  gap: 14px;
+  flex-direction: row;
+}
+
+.stepIcon {
+  font-size: 32px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.stepNumber {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a8780;
+  font-weight: 600;
+}
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.stepDesc {
+  font-size: 13px;
+  color: #4a4845;
+  line-height: 1.55;
+}
+
+.connector {
+  position: absolute;
+  right: -14px;
+  top: 20px;
+  font-size: 18px;
+  color: #e8a020;
+  font-weight: bold;
+  width: 8px;
+  text-align: center;
+}
+
+.connector.vertical {
+  display: none;
+}
+
+.connector.horizontal {
+  right: -14px;
+  top: 20px;
+}
+
+@media (max-width: 768px) {
+  .steps.horizontal {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .step {
+    min-width: auto;
+  }
+
+  .stepIcon {
+    font-size: 28px;
+  }
+
+  .stepTitle {
+    font-size: 15px;
+  }
+
+  .stepDesc {
+    font-size: 12px;
+  }
+}
