@@ -1,0 +1,223 @@
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
+  padding: 60px 48px;
+  color: white;
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 48px);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: 60px 48px;
+  background: white;
+  border-bottom: 1px solid #e0dcd4;
+}
+
+.section.sectionOff {
+  background: #f7f5f0;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+}
+
+/* ── TIPS GRID ── */
+.tipsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.tipCard {
+  background: white;
+  border: 1px solid #e0dcd4;
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tipCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e8a020, #0a3d2e);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.tipCard:hover {
+  border-color: #e8a020;
+  box-shadow: 0 8px 20px rgba(232, 160, 32, 0.1);
+  transform: translateY(-4px);
+}
+
+.tipCard:hover::before {
+  transform: scaleX(1);
+}
+
+.tipNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #e8a020;
+  color: #1a1a1a;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.tipTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.tipText {
+  font-size: 13px;
+  color: #4a4845;
+  line-height: 1.6;
+}
+
+/* ── VISIBILITY CARDS ── */
+.visibilityCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.visCard {
+  background: #f7f5f0;
+  border: 2px solid #e0dcd4;
+  border-radius: 12px;
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.visCard:hover {
+  border-color: #e8a020;
+  box-shadow: 0 6px 16px rgba(232, 160, 32, 0.1);
+}
+
+.visTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.visText {
+  font-size: 14px;
+  color: #4a4845;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── CTA SECTION ── */
+.ctaSection {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
+  padding: 60px 48px;
+  color: white;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaContent h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.ctaContent > p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.ctaContent :global(.btn-primary) {
+  margin: 0 auto;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.ctaNote {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* ── FAQ ── */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero,
+  .section,
+  .ctaSection {
+    padding: 40px 24px;
+  }
+
+  .section h2,
+  .ctaContent h2 {
+    font-size: 24px;
+  }
+
+  .tipsGrid,
+  .visibilityCards {
+    grid-template-columns: 1fr;
+  }
+
+  .tipCard,
+  .visCard {
+    padding: 20px;
+  }
+}
