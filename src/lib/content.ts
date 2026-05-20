@@ -47,6 +47,36 @@ export const PROZESS_SUCHENDE = [
   },
 ]
 
+// ── PROZESS FÜR HOMEPAGE (Vereinfacht & Fokussiert) ──
+export const PROZESS_HOMEPAGE = [
+  {
+    nr: 1,
+    icon: '💡',
+    title: 'Idee oder Gesuch einreichen',
+    desc: 'Unternehmen beschreiben, wen oder was sie suchen – z. B. Vertriebspartner, Produkte, Projektpartner oder Zugang zum deutschen bzw. dänischen Markt.',
+  },
+  {
+    nr: 2,
+    icon: '🔍',
+    title: 'Wir prüfen & filtern persönlich',
+    desc: 'Easy-B2B ist keine anonyme Kontaktbörse. Wir prüfen Anfragen, sortieren unrealistische Gesuche aus und suchen nach passenden Verbindungen.',
+  },
+  {
+    nr: 3,
+    icon: '🤝',
+    title: 'Passende Unternehmen werden verbunden',
+    desc: 'Wenn es fachlich und menschlich passt, bringen wir Unternehmen zusammen – persönlich, direkt und ohne unnötiges Networking-Blabla.',
+  },
+]
+
+// ── TYPISCHE HOMEPAGE-BEISPIELE ──
+export const BEISPIELE_HOMEPAGE = [
+  'Dänischer Hersteller sucht Vertrieb in Hamburg',
+  'Deutsche Firma sucht skandinavische Produkte',
+  'IT-Unternehmen sucht Pilotkunden',
+  'Projektpartner für Ausschreibungen gesucht',
+]
+
 // ── PROZESS FÜR INTERESSENTEN (4 Schritte) ──
 export const PROZESS_INTERESSENTEN = [
   {

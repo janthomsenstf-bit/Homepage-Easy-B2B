@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import ProcessSteps from '@/components/ProcessSteps'
 import AnzeigeCard from '@/components/AnzeigeCard'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
-import { SITE, STATS, DEMO_ANFRAGEN, KOOPERATIONS_TEASER } from '@/lib/content'
+import { SITE, STATS, DEMO_ANFRAGEN, KOOPERATIONS_TEASER, PROZESS_HOMEPAGE, BEISPIELE_HOMEPAGE } from '@/lib/content'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -53,33 +52,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WIE ES FUNKTIONIERT ── */}
-      <section className={styles.section}>
+      {/* ── SO FUNKTIONIERT EASYB2B ── */}
+      <section className={styles.processSection}>
         <div className={styles.sectionContent}>
-          <h2>Drei Schritte zum Match</h2>
-          <ProcessSteps
-            steps={[
-              {
-                nr: 1,
-                icon: '✏️',
-                title: 'Anfrage einreichen',
-                desc: 'Du beschreibst konkret was du suchst.',
-              },
-              {
-                nr: 2,
-                icon: '🔍',
-                title: 'Wir prüfen',
-                desc: 'Persönliche, nicht automatisierte Prüfung.',
-              },
-              {
-                nr: 3,
-                icon: '🤝',
-                title: 'Ihr werdet Vermittelt',
-                desc: 'Direkter Kontakt zu qualifizierten Partnern.',
-              },
-            ]}
-            variant="horizontal"
-          />
+          <div className={styles.processHeader}>
+            <h2>So funktioniert Easy-B2B</h2>
+            <p className={styles.processSubtitle}>Von der ersten Idee zur passenden deutsch-dänischen Kooperation.</p>
+          </div>
+
+          <div className={styles.processSteps}>
+            {PROZESS_HOMEPAGE.map((step, idx) => (
+              <div key={step.nr} className={styles.processStep}>
+                <div className={styles.stepNumber}>{step.nr}</div>
+                <div className={styles.stepIcon}>{step.icon}</div>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+                <p className={styles.stepDesc}>{step.desc}</p>
+                {idx < PROZESS_HOMEPAGE.length - 1 && <div className={styles.stepArrow}>→</div>}
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.processBadge}>
+            <span className={styles.badgeIcon}>✓</span>
+            <strong>Wir bringen nicht möglichst viele Kontakte zusammen – sondern die richtigen.</strong>
+          </div>
+
+          <div className={styles.typischeGesuche}>
+            <h3 className={styles.gesuchwTitle}>Typische Gesuche können sein:</h3>
+            <div className={styles.gesuchwGrid}>
+              {BEISPIELE_HOMEPAGE.map((beispiel, idx) => (
+                <div key={idx} className={styles.gesuchwCard}>
+                  <span className={styles.gesuchwBullet}>→</span>
+                  {beispiel}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

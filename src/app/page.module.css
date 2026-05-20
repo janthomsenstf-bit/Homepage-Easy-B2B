@@ -118,6 +118,12 @@
   border-bottom: 1px solid #e0dcd4;
 }
 
+.processSection {
+  padding: 80px 48px;
+  background: linear-gradient(180deg, #f7f5f0 0%, white 100%);
+  border-bottom: 1px solid #e0dcd4;
+}
+
 .sectionContent {
   max-width: 1200px;
   margin: 0 auto;
@@ -295,6 +301,209 @@
   margin-top: 44px;
 }
 
+/* ── PROZESS SECTION ── */
+.processHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.processHeader h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.processSubtitle {
+  font-size: 16px;
+  color: #4a4845;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+/* Desktop: Verbindungslinien zwischen Steps */
+@media (min-width: 1024px) {
+  .processSteps::before {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 16.66%;
+    right: 16.66%;
+    height: 2px;
+    background: linear-gradient(90deg, #e8a020 0%, #0a3d2e 100%);
+    pointer-events: none;
+  }
+}
+
+.processStep {
+  background: white;
+  border: 2px solid #e0dcd4;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.processStep:hover {
+  border-color: #e8a020;
+  box-shadow: 0 12px 28px rgba(232, 160, 32, 0.12);
+  transform: translateY(-4px);
+}
+
+.stepNumber {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #e8a020 0%, #0a3d2e 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  border: 4px solid #f7f5f0;
+  z-index: 2;
+}
+
+.stepIcon {
+  font-size: 52px;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.stepTitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.stepDesc {
+  font-size: 13px;
+  color: #4a4845;
+  line-height: 1.7;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.stepArrow {
+  display: none;
+  font-size: 28px;
+  color: #e8a020;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+  .stepArrow {
+    display: block;
+    position: absolute;
+    right: -42px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .processStep:last-child .stepArrow {
+    display: none;
+  }
+}
+
+/* ── PROZESS BADGE ── */
+.processBadge {
+  background: linear-gradient(135deg, #2ecc8a 0%, #1da863 100%);
+  color: white;
+  padding: 20px 28px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.badgeIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.processBadge strong {
+  font-weight: 600;
+}
+
+/* ── TYPISCHE GESUCHE ── */
+.typischeGesuche {
+  background: white;
+  border: 1px solid #e0dcd4;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.gesuchwTitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a8780;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.gesuchwGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.gesuchwCard {
+  background: #f7f5f0;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #4a4845;
+  line-height: 1.6;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  transition: all 0.2s ease;
+}
+
+.gesuchwCard:hover {
+  background: #e8a020;
+  color: white;
+}
+
+.gesuchwBullet {
+  color: #e8a020;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.gesuchwCard:hover .gesuchwBullet {
+  color: white;
+}
+
 /* ── CTA BANNER ── */
 .ctaBanner {
   background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
@@ -348,8 +557,13 @@
     padding: 48px 24px;
   }
 
+  .processSection {
+    padding: 56px 24px;
+  }
+
   .section h2,
-  .ctaBanner h2 {
+  .ctaBanner h2,
+  .processHeader h2 {
     font-size: 24px;
   }
 
@@ -368,5 +582,50 @@
   .whyGrid,
   .cooperationGrid {
     grid-template-columns: 1fr;
+  }
+
+  /* Prozess Mobile */
+  .processSteps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .processStep {
+    padding: 28px 20px;
+  }
+
+  .stepIcon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .stepTitle {
+    font-size: 16px;
+  }
+
+  .processBadge {
+    font-size: 14px;
+    padding: 16px 20px;
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .badgeIcon {
+    font-size: 18px;
+  }
+
+  .typischeGesuche {
+    padding: 24px;
+  }
+
+  .gesuchwGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gesuchwCard {
+    padding: 12px 14px;
+    font-size: 12px;
   }
 }
