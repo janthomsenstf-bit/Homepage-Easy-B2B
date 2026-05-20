@@ -70,6 +70,71 @@ export const PROZESS_HOMEPAGE = [
 ]
 
 // ── TYPISCHE HOMEPAGE-BEISPIELE (erweitert) ──
+// ── ANFRAGE-DETAILS (Was ist in einer Anfrage?) ──
+export const ANFRAGE_DETAILS = [
+  'Produktbilder & Videos',
+  'Produktbeschreibung',
+  'Zielgruppe',
+  'Preisniveau',
+  'Liefermöglichkeiten',
+  'Gewünschte Regionen',
+  'Art der Zusammenarbeit',
+  'Sprachkenntnisse',
+  'Bisherige Märkte',
+]
+
+// ── BEISPIEL-STORY: Dänischer Holzspielzeug-Hersteller ──
+export const BEISPIEL_ANFRAGE = {
+  id: 'ANZ-2024-STORY-001',
+  land: '🇩🇰',
+  unternehmen: 'Dänischer Hersteller für Holzspielzeug',
+  beschreibung: 'Hochwertiges, nachhaltiges Holzspielzeug für Kinder ab 3 Jahren',
+  gesucht: 'Vertriebspartner in Deutschland',
+  details: [
+    'Handelsvertreter / Distributoren',
+    'Spielwarenhandel',
+    'Langfristiger Marktaufbau',
+    'Fokus auf Nachhaltigkeit & Qualität',
+  ],
+  vorteile: [
+    'Etabliert seit 15 Jahren',
+    'Ausgezeichnet mit Design-Awards',
+    'Vollständige Unterstützung beim Vertrieb',
+    'Flexible Zahlungskonditionen',
+  ],
+}
+
+// ── BEISPIEL-INTERESSENTEN ──
+export const BEISPIEL_INTERESSENTEN = [
+  {
+    id: 1,
+    land: '🇩🇪',
+    stadt: 'Hamburg',
+    rolle: 'Handelsvertreter',
+    interesse: 'Norddeutschland & Bremen',
+    beschreibung: 'Mit etabliertem Netzwerk in Spielwarenhandel',
+    match: 'Sehr passend',
+  },
+  {
+    id: 2,
+    land: '🇩🇪',
+    stadt: 'Düsseldorf',
+    rolle: 'Spielwarenhandel',
+    interesse: 'Hochwertige nordische Produkte',
+    beschreibung: 'Premium-Fokus, Fachgeschäft seit 20 Jahren',
+    match: 'Sehr passend',
+  },
+  {
+    id: 3,
+    land: '🇩🇪',
+    stadt: 'Bayern',
+    rolle: 'Spielzeuggroßhandel',
+    interesse: 'Vertrieb im südlichen Deutschland',
+    beschreibung: 'Großes Netzwerk zu Einzelhandelsketten',
+    match: 'Gut passend',
+  },
+]
+
 export const BEISPIELE_KATEGORIEN = [
   {
     kategorie: 'Du brauchst einen Vertriebspartner',
