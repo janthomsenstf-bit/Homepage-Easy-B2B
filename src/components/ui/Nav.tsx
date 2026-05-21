@@ -7,6 +7,7 @@ const links = [
   { href: '/',                     label: 'Start' },
   { href: '/marktplatz',           label: 'Marktplatz' },
   { href: '/so-funktioniert-es',   label: 'So funktioniert\'s' },
+  { href: '/events',               label: 'Events' },
   { href: '/kontakt',              label: 'Kontakt' },
 ]
 

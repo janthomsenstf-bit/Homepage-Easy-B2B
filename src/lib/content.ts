@@ -1032,55 +1032,105 @@ export const PRICING_INFO = {
   },
 }
 
-// ── PITCH & MEET FORMAT PAGE ──
+// ── EVENTS HUB & PITCH & MEET FORMAT PAGE ──
 export const PITCH_AND_MEET = {
   hero: {
-    title: 'Pitch & Meet',
-    subtitle: 'Deutsch-dänische Unternehmen treffen sich live, stellen ihre Ideen vor und lernen potenzielle Partner persönlich kennen.',
-    intro: 'Easy-B2B soll nicht nur digital stattfinden. Mit Pitch & Meet bringen wir Unternehmen, Ideen und Menschen auch live zusammen – konkret, persönlich und mit echtem Austausch.',
+    title: 'Wenn deutsche und dänische Unternehmen zusammenkommen',
+    subtitle: 'Deutsch-dänische Zufälle systematisieren. Synergien schaffen. Kooperationen entstehen lassen.',
+    intro: 'Pitch & Meet ist ein Begegnungsformat für konkrete Ideen und echte Partnerschaften. Hier treffen Unternehmer*innen aufeinander – live, persönlich und mit echtem Austausch. Nicht digital, nicht anonym, nicht theoretisch. Sondern: echt.',
+    cta_text: 'Mehr erfahren',
   },
-  format: {
-    title: 'Das Format',
-    description: 'Bei Pitch & Meet präsentieren sich vier deutsche und vier dänische Unternehmen vor Publikum. Sie stellen ihre Idee, ihr Produkt, ihre Dienstleistung oder ihre Kooperationssuche vor.',
-    message: 'Hier wird nicht nur anonym gesucht – hier zeigen Unternehmen konkret, was sie möchten und wie ernst ihnen die Zusammenarbeit ist.',
+  culture_section: {
+    title: 'Sprache und Kultur: Die größten Barrieren',
+    intro: 'Deutsch-dänische Unterschiede sind oft das größte Hindernis – nicht die Geschäftsidee. Unterschiedliche Kommunikationsstile, andere Entscheidungswege, kulturelle Gewohnheiten.',
+    point1: 'Pitch & Meet hilft dabei, genau diese Barrieren abzubauen.',
+    point2: 'Nicht durch Training oder Leitfäden – sondern durch echte Begegnung.',
+    benefits: [
+      'Hemmungen abbauen',
+      'Verständnis schaffen',
+      'Gemeinsamkeiten entdecken',
+      'Ideen greifbar machen',
+    ],
+  },
+  pitch_format: {
+    title: 'Das Pitch & Meet Format',
+    subtitle: 'Kurze, persönliche Pitches. Nicht 50 PowerPoint-Folien.',
+    description: 'Bei Pitch & Meet präsentieren sich deutsche und dänische Unternehmen live vor Publikum. Jedes Unternehmen hat ca. 10-15 Minuten Zeit, ihre Idee, ihr Produkt oder ihre Kooperationssuche vorzustellen – plus Fragen aus dem Publikum.',
+    highlight: 'Der Pitch lebt von: Sprache. Persönlichkeit. Gestik. Energie. Klarheit. Nicht von Folien-Overload.',
+    what_companies_seek: [
+      'Kooperationen auf der anderen Seite der Grenze',
+      'Vertriebspartner und Distributoren',
+      'Zugang zu neuen Märkten',
+      'Projektpartner für gemeinsame Vorhaben',
+      'Kontakte und Sichtbarkeit',
+      'Austausch und Inspiration',
+    ],
+    important_message: 'Hier wird es konkret. Nicht anonym, digital oder theoretisch. Sondern: Unternehmen zeigen öffentlich, was sie suchen, was sie anbieten, und wie ernst ihnen die Zusammenarbeit ist.',
     icon: '🎤',
   },
   ablauf: [
     {
       nr: 1,
       title: 'Bewerbung',
-      beschreibung: 'Unternehmen bewerben sich mit ihrer Idee oder Kooperationssuche.',
+      beschreibung: 'Dein Unternehmen bewirbt sich mit der konkreten Idee oder Kooperationssuche. Was suchst du? Was bietest du an? Wie ernst ist dir die Zusammenarbeit?',
       icon: '📝',
     },
     {
       nr: 2,
-      title: 'Kennenlernen & Interview',
-      beschreibung: 'Easy-B2B führt kurze Gespräche mit den teilnehmenden Unternehmen.',
+      title: 'Vorbereitung & Interviews',
+      beschreibung: 'Easy-B2B führt kurze Online-Interviews mit dir. Wir verstehen deine Idee wirklich, klären offene Fragen, laden passende Gäste ein und erzeugen Sichtbarkeit.',
       icon: '💬',
     },
     {
       nr: 3,
-      title: 'Sichtbarkeit & Vorstellung',
-      beschreibung: 'Die Unternehmen werden angekündigt und über Easy-B2B-/Etablering-Tyskland-Kanäle sichtbar gemacht. Das erzeugt Aufmerksamkeit, zieht passende Besucher an und bereitet erste Kontakte vor.',
+      title: 'Vorstellung & Sichtbarkeit',
+      beschreibung: 'BEVOR das Event stattfindet, stellen wir dein Unternehmen schon vor – Social Media, Netzwerk, Eventankündigungen. Das erzeugt Aufmerksamkeit und zieht die richtigen Partner an.',
       icon: '📢',
     },
     {
       nr: 4,
-      title: 'Das Event',
-      beschreibung: 'Die Unternehmen präsentieren sich live vor Publikum in persönlicher und konkreter Atmosphäre.',
+      title: 'Live Event – Der Pitch',
+      beschreibung: 'Jetzt gehts los: Du pitchst live vor Publikum. 10-15 Minuten. Persönlich, direkt, ehrlich. Keine Folien-Überflutung – deine Energie zählt.',
       icon: '🎯',
     },
     {
       nr: 5,
-      title: 'Networking & Gespräche',
-      beschreibung: 'Danach entstehen echte Gespräche, Kontakte und mögliche Kooperationen.',
+      title: 'Gespräche & Kooperationen',
+      beschreibung: 'Nach den Pitches entstehen direkte Gespräche. Erste Kontakte, erste Ideen, mögliche Kooperationen. Die echte Arbeit beginnt.',
       icon: '🤝',
     },
   ],
   connectInCar: {
-    title: 'Connect in Car',
-    beschreibung: 'Zwischen den Pitch-Runden oder danach können kurze Networking-Gespräche direkt in Fahrzeugen stattfinden. 10 Minuten Austausch im Auto – danach Wechsel zur nächsten Gesprächsrunde. Netzwerken mal etwas anders.',
+    title: 'Connect in Car – Netzwerken mal anders',
+    description: 'Zwischen den Pitches oder danach: 10 Minuten intensiver Austausch in hochwertigen Fahrzeugen. Danach zum nächsten Gesprächspartner. Locker, hochwertig, sympathisch, modern.',
+    detail: 'Zum Beispiel: 10 Minuten Austausch im Mercedes, danach Wechsel zum nächsten Partner. Das ist ungewöhnlich, merkbar und bleibt in Erinnerung. Netzwerken mal etwas natürlicher – nicht am Stehtisch mit Häppchen, sondern in echten Gesprächen.',
     icon: '🚗',
+  },
+  for_whom: {
+    title: 'Für wen ist Pitch & Meet gedacht?',
+    intro: 'Wenn du eine konkrete Idee hast und auf der anderen Seite der Grenze Partner suchen möchtest, dann ist Pitch & Meet genau das Richtige für dich.',
+    profiles: [
+      {
+        icon: '🇩🇪',
+        title: 'Deutsche Unternehmen',
+        beschreibung: 'Mit Fokus auf den dänischen Markt, neue Partner oder konkrete Kooperationsideen.',
+      },
+      {
+        icon: '🇩🇰',
+        title: 'Dänische Unternehmen',
+        beschreibung: 'Die Deutschland als Markt erschließen oder nordische Lösungen deutschlandweit verbreiten möchten.',
+      },
+      {
+        icon: '💡',
+        title: 'Unternehmer*innen mit Ideen',
+        beschreibung: 'Mit konkreten Produkten, Services oder Projektideen. Nicht mit vagen Gedanken – mit echten Plänen.',
+      },
+      {
+        icon: '🤝',
+        title: 'Menschen auf Partnersuche',
+        beschreibung: 'Offen für Kooperationen, Austausch, neue Märkte. Bereit, sichtbar zu werden und zu pitchen.',
+      },
+    ],
   },
   bvmw: {
     title: 'Gemeinsam mit dem BVMW',
@@ -1089,13 +1139,15 @@ export const PITCH_AND_MEET = {
   },
   costs: {
     title: 'Kosten & Teilnahme',
-    intro: 'Die Veranstaltungen können kostenpflichtig sein – für Eintritt, Catering, Veranstaltungsorganisation und hochwertige Netzwerkformate. Das ermöglicht gute Gespräche, passende Gäste und eine hervorragende Veranstaltung.',
+    why_costs: 'Warum können Kosten entstehen? Gute Events brauchen gute Vorbereitung, passende Gäste, professionelle Moderation und echte Netzwerk-Momente. Das kostet Zeit und Ressourcen.',
+    for_whom: 'Für wen ist das interessant? Für Unternehmen, die ihre Idee ernsthaft vorstellen möchten – und die mit echten, qualifizierten Partnern zusammenkommen wollen.',
+    alternative: 'Was ist die Alternative? Easy-B2B bleibt auch digital und kostenfrei. Pitch & Meet ist ein zusätzliches Angebot für Unternehmen, die auch persönlich präsent sein möchten.',
   },
   cta: {
     title: 'Mit deinem Unternehmen dabei sein',
-    beschreibung: 'Unternehmen können sich bewerben, um ihre Idee, ihr Produkt, ihre Dienstleistung oder ihre Kooperationssuche vorzustellen.',
-    button: 'Für Pitch & Meet bewerben',
-    link: '/anfrage-einreichen',
+    beschreibung: 'Du hast eine konkrete Idee und suchst Partner auf der anderen Seite der Grenze? Dann bewirb dich jetzt für Pitch & Meet.',
+    button: 'Jetzt bewerben',
+    link: '/anfrage-einreichen?format=pitch-meet',
   },
   otherFormats: {
     title: 'Weitere deutsch-dänische Formate',
