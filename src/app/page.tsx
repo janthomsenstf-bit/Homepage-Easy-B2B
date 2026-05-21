@@ -69,40 +69,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 2. WAS PASSIERT HIER? ── */}
-      <section className={`${styles.section} ${styles.whatHappensSection}`}>
+      {/* ── 2. WAS PASSIERT HIER? – EDITORIAL STYLE ── */}
+      <section className={styles.whatHappensEditorialSection}>
         <div className={styles.sectionContent}>
-          <div className={styles.whatHappensHeader}>
+          <div className={styles.whatHappensEditorialHeader}>
             <h2>Was passiert hier?</h2>
-            <p className={styles.whatHappensIntro}>
-              Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark für konkrete Kooperationen, neue Märkte und gemeinsame Geschäftsideen.
+            <p className={styles.whatHappensEditorialIntro}>
+              Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark. Hier sind vier konkrete Möglichkeiten, wie das funktioniert.
             </p>
           </div>
 
-          <div className={styles.whatHappensGrid}>
+          <div className={styles.whatHappensEditorialContent}>
             {WHAT_IS_POSSIBLE.map((item, idx) => (
-              <div key={idx} className={styles.whatHappensCard}>
-                <div className={styles.cardHeader}>
-                  <span className={styles.cardIcon}>{item.icon}</span>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
+              <div
+                key={idx}
+                className={`${styles.whatHappensEditorialBlock} ${
+                  idx % 2 === 0 ? styles.blockImageLeft : styles.blockImageRight
+                }`}
+              >
+                {/* IMAGE SIDE */}
+                <div className={styles.editorialImageSide}>
+                  <div className={styles.editorialImagePlaceholder}>
+                    <span className={styles.editorialImageIcon}>{item.icon}</span>
+                  </div>
                 </div>
 
-                <p className={styles.cardExpl}>{item.erklärung}</p>
+                {/* TEXT SIDE */}
+                <div className={styles.editorialTextSide}>
+                  <div className={styles.editorialStepNumber}>0{idx + 1}</div>
+                  <h3 className={styles.editorialBlockTitle}>{item.title}</h3>
+                  <p className={styles.editorialBlockExpl}>{item.erklärung}</p>
 
-                <div className={styles.cardExamples}>
-                  {item.inspirationText && (
-                    <p className={styles.cardInspirationText}>{item.inspirationText}</p>
-                  )}
-                  <ul className={styles.examplesList}>
-                    {item.beispiele.map((beispiel, bidx) => (
-                      <li key={bidx} className={styles.exampleItem}>
+                  <ul className={styles.editorialExamples}>
+                    {item.beispiele.slice(0, 3).map((beispiel, bidx) => (
+                      <li key={bidx} className={styles.editorialExample}>
                         {parseHighlight(beispiel)}
                       </li>
                     ))}
                   </ul>
                 </div>
-
-                <div className={styles.cardArrow}>→</div>
               </div>
             ))}
           </div>

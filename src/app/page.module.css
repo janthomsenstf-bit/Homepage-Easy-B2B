@@ -91,18 +91,20 @@
 }
 
 /* ── 2. WAS PASSIERT HIER? ── */
-/* ── 2. WAS PASSIERT HIER? – MODERNES CARD DESIGN ── */
-.whatHappensSection {
-  background: #f9f9f9;
+/* ── 2. WAS PASSIERT HIER? – EDITORIAL STYLE ── */
+.whatHappensEditorialSection {
+  background: white;
+  padding: 100px 48px;
 }
 
-.whatHappensHeader {
-  margin-bottom: 80px;
+.whatHappensEditorialHeader {
+  max-width: 1200px;
+  margin: 0 auto 120px;
   text-align: center;
 }
 
-.whatHappensHeader h2 {
-  font-size: clamp(36px, 5vw, 48px);
+.whatHappensEditorialHeader h2 {
+  font-size: clamp(40px, 6vw, 56px);
   font-weight: 700;
   margin-bottom: 24px;
   color: #003366;
@@ -110,165 +112,152 @@
   line-height: 1.2;
 }
 
-.whatHappensIntro {
+.whatHappensEditorialIntro {
   font-size: 18px;
   color: #666666;
   line-height: 1.7;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 700px;
   font-weight: 500;
 }
 
-/* Grid mit 4 Cards */
-.whatHappensGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  margin: 0;
-}
-
-/* Moderne Card Struktur */
-.whatHappensCard {
-  background: white;
-  border-radius: 12px;
-  padding: 40px 32px;
-  border: 1px solid #e0e0e0;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-  cursor: pointer;
+/* Content Container */
+.whatHappensEditorialContent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  animation: slideInUp 0.6s ease-out both;
+  gap: 120px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.whatHappensCard:nth-child(1) { animation-delay: 0.1s; }
-.whatHappensCard:nth-child(2) { animation-delay: 0.2s; }
-.whatHappensCard:nth-child(3) { animation-delay: 0.3s; }
-.whatHappensCard:nth-child(4) { animation-delay: 0.4s; }
-
-.whatHappensCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #FF9900 0%, #003366 100%);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
+/* Individual Editorial Block */
+.whatHappensEditorialBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  animation: fadeIn 0.8s ease-out;
 }
 
-.whatHappensCard:hover::before {
-  transform: scaleX(1);
+.whatHappensEditorialBlock.blockImageLeft {
+  grid-template-columns: 1fr 1fr;
 }
 
-.whatHappensCard:hover {
-  transform: translateY(-8px);
-  border-color: #FF9900;
-  box-shadow: 0 12px 24px rgba(255, 153, 0, 0.15);
+.whatHappensEditorialBlock.blockImageRight {
+  grid-template-columns: 1fr 1fr;
 }
 
-/* Card Content */
-.cardHeader {
+.whatHappensEditorialBlock.blockImageRight .editorialImageSide {
+  order: 2;
+}
+
+.whatHappensEditorialBlock.blockImageRight .editorialTextSide {
+  order: 1;
+}
+
+/* Image Side */
+.editorialImageSide {
+  position: relative;
+}
+
+.editorialImagePlaceholder {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  border-radius: 16px;
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  position: relative;
 }
 
-.cardIcon {
-  font-size: 40px;
+.editorialImageIcon {
+  font-size: 120px;
   line-height: 1;
-  flex-shrink: 0;
-  animation: rotateIn 0.6s ease-out;
+  color: rgba(0, 51, 102, 0.1);
+  display: block;
 }
 
-.cardTitle {
-  font-size: 18px;
+/* Text Side */
+.editorialTextSide {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px 0;
+}
+
+.editorialStepNumber {
+  font-size: 56px;
+  font-weight: 700;
+  color: #FF9900;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-family: var(--font-sans);
+  opacity: 0.4;
+}
+
+.editorialBlockTitle {
+  font-size: 32px;
   font-weight: 700;
   color: #003366;
   margin: 0;
   line-height: 1.3;
   font-family: var(--font-sans);
-  transition: color 0.3s ease;
 }
 
-.whatHappensCard:hover .cardTitle {
-  color: #FF9900;
-}
-
-.cardExpl {
-  font-size: 14px;
+.editorialBlockExpl {
+  font-size: 16px;
   color: #666666;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
   font-weight: 400;
 }
 
-/* Card Examples */
-.cardExamples {
-  flex: 1;
-}
-
-.cardInspirationText {
-  font-size: 12px;
-  color: #FF9900;
-  line-height: 1.5;
-  margin: 0 0 12px 0;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.examplesList {
+/* Examples List */
+.editorialExamples {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 8px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
-.exampleItem {
-  font-size: 12px;
-  color: #888888;
-  line-height: 1.5;
-  padding-left: 20px;
+.editorialExample {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.6;
+  padding-left: 28px;
   position: relative;
   font-weight: 400;
+  margin: 0;
 }
 
-.exampleItem strong {
-  color: #333333;
+.editorialExample strong {
+  color: #003366;
   font-weight: 600;
 }
 
-.exampleItem::before {
+.editorialExample::before {
   content: '✓';
   position: absolute;
   left: 0;
   color: #FF9900;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 18px;
+  line-height: 1;
 }
 
-/* Arrow */
-.cardArrow {
-  font-size: 20px;
-  color: #FF9900;
-  font-weight: 700;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: all 0.3s ease;
-  margin-top: 12px;
-}
-
-.whatHappensCard:hover .cardArrow {
-  opacity: 1;
-  transform: translateX(0);
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ── 3. WIE FUNKTIONIERT EASY-B2B? ── */
@@ -954,13 +943,52 @@
     display: none;
   }
 
-  .whatHappensGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+  .whatHappensEditorialSection {
+    padding: 60px 32px;
   }
 
-  .whatHappensCard {
-    padding: 32px 24px;
+  .whatHappensEditorialHeader {
+    margin-bottom: 80px;
+  }
+
+  .whatHappensEditorialHeader h2 {
+    font-size: 40px;
+  }
+
+  .whatHappensEditorialIntro {
+    font-size: 16px;
+  }
+
+  .whatHappensEditorialContent {
+    gap: 80px;
+  }
+
+  .whatHappensEditorialBlock {
+    gap: 60px;
+  }
+
+  .editorialImagePlaceholder {
+    border-radius: 12px;
+  }
+
+  .editorialImageIcon {
+    font-size: 90px;
+  }
+
+  .editorialTextSide {
+    padding: 30px 0;
+  }
+
+  .editorialStepNumber {
+    font-size: 48px;
+  }
+
+  .editorialBlockTitle {
+    font-size: 28px;
+  }
+
+  .editorialBlockExpl {
+    font-size: 15px;
   }
 
   /* Prozess-Karten: Tablet */
@@ -1038,43 +1066,74 @@
     font-size: 80px;
   }
 
-  .whatHappensHeader {
-    margin-bottom: 50px;
+  .whatHappensEditorialSection {
+    padding: 48px 24px;
   }
 
-  .whatHappensHeader h2 {
+  .whatHappensEditorialHeader {
+    margin-bottom: 60px;
+  }
+
+  .whatHappensEditorialHeader h2 {
     font-size: 28px;
     margin-bottom: 16px;
   }
 
-  .whatHappensIntro {
+  .whatHappensEditorialIntro {
     font-size: 15px;
   }
 
-  .whatHappensGrid {
+  .whatHappensEditorialContent {
+    gap: 60px;
+  }
+
+  .whatHappensEditorialBlock {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 32px;
   }
 
-  .whatHappensCard {
-    padding: 28px 20px;
-    gap: 16px;
+  .whatHappensEditorialBlock.blockImageRight .editorialImageSide {
+    order: 1;
   }
 
-  .cardIcon {
-    font-size: 32px;
+  .whatHappensEditorialBlock.blockImageRight .editorialTextSide {
+    order: 2;
   }
 
-  .cardTitle {
-    font-size: 16px;
+  .editorialImagePlaceholder {
+    border-radius: 12px;
+    min-height: 300px;
   }
 
-  .cardExpl {
+  .editorialImageIcon {
+    font-size: 70px;
+  }
+
+  .editorialTextSide {
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .editorialStepNumber {
+    font-size: 36px;
+    margin-bottom: 4px;
+  }
+
+  .editorialBlockTitle {
+    font-size: 22px;
+  }
+
+  .editorialBlockExpl {
+    font-size: 14px;
+  }
+
+  .editorialExample {
     font-size: 13px;
+    padding-left: 24px;
   }
 
-  .exampleItem {
-    font-size: 11px;
+  .editorialExample::before {
+    font-size: 16px;
   }
 
   .checklistGrid,
