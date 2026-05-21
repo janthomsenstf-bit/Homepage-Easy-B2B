@@ -240,7 +240,7 @@
   gap: 48px;
   margin: 60px 0;
   position: relative;
-  align-items: start;
+  align-items: stretch;
 }
 
 .processStepItem {
@@ -254,7 +254,6 @@
   text-align: center;
   gap: 20px;
   transition: all 0.3s ease;
-  min-height: 420px;
   box-shadow: 0 2px 8px rgba(0, 51, 102, 0.06);
 }
 
@@ -297,8 +296,7 @@
   line-height: 1.7;
   margin: 0;
   flex-grow: 1;
-  display: flex;
-  align-items: center;
+  display: block;
 }
 
 .stepDesc strong {
@@ -710,7 +708,6 @@
 
   .processStepItem {
     padding: 36px 28px;
-    min-height: 380px;
   }
 
   .stepIcon {
@@ -793,7 +790,6 @@
 
   .processStepItem {
     padding: 32px 24px;
-    min-height: auto;
   }
 
   .stepNumber {
