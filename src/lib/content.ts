@@ -1002,9 +1002,31 @@ export const EVENTS_FORMATS = [
 ]
 
 // ── PRICING & KOSTEN ──
+// ── KOSTEN / PREISE ──
 export const PRICING_INFO = {
-  hauptsatz: 'Easy-B2B ist kostenfrei nutzbar.',
-  beschreibung1: 'Easy-B2B ist ein Service von Etablering Tyskland und soll Unternehmen den Einstieg in den deutsch-dänischen Markt erleichtern.',
-  beschreibung2: 'Bei besonderen Veranstaltungen, erweiterten Kooperationssuchen oder speziellen Netzwerkformaten können später Kosten oder Mitgliedschaften entstehen – etwa im Rahmen von BVMW-Netzwerkformaten.',
-  hinweis: 'Aber das kommt später. Jetzt nutze Easy-B2B ganz entspannt kostenlos.',
+  free: {
+    title: 'Easy-B2B ist kostenfrei nutzbar',
+    intro: 'Easy-B2B ist ein Service von Etablering Tyskland und soll Unternehmen den Einstieg in den deutsch-dänischen Markt erleichtern.',
+    story: 'Viele Unternehmen stellen sich beim Schritt über die Grenze ähnliche Fragen: „Kennst du jemanden?", „Wie findet man erste Kontakte?", „Wie kommt man in den Markt?" Genau aus diesen Gesprächen entstand die Idee zu Easy-B2B.',
+    goal: 'Easy-B2B hilft dir, erste Kontakte zu finden, deine Idee greifbarer zu machen, Sprach- und Kulturbarrieren etwas abzubauen – und den Einstieg einfacher zu gestalten.',
+    partnership: 'Wenn du später Unterstützung brauchst, freuen wir uns, wenn daraus auch eine Zusammenarbeit mit Etablering Tyskland entsteht. Aber kein Druck – deine Idee zählt.',
+    icon: '✨',
+    button: {
+      text: 'Was ist Etablering Tyskland?',
+      link: '#', // wird später ergänzt
+    },
+  },
+  costs: {
+    title: 'Kosten können entstehen bei',
+    intro: 'Die Easy-B2B Plattform selbst bleibt kostenfrei. Einige Zusatzangebote können optional kostenpflichtig werden:',
+    examples: [
+      'besondere Vor-Ort-Veranstaltungen',
+      'Netzwerkabende und Branchenformate',
+      'BVMW-Mitgliedschaften oder Partnernetzwerke',
+      'größere Matching- oder Veranstaltungsformate',
+      'erweiterte Kooperationsunterstützungen',
+    ],
+    note: 'Diese Kosten kommen später und sind vollständig optional. Die Basis-Plattform bleibt offen.',
+    icon: '🤝',
+  },
 }

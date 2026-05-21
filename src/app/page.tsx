@@ -294,11 +294,59 @@ export default function Home() {
       <section className={styles.section}>
         <div className={styles.sectionContent}>
           <h2>Kosten</h2>
-          <div className={styles.pricingBlock}>
-            <h3 className={styles.pricingHeadline}>{PRICING_INFO.hauptsatz}</h3>
-            <p className={styles.pricingText}>{PRICING_INFO.beschreibung1}</p>
-            <p className={styles.pricingText}>{PRICING_INFO.beschreibung2}</p>
-            <p className={styles.pricingHinweis}>{PRICING_INFO.hinweis}</p>
+          <p className={styles.sectionIntro}>
+            Warum ist Easy-B2B kostenfrei – und wann könnten trotzdem Kosten entstehen?
+          </p>
+
+          {/* Zwei-Block Layout */}
+          <div className={styles.pricingGrid}>
+
+            {/* LINKER BLOCK – Kostenfrei */}
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingCardIcon}>{PRICING_INFO.free.icon}</div>
+              <h3 className={styles.pricingCardTitle}>{PRICING_INFO.free.title}</h3>
+
+              <p className={styles.pricingCardText}>
+                {PRICING_INFO.free.intro}
+              </p>
+
+              <p className={styles.pricingCardStory}>
+                {PRICING_INFO.free.story}
+              </p>
+
+              <p className={styles.pricingCardGoal}>
+                <strong>{PRICING_INFO.free.goal}</strong>
+              </p>
+
+              <p className={styles.pricingCardPartnership}>
+                {PRICING_INFO.free.partnership}
+              </p>
+
+              <Link href={PRICING_INFO.free.button.link} className={styles.pricingButton}>
+                {PRICING_INFO.free.button.text} →
+              </Link>
+            </div>
+
+            {/* RECHTER BLOCK – Kosten können entstehen */}
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingCardIcon}>{PRICING_INFO.costs.icon}</div>
+              <h3 className={styles.pricingCardTitle}>{PRICING_INFO.costs.title}</h3>
+
+              <p className={styles.pricingCardText}>
+                {PRICING_INFO.costs.intro}
+              </p>
+
+              <ul className={styles.pricingList}>
+                {PRICING_INFO.costs.examples.map((example, idx) => (
+                  <li key={idx}>{example}</li>
+                ))}
+              </ul>
+
+              <p className={styles.pricingCardNote}>
+                {PRICING_INFO.costs.note}
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
