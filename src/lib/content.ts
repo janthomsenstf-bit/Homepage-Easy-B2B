@@ -51,23 +51,32 @@ export const PROZESS_SUCHENDE = [
 export const PROZESS_HOMEPAGE = [
   {
     nr: 1,
-    icon: '💡',
-    title: 'Idee oder Gesuch einreichen',
-    desc: 'Unternehmen beschreiben, wen oder was sie suchen – z. B. Vertriebspartner, Produkte, Projektpartner oder Zugang zum deutschen bzw. dänischen Markt.',
+    icon: '✏️',
+    title: 'Anfrage einreichen',
+    desc: 'Offen oder anonym möglich. Du beschreibst konkret, wen oder was du suchst.',
   },
   {
     nr: 2,
-    icon: '🔍',
-    title: 'Wir prüfen & filtern persönlich',
-    desc: 'Easy-B2B ist keine anonyme Kontaktbörse. Wir prüfen Anfragen, sortieren unrealistische Gesuche aus und suchen nach passenden Verbindungen.',
+    icon: '💬',
+    title: 'Kurz kennenlernen',
+    desc: 'Ca. 15 Minuten Austausch. So verstehen wir wirklich, wen du brauchst.',
   },
   {
     nr: 3,
+    icon: '📬',
+    title: 'Passende Kontakte erhalten',
+    desc: 'Du bekommst nur echte Matches – persönlich geprüft, nicht automatisiert.',
+  },
+  {
+    nr: 4,
     icon: '🤝',
-    title: 'Passende Unternehmen werden verbunden',
-    desc: 'Wenn es fachlich und menschlich passt, bringen wir Unternehmen zusammen – persönlich, direkt und ohne unnötiges Networking-Blabla.',
+    title: 'Selbst entscheiden & verhandeln',
+    desc: 'Easy-B2B vermittelt Kontakte. Die Zusammenarbeit läuft dann direkt zwischen euch.',
   },
 ]
+
+// ── PROZESS-HINWEIS ──
+export const PROZESS_HINWEIS = 'Easy-B2B vermittelt Kontakte und Möglichkeiten. Die eigentliche Zusammenarbeit und Verhandlung findet direkt zwischen den Unternehmen statt.'
 
 // ── TYPISCHE HOMEPAGE-BEISPIELE (erweitert) ──
 // ── ANFRAGE-DETAILS (Was ist in einer Anfrage?) ──
@@ -217,28 +226,36 @@ export const PROZESS_INTERESSENTEN = [
 // ── HÄUFIG GESTELLTE FRAGEN ──
 export const FAQ = [
   {
-    frage: 'Wer sieht meine Daten?',
-    antwort: 'Das entscheidest du. Bei anonymen Anfragen sehen Interessenten nur die Branche und Beschreibung – nicht deine Firma. Bei öffentlichen Anfragen sehen sie deinen Namen und Website.',
+    frage: 'Wer darf Easy-B2B nutzen?',
+    antwort: 'Unternehmen aus Deutschland und Dänemark, die echte Partner suchen oder ihr Angebot erweitern möchten. Von Startups bis Mittelständler – alle sind willkommen.',
   },
   {
-    frage: 'Wie lange ist eine Anfrage gültig?',
-    antwort: 'Max. 3 Monate. Du kannst die Gültigkeit jederzeit verlängern. Abgelaufene Anfragen archivieren wir automatisch.',
+    frage: 'Wie funktioniert das Matchmaking?',
+    antwort: 'Jede Anfrage wird persönlich geprüft. Dann suchen wir aktiv nach passenden Unternehmen – nicht automatisiert, sondern von Hand.',
   },
   {
-    frage: 'Was kostet es?',
-    antwort: 'EasyB2B ist kostenlos. Wir verdienen mit langfristigen Partnerschaften zwischen den Unternehmen.',
+    frage: 'Wie lange dauert die Prüfung?',
+    antwort: 'Normalerweise 3-5 Werktage. Bei ungeklärten Fragen können wir dir auch Feedback geben, um deine Anfrage zu konkretisieren.',
   },
   {
-    frage: 'Wie funktioniert die Vermittlung?',
-    antwort: 'Jede Anfrage und jeder Interessent wird persönlich geprüft. Wir geben nur echte Matches weiter – keine Spam, keine Automatik.',
+    frage: 'Wie erfahre ich von Interessenten?',
+    antwort: 'Du bekommst von uns direkt Kontaktdaten und eine kurze Beschreibung. Dann nimm selbst Kontakt auf – oder lass dich kontaktieren.',
   },
   {
-    frage: 'Kann ich mehrere Anfragen stellen?',
-    antwort: 'Ja. Je konkreter die Anfrage, desto bessere Matches findest du.',
+    frage: 'Welche Sprache kann genutzt werden?',
+    antwort: 'Deutsch, Dänisch und Englisch. Wir übersetzen, falls nötig. Sprachbarrieren sind kein Problem.',
   },
   {
-    frage: 'Wie lange dauert es bis zum Match?',
-    antwort: 'Im Durchschnitt 10-14 Tage. Manchmal schneller wenn deine Anfrage sehr konkret ist.',
+    frage: 'Wie werden Kontakte geprüft?',
+    antwort: 'Wir schauen uns die Webseite an, sprechen mit Gründer und Geschäftsführer, und prüfen ob die Anfrage realistisch ist und zum Netzwerk passt.',
+  },
+  {
+    frage: 'Muss meine Anfrage öffentlich sein?',
+    antwort: 'Nein. Du kannst deine Anfrage anonymisieren. Interessenten sehen dann nur Branche und Anfrage – nicht deinen Namen.',
+  },
+  {
+    frage: 'Wie oft darf ich die Plattform nutzen?',
+    antwort: 'So oft du möchtest. Manche Unternehmen stellen monatlich Anfragen. Je konkreter die Anfrage, desto bessere Ergebnisse.',
   },
 ]
 
@@ -665,3 +682,164 @@ export const KOOPERATIONSBEISPIELE_DETAILS = [
     nutzen: ['Authentische Partnerschaften', 'Exklusivität', 'Differenzierung', 'Geteilte Wertvorstellungen'],
   },
 ]
+
+// ── WAS IST ALLES MÖGLICH? (6 Use Cases für Homepage) ──
+export const WHAT_IS_POSSIBLE = [
+  {
+    icon: '🇩🇪',
+    title: 'Deutschen Vertriebspartner finden',
+    beschreibung: 'Du hast ein dänisches Produkt und brauchst jemanden, der es in Deutschland verkauft?',
+  },
+  {
+    icon: '🇩🇰',
+    title: 'Neue Märkte erschließen',
+    beschreibung: 'Dein deutsches Produkt könnte auch in Dänemark funktionieren. Wir finden den richtigen Partner.',
+  },
+  {
+    icon: '🤝',
+    title: 'Grenzüberschreitende Kooperationen starten',
+    beschreibung: 'Gemeinsame Projekte, Joint Ventures oder Strategische Allianzen zwischen DE und DK.',
+  },
+  {
+    icon: '📦',
+    title: 'Produktsortiment erweitern',
+    beschreibung: 'Du suchst neue Lieferanten, Designer oder Hersteller aus dem Nachbarland.',
+  },
+  {
+    icon: '🚛',
+    title: 'Servicepartner finden',
+    beschreibung: 'Logistik, Support, Wartung oder Montage – manchmal brauchst du einfach lokale Hilfe.',
+  },
+  {
+    icon: '🏗',
+    title: 'Projektpartner finden',
+    beschreibung: 'Für konkrete Ausschreibungen, Konstruktionsprojekte oder spezialisierte Aufträge.',
+  },
+]
+
+// ── WAS FRAGEN WIR EIGENTLICH AB? ──
+export const WHAT_WE_ASK = [
+  'Was suchst du konkret?',
+  'Wie stellst du dir die Zusammenarbeit vor?',
+  'Welche Regionen sind interessant?',
+  'Welche Sprache kann gesprochen werden?',
+  'Wie weit ist deine Idee bereits?',
+  'Wie möchtest du kontaktiert werden?',
+  'Was suchst du ausdrücklich NICHT?',
+]
+
+// ── KULTUR & MENSCHEN ──
+export const KULTUR_HINTS = [
+  {
+    frage: 'Eher schnelle Entscheidungen oder erstmal kennenlernen?',
+    hinweis: 'Dänen und Deutsche ticken unterschiedlich. Wir achten auf Kommunikationsstil und Entscheidungswege.',
+  },
+  {
+    frage: 'Wie direkt darf kommuniziert werden?',
+    hinweis: 'Die norddeutsche Direktheit ist willkommen. Reden wir Klartext – aber immer respektvoll.',
+  },
+  {
+    frage: 'Was ist dir bei Zusammenarbeit wichtig?',
+    hinweis: 'Verlässlichkeit, Qualität, Langfristigkeit? Das finden wir heraus – und vermitteln nur echte Matches.',
+  },
+  {
+    frage: 'Wie soll die Zusammenarbeit menschlich funktionieren?',
+    hinweis: 'Gute Kooperationen entstehen zwischen Menschen, nicht nur zwischen Firmen. Wir schauen auf beide.',
+  },
+]
+
+// ── VERTRAUEN & WERTE ──
+export const TRUST_VALUES = [
+  {
+    icon: '🔍',
+    statement: 'Persönlichkeit vor Masse',
+    erklärung: 'Wir prüfen jede Anfrage persönlich. Keine Spam, keine Automatik, keine irrelevanten Kontakte.',
+  },
+  {
+    icon: '🔒',
+    statement: 'Nicht jede Anfrage muss öffentlich sein',
+    erklärung: 'Anonymität auf Wunsch. Du entscheidest, wer deine Firma sieht und wer nicht.',
+  },
+  {
+    icon: '🤝',
+    statement: 'Gute Kooperationen entstehen zwischen Menschen',
+    erklärung: 'Wir achten nicht nur auf fachliche Passung, sondern auch auf Mentalität und Zusammenarbeit.',
+  },
+  {
+    icon: '📋',
+    statement: 'Sorgsam mit Kontakten und Informationen',
+    erklärung: 'DSGVO-konform. Deine Daten und Kontakte sind bei uns sicher. Punkt.',
+  },
+]
+
+// ── VORBEREITETE ANFRAGE-TEMPLATES ──
+export const QUICK_REQUEST_TEMPLATES = [
+  {
+    title: 'Deutschen Vertriebspartner finden',
+    href: '/anfrage-einreichen?category=vertrieb',
+  },
+  {
+    title: 'Produktsortiment erweitern',
+    href: '/anfrage-einreichen?category=produkte',
+  },
+  {
+    title: 'Projektpartner finden',
+    href: '/anfrage-einreichen?category=projekte',
+  },
+  {
+    title: 'Zugang zum Markt',
+    href: '/anfrage-einreichen?category=markt',
+  },
+  {
+    title: 'Spezialisten suchen',
+    href: '/anfrage-einreichen?category=spezialisten',
+  },
+]
+
+// ── VERANSTALTUNGSFORMATE ──
+export const EVENTS_FORMATS = [
+  {
+    icon: '🎤',
+    name: 'Pitch & Meet',
+    beschreibung: 'Unternehmen stellen sich vor, andere hören zu. Danach informelles Netzwerk-Treffen.',
+    status: 'In Planung',
+  },
+  {
+    icon: '🏭',
+    name: 'Betriebsbesichtigungen',
+    beschreibung: 'Exklusiv: Besuche echte Produktionsstätten und lerne die Menschen dahinter kennen.',
+    status: 'In Planung',
+  },
+  {
+    icon: '📅',
+    name: 'Branchentage',
+    beschreibung: 'Fokus auf eine Branche (z. B. Logistik, Maschinenbau). Expert-Talks und Matching.',
+    status: 'In Planung',
+  },
+  {
+    icon: '🚗',
+    name: 'Connect in Car',
+    beschreibung: 'Netzwerken auf der Fahrt zwischen Hamburg und Kopenhagen. Informal, effektiv.',
+    status: 'In Planung',
+  },
+  {
+    icon: '🤝',
+    name: 'Persönliche Netzwerktreffen',
+    beschreibung: 'Kleine Gruppen. Kleine Stadt. Großes Ziel: Echte Kontakte aufbauen.',
+    status: 'Laufend',
+  },
+  {
+    icon: '🎙',
+    name: 'Interviews & Podcasts',
+    beschreibung: 'Erfolgsgeschichten von deutsch-dänischen Partnerschaften. Zum Hören und Lernen.',
+    status: 'In Planung',
+  },
+]
+
+// ── PRICING & KOSTEN ──
+export const PRICING_INFO = {
+  hauptsatz: 'Easy-B2B ist kostenfrei nutzbar.',
+  beschreibung1: 'Easy-B2B ist ein Service von Etablering Tyskland und soll Unternehmen den Einstieg in den deutsch-dänischen Markt erleichtern.',
+  beschreibung2: 'Bei besonderen Veranstaltungen, erweiterten Kooperationssuchen oder speziellen Netzwerkformaten können später Kosten oder Mitgliedschaften entstehen – etwa im Rahmen von BVMW-Netzwerkformaten.',
+  hinweis: 'Aber das kommt später. Jetzt nutze Easy-B2B ganz entspannt kostenlos.',
+}

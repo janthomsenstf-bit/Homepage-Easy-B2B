@@ -1,0 +1,76 @@
+.card {
+  background: white;
+  border: 2px solid #e0dcd4;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #e8a020;
+  box-shadow: 0 12px 32px rgba(232, 160, 32, 0.12);
+  transform: translateY(-4px);
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.icon {
+  font-size: 32px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.status {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.status.in-planung {
+  background: #f59e0b;
+  color: white;
+}
+
+.status.laufend {
+  background: #10b981;
+  color: white;
+}
+
+.status.coming-soon {
+  background: #94a3b8;
+  color: white;
+}
+
+.beschreibung {
+  font-size: 13px;
+  color: #4a4845;
+  line-height: 1.6;
+  margin: 0;
+}
