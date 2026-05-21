@@ -62,19 +62,33 @@ export default function Home() {
       {/* ── 2. WAS PASSIERT HIER? ── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.sectionContent}>
-          <h2>Was passiert hier?</h2>
-          <p className={styles.sectionIntro}>
-            Hier sind einige Beispiele, wofür Easy-B2B genutzt wird – konkret und direkt.
-          </p>
-          <div className={styles.useCasesGrid}>
-            {WHAT_IS_POSSIBLE.map((useCase, idx) => (
-              <UseCaseCard
-                key={idx}
-                icon={useCase.icon}
-                title={useCase.title}
-                beschreibung={useCase.beschreibung}
-              />
-            ))}
+          <div className={styles.whatHappensSection}>
+            {/* LEFT: Text + List */}
+            <div className={styles.whatHappensLeft}>
+              <h2>Was passiert hier?</h2>
+              <p className={styles.whatHappensIntro}>
+                Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark und schafft Möglichkeiten für echte Kooperationen.
+              </p>
+
+              <ul className={styles.whatHappensList}>
+                {WHAT_IS_POSSIBLE.map((item, idx) => (
+                  <li key={idx} className={styles.whatHappensItem}>
+                    <span className={styles.whatHappensIcon}>{item.icon}</span>
+                    <div className={styles.whatHappensItemContent}>
+                      <h3 className={styles.whatHappensItemTitle}>{item.title}</h3>
+                      <p className={styles.whatHappensItemDesc}>{item.beschreibung}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* RIGHT: Illustration Placeholder */}
+            <div className={styles.whatHappensRight}>
+              <div className={styles.whatHappensRightImage}>
+                🤔
+              </div>
+            </div>
           </div>
         </div>
       </section>

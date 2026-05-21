@@ -91,11 +91,103 @@
 }
 
 /* ── 2. WAS PASSIERT HIER? ── */
-.useCasesGrid {
+.whatHappensSection {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.whatHappensLeft {
+  /* Text + List */
+}
+
+.whatHappensLeft h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
   margin-bottom: 20px;
+  color: #1a1a1a;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.whatHappensIntro {
+  font-size: 16px;
+  color: #4a4845;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 600px;
+}
+
+.whatHappensList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.whatHappensItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.whatHappensIcon {
+  font-size: 28px;
+  line-height: 1;
+  min-width: 36px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.whatHappensItemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.whatHappensItemTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.whatHappensItemDesc {
+  font-size: 13px;
+  color: #4a4845;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.whatHappensRight {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatHappensRightImage {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f7f5f0 0%, #e0dcd4 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+  color: rgba(0, 0, 0, 0.08);
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 /* ── 3. WIE FUNKTIONIERT EASY-B2B? ── */
@@ -562,6 +654,16 @@
   .previewArrow {
     display: none;
   }
+
+  .whatHappensSection {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .whatHappensRight {
+    order: -1;
+    min-height: 400px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -611,7 +713,6 @@
     font-size: 80px;
   }
 
-  .useCasesGrid,
   .checklistGrid,
   .kulturGrid,
   .trustGrid,
@@ -647,5 +748,41 @@
 
   .ctaBanner p {
     font-size: 16px;
+  }
+
+  /* Was passiert hier? Mobile */
+  .whatHappensSection {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .whatHappensLeft h2 {
+    font-size: 24px;
+  }
+
+  .whatHappensIntro {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .whatHappensList {
+    gap: 24px;
+  }
+
+  .whatHappensIcon {
+    font-size: 24px;
+  }
+
+  .whatHappensItemTitle {
+    font-size: 14px;
+  }
+
+  .whatHappensItemDesc {
+    font-size: 12px;
+  }
+
+  .whatHappensRight {
+    order: -1;
+    min-height: 320px;
   }
 }
