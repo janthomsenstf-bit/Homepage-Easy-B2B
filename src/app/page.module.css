@@ -93,101 +93,129 @@
 /* ── 2. WAS PASSIERT HIER? ── */
 .whatHappensSection {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
   align-items: start;
   margin-top: 20px;
 }
 
 .whatHappensLeft {
-  /* Text + List */
+  /* Text + Szenarien mit konkreten Beispielen */
 }
 
 .whatHappensLeft h2 {
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #333333;
   font-family: var(--font-sans);
+  line-height: 1.3;
 }
 
 .whatHappensIntro {
   font-size: 16px;
   color: #666666;
-  line-height: 1.6;
-  margin: 0 0 40px 0;
-  max-width: 600px;
+  line-height: 1.7;
+  margin: 0 0 56px 0;
+  max-width: 650px;
+  font-weight: 400;
 }
 
-.whatHappensList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Neue Struktur: Szenarien */
+.whatHappensScenarios {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 56px;
 }
 
-.whatHappensItem {
-  display: grid;
-  grid-template-columns: auto 1fr;
+.whatHappensScenario {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  align-items: start;
 }
 
-.whatHappensIcon {
+.scenarioHeader {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.scenarioIcon {
   font-size: 28px;
   line-height: 1;
-  min-width: 36px;
-  text-align: center;
+  min-width: 32px;
   flex-shrink: 0;
+  text-align: center;
+  margin-top: 2px;
 }
 
-.whatHappensItemContent {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.whatHappensItemTitle {
-  font-size: 15px;
+.scenarioTitle {
+  font-size: 18px;
   font-weight: 600;
   color: #333333;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
+  padding-top: 2px;
 }
 
-.whatHappensItemDesc {
-  font-size: 13px;
+.scenarioExpl {
+  font-size: 15px;
   color: #666666;
   line-height: 1.6;
   margin: 0;
+  margin-left: 44px;
+  font-weight: 400;
+}
+
+.scenarioExamples {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scenarioExample {
+  font-size: 13px;
+  color: #999999;
+  line-height: 1.5;
+  padding-left: 20px;
+  position: relative;
+  font-weight: 400;
+}
+
+.scenarioExample::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #FF9900;
+  font-weight: 600;
 }
 
 .whatHappensRight {
   position: relative;
-  min-height: 500px;
+  min-height: 350px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 40px;
 }
 
 .whatHappensRightImage {
-  width: 100%;
-  height: 100%;
-  background: #f0f0f0;
-  border-radius: 16px;
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 120px;
-  color: rgba(0, 0, 0, 0.08);
+  font-size: 100px;
+  color: rgba(255, 153, 0, 0.15);
   line-height: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 51, 102, 0.08);
 }
 
 /* ── 3. WIE FUNKTIONIERT EASY-B2B? ── */
@@ -657,12 +685,17 @@
 
   .whatHappensSection {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 50px;
   }
 
   .whatHappensRight {
     order: -1;
-    min-height: 400px;
+    min-height: auto;
+    padding-top: 0;
+  }
+
+  .whatHappensRightImage {
+    margin-bottom: 30px;
   }
 }
 
@@ -753,36 +786,52 @@
   /* Was passiert hier? Mobile */
   .whatHappensSection {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 40px;
   }
 
   .whatHappensLeft h2 {
     font-size: 24px;
+    margin-bottom: 12px;
   }
 
   .whatHappensIntro {
     font-size: 14px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
+    line-height: 1.6;
   }
 
-  .whatHappensList {
-    gap: 24px;
+  .whatHappensScenarios {
+    gap: 40px;
   }
 
-  .whatHappensIcon {
-    font-size: 24px;
+  .scenarioTitle {
+    font-size: 16px;
   }
 
-  .whatHappensItemTitle {
+  .scenarioExpl {
     font-size: 14px;
+    margin-left: 40px;
   }
 
-  .whatHappensItemDesc {
+  .scenarioExamples {
+    margin-left: 40px;
+    gap: 8px;
+  }
+
+  .scenarioExample {
     font-size: 12px;
+    padding-left: 18px;
   }
 
   .whatHappensRight {
     order: -1;
-    min-height: 320px;
+    min-height: auto;
+    padding-top: 0;
+    justify-content: center;
+  }
+
+  .whatHappensRightImage {
+    width: 240px;
+    height: 240px;
   }
 }

@@ -63,30 +63,37 @@ export default function Home() {
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.sectionContent}>
           <div className={styles.whatHappensSection}>
-            {/* LEFT: Text + List */}
+            {/* LEFT: Text + Szenarien */}
             <div className={styles.whatHappensLeft}>
               <h2>Was passiert hier?</h2>
               <p className={styles.whatHappensIntro}>
-                Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark und schafft Möglichkeiten für echte Kooperationen.
+                Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark und schafft Möglichkeiten für echte Kooperationen, neue Märkte und konkrete Geschäftsideen.
               </p>
 
-              <ul className={styles.whatHappensList}>
+              <div className={styles.whatHappensScenarios}>
                 {WHAT_IS_POSSIBLE.map((item, idx) => (
-                  <li key={idx} className={styles.whatHappensItem}>
-                    <span className={styles.whatHappensIcon}>{item.icon}</span>
-                    <div className={styles.whatHappensItemContent}>
-                      <h3 className={styles.whatHappensItemTitle}>{item.title}</h3>
-                      <p className={styles.whatHappensItemDesc}>{item.beschreibung}</p>
+                  <div key={idx} className={styles.whatHappensScenario}>
+                    <div className={styles.scenarioHeader}>
+                      <span className={styles.scenarioIcon}>{item.icon}</span>
+                      <h3 className={styles.scenarioTitle}>{item.title}</h3>
                     </div>
-                  </li>
+                    <p className={styles.scenarioExpl}>{item.erklärung}</p>
+                    <ul className={styles.scenarioExamples}>
+                      {item.beispiele.map((beispiel, bidx) => (
+                        <li key={bidx} className={styles.scenarioExample}>
+                          {beispiel}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* RIGHT: Illustration Placeholder */}
             <div className={styles.whatHappensRight}>
               <div className={styles.whatHappensRightImage}>
-                🤔
+                💡
               </div>
             </div>
           </div>

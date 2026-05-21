@@ -683,37 +683,51 @@ export const KOOPERATIONSBEISPIELE_DETAILS = [
   },
 ]
 
-// ── WAS IST ALLES MÖGLICH? (6 Use Cases für Homepage) ──
+// ── WAS IST ALLES MÖGLICH? (4 konkrete Szenarien) ──
 export const WHAT_IS_POSSIBLE = [
   {
     icon: '🇩🇪',
     title: 'Deutschen Vertriebspartner finden',
-    beschreibung: 'Du hast ein dänisches Produkt und brauchst jemanden, der es in Deutschland verkauft?',
-  },
-  {
-    icon: '🇩🇰',
-    title: 'Neue Märkte erschließen',
-    beschreibung: 'Dein deutsches Produkt könnte auch in Dänemark funktionieren. Wir finden den richtigen Partner.',
+    erklärung: 'Du hast ein dänisches Produkt und suchst jemanden, der es in Deutschland verkauft.',
+    beispiele: [
+      'Dänischen Gin in die Hamburger Gastroszene bringen',
+      '5-Kilo-Garneleneimer an Fischgroßmärkte liefern',
+      'Nordisches Eis für deutsche Cafés und Gastronomiebetriebe',
+      'Dänische Sahneprodukte für bayerische Bäckereiketten',
+    ],
   },
   {
     icon: '🤝',
     title: 'Grenzüberschreitende Kooperationen starten',
-    beschreibung: 'Gemeinsame Projekte, Joint Ventures oder Strategische Allianzen zwischen DE und DK.',
-  },
-  {
-    icon: '📦',
-    title: 'Produktsortiment erweitern',
-    beschreibung: 'Du suchst neue Lieferanten, Designer oder Hersteller aus dem Nachbarland.',
-  },
-  {
-    icon: '🚛',
-    title: 'Servicepartner finden',
-    beschreibung: 'Logistik, Support, Wartung oder Montage – manchmal brauchst du einfach lokale Hilfe.',
+    erklärung: 'Unternehmen aus Deutschland und Dänemark zusammenbringen – für gemeinsame Projekte.',
+    beispiele: [
+      'Smart-City-Projekte für deutsche Kommunen',
+      'Steuerbare Straßenbeleuchtung für Industriegebiete',
+      'Digitalisierungslösungen für öffentliche Einrichtungen',
+      'Gemeinsame Pilotprojekte im Grenzbereich',
+    ],
   },
   {
     icon: '🏗',
     title: 'Projektpartner finden',
-    beschreibung: 'Für konkrete Ausschreibungen, Konstruktionsprojekte oder spezialisierte Aufträge.',
+    erklärung: 'Für konkrete Projekte, Ausschreibungen oder operative Zusammenarbeit.',
+    beispiele: [
+      'Fugensand für Marktplätze und Kommunen',
+      'Trockeneis-Reinigungslösungen für Industrieanlagen',
+      'Servicepartner für technische Wartung und Support',
+      'Spezialisierte Partner für regionale Ausschreibungen',
+    ],
+  },
+  {
+    icon: '📦',
+    title: 'Produktsortiment erweitern',
+    erklärung: 'Neue Produkte und Geschäftsideen aus dem Nachbarland entdecken.',
+    beispiele: [
+      'Nordische Spezialprodukte für Concept Stores',
+      'Dänische Delikatessen für regionale Einzelhändler',
+      'Nachhaltige skandinavische Produkte für bestehende Sortimente',
+      'Spezialprodukte für Hotellerie und Gastronomie',
+    ],
   },
 ]
 
