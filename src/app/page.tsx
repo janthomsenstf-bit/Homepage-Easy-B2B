@@ -70,45 +70,41 @@ export default function Home() {
       </section>
 
       {/* ── 2. WAS PASSIERT HIER? ── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <section className={`${styles.section} ${styles.whatHappensSection}`}>
         <div className={styles.sectionContent}>
-          <div className={styles.whatHappensSection}>
-            {/* LEFT: Text + Szenarien */}
-            <div className={styles.whatHappensLeft}>
-              <h2>Was passiert hier?</h2>
-              <p className={styles.whatHappensIntro}>
-                Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark und schafft Möglichkeiten für echte Kooperationen, neue Märkte und konkrete Geschäftsideen.
-              </p>
+          <div className={styles.whatHappensHeader}>
+            <h2>Was passiert hier?</h2>
+            <p className={styles.whatHappensIntro}>
+              Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark für konkrete Kooperationen, neue Märkte und gemeinsame Geschäftsideen.
+            </p>
+          </div>
 
-              <div className={styles.whatHappensScenarios}>
-                {WHAT_IS_POSSIBLE.map((item, idx) => (
-                  <div key={idx} className={styles.whatHappensScenario}>
-                    <div className={styles.scenarioHeader}>
-                      <span className={styles.scenarioIcon}>{item.icon}</span>
-                      <h3 className={styles.scenarioTitle}>{item.title}</h3>
-                    </div>
-                    <p className={styles.scenarioExpl}>{item.erklärung}</p>
-                    {item.inspirationText && (
-                      <p className={styles.inspirationText}>{item.inspirationText}</p>
-                    )}
-                    <ul className={styles.scenarioExamples}>
-                      {item.beispiele.map((beispiel, bidx) => (
-                        <li key={bidx} className={styles.scenarioExample}>
-                          {parseHighlight(beispiel)}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className={styles.whatHappensGrid}>
+            {WHAT_IS_POSSIBLE.map((item, idx) => (
+              <div key={idx} className={styles.whatHappensCard}>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardIcon}>{item.icon}</span>
+                  <h3 className={styles.cardTitle}>{item.title}</h3>
+                </div>
 
-            {/* RIGHT: Illustration Placeholder */}
-            <div className={styles.whatHappensRight}>
-              <div className={styles.whatHappensRightImage}>
-                💡
+                <p className={styles.cardExpl}>{item.erklärung}</p>
+
+                <div className={styles.cardExamples}>
+                  {item.inspirationText && (
+                    <p className={styles.cardInspirationText}>{item.inspirationText}</p>
+                  )}
+                  <ul className={styles.examplesList}>
+                    {item.beispiele.map((beispiel, bidx) => (
+                      <li key={bidx} className={styles.exampleItem}>
+                        {parseHighlight(beispiel)}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className={styles.cardArrow}>→</div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

@@ -91,104 +91,149 @@
 }
 
 /* ── 2. WAS PASSIERT HIER? ── */
+/* ── 2. WAS PASSIERT HIER? – MODERNES CARD DESIGN ── */
 .whatHappensSection {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 100px;
-  align-items: start;
-  margin-top: 20px;
+  background: #f9f9f9;
 }
 
-.whatHappensLeft {
-  /* Text + Szenarien mit konkreten Beispielen */
+.whatHappensHeader {
+  margin-bottom: 80px;
+  text-align: center;
 }
 
-.whatHappensLeft h2 {
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #333333;
+.whatHappensHeader h2 {
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #003366;
   font-family: var(--font-sans);
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .whatHappensIntro {
-  font-size: 16px;
+  font-size: 18px;
   color: #666666;
   line-height: 1.7;
-  margin: 0 0 56px 0;
-  max-width: 650px;
-  font-weight: 400;
+  margin: 0 auto;
+  max-width: 600px;
+  font-weight: 500;
 }
 
-/* Neue Struktur: Szenarien */
-.whatHappensScenarios {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
+/* Grid mit 4 Cards */
+.whatHappensGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin: 0;
 }
 
-.whatHappensScenario {
+/* Moderne Card Struktur */
+.whatHappensCard {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 32px;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  animation: slideInUp 0.6s ease-out both;
+}
+
+.whatHappensCard:nth-child(1) { animation-delay: 0.1s; }
+.whatHappensCard:nth-child(2) { animation-delay: 0.2s; }
+.whatHappensCard:nth-child(3) { animation-delay: 0.3s; }
+.whatHappensCard:nth-child(4) { animation-delay: 0.4s; }
+
+.whatHappensCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF9900 0%, #003366 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.whatHappensCard:hover::before {
+  transform: scaleX(1);
+}
+
+.whatHappensCard:hover {
+  transform: translateY(-8px);
+  border-color: #FF9900;
+  box-shadow: 0 12px 24px rgba(255, 153, 0, 0.15);
+}
+
+/* Card Content */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
   gap: 16px;
 }
 
-.scenarioHeader {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.scenarioIcon {
-  font-size: 28px;
+.cardIcon {
+  font-size: 40px;
   line-height: 1;
-  min-width: 32px;
   flex-shrink: 0;
-  text-align: center;
-  margin-top: 2px;
+  animation: rotateIn 0.6s ease-out;
 }
 
-.scenarioTitle {
+.cardTitle {
   font-size: 18px;
-  font-weight: 600;
-  color: #333333;
+  font-weight: 700;
+  color: #003366;
   margin: 0;
   line-height: 1.3;
-  padding-top: 2px;
+  font-family: var(--font-sans);
+  transition: color 0.3s ease;
 }
 
-.scenarioExpl {
-  font-size: 15px;
+.whatHappensCard:hover .cardTitle {
+  color: #FF9900;
+}
+
+.cardExpl {
+  font-size: 14px;
   color: #666666;
   line-height: 1.6;
   margin: 0;
-  margin-left: 44px;
   font-weight: 400;
 }
 
-.inspirationText {
-  font-size: 13px;
-  color: #FF9900;
-  line-height: 1.5;
-  margin: 12px 0 16px 0;
-  margin-left: 44px;
-  font-weight: 500;
-  font-style: italic;
+/* Card Examples */
+.cardExamples {
+  flex: 1;
 }
 
-.scenarioExamples {
+.cardInspirationText {
+  font-size: 12px;
+  color: #FF9900;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.examplesList {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-left: 44px;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
 }
 
-.scenarioExample {
-  font-size: 13px;
+.exampleItem {
+  font-size: 12px;
   color: #888888;
   line-height: 1.5;
   padding-left: 20px;
@@ -196,41 +241,34 @@
   font-weight: 400;
 }
 
-.scenarioExample strong {
+.exampleItem strong {
   color: #333333;
   font-weight: 600;
 }
 
-.scenarioExample::before {
-  content: '•';
+.exampleItem::before {
+  content: '✓';
   position: absolute;
   left: 0;
   color: #FF9900;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 13px;
 }
 
-.whatHappensRight {
-  position: relative;
-  min-height: 350px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding-top: 40px;
+/* Arrow */
+.cardArrow {
+  font-size: 20px;
+  color: #FF9900;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  margin-top: 12px;
 }
 
-.whatHappensRightImage {
-  width: 280px;
-  height: 280px;
-  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 100px;
-  color: rgba(255, 153, 0, 0.15);
-  line-height: 1;
-  flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(0, 51, 102, 0.08);
+.whatHappensCard:hover .cardArrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* ── 3. WIE FUNKTIONIERT EASY-B2B? ── */
@@ -862,6 +900,29 @@
   line-height: 1.6;
 }
 
+/* ── ANIMATIONS ── */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero,
@@ -893,19 +954,13 @@
     display: none;
   }
 
-  .whatHappensSection {
-    grid-template-columns: 1fr;
-    gap: 50px;
+  .whatHappensGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
-  .whatHappensRight {
-    order: -1;
-    min-height: auto;
-    padding-top: 0;
-  }
-
-  .whatHappensRightImage {
-    margin-bottom: 30px;
+  .whatHappensCard {
+    padding: 32px 24px;
   }
 
   /* Prozess-Karten: Tablet */
@@ -981,6 +1036,45 @@
 
   .heroPlaceholder {
     font-size: 80px;
+  }
+
+  .whatHappensHeader {
+    margin-bottom: 50px;
+  }
+
+  .whatHappensHeader h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .whatHappensIntro {
+    font-size: 15px;
+  }
+
+  .whatHappensGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .whatHappensCard {
+    padding: 28px 20px;
+    gap: 16px;
+  }
+
+  .cardIcon {
+    font-size: 32px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardExpl {
+    font-size: 13px;
+  }
+
+  .exampleItem {
+    font-size: 11px;
   }
 
   .checklistGrid,
