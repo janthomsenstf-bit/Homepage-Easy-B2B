@@ -96,12 +96,11 @@ export default function Home() {
 
                 {/* TEXT SIDE */}
                 <div className={styles.editorialTextSide}>
-                  <div className={styles.editorialStepNumber}>0{idx + 1}</div>
                   <h3 className={styles.editorialBlockTitle}>{item.title}</h3>
                   <p className={styles.editorialBlockExpl}>{item.erklärung}</p>
 
                   <ul className={styles.editorialExamples}>
-                    {item.beispiele.slice(0, 3).map((beispiel, bidx) => (
+                    {item.beispiele.map((beispiel, bidx) => (
                       <li key={bidx} className={styles.editorialExample}>
                         {parseHighlight(beispiel)}
                       </li>

@@ -94,30 +94,30 @@
 /* ── 2. WAS PASSIERT HIER? – EDITORIAL STYLE ── */
 .whatHappensEditorialSection {
   background: white;
-  padding: 100px 48px;
+  padding: 80px 48px;
 }
 
 .whatHappensEditorialHeader {
   max-width: 1200px;
-  margin: 0 auto 120px;
+  margin: 0 auto 100px;
   text-align: center;
 }
 
 .whatHappensEditorialHeader h2 {
-  font-size: clamp(40px, 6vw, 56px);
+  font-size: clamp(36px, 5vw, 48px);
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   color: #003366;
   font-family: var(--font-sans);
   line-height: 1.2;
 }
 
 .whatHappensEditorialIntro {
-  font-size: 18px;
+  font-size: 16px;
   color: #666666;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 650px;
   font-weight: 500;
 }
 
@@ -125,7 +125,7 @@
 .whatHappensEditorialContent {
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  gap: 90px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -134,8 +134,8 @@
 .whatHappensEditorialBlock {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
+  gap: 80px;
+  align-items: flex-start;
   animation: fadeIn 0.8s ease-out;
 }
 
@@ -158,24 +158,28 @@
 /* Image Side */
 .editorialImageSide {
   position: relative;
+  display: flex;
+  align-items: flex-start;
 }
 
 .editorialImagePlaceholder {
+  width: 100%;
+  max-width: 380px;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  background: linear-gradient(135deg, #f5f5f5 0%, #ebebeb 100%);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   position: relative;
 }
 
 .editorialImageIcon {
-  font-size: 120px;
+  font-size: 90px;
   line-height: 1;
-  color: rgba(0, 51, 102, 0.1);
+  color: rgba(0, 51, 102, 0.08);
   display: block;
 }
 
@@ -183,22 +187,16 @@
 .editorialTextSide {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 40px 0;
+  gap: 20px;
+  padding: 0;
 }
 
 .editorialStepNumber {
-  font-size: 56px;
-  font-weight: 700;
-  color: #FF9900;
-  line-height: 1;
-  margin-bottom: 8px;
-  font-family: var(--font-sans);
-  opacity: 0.4;
+  display: none;
 }
 
 .editorialBlockTitle {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: #003366;
   margin: 0;
@@ -207,9 +205,9 @@
 }
 
 .editorialBlockExpl {
-  font-size: 16px;
+  font-size: 15px;
   color: #666666;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
   font-weight: 400;
 }
@@ -219,24 +217,24 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 8px;
+  margin-top: 4px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .editorialExample {
-  font-size: 14px;
-  color: #555555;
-  line-height: 1.6;
-  padding-left: 28px;
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.5;
+  padding-left: 24px;
   position: relative;
   font-weight: 400;
   margin: 0;
 }
 
 .editorialExample strong {
-  color: #003366;
+  color: #333333;
   font-weight: 600;
 }
 
@@ -246,7 +244,7 @@
   left: 0;
   color: #FF9900;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
 }
 
@@ -948,19 +946,20 @@
   }
 
   .whatHappensEditorialHeader {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
   }
 
   .whatHappensEditorialHeader h2 {
-    font-size: 40px;
+    font-size: 36px;
+    margin-bottom: 16px;
   }
 
   .whatHappensEditorialIntro {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .whatHappensEditorialContent {
-    gap: 80px;
+    gap: 70px;
   }
 
   .whatHappensEditorialBlock {
@@ -969,26 +968,32 @@
 
   .editorialImagePlaceholder {
     border-radius: 12px;
+    max-width: 320px;
   }
 
   .editorialImageIcon {
-    font-size: 90px;
+    font-size: 75px;
   }
 
   .editorialTextSide {
-    padding: 30px 0;
-  }
-
-  .editorialStepNumber {
-    font-size: 48px;
+    gap: 18px;
   }
 
   .editorialBlockTitle {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .editorialBlockExpl {
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  .editorialExample {
+    font-size: 12px;
+    padding-left: 22px;
+  }
+
+  .editorialExample::before {
+    font-size: 14px;
   }
 
   /* Prozess-Karten: Tablet */
@@ -1071,25 +1076,26 @@
   }
 
   .whatHappensEditorialHeader {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 
   .whatHappensEditorialHeader h2 {
     font-size: 28px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .whatHappensEditorialIntro {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .whatHappensEditorialContent {
-    gap: 60px;
+    gap: 50px;
   }
 
   .whatHappensEditorialBlock {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
   .whatHappensEditorialBlock.blockImageRight .editorialImageSide {
@@ -1102,38 +1108,39 @@
 
   .editorialImagePlaceholder {
     border-radius: 12px;
-    min-height: 300px;
+    min-height: 250px;
+    max-width: 100%;
   }
 
   .editorialImageIcon {
-    font-size: 70px;
+    font-size: 60px;
   }
 
   .editorialTextSide {
-    padding: 20px 0;
-    gap: 20px;
+    gap: 16px;
   }
 
   .editorialStepNumber {
-    font-size: 36px;
-    margin-bottom: 4px;
+    display: none;
   }
 
   .editorialBlockTitle {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .editorialBlockExpl {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .editorialExample {
-    font-size: 13px;
-    padding-left: 24px;
+    font-size: 12px;
+    padding-left: 20px;
+    gap: 8px;
   }
 
   .editorialExample::before {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .checklistGrid,
