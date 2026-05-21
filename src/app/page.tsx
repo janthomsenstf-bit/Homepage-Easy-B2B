@@ -136,80 +136,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── 4. KONKRETES BEISPIEL ── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
-        <div className={styles.sectionContent}>
-          <h2>So könnte eine Kooperation entstehen</h2>
-
-          <div className={styles.storyPreviewIntro}>
-            <p>
-              Ein dänischer Hersteller für Holzspielzeug sucht Vertriebspartner in Deutschland.
-              So könnte der Ablauf über Easy-B2B aussehen:
-            </p>
-          </div>
-
-          <div className={styles.storyPreviewSteps}>
-            <div className={styles.previewStep}>
-              <div className={styles.previewNumber}>1</div>
-              <h3>Anfrage einreichen</h3>
-              <p>Hersteller beschreibt konkret, was er sucht</p>
-            </div>
-
-            <div className={styles.previewArrow}>→</div>
-
-            <div className={styles.previewStep}>
-              <div className={styles.previewNumber}>2</div>
-              <h3>Easy-B2B prüft</h3>
-              <p>Persönliche Prüfung & Optimierung</p>
-            </div>
-
-            <div className={styles.previewArrow}>→</div>
-
-            <div className={styles.previewStep}>
-              <div className={styles.previewNumber}>3</div>
-              <h3>Interessenten melden sich</h3>
-              <p>Passende Unternehmen aus dem Netzwerk</p>
-            </div>
-
-            <div className={styles.previewArrow}>→</div>
-
-            <div className={styles.previewStep}>
-              <div className={styles.previewNumber}>4</div>
-              <h3>Verbindung entsteht</h3>
-              <p>Erstes Gespräch oder Zusammenarbeit</p>
-            </div>
-          </div>
-
-          <div className={styles.storyPreviewExamples}>
-            <p className={styles.examplesLabel}>Beispielhafte Interessenten:</p>
-            <div className={styles.examplesGrid}>
-              <div className={styles.exampleCard}>
-                <span>🇩🇪</span>
-                <div>
-                  <strong>Spielwarenhandel</strong>
-                  <small>Düsseldorf</small>
-                </div>
-              </div>
-              <div className={styles.exampleCard}>
-                <span>🇩🇪</span>
-                <div>
-                  <strong>Handelsvertreter</strong>
-                  <small>Hamburg</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.storyPreviewCta}>
-            <Link href="/so-funktioniert-es" className="btn-primary">
-              Ablauf im Detail ansehen →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. WAS FRAGEN WIR AB? ── */}
+      {/* ── 4. WAS FRAGEN WIR AB? ── */}
       <section className={styles.section}>
         <div className={styles.sectionContent}>
           <h2>Was fragen wir eigentlich ab?</h2>
@@ -224,7 +151,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 6. KULTUR & MENSCHEN ── */}
+      {/* ── 5. KULTUR & MENSCHEN ── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.sectionContent}>
           <h2>Kultur & Menschen</h2>
@@ -242,7 +169,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. AKTUELLE GESUCHE ── */}
+      {/* ── 6. AKTUELLE GESUCHE ── */}
       <section className={styles.section}>
         <div className={styles.sectionContent}>
           <h2>Aktuelle Anfragen im Netzwerk</h2>
@@ -268,7 +195,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 8. VERTRAUEN & WERTE ── */}
+      {/* ── 7. VERTRAUEN & WERTE ── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.sectionContent}>
           <h2>Vertrauen & Werte</h2>
@@ -294,7 +221,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. VORBEREITETE ANFRAGEN ── */}
+      {/* ── 8. VORBEREITETE ANFRAGEN ── */}
       <section className={styles.section}>
         <div className={styles.sectionContent}>
           <h2>Schneller Einstieg</h2>
@@ -316,7 +243,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10. VERANSTALTUNGEN & TREFFEN VOR ORT ── */}
+      {/* ── 9. VERANSTALTUNGEN & TREFFEN VOR ORT ── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.sectionContent}>
           <h2>Veranstaltungen & Treffen vor Ort</h2>
@@ -337,7 +264,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 11. KOSTEN ── */}
+      {/* ── 10. KOSTEN ── */}
       <section className={styles.section}>
         <div className={styles.sectionContent}>
           <h2>Kosten</h2>
@@ -350,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 12. FAQ ── */}
+      {/* ── 11. FAQ ── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.sectionContent}>
           <h2>Häufig gestellte Fragen</h2>
