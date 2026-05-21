@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import styles from './EventCard.module.css'
 
 interface EventCardProps {
@@ -7,11 +8,12 @@ interface EventCardProps {
   name: string
   beschreibung: string
   status: string
+  href?: string
 }
 
-export default function EventCard({ icon, name, beschreibung, status }: EventCardProps) {
-  return (
-    <div className={styles.card}>
+export default function EventCard({ icon, name, beschreibung, status, href }: EventCardProps) {
+  const content = (
+    <>
       <div className={styles.header}>
         <div className={styles.icon}>{icon}</div>
         <div className={styles.titleArea}>
@@ -22,6 +24,18 @@ export default function EventCard({ icon, name, beschreibung, status }: EventCar
         </div>
       </div>
       <p className={styles.beschreibung}>{beschreibung}</p>
-    </div>
+    </>
   )
+
+  if (href) {
+    return (
+      <Link href={href} className={styles.cardLink}>
+        <div className={styles.card}>
+          {content}
+        </div>
+      </Link>
+    )
+  }
+
+  return <div className={styles.card}>{content}</div>
 }

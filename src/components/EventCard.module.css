@@ -74,3 +74,17 @@
   line-height: 1.6;
   margin: 0;
 }
+
+.cardLink {
+  text-decoration: none;
+  display: block;
+}
+
+.cardLink .card {
+  cursor: pointer;
+}
+
+.cardLink .card:hover {
+  border-color: #FF9900;
+  box-shadow: 0 8px 24px rgba(255, 153, 0, 0.2);
+}

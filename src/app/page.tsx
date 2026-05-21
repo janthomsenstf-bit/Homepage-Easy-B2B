@@ -284,6 +284,7 @@ export default function Home() {
                 name={event.name}
                 beschreibung={event.beschreibung}
                 status={event.status}
+                href={event.href}
               />
             ))}
           </div>

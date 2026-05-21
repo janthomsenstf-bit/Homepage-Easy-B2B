@@ -968,6 +968,7 @@ export const EVENTS_FORMATS = [
     name: 'Pitch & Meet',
     beschreibung: 'Unternehmen stellen sich vor, andere hören zu. Danach informelles Netzwerk-Treffen.',
     status: 'In Planung',
+    href: '/pitch-and-meet',
   },
   {
     icon: '🏭',
@@ -1028,5 +1029,83 @@ export const PRICING_INFO = {
     ],
     note: 'Diese Kosten kommen später und sind vollständig optional. Die Basis-Plattform bleibt offen.',
     icon: '🤝',
+  },
+}
+
+// ── PITCH & MEET FORMAT PAGE ──
+export const PITCH_AND_MEET = {
+  hero: {
+    title: 'Pitch & Meet',
+    subtitle: 'Deutsch-dänische Unternehmen treffen sich live, stellen ihre Ideen vor und lernen potenzielle Partner persönlich kennen.',
+    intro: 'Easy-B2B soll nicht nur digital stattfinden. Mit Pitch & Meet bringen wir Unternehmen, Ideen und Menschen auch live zusammen – konkret, persönlich und mit echtem Austausch.',
+  },
+  format: {
+    title: 'Das Format',
+    description: 'Bei Pitch & Meet präsentieren sich vier deutsche und vier dänische Unternehmen vor Publikum. Sie stellen ihre Idee, ihr Produkt, ihre Dienstleistung oder ihre Kooperationssuche vor.',
+    message: 'Hier wird nicht nur anonym gesucht – hier zeigen Unternehmen konkret, was sie möchten und wie ernst ihnen die Zusammenarbeit ist.',
+    icon: '🎤',
+  },
+  ablauf: [
+    {
+      nr: 1,
+      title: 'Bewerbung',
+      beschreibung: 'Unternehmen bewerben sich mit ihrer Idee oder Kooperationssuche.',
+      icon: '📝',
+    },
+    {
+      nr: 2,
+      title: 'Kennenlernen & Interview',
+      beschreibung: 'Easy-B2B führt kurze Gespräche mit den teilnehmenden Unternehmen.',
+      icon: '💬',
+    },
+    {
+      nr: 3,
+      title: 'Sichtbarkeit & Vorstellung',
+      beschreibung: 'Die Unternehmen werden angekündigt und über Easy-B2B-/Etablering-Tyskland-Kanäle sichtbar gemacht. Das erzeugt Aufmerksamkeit, zieht passende Besucher an und bereitet erste Kontakte vor.',
+      icon: '📢',
+    },
+    {
+      nr: 4,
+      title: 'Das Event',
+      beschreibung: 'Die Unternehmen präsentieren sich live vor Publikum in persönlicher und konkreter Atmosphäre.',
+      icon: '🎯',
+    },
+    {
+      nr: 5,
+      title: 'Networking & Gespräche',
+      beschreibung: 'Danach entstehen echte Gespräche, Kontakte und mögliche Kooperationen.',
+      icon: '🤝',
+    },
+  ],
+  connectInCar: {
+    title: 'Connect in Car',
+    beschreibung: 'Zwischen den Pitch-Runden oder danach können kurze Networking-Gespräche direkt in Fahrzeugen stattfinden. 10 Minuten Austausch im Auto – danach Wechsel zur nächsten Gesprächsrunde. Netzwerken mal etwas anders.',
+    icon: '🚗',
+  },
+  bvmw: {
+    title: 'Gemeinsam mit dem BVMW',
+    beschreibung: 'Pitch & Meet wird gemeinsam mit dem Bundesverband mittelständische Wirtschaft (BVMW) umgesetzt. Der BVMW hilft dabei, passende Besucher, Unternehmen und Kontakte zu schaffen – und gibt der Veranstaltung große Reichweite.',
+    icon: '🏢',
+  },
+  costs: {
+    title: 'Kosten & Teilnahme',
+    intro: 'Die Veranstaltungen können kostenpflichtig sein – für Eintritt, Catering, Veranstaltungsorganisation und hochwertige Netzwerkformate. Das ermöglicht gute Gespräche, passende Gäste und eine hervorragende Veranstaltung.',
+  },
+  cta: {
+    title: 'Mit deinem Unternehmen dabei sein',
+    beschreibung: 'Unternehmen können sich bewerben, um ihre Idee, ihr Produkt, ihre Dienstleistung oder ihre Kooperationssuche vorzustellen.',
+    button: 'Für Pitch & Meet bewerben',
+    link: '/anfrage-einreichen',
+  },
+  otherFormats: {
+    title: 'Weitere deutsch-dänische Formate',
+    intro: 'Weitere Format und Veranstaltungen sind bereits in Planung:',
+    examples: [
+      'Branchentreffen',
+      'Betriebsbesichtigungen',
+      'Networking-Formate',
+      'Themenabende',
+      'Deutsch-dänische Kooperationstage',
+    ],
   },
 }

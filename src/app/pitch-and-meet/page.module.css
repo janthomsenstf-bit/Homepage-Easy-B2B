@@ -1,0 +1,553 @@
+/* ─────────────────────────────────────────────
+   PITCH & MEET PAGE STYLES
+   ───────────────────────────────────────────── */
+
+/* ── HERO SECTION ── */
+.hero {
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  color: white;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 153, 0, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heroLabel {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heroTitle {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 0.95;
+  margin: 0;
+  max-width: 700px;
+}
+
+.heroIntro {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin: 16px 0 0 0;
+  max-width: 700px;
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: 100px 20px;
+  background: white;
+}
+
+.sectionAlt {
+  background: #f9f9f9;
+}
+
+.sectionContent {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionIntro {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 16px 0 48px 0;
+}
+
+/* ── FORMAT EXPLANATION ── */
+.formatBlock {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: start;
+  background: white;
+  padding: 48px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.formatIcon {
+  font-size: 72px;
+  line-height: 1;
+  min-width: 100px;
+  text-align: center;
+}
+
+.formatText h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #003366;
+  margin: 0 0 16px 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.formatDescription {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.formatMessage {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── ABLAUF (5-STEP PROCESS) ── */
+.ablaufContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.ablaufWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.ablaufCard {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.ablaufCard:hover {
+  border-color: #FF9900;
+  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+}
+
+.ablaufIcon {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.ablaufNumber {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FF9900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ablaufTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #003366;
+  margin: 8px 0 0 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.ablaufDesc {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.ablaufArrow {
+  display: none;
+  font-size: 28px;
+  color: #FF9900;
+  font-weight: 300;
+  margin: -8px 0;
+}
+
+/* ── CONNECT IN CAR SECTION ── */
+.connectInCarBlock {
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.08) 0%, rgba(0, 51, 102, 0.05) 100%);
+  border: 2px solid #FF9900;
+  border-radius: 12px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.connectInCarIcon {
+  font-size: 80px;
+  line-height: 1;
+  min-width: 100px;
+  text-align: center;
+}
+
+.connectInCarContent h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #003366;
+  margin: 0 0 16px 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.connectInCarContent p {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.connectInCarNote {
+  background: white;
+  padding: 16px 20px;
+  border-left: 4px solid #FF9900;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* ── BVMW PARTNERSHIP ── */
+.bvmwBlock {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: start;
+  background: white;
+  padding: 48px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.bvmwIcon {
+  font-size: 72px;
+  line-height: 1;
+  min-width: 100px;
+  text-align: center;
+}
+
+.bvmwContent h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #003366;
+  margin: 0 0 16px 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.bvmwContent p {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.bvmwNote {
+  color: #666666;
+  font-style: italic;
+}
+
+/* ── COSTS EXPLANATION ── */
+.costsExplanation {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #f9f9f9;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.costsExplanation p {
+  margin: 0;
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.6;
+}
+
+.costsExplanation strong {
+  color: #003366;
+  font-weight: 700;
+}
+
+/* ── CTA SECTION ── */
+.ctaSection {
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 153, 0, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ctaSection > .sectionContent {
+  position: relative;
+  z-index: 2;
+}
+
+.ctaSection h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.ctaDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+.ctaSection .btn-primary {
+  display: inline-block;
+}
+
+/* ── OTHER FORMATS ── */
+.otherFormatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.formatCard {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.formatCard:hover {
+  border-color: #FF9900;
+  box-shadow: 0 8px 16px rgba(255, 153, 0, 0.15);
+}
+
+.formatBullet {
+  font-size: 18px;
+  color: #FF9900;
+  font-weight: 600;
+}
+
+.formatText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #003366;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* ── BACK LINK ── */
+.backSection {
+  padding: 60px 20px;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+.backLink {
+  font-size: 15px;
+  font-weight: 600;
+  color: #003366;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease;
+}
+
+.backLink:hover {
+  gap: 12px;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE DESIGN
+   ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .heroTitle {
+    font-size: 44px;
+  }
+
+  .section {
+    padding: 80px 20px;
+  }
+
+  .formatBlock,
+  .bvmwBlock {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px;
+  }
+
+  .connectInCarBlock {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px;
+  }
+
+  .formatIcon,
+  .connectInCarIcon,
+  .bvmwIcon {
+    font-size: 60px;
+  }
+
+  .ablaufContainer {
+    gap: 24px;
+  }
+
+  .ctaSection {
+    padding: 60px 20px;
+  }
+
+  .ctaSection h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .sectionContent {
+    width: 100%;
+  }
+
+  .formatBlock,
+  .bvmwBlock {
+    padding: 28px;
+    gap: 24px;
+  }
+
+  .connectInCarBlock {
+    padding: 28px;
+    gap: 24px;
+  }
+
+  .formatIcon,
+  .connectInCarIcon,
+  .bvmwIcon {
+    font-size: 48px;
+  }
+
+  .formatText h2,
+  .connectInCarContent h2,
+  .bvmwContent h2 {
+    font-size: 22px;
+  }
+
+  .ablaufContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ablaufCard {
+    padding: 28px;
+  }
+
+  .otherFormatsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .costsExplanation {
+    padding: 28px;
+  }
+
+  .ctaSection {
+    padding: 48px 20px;
+  }
+
+  .ctaSection h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .ctaDescription {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .backSection {
+    padding: 40px 20px;
+  }
+}
