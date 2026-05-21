@@ -1,8 +1,8 @@
 .card {
-  background: #f7f5f0;
-  border: 1px solid #e0dcd4;
+  background: white;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 16px;
+  padding: 18px;
   display: flex;
   gap: 12px;
   align-items: flex-start;
@@ -11,12 +11,12 @@
 
 .card:hover {
   background: white;
-  border-color: #e8a020;
-  box-shadow: 0 4px 12px rgba(232, 160, 32, 0.08);
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
 }
 
 .checkmark {
-  color: #2ecc8a;
+  color: #4CAF50;
   font-weight: 700;
   font-size: 18px;
   flex-shrink: 0;
@@ -26,7 +26,7 @@
 
 .text {
   font-size: 14px;
-  color: #1a1a1a;
+  color: #333333;
   line-height: 1.5;
   margin: 0;
   font-weight: 500;

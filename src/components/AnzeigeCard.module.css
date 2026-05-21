@@ -1,8 +1,8 @@
 .card {
   background: white;
-  border: 1px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 24px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -19,15 +19,15 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #e8a020, #0a3d2e);
+  background: linear-gradient(90deg, #FF9900, #003366);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
 }
 
 .card:hover {
-  border-color: #e8a020;
-  box-shadow: 0 8px 24px rgba(13, 31, 53, 0.1);
+  border-color: #e0e0e0;
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
   transform: translateY(-4px);
 }
 
@@ -47,7 +47,7 @@
   font-family: 'Courier New', monospace;
   font-size: 12px;
   font-weight: 600;
-  color: #8a8780;
+  color: #999999;
   letter-spacing: 0.05em;
 }
 
@@ -59,13 +59,13 @@
 .branche {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   margin: 4px 0;
 }
 
 .beschreibung {
   font-size: 13px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.55;
   margin: 8px 0;
   display: -webkit-box;
@@ -80,7 +80,7 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 8px;
-  border-top: 1px solid #f0ede8;
+  border-top: 1px solid #f0f0f0;
   margin: 4px 0;
 }
 
@@ -90,7 +90,7 @@
   gap: 6px;
   font-size: 12px;
   font-weight: 500;
-  color: #4a4845;
+  color: #666666;
 }
 
 .statusDot {
@@ -106,7 +106,7 @@
 
 .gueltig {
   font-size: 11px;
-  color: #8a8780;
+  color: #999999;
   font-weight: 400;
 }
 
@@ -120,10 +120,10 @@
   flex: 1;
   text-align: center;
   padding: 10px 12px;
-  background: #f7f5f0;
-  border: 1px solid #e0dcd4;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  color: #1a1a1a;
+  color: #333333;
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
@@ -132,16 +132,17 @@
 }
 
 .detailLink:hover {
-  background: #e0dcd4;
-  border-color: #d0ccc4;
+  background: white;
+  border-color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.08);
 }
 
 .cta {
   flex: 1;
   text-align: center;
   padding: 10px 12px;
-  background: #e8a020;
-  color: #1a1a1a;
+  background: #FF9900;
+  color: white;
   border: none;
   border-radius: 8px;
   font-size: 13px;
@@ -149,12 +150,12 @@
   text-decoration: none;
   transition: all 0.2s ease;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(232, 160, 32, 0.15);
+  box-shadow: 0 2px 8px rgba(255, 153, 0, 0.2);
 }
 
 .cta:hover {
-  background: #d4900a;
-  box-shadow: 0 4px 12px rgba(232, 160, 32, 0.25);
+  background: #FFB84D;
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
   transform: translateY(-1px);
 }
 

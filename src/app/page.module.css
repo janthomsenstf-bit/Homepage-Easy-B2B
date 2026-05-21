@@ -3,8 +3,8 @@
 
 /* ── 1. HERO ── */
 .hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
-  padding: 80px 48px;
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  padding: 100px 48px;
   color: white;
 }
 
@@ -27,8 +27,8 @@
   line-height: 1.2;
   margin-bottom: 20px;
   color: white;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 400;
+  font-family: var(--font-sans);
+  font-weight: 600;
 }
 
 .heroSub {
@@ -37,7 +37,7 @@
   line-height: 1.6;
   margin-bottom: 32px;
   max-width: 500px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .heroBtns {
@@ -60,13 +60,13 @@
 
 /* ── SECTIONS (shared) ── */
 .section {
-  padding: 80px 48px;
-  background: white;
-  border-bottom: 1px solid #e0dcd4;
+  padding: 100px 48px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .section.sectionAlt {
-  background: #f7f5f0;
+  background: #f9f9f9;
 }
 
 .sectionContent {
@@ -76,15 +76,15 @@
 
 .section h2 {
   font-size: clamp(32px, 4vw, 44px);
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 16px;
-  color: #1a1a1a;
-  font-family: 'Playfair Display', Georgia, serif;
+  color: #333333;
+  font-family: var(--font-sans);
 }
 
 .sectionIntro {
   font-size: 16px;
-  color: #4a4845;
+  color: #666666;
   margin-bottom: 40px;
   line-height: 1.6;
   max-width: 700px;
@@ -105,15 +105,15 @@
 
 .whatHappensLeft h2 {
   font-size: clamp(28px, 4vw, 40px);
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 20px;
-  color: #1a1a1a;
-  font-family: 'Playfair Display', Georgia, serif;
+  color: #333333;
+  font-family: var(--font-sans);
 }
 
 .whatHappensIntro {
   font-size: 16px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.6;
   margin: 0 0 40px 0;
   max-width: 600px;
@@ -152,14 +152,14 @@
 .whatHappensItemTitle {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   margin: 0;
   line-height: 1.4;
 }
 
 .whatHappensItemDesc {
   font-size: 13px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.6;
   margin: 0;
 }
@@ -175,7 +175,7 @@
 .whatHappensRightImage {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f7f5f0 0%, #e0dcd4 100%);
+  background: #f0f0f0;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -200,10 +200,10 @@
 }
 
 .processStepItem {
-  background: linear-gradient(135deg, #f7f5f0 0%, #f0ede8 100%);
-  border: 2px solid #e0dcd4;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 28px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,15 +213,15 @@
 }
 
 .processStepItem:hover {
-  border-color: #e8a020;
-  box-shadow: 0 12px 32px rgba(232, 160, 32, 0.12);
+  border-color: #e0e0e0;
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
   transform: translateY(-4px);
 }
 
 .stepNumber {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #e8a020 0%, #0a3d2e 100%);
+  background: #003366;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -240,30 +240,30 @@
 .stepTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   margin: 0;
   line-height: 1.3;
 }
 
 .stepDesc {
   font-size: 13px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.5;
   margin: 0;
 }
 
 .stepArrow {
   display: none;
-  color: #e8a020;
+  color: #FF9900;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
 
 .processBadge {
-  background: rgba(46, 204, 138, 0.08);
-  border: 1px solid #2ecc8a;
-  border-left: 4px solid #2ecc8a;
+  background: rgba(76, 175, 80, 0.08);
+  border: 1px solid #4CAF50;
+  border-left: 4px solid #4CAF50;
   border-radius: 8px;
   padding: 20px;
   display: flex;
@@ -280,7 +280,7 @@
 
 .processBadge strong {
   font-size: 14px;
-  color: #1a1a1a;
+  color: #333333;
   line-height: 1.5;
 }
 
@@ -291,7 +291,7 @@
 
 .storyPreviewIntro p {
   font-size: 15px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.6;
   margin: 0;
   max-width: 700px;
@@ -305,10 +305,10 @@
 }
 
 .previewStep {
-  background: linear-gradient(135deg, #f7f5f0 0%, #f0ede8 100%);
-  border: 2px solid #e0dcd4;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 24px;
+  padding: 28px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -317,15 +317,15 @@
 }
 
 .previewStep:hover {
-  border-color: #e8a020;
-  box-shadow: 0 8px 20px rgba(232, 160, 32, 0.1);
+  border-color: #e0e0e0;
+  box-shadow: 0 6px 16px rgba(0, 51, 102, 0.1);
   transform: translateY(-2px);
 }
 
 .previewNumber {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #e8a020 0%, #0a3d2e 100%);
+  background: #003366;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -339,14 +339,14 @@
 .previewStep h3 {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   margin: 0;
   line-height: 1.3;
 }
 
 .previewStep p {
   font-size: 12px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.4;
   margin: 0;
 }
@@ -354,7 +354,7 @@
 .previewArrow {
   display: none;
   text-align: center;
-  color: #e8a020;
+  color: #FF9900;
   font-weight: bold;
 }
 
@@ -366,7 +366,7 @@
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #8a8780;
+  color: #999999;
   font-weight: 600;
   margin-bottom: 16px;
 }
@@ -379,7 +379,7 @@
 
 .exampleCard {
   background: white;
-  border: 1px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 16px;
   display: flex;
@@ -394,14 +394,14 @@
 
 .exampleCard strong {
   font-size: 13px;
-  color: #1a1a1a;
+  color: #333333;
   line-height: 1.3;
   display: block;
 }
 
 .exampleCard small {
   font-size: 11px;
-  color: #8a8780;
+  color: #999999;
   display: block;
 }
 
@@ -425,9 +425,9 @@
 
 .kulturCard {
   background: white;
-  border: 2px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 24px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -435,23 +435,23 @@
 }
 
 .kulturCard:hover {
-  border-color: #e8a020;
-  box-shadow: 0 8px 20px rgba(232, 160, 32, 0.1);
+  border-color: #e0e0e0;
+  box-shadow: 0 6px 16px rgba(0, 51, 102, 0.1);
   transform: translateY(-2px);
 }
 
 .kulturFrage {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   margin: 0;
   line-height: 1.4;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-sans);
 }
 
 .kulturHinweis {
   font-size: 13px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.6;
   margin: 0;
 }
@@ -469,7 +469,7 @@
   align-items: center;
   gap: 5px;
   font-size: 14px;
-  color: #e8a020;
+  color: #FF9900;
   font-weight: 600;
   text-decoration: none;
   margin-top: 20px;
@@ -491,9 +491,9 @@
 
 .trustCard {
   background: white;
-  border: 2px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 24px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -503,8 +503,8 @@
 }
 
 .trustCard:hover {
-  border-color: #e8a020;
-  box-shadow: 0 12px 32px rgba(232, 160, 32, 0.12);
+  border-color: #e0e0e0;
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
   transform: translateY(-4px);
 }
 
@@ -516,30 +516,30 @@
 .trustTitle {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   margin: 0;
   line-height: 1.4;
 }
 
 .trustDesc {
   font-size: 13px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.6;
   margin: 0;
 }
 
 .trustNote {
-  background: rgba(232, 160, 32, 0.08);
-  border: 1px solid #e8a020;
-  border-left: 4px solid #e8a020;
+  background: rgba(0, 51, 102, 0.04);
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #003366;
   border-radius: 8px;
-  padding: 20px;
+  padding: 24px;
   margin-top: 32px;
 }
 
 .trustNote p {
   font-size: 14px;
-  color: #1a1a1a;
+  color: #333333;
   line-height: 1.6;
   margin: 0;
 }
@@ -560,32 +560,32 @@
 
 /* ── 11. KOSTEN ── */
 .pricingBlock {
-  background: linear-gradient(135deg, #f7f5f0 0%, #f0ede8 100%);
-  border: 2px solid #e0dcd4;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 40px;
+  padding: 48px;
   max-width: 700px;
 }
 
 .pricingHeadline {
   font-size: 24px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   margin: 0 0 20px 0;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-sans);
   line-height: 1.3;
 }
 
 .pricingText {
   font-size: 14px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.7;
   margin-bottom: 16px;
 }
 
 .pricingHinweis {
   font-size: 13px;
-  color: #8a8780;
+  color: #999999;
   line-height: 1.6;
   margin: 0;
   font-style: italic;
@@ -600,17 +600,17 @@
 
 /* ── CTA BANNER ── */
 .ctaBanner {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
-  padding: 80px 48px;
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  padding: 100px 48px;
   text-align: center;
   color: white;
 }
 
 .ctaBanner h2 {
   font-size: clamp(28px, 4vw, 44px);
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 16px;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-sans);
   color: white;
 }
 
