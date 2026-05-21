@@ -2,9 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid var(--border);
+  background: var(--color-primary);
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0 48px;
   height: 60px;
   display: flex;
@@ -13,40 +13,41 @@
 }
 
 .logo {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  color: var(--navy);
+  font-family: var(--font-sans);
+  font-size: 20px;
+  color: white;
   text-decoration: none;
   letter-spacing: -0.02em;
+  font-weight: 600;
 }
-.logo span { color: var(--amber); }
+.logo span { color: var(--color-accent); }
 
 .links {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   align-items: center;
 }
 
 .link {
   font-size: 13px;
-  color: var(--t3);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.2s;
 }
-.link:hover { color: var(--navy); }
-.active { color: var(--navy); font-weight: 500; }
+.link:hover { color: white; }
+.active { color: white; font-weight: 600; }
 
 .cta {
-  background: var(--navy);
-  color: #fff;
+  background: var(--color-accent);
+  color: white;
   font-size: 13px;
-  font-weight: 500;
-  padding: 8px 18px;
+  font-weight: 600;
+  padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.2s;
 }
-.cta:hover { background: #243d60; }
+.cta:hover { background: #FFB84D; }
 
 @media (max-width: 768px) {
   .nav { padding: 0 20px; }

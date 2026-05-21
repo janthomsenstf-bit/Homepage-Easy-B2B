@@ -1,13 +1,13 @@
 .item {
-  border: 1px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.2s ease;
 }
 
 .item.open {
-  border-color: #e8a020;
-  box-shadow: 0 4px 12px rgba(232, 160, 32, 0.1);
+  border-color: #FF9900;
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.1);
 }
 
 .header {
@@ -15,8 +15,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 18px 20px;
-  background: #f7f5f0;
+  padding: 20px 22px;
+  background: #f9f9f9;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -25,23 +25,23 @@
 }
 
 .item.open .header {
-  background: #f0ede8;
+  background: #f0f0f0;
 }
 
 .header:hover {
-  background: #f0ede8;
+  background: #f0f0f0;
 }
 
 .frage {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #333333;
   line-height: 1.4;
 }
 
 .icon {
   font-size: 20px;
-  color: #e8a020;
+  color: #FF9900;
   font-weight: bold;
   margin-left: 12px;
   flex-shrink: 0;
@@ -53,10 +53,10 @@
 }
 
 .antwort {
-  padding: 18px 20px;
+  padding: 20px 22px;
   background: white;
   font-size: 14px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.65;
   animation: slideDown 0.2s ease;
 }
