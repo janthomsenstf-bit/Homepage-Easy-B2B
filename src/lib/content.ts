@@ -745,16 +745,153 @@ export const WHAT_IS_POSSIBLE = [
   },
 ]
 
-// ── WAS FRAGEN WIR EIGENTLICH AB? ──
+// ── WAS WOLLEN WIR VON DIR WISSEN? ──
+export const WHAT_WE_ASK_INTRO = 'Je nach Anfrage und Idee können die Informationen unterschiedlich sein. Im Kern brauchen wir aber einige wichtige Informationen, um passende Kontakte und sinnvolle Kooperationen finden zu können.'
+
 export const WHAT_WE_ASK = [
-  'Was suchst du konkret?',
-  'Wie stellst du dir die Zusammenarbeit vor?',
-  'Welche Regionen sind interessant?',
-  'Welche Sprache kann gesprochen werden?',
-  'Wie weit ist deine Idee bereits?',
-  'Wie möchtest du kontaktiert werden?',
-  'Was suchst du ausdrücklich NICHT?',
+  {
+    icon: '🎯',
+    frage: 'Was suchst du konkret?',
+    erklärung: 'Ein konkretes Produkt, einen Vertriebspartner, ein Projekt oder einen anderen Kooperationstyp?',
+  },
+  {
+    icon: '🇩🇪🇩🇰',
+    frage: 'Auf welcher Seite der Grenze?',
+    erklärung: 'Bist du aus Deutschland und suchst in Dänemark? Oder umgekehrt?',
+  },
+  {
+    icon: '📍',
+    frage: 'Wo suchst du?',
+    erklärung: 'Regionen, Bundesländer oder spezifische Städte sind hilfreich.',
+  },
+  {
+    icon: '🤝',
+    frage: 'Wie stellst du dir die Zusammenarbeit vor?',
+    erklärung: 'Langfristig, Projekt, Vertrieb, Produktion – je konkreter, desto besser.',
+  },
+  {
+    icon: '🗣️',
+    frage: 'Welche Sprache kann gesprochen werden?',
+    erklärung: 'Deutsch, Dänisch oder Englisch – wir übersetzen gerne.',
+  },
+  {
+    icon: '⏳',
+    frage: 'Wie weit ist deine Idee bereits?',
+    erklärung: 'Ist es eine lose Idee, ein konkretes Projekt oder sofort startbereit?',
+  },
+  {
+    icon: '📅',
+    frage: 'Wie lange soll die Suche laufen?',
+    erklärung: 'Brauchst du schnell einen Partner oder hast du Zeit, die perfekte Person zu finden?',
+  },
+  {
+    icon: '🔐',
+    frage: 'Anonym oder öffentlich?',
+    erklärung: 'Soll die Anfrage öffentlich sichtbar sein oder lieber diskret?',
+  },
+  {
+    icon: '📞',
+    frage: 'Wie soll der Kontakt hergestellt werden?',
+    erklärung: 'Direkt oder zunächst über Easy-B2B?',
+  },
+  {
+    icon: '⏰',
+    frage: 'Wann und wie bist du erreichbar?',
+    erklärung: 'Telefon, Email, Video-Call – was passt zu dir?',
+  },
+  {
+    icon: '✅',
+    frage: 'Für welche Kontakte bist du offen?',
+    erklärung: 'Nur etablierte Unternehmen oder auch Startups? Größe, Branche, Erfahrung?',
+  },
+  {
+    icon: '🚫',
+    frage: 'Was möchtest du NICHT?',
+    erklärung: 'Welche Anfragen oder Partner passen überhaupt nicht zu dir?',
+  },
 ]
+
+// ── REIFEGRAD-SKALA (für "Wie weit ist deine Idee?") ──
+export const REIFEGRAD_SKALA = [
+  {
+    stufe: 1,
+    label: 'Lose Idee',
+    beschreibung: 'Gerade erst entstanden. Noch viel offen.',
+  },
+  {
+    stufe: 2,
+    label: 'Erste Planung',
+    beschreibung: 'Grundzüge sind klar. Noch nicht konkret.',
+  },
+  {
+    stufe: 3,
+    label: 'Konkretes Projekt',
+    beschreibung: 'Details sind definiert. Noch nicht gestartet.',
+  },
+  {
+    stufe: 4,
+    label: 'In Umsetzung',
+    beschreibung: 'Läuft schon. Suche Partner für Skalierung.',
+  },
+  {
+    stufe: 5,
+    label: 'Sofort startbereit',
+    beschreibung: 'Alles vorbereitet. Kann morgen losgehen.',
+  },
+]
+
+// ── ANONYMITÄT-ERKLÄRUNG ──
+export const ANONYMITY_EXPLAIN = {
+  title: 'Anonym oder öffentlich?',
+  intro: 'Nicht jede Anfrage muss öffentlich sichtbar sein. Du hast die volle Kontrolle über deine Sichtbarkeit.',
+  options: [
+    {
+      typ: 'Öffentlich',
+      icon: '👁️',
+      beschreibung: 'Deine Anfrage ist im öffentlichen Marktplatz sichtbar. Interessenten können dich aktiv finden.',
+      vorteil: 'Größere Reichweite, more Optionen',
+    },
+    {
+      typ: 'Anonym',
+      icon: '🔒',
+      beschreibung: 'Nur die Anfrage ist sichtbar (Branche, Was gesucht). Dein Name und deine Firma bleiben geheim.',
+      vorteil: 'Diskret, sensible Anfragen möglich',
+    },
+    {
+      typ: 'Privat',
+      icon: '🤝',
+      beschreibung: 'Nur Easy-B2B kennt deine Anfrage. Wir suchen gezielt für dich, ohne zu veröffentlichen.',
+      vorteil: 'Höchste Diskretion, persönliche Suche',
+    },
+  ],
+}
+
+// ── KONTAKTAUFNAHME-ERKLÄRUNG ──
+export const CONTACT_METHODS_EXPLAIN = {
+  title: 'Wie stellen wir den Kontakt her?',
+  intro: 'Du entscheidest, wie direkt die Kommunikation laufen soll.',
+  methods: [
+    {
+      methode: 'Direkt',
+      icon: '↔️',
+      beschreibung: 'Du bekommst Kontaktdaten und Infos über mögliche Partner. Ihr könnt direkt miteinander reden.',
+      vorteil: 'Schnell, keine Umschweife, echte Verhandlung',
+    },
+    {
+      methode: 'Über Easy-B2B',
+      icon: '🔗',
+      beschreibung: 'Wir machen die erste Vorstellung. Danach könnt ihr euch kennenlernen oder Easy-B2B bleibt als Moderator.',
+      vorteil: 'Sicherer, Easy-B2B kann helfen bei Fragen, besseres Vertrauen',
+    },
+  ],
+}
+
+// ── FUNFACT-ABSCHLUSS ──
+export const WHAT_WE_ASK_FUNFACT = {
+  frage: 'Wie würdest du die neue Kooperation mit deinem zukünftigen Geschäftspartner feiern?',
+  beschreibung: 'Bei Easy-B2B versuchen wir, echte Menschen zusammenzubringen – nicht nur Firmen. Die beste Zusammenarbeit entsteht, wenn Menschen sich verstehen und miteinander wollen.',
+  hint: 'Das ist übrigens keine Pflichtfrage. Aber die lustigsten Antworten speichern wir uns – zur Erinnerung! 😊',
+}
 
 // ── KULTUR & MENSCHEN ──
 export const KULTUR_HINTS = [

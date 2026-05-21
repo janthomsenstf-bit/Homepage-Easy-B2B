@@ -445,7 +445,289 @@
   gap: 16px;
 }
 
-/* ── 6. KULTUR & MENSCHEN ── */
+/* ── 4. WAS WOLLEN WIR VON DIR WISSEN? (erweitert) ── */
+
+.whatWeAskGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin: 48px 0;
+}
+
+.whatWeAskCard {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.04);
+}
+
+.whatWeAskCard:hover {
+  border-color: #FF9900;
+  box-shadow: 0 8px 20px rgba(255, 153, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.askCardIcon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.askCardQuestion {
+  font-size: 15px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.askCardExplanation {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Reifegrad-Skala */
+.reifeGradSection {
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  padding: 40px;
+  margin: 48px 0;
+}
+
+.reifeGradTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 12px 0;
+}
+
+.reifeGradIntro {
+  font-size: 14px;
+  color: #666666;
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+}
+
+.reifeGradScale {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.reifeGradStep {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.reifeGradBubble {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.reifeGradLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+}
+
+.reifeGradDesc {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Anonymität-Erklärung */
+.anonymitySection {
+  margin: 48px 0;
+}
+
+.anonymityTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 12px 0;
+}
+
+.anonymityIntro {
+  font-size: 14px;
+  color: #666666;
+  margin: 0 0 28px 0;
+  line-height: 1.6;
+}
+
+.anonymityOptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.anonymityCard {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.anonymityCard:hover {
+  border-color: #4CAF50;
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.1);
+}
+
+.optionIcon {
+  font-size: 32px;
+}
+
+.optionType {
+  font-size: 14px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+}
+
+.optionDesc {
+  font-size: 13px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.optionVorteil {
+  font-size: 12px;
+  color: #4CAF50;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Kontaktaufnahme-Erklärung */
+.contactMethodsSection {
+  margin: 48px 0;
+}
+
+.contactTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 12px 0;
+}
+
+.contactIntro {
+  font-size: 14px;
+  color: #666666;
+  margin: 0 0 28px 0;
+  line-height: 1.6;
+}
+
+.contactMethods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.methodCard {
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.methodCard:hover {
+  border-color: #FF9900;
+  box-shadow: 0 6px 16px rgba(255, 153, 0, 0.1);
+}
+
+.methodIcon {
+  font-size: 32px;
+}
+
+.methodName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+}
+
+.methodDesc {
+  font-size: 13px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.methodVorteil {
+  font-size: 12px;
+  color: #FF9900;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Funfact-Abschluss */
+.funfactBox {
+  background: linear-gradient(135deg, #f0f7ff 0%, #f9f5f0 100%);
+  border: 2px solid #FF9900;
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.funfactQuestion {
+  font-size: 16px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+.funfactText {
+  font-size: 14px;
+  color: #666666;
+  margin: 0 0 16px 0;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.funfactHint {
+  font-size: 13px;
+  color: #999999;
+  margin: 0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── 5. KULTUR & MENSCHEN ── */
 .kulturGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -775,6 +1057,9 @@
   }
 
   .checklistGrid,
+  .whatWeAskGrid,
+  .anonymityOptions,
+  .contactMethods,
   .kulturGrid,
   .trustGrid,
   .eventsGrid,
