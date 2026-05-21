@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import AnzeigeCard from '@/components/AnzeigeCard'
 import UseCaseCard from '@/components/UseCaseCard'
 import ChecklistCard from '@/components/ChecklistCard'
@@ -89,9 +90,14 @@ export default function Home() {
               >
                 {/* IMAGE SIDE */}
                 <div className={styles.editorialImageSide}>
-                  <div className={styles.editorialImagePlaceholder}>
-                    <span className={styles.editorialImageIcon}>{item.icon}</span>
-                  </div>
+                  <Image
+                    src={`/Stickman/Block${idx + 1}.png`}
+                    alt={item.title}
+                    width={380}
+                    height={380}
+                    className={styles.editorialImage}
+                    priority={idx === 0}
+                  />
                 </div>
 
                 {/* TEXT SIDE */}
