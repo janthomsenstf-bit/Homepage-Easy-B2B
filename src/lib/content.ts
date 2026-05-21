@@ -53,25 +53,25 @@ export const PROZESS_HOMEPAGE = [
     nr: 1,
     icon: '✏️',
     title: 'Anfrage einreichen',
-    desc: 'Offen oder anonym möglich. Du beschreibst konkret, wen oder was du suchst.',
+    desc: 'Du beschreibst **konkret** und **ehrlich**, wen oder was du suchst. Egal ob Vertriebspartner, Projektpartner oder neuer Markt – je klarer deine Vorstellung, desto passendere Kontakte. Du entscheidest: **offen oder anonym**. Wir fragen ab, welche **Sprache**, welche **Regionen**, wie weit deine Idee fortgeschritten ist. Und wichtig: Was suchst du **ausdrücklich nicht**? Diese Details helfen uns, wirklich passende Unternehmen zu finden.',
   },
   {
     nr: 2,
     icon: '💬',
     title: 'Kurz kennenlernen',
-    desc: 'Ca. 15 Minuten Austausch. So verstehen wir wirklich, wen du brauchst.',
+    desc: 'Das ist nicht automatisiert. Du führst ein **persönliches Gespräch** mit uns – online, ca. 15 Minuten. Wir hören dir zu, verstehen deine Idee wirklich, klären offene Fragen. Es geht um **Vertrauen und Verständnis**, nicht um Formulare. Wir schauen auch auf **kulturelle Passung**: Wie direkt darf kommuniziert werden? Wie schnell sollten Entscheidungen fallen? Was ist dir bei der Zusammenarbeit mit Menschen auf der anderen Seite der Grenze wichtig?',
   },
   {
     nr: 3,
     icon: '📬',
     title: 'Passende Kontakte erhalten',
-    desc: 'Du bekommst nur echte Matches – persönlich geprüft, nicht automatisiert.',
+    desc: 'Basierend auf deiner Anfrage und unserem Gespräch suchen wir im Netzwerk nach **echten Matches**. Das heißt: Wir filtern gezielt – nicht einfach alle Kontakte verschicken, die irgendwie passen könnten. Du bekommst **hochwertige Vorschläge**, nicht Masse. Jeder Kontakt wurde von uns überprüft und passt zu dem, was du gesucht hast. **Qualität vor Quantität** – das ist uns wichtig.',
   },
   {
     nr: 4,
     icon: '🤝',
     title: 'Selbst entscheiden & verhandeln',
-    desc: 'Easy-B2B vermittelt Kontakte. Die Zusammenarbeit läuft dann direkt zwischen euch.',
+    desc: 'Jetzt nimmt du **direkt Kontakt** auf mit den Unternehmen, die dir vorgeschlagen wurden. Easy-B2B sitzt nicht dazwischen. Ihr redet miteinander, klickt – oder auch nicht – und entscheidet selbst, ob und wie ihr zusammenarbeiten möchtet. Das ist dein Geschäft, deine Beziehung. Wir haben nur die Tür geöffnet.',
   },
 ]
 

@@ -116,7 +116,7 @@ export default function Home() {
         <div className={styles.sectionContent}>
           <h2>Wie funktioniert Easy-B2B?</h2>
           <p className={styles.sectionIntro}>
-            4 einfache Schritte vom Gesuch zur Zusammenarbeit.
+            4 persönliche Schritte vom Gesuch zur echten Zusammenarbeit.
           </p>
 
           <div className={styles.processStepsContainer}>
@@ -126,18 +126,13 @@ export default function Home() {
                   <div className={styles.stepNumber}>{step.nr}</div>
                   <div className={styles.stepIcon}>{step.icon}</div>
                   <h3 className={styles.stepTitle}>{step.title}</h3>
-                  <p className={styles.stepDesc}>{step.desc}</p>
+                  <p className={styles.stepDesc}>{parseHighlight(step.desc)}</p>
                 </div>
                 {idx < PROZESS_HOMEPAGE.length - 1 && (
                   <div className={styles.stepArrow}>→</div>
                 )}
               </div>
             ))}
-          </div>
-
-          <div className={styles.processBadge}>
-            <span className={styles.badgeIcon}>💡</span>
-            {PROZESS_HINWEIS}
           </div>
         </div>
       </section>
