@@ -167,6 +167,16 @@
   font-weight: 400;
 }
 
+.inspirationText {
+  font-size: 13px;
+  color: #FF9900;
+  line-height: 1.5;
+  margin: 12px 0 16px 0;
+  margin-left: 44px;
+  font-weight: 500;
+  font-style: italic;
+}
+
 .scenarioExamples {
   list-style: none;
   padding: 0;
@@ -174,16 +184,21 @@
   margin-left: 44px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
 }
 
 .scenarioExample {
   font-size: 13px;
-  color: #999999;
+  color: #888888;
   line-height: 1.5;
   padding-left: 20px;
   position: relative;
   font-weight: 400;
+}
+
+.scenarioExample strong {
+  color: #333333;
+  font-weight: 600;
 }
 
 .scenarioExample::before {
@@ -810,6 +825,11 @@
 
   .scenarioExpl {
     font-size: 14px;
+    margin-left: 40px;
+  }
+
+  .inspirationText {
+    font-size: 12px;
     margin-left: 40px;
   }
 

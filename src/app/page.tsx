@@ -29,6 +29,14 @@ export const metadata = {
   description: 'Deutsch-dänische Kooperationen. Persönlich verbunden. Easy-B2B vermittelt Unternehmen für Vertrieb, Projekte, Produkte und neue Marktchancen.',
 }
 
+// Hilfsfunktion: Konvertiert **text** zu <strong>text</strong>
+function parseHighlight(text: string) {
+  const parts = text.split(/\*\*([^*]+)\*\*/g)
+  return parts.map((part, idx) =>
+    idx % 2 === 1 ? <strong key={idx}>{part}</strong> : part
+  )
+}
+
 export default function Home() {
   const featuredAnzeigen = DEMO_ANFRAGEN.slice(0, 3)
 
@@ -78,10 +86,13 @@ export default function Home() {
                       <h3 className={styles.scenarioTitle}>{item.title}</h3>
                     </div>
                     <p className={styles.scenarioExpl}>{item.erklärung}</p>
+                    {item.inspirationText && (
+                      <p className={styles.inspirationText}>{item.inspirationText}</p>
+                    )}
                     <ul className={styles.scenarioExamples}>
                       {item.beispiele.map((beispiel, bidx) => (
                         <li key={bidx} className={styles.scenarioExample}>
-                          {beispiel}
+                          {parseHighlight(beispiel)}
                         </li>
                       ))}
                     </ul>
