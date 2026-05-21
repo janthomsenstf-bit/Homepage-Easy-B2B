@@ -795,9 +795,9 @@ export const WHAT_WE_ASK = [
     erklärung: 'Direkt oder zunächst über Easy-B2B?',
   },
   {
-    icon: '⏰',
-    frage: 'Wann und wie bist du erreichbar?',
-    erklärung: 'Telefon, Email, Video-Call – was passt zu dir?',
+    icon: '🎉',
+    frage: 'Wie würdest du eine neue Kooperation feiern?',
+    erklärung: 'Das zeigt: Bei Easy-B2B geht es um Menschen, nicht nur um Firmen.',
   },
   {
     icon: '✅',

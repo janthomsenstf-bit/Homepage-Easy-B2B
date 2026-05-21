@@ -17,9 +17,6 @@ import {
   WHAT_WE_ASK,
   WHAT_WE_ASK_INTRO,
   REIFEGRAD_SKALA,
-  ANONYMITY_EXPLAIN,
-  CONTACT_METHODS_EXPLAIN,
-  WHAT_WE_ASK_FUNFACT,
   KULTUR_HINTS,
   TRUST_VALUES,
   QUICK_REQUEST_TEMPLATES,
@@ -177,44 +174,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Anonymität-Erklärung */}
-          <div className={styles.anonymitySection}>
-            <h3 className={styles.anonymityTitle}>{ANONYMITY_EXPLAIN.title}</h3>
-            <p className={styles.anonymityIntro}>{ANONYMITY_EXPLAIN.intro}</p>
-            <div className={styles.anonymityOptions}>
-              {ANONYMITY_EXPLAIN.options.map((option, idx) => (
-                <div key={idx} className={styles.anonymityCard}>
-                  <div className={styles.optionIcon}>{option.icon}</div>
-                  <h4 className={styles.optionType}>{option.typ}</h4>
-                  <p className={styles.optionDesc}>{option.beschreibung}</p>
-                  <p className={styles.optionVorteil}><strong>{option.vorteil}</strong></p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Kontaktaufnahme-Erklärung */}
-          <div className={styles.contactMethodsSection}>
-            <h3 className={styles.contactTitle}>{CONTACT_METHODS_EXPLAIN.title}</h3>
-            <p className={styles.contactIntro}>{CONTACT_METHODS_EXPLAIN.intro}</p>
-            <div className={styles.contactMethods}>
-              {CONTACT_METHODS_EXPLAIN.methods.map((method, idx) => (
-                <div key={idx} className={styles.methodCard}>
-                  <div className={styles.methodIcon}>{method.icon}</div>
-                  <h4 className={styles.methodName}>{method.methode}</h4>
-                  <p className={styles.methodDesc}>{method.beschreibung}</p>
-                  <p className={styles.methodVorteil}><strong>{method.vorteil}</strong></p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Funfact-Abschluss */}
-          <div className={styles.funfactBox}>
-            <h3 className={styles.funfactQuestion}>{WHAT_WE_ASK_FUNFACT.frage}</h3>
-            <p className={styles.funfactText}>{WHAT_WE_ASK_FUNFACT.beschreibung}</p>
-            <p className={styles.funfactHint}>{WHAT_WE_ASK_FUNFACT.hint}</p>
-          </div>
         </div>
       </section>
 
