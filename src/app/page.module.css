@@ -141,10 +141,12 @@
 
 .whatHappensEditorialBlock.blockImageLeft {
   grid-template-columns: 1fr 1fr;
+  gap: 60px;
 }
 
 .whatHappensEditorialBlock.blockImageRight {
   grid-template-columns: 1fr 1fr;
+  gap: 80px;
 }
 
 .whatHappensEditorialBlock.blockImageRight .editorialImageSide {
@@ -951,7 +953,11 @@
     gap: 70px;
   }
 
-  .whatHappensEditorialBlock {
+  .whatHappensEditorialBlock.blockImageLeft {
+    gap: 50px;
+  }
+
+  .whatHappensEditorialBlock.blockImageRight {
     gap: 60px;
   }
 
@@ -1079,7 +1085,15 @@
 
   .whatHappensEditorialBlock {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
+  }
+
+  .whatHappensEditorialBlock.blockImageLeft {
+    gap: 24px;
+  }
+
+  .whatHappensEditorialBlock.blockImageRight {
+    gap: 24px;
   }
 
   .whatHappensEditorialBlock.blockImageRight .editorialImageSide {
