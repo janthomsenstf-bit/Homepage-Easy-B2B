@@ -294,8 +294,8 @@ export const BEISPIELE_KATEGORIEN = [
   },
 ]
 
-// ── PROZESS FÜR INTERESSENTEN (4 Schritte) ──
-export const PROZESS_INTERESSENTEN = [
+// ── PROZESS FÜR INTERESSENTEN – KURZ (4 Schritte für ProcessSteps) ──
+export const PROZESS_INTERESSENTEN_KURZ = [
   {
     nr: 1,
     icon: '🔎',
@@ -319,6 +319,94 @@ export const PROZESS_INTERESSENTEN = [
     icon: '📞',
     title: 'Direkter Kontakt',
     desc: 'Das suchende Unternehmen schreibt dir. Der Kontakt ist bei euch.',
+  },
+]
+
+// ── PROZESS FÜR INTERESSENTEN (7 Schritte – Detailliert & Vertrauensaufbau) ──
+export const PROZESS_INTERESSENTEN = [
+  {
+    nr: 1,
+    icon: '🔎',
+    title: 'Du entdeckst ein interessantes Gesuch',
+    shortDesc: 'Eine Anfrage passt zu deinem Unternehmen.',
+    details: [
+      'Eine Anfrage passt zu deinem Unternehmen, Produkt oder Netzwerk.',
+      'Du siehst Potenzial – nicht nur für dich, sondern für beide Seiten.',
+      'Vielleicht suchst du selbst genau solche Kontakte. Oder du erkennst, dass dein Angebot jemanden interessieren könnte.',
+      'Der Moment: Du wirst gerade hellhörig. Das könnte passen.',
+    ],
+  },
+  {
+    nr: 2,
+    icon: '💬',
+    title: 'Du bekundest dein Interesse',
+    shortDesc: 'Kurz erklären, warum ihr passt.',
+    details: [
+      'Du füllst ein kurzes Formular aus – keine Dissertation, einfach kurz und prägnant.',
+      'Warum interessiert dich diese Anfrage? Was könntest du beitragen? Warum passt ihr zusammen?',
+      'Erste Informationen, damit wir dich einordnen können – dein Unternehmen, deine Stärken, deine Erfahrung.',
+      'Wichtig: Das ist nicht aus Neugier – sondern damit beide Seiten besser vorbereitet werden können.',
+    ],
+  },
+  {
+    nr: 3,
+    icon: '🔍',
+    title: 'Easy-B2B prüft und bereitet den Kontakt vor',
+    shortDesc: 'Das ist der wichtigste Vertrauensschritt.',
+    details: [
+      'Wir geben nicht einfach automatisch Kontaktdaten weiter. Das ist das Wichtigste.',
+      'Wir schauen zunächst: Passt das grundsätzlich zusammen? Wirkt das ernst gemeint? Könnte daraus wirklich ein sinnvoller Kontakt entstehen?',
+      'Wir denken aus beiden Perspektiven: Der Suchende hat vermutlich mehrere Interessenten. Welche passen wirklich?',
+      'Ziel: Weniger wahllose Kontakte. Mehr relevante Gespräche. Du sparst Zeit – und der Suchende auch.',
+    ],
+  },
+  {
+    nr: 4,
+    icon: '📋',
+    title: 'Der Kontakt wird vorbereitet',
+    shortDesc: 'Beide Seiten sollen wissen, mit wem sie sprechen.',
+    details: [
+      'Wenn beide Seiten grundsätzlich passen, bereiten wir die Kontaktaufnahme vor.',
+      'Das kann bedeuten: direkte Weitergabe der Kontaktdaten oder eine erste Vorstellung über Easy-B2B.',
+      'Beide Seiten wissen, mit wem sie sprechen – nicht einfach „hier sind Daten, viel Erfolg".',
+      'Der Gedanke: Ein bewusst vorbereiteter erster Austausch ist viel wertvoller als eine kalte Kontaktliste.',
+    ],
+  },
+  {
+    nr: 5,
+    icon: '📞',
+    title: 'Der erste Kontakt entsteht',
+    shortDesc: 'Ein bewusst vorbereiteter Austausch.',
+    details: [
+      'Die Parteien melden sich direkt miteinander – telefonisch, online, per Mail oder sogar persönlich.',
+      'Das Erste Gespräch entsteht. Ihr lernt euch kennen. Ihr sprecht über das Potenzial, über Anforderungen, über kulturelle Passung.',
+      'Nicht einfach „hier sind Daten — viel Erfolg". Sondern: Ein bewusst vorbereiteter erster Austausch.',
+      'Und: Beide Seiten wissen, dass sie von Easy-B2B vorgefiltert wurden – das schafft mehr Sicherheit.',
+    ],
+  },
+  {
+    nr: 6,
+    icon: '👀',
+    title: 'Wenn etwas nicht funktioniert, fassen wir nach',
+    shortDesc: 'Qualitätssicherung mit Aufmerksamkeit.',
+    details: [
+      'Wenn nach einigen Tagen keine Kontaktaufnahme zustande kommt, fragen wir nach. Nicht aufdringlich – einfach unterstützend.',
+      'War jemand im Urlaub? Ist die Mail untergegangen? Gab es technische Probleme? Passt es doch nicht?',
+      'Easy-B2B soll nicht einfach Kontakte verschicken und verschwinden.',
+      'Sondern: Darauf achten, dass der erste Austausch tatsächlich zustande kommt. Das ist echte Qualität.',
+    ],
+  },
+  {
+    nr: 7,
+    icon: '🚀',
+    title: 'Danach läuft die Kommunikation direkt zwischen euch',
+    shortDesc: 'Der Einstieg ist geschafft – jetzt läuft es.',
+    details: [
+      'Easy-B2B soll den Einstieg erleichtern – nicht dauerhaft zwischen beiden Seiten stehen.',
+      'Die eigentliche Zusammenarbeit, Verhandlung und Kommunikation läuft jetzt direkt zwischen den Unternehmen.',
+      'Wenn es passt, entstehen echte Kooperationen. Wenn nicht, habt ihr immerhin einen guten Eindruck voneinander gewonnen.',
+      'Das ist der Punkt: Easy-B2B öffnet die Tür – der Rest ist eure Sache.',
+    ],
   },
 ]
 
