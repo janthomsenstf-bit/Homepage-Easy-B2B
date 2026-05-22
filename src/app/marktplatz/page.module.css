@@ -1,6 +1,6 @@
 /* ── HERO ── */
 .hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
   padding: 60px 48px;
   color: white;
 }
@@ -28,7 +28,7 @@
 /* ── FILTER BAR ── */
 .filterBar {
   background: white;
-  border-bottom: 1px solid #e0dcd4;
+  border-bottom: 1px solid #e0e0e0;
   padding: 24px 48px;
   sticky: top;
   position: sticky;
@@ -57,13 +57,13 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #8a8780;
+  color: #999999;
   font-weight: 600;
 }
 
 .filterSelect {
   padding: 10px 12px;
-  border: 1px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   font-family: inherit;
   font-size: 14px;
@@ -75,22 +75,22 @@
 
 .filterSelect:focus {
   outline: none;
-  border-color: #e8a020;
-  box-shadow: 0 0 0 3px rgba(232, 160, 32, 0.1);
+  border-color: #FF9900;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
 }
 
 .filterSelect:hover {
-  border-color: #d0ccc4;
+  border-color: #d0d0d0;
 }
 
 .clearFiltersBtn {
   padding: 10px 14px;
-  background: #f0ede8;
-  border: 1px solid #e0dcd4;
+  background: #f0f0f0;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
-  color: #e8a020;
+  color: #FF9900;
   cursor: pointer;
   transition: all 0.2s ease;
   text-transform: uppercase;
@@ -98,15 +98,15 @@
 }
 
 .clearFiltersBtn:hover {
-  background: #e0dcd4;
-  border-color: #d0ccc4;
+  background: #e0e0e0;
+  border-color: #d0d0d0;
 }
 
 /* ── SECTION ── */
 .section {
   padding: 48px;
-  background: #f7f5f0;
-  border-bottom: 1px solid #e0dcd4;
+  background: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .sectionContent {
@@ -128,7 +128,7 @@
 
 .resultInfo {
   font-size: 13px;
-  color: #8a8780;
+  color: #999999;
   font-weight: 500;
 }
 
@@ -162,7 +162,7 @@
 
 .emptyState p {
   font-size: 14px;
-  color: #4a4845;
+  color: #666666;
   margin-bottom: 24px;
 }
 
@@ -173,7 +173,7 @@
 
 /* ── CTA SECTION ── */
 .ctaSection {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
   padding: 64px 48px;
   text-align: center;
 }
