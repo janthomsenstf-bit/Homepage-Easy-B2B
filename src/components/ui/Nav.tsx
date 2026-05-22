@@ -7,7 +7,7 @@ import styles from './Nav.module.css'
 const links = [
   { href: '/',                     label: 'Start' },
   { href: '/marktplatz',           label: 'Marktplatz' },
-  { href: '/so-funktioniert-es',   label: 'So funktioniert\'s' },
+  { href: '/so-funktioniert-es',   label: 'Ablauf' },
   { href: '/events',               label: 'Events' },
   { href: '/kontakt',              label: 'Kontakt' },
 ]

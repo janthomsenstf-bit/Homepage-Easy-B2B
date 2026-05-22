@@ -1,7 +1,7 @@
 /* ── HERO ── */
 .hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
-  padding: 60px 48px;
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  padding: 80px 48px;
   color: white;
 }
 
@@ -29,11 +29,11 @@
 .section {
   padding: 60px 48px;
   background: white;
-  border-bottom: 1px solid #e0dcd4;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .section.sectionAlt {
-  background: #f7f5f0;
+  background: #f9f9f9;
 }
 
 .sectionContent {
@@ -51,9 +51,78 @@
 
 .intro {
   font-size: 15px;
-  color: #4a4845;
+  color: #666666;
   margin-bottom: 40px;
   line-height: 1.6;
+}
+
+/* ── EINSTIEGS-KACHELN ── */
+.choiceSection {
+  padding: 60px 48px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.choiceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.choiceCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.05);
+}
+
+.choiceCard:hover {
+  border-color: #FF9900;
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+  transform: translateY(-4px);
+}
+
+.choiceIcon {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.choiceTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.choiceText {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.choiceButton {
+  font-size: 13px;
+  font-weight: 600;
+  color: #FF9900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.choiceCard:hover .choiceButton {
+  color: #003366;
 }
 
 /* ── FAQ ── */
@@ -75,7 +144,7 @@
 
 .privacyList li {
   font-size: 14px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.6;
   padding-left: 28px;
   position: relative;
@@ -92,19 +161,19 @@
 
 .linkNote {
   font-size: 14px;
-  color: #4a4845;
+  color: #666666;
   margin-top: 24px;
 }
 
 .link {
-  color: #e8a020;
+  color: #FF9900;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
 }
 
 .link:hover {
-  color: #0a3d2e;
+  color: #1a4d7a;
   text-decoration: underline;
 }
 
@@ -112,7 +181,7 @@
 .storySection {
   padding: 80px 48px;
   background: white;
-  border-bottom: 1px solid #e0dcd4;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .storyHeader {
@@ -130,7 +199,7 @@
 
 .storySubtitle {
   font-size: 16px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.6;
   max-width: 700px;
   margin: 0 auto;
@@ -154,7 +223,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #e8a020 0%, #0a3d2e 50%, #e8a020 100%);
+    background: linear-gradient(180deg, #FF9900 0%, #1a4d7a 50%, #FF9900 100%);
     transform: translateX(-1px);
   }
 }
@@ -203,7 +272,7 @@
 .stepNumber {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, #e8a020 0%, #0a3d2e 100%);
+  background: linear-gradient(135deg, #FF9900 0%, #1a4d7a 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -233,15 +302,15 @@
 
 /* ── ANFRAGE CARD ── */
 .anfrageCard {
-  background: linear-gradient(135deg, #f7f5f0 0%, #f0ede8 100%);
-  border: 2px solid #e0dcd4;
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0ede8 100%);
+  border: 2px solid #e0e0e0;
   border-radius: 12px;
   padding: 28px;
   transition: all 0.3s ease;
 }
 
 .anfrageCard:hover {
-  border-color: #e8a020;
+  border-color: #FF9900;
   box-shadow: 0 12px 32px rgba(232, 160, 32, 0.12);
 }
 
@@ -268,7 +337,7 @@
 
 .anfrageBeschreibung {
   font-size: 13px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.6;
   margin: 0 0 12px 0;
   font-style: italic;
@@ -281,7 +350,7 @@
 }
 
 .anfrageGesucht strong {
-  color: #e8a020;
+  color: #FF9900;
   font-weight: 700;
 }
 
@@ -296,7 +365,7 @@
 
 .anfrageDetails li {
   font-size: 12px;
-  color: #4a4845;
+  color: #666666;
   padding-left: 16px;
   position: relative;
 }
@@ -305,7 +374,7 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #e8a020;
+  color: #FF9900;
   font-weight: bold;
 }
 
@@ -315,7 +384,7 @@
   border-radius: 8px;
   border-left: 3px solid #2ecc8a;
   font-size: 12px;
-  color: #4a4845;
+  color: #666666;
   display: flex;
   gap: 8px;
   align-items: flex-start;
@@ -331,7 +400,7 @@
 /* ── DETAILS PREVIEW ── */
 .detailsPreview {
   background: white;
-  border: 1px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 16px;
 }
@@ -352,13 +421,13 @@
 }
 
 .detailTag {
-  background: #f7f5f0;
+  background: #f9f9f9;
   padding: 8px 10px;
   border-radius: 6px;
   font-size: 11px;
-  color: #4a4845;
+  color: #666666;
   font-weight: 500;
-  border: 1px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
 }
 
 /* ── PRÜFUNG, VERÖFFENTLICHUNG, QUALITÄTS, KONTAKT CARDS ── */
@@ -366,8 +435,8 @@
 .veroeffentlichungCard,
 .qualitaetCard,
 .kontaktCard {
-  background: linear-gradient(135deg, #f7f5f0 0%, #f0ede8 100%);
-  border: 2px solid #e0dcd4;
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0ede8 100%);
+  border: 2px solid #e0e0e0;
   border-radius: 12px;
   padding: 28px;
   transition: all 0.3s ease;
@@ -377,7 +446,7 @@
 .veroeffentlichungCard:hover,
 .qualitaetCard:hover,
 .kontaktCard:hover {
-  border-color: #e8a020;
+  border-color: #FF9900;
   box-shadow: 0 12px 32px rgba(232, 160, 32, 0.12);
 }
 
@@ -397,7 +466,7 @@
 .qualitaetCard p,
 .kontaktCard p {
   font-size: 13px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.7;
   margin: 0 0 12px 0;
 }
@@ -428,13 +497,13 @@
   background: rgba(232, 160, 32, 0.08);
   padding: 12px;
   border-radius: 8px;
-  border-left: 3px solid #e8a020;
+  border-left: 3px solid #FF9900;
   margin-top: 14px !important;
   font-size: 12px !important;
 }
 
 .pruefungNote strong {
-  color: #e8a020;
+  color: #FF9900;
   font-weight: 700;
 }
 
@@ -463,14 +532,14 @@
 
 .interessentCard {
   background: white;
-  border: 2px solid #e0dcd4;
+  border: 2px solid #e0e0e0;
   border-radius: 10px;
   padding: 16px;
   transition: all 0.2s ease;
 }
 
 .interessentCard:hover {
-  border-color: #e8a020;
+  border-color: #FF9900;
   box-shadow: 0 8px 16px rgba(232, 160, 32, 0.1);
   transform: translateY(-2px);
 }
@@ -505,14 +574,14 @@
 
 .interessentInteresse {
   font-size: 12px;
-  color: #e8a020;
+  color: #FF9900;
   font-weight: 600;
   margin: 8px 0;
 }
 
 .interessentBeschreibung {
   font-size: 11px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.5;
   margin: 8px 0;
 }
@@ -543,14 +612,14 @@
   font-size: 12px;
   color: #1a1a1a;
   font-weight: 500;
-  border: 1px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   text-align: center;
 }
 
 /* ── KONTAKT CARD ── */
 .kontaktText {
   font-size: 13px;
-  color: #4a4845;
+  color: #666666;
   line-height: 1.7;
 }
 
@@ -568,7 +637,7 @@
   font-size: 12px;
   color: #1a1a1a;
   font-weight: 500;
-  border: 1px solid #e0dcd4;
+  border: 1px solid #e0e0e0;
   text-align: center;
   line-height: 1.5;
 }
@@ -577,16 +646,17 @@
   background: rgba(232, 160, 32, 0.08);
   padding: 12px;
   border-radius: 8px;
-  border-left: 3px solid #e8a020;
+  border-left: 3px solid #FF9900;
   font-size: 12px !important;
-  color: #4a4845;
+  color: #666666;
   margin-top: 14px !important;
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .hero,
-  .section {
+  .section,
+  .choiceSection {
     padding: 40px 24px;
   }
 
@@ -596,6 +666,15 @@
 
   .hero h1 {
     font-size: 28px;
+  }
+
+  .choiceGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .choiceCard {
+    padding: 28px;
   }
 
   .privacyList li {

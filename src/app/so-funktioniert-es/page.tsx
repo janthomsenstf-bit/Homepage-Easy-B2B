@@ -18,24 +18,47 @@ export default function SoFunktioniertEsPage() {
       {/* ── HERO ── */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <h1>So funktioniert EasyB2B</h1>
-          <p>Zwei einfache Prozesse für Erfolg.</p>
+          <h1>Ablauf</h1>
+          <p>Wähle deine Rolle und entdecke, wie Easy-B2B für dich funktioniert.</p>
+        </div>
+      </section>
+
+      {/* ── EINSTIEGS-KACHELN ── */}
+      <section className={styles.choiceSection}>
+        <div className={styles.sectionContent}>
+          <div className={styles.choiceGrid}>
+            {/* KACHEL 1: Suchende */}
+            <a href="#suchende" className={styles.choiceCard}>
+              <div className={styles.choiceIcon}>🔍</div>
+              <h3 className={styles.choiceTitle}>Ablauf für Suchende</h3>
+              <p className={styles.choiceText}>Du hast eine konkrete Anfrage und suchst qualifizierte Kooperationspartner.</p>
+              <span className={styles.choiceButton}>Ablauf ansehen →</span>
+            </a>
+
+            {/* KACHEL 2: Interessierte */}
+            <a href="#interessierte" className={styles.choiceCard}>
+              <div className={styles.choiceIcon}>💡</div>
+              <h3 className={styles.choiceTitle}>Ablauf für Interessierte</h3>
+              <p className={styles.choiceText}>Du möchtest auf Gesuche antworten und neue Partnerschaften aufbauen.</p>
+              <span className={styles.choiceButton}>Ablauf ansehen →</span>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* ── SUCHENDE ── */}
-      <section className={styles.section}>
+      <section className={styles.section} id="suchende">
         <div className={styles.sectionContent}>
-          <h2>Für dich als Suchender</h2>
+          <h2>Ablauf für Suchende</h2>
           <p className={styles.intro}>Du hast eine konkrete Anfrage und möchtest qualifizierte Partner finden?</p>
           <ProcessSteps steps={PROZESS_SUCHENDE} variant="vertical" />
         </div>
       </section>
 
       {/* ── INTERESSENTEN ── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <section className={`${styles.section} ${styles.sectionAlt}`} id="interessierte">
         <div className={styles.sectionContent}>
-          <h2>Für dich als Interessent</h2>
+          <h2>Ablauf für Interessierte</h2>
           <p className={styles.intro}>Du möchtest auf interessante Anfragen antworten und neue Partnerschaften aufbauen?</p>
           <ProcessSteps steps={PROZESS_INTERESSENTEN} variant="vertical" />
         </div>
