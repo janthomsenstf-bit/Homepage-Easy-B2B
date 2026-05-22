@@ -1,16 +1,16 @@
+'use client'
+import { useState } from 'react'
+import Link from 'next/link'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
 import ProcessSteps from '@/components/ProcessSteps'
 import FAQItem from '@/components/FAQItem'
-import { PROZESS_SUCHENDE, PROZESS_INTERESSENTEN, FAQ, ANFRAGE_DETAILS, BEISPIEL_ANFRAGE, BEISPIEL_INTERESSENTEN } from '@/lib/content'
+import { PROZESS_SUCHENDE, PROZESS_INTERESSENTEN, FAQ } from '@/lib/content'
 import styles from './page.module.css'
 
-export const metadata = {
-  title: 'So funktioniert\'s – EasyB2B',
-  description: 'Erfahre, wie EasyB2B funktioniert: Der Prozess für Suchende und Interessenten, sowie häufig gestellte Fragen.',
-}
+export default function AblaufPage() {
+  const [activeRole, setActiveRole] = useState<'suchende' | 'interessierte'>('suchende')
 
-export default function SoFunktioniertEsPage() {
   return (
     <>
       <Nav />
@@ -23,224 +23,232 @@ export default function SoFunktioniertEsPage() {
         </div>
       </section>
 
-      {/* ── EINSTIEGS-KACHELN ── */}
+      {/* ── AUSWAHL-KACHELN ── */}
       <section className={styles.choiceSection}>
         <div className={styles.sectionContent}>
           <div className={styles.choiceGrid}>
             {/* KACHEL 1: Suchende */}
-            <a href="#suchende" className={styles.choiceCard}>
+            <button
+              className={`${styles.choiceCard} ${activeRole === 'suchende' ? styles.active : ''}`}
+              onClick={() => setActiveRole('suchende')}
+            >
               <div className={styles.choiceIcon}>🔍</div>
               <h3 className={styles.choiceTitle}>Ablauf für Suchende</h3>
               <p className={styles.choiceText}>Du hast eine konkrete Anfrage und suchst qualifizierte Kooperationspartner.</p>
               <span className={styles.choiceButton}>Ablauf ansehen →</span>
-            </a>
+            </button>
 
             {/* KACHEL 2: Interessierte */}
-            <a href="#interessierte" className={styles.choiceCard}>
+            <button
+              className={`${styles.choiceCard} ${activeRole === 'interessierte' ? styles.active : ''}`}
+              onClick={() => setActiveRole('interessierte')}
+            >
               <div className={styles.choiceIcon}>💡</div>
               <h3 className={styles.choiceTitle}>Ablauf für Interessierte</h3>
               <p className={styles.choiceText}>Du möchtest auf Gesuche antworten und neue Partnerschaften aufbauen.</p>
               <span className={styles.choiceButton}>Ablauf ansehen →</span>
-            </a>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* ── SUCHENDE ── */}
-      <section className={styles.section} id="suchende">
+      {/* ── TIMELINE BEREICH (Dynamisch) ── */}
+      <section className={styles.timelineSection}>
         <div className={styles.sectionContent}>
-          <h2>Ablauf für Suchende</h2>
-          <p className={styles.intro}>Du hast eine konkrete Anfrage und möchtest qualifizierte Partner finden?</p>
-          <ProcessSteps steps={PROZESS_SUCHENDE} variant="vertical" />
-        </div>
-      </section>
+          <div className={styles.timelineContainer}>
+            {/* SUCHENDE TIMELINE */}
+            {activeRole === 'suchende' && (
+              <div className={`${styles.timeline} ${styles.timelineEnter}`}>
+                <div className={styles.timelineHeader}>
+                  <h2>Ablauf für Suchende</h2>
+                  <p className={styles.timelineIntro}>
+                    Du hast eine konkrete Anfrage? Hier sind die Schritte von der Einreichung bis zu qualifizierten Kooperationspartnern.
+                  </p>
+                </div>
+                <ProcessSteps steps={PROZESS_SUCHENDE} variant="vertical" />
+              </div>
+            )}
 
-      {/* ── INTERESSENTEN ── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`} id="interessierte">
-        <div className={styles.sectionContent}>
-          <h2>Ablauf für Interessierte</h2>
-          <p className={styles.intro}>Du möchtest auf interessante Anfragen antworten und neue Partnerschaften aufbauen?</p>
-          <ProcessSteps steps={PROZESS_INTERESSENTEN} variant="vertical" />
-        </div>
-      </section>
-
-      {/* ── DETAILLIERTES BEISPIEL: STORY TIMELINE ── */}
-      <section className={styles.storySection}>
-        <div className={styles.sectionContent}>
-          <div className={styles.storyHeader}>
-            <h2>So könnte eine Kooperation entstehen</h2>
-            <p className={styles.storySubtitle}>
-              Ein beispielhafter Ablauf vom ersten Gesuch bis zur passenden deutsch-dänischen Verbindung.
-            </p>
+            {/* INTERESSIERTE TIMELINE */}
+            {activeRole === 'interessierte' && (
+              <div className={`${styles.timeline} ${styles.timelineEnter}`}>
+                <div className={styles.timelineHeader}>
+                  <h2>Ablauf für Interessierte</h2>
+                  <p className={styles.timelineIntro}>
+                    Du möchtest auf Gesuche antworten? Hier sind die Schritte von der Anfrage-Entdeckung bis zur Zusammenarbeit.
+                  </p>
+                </div>
+                <ProcessSteps steps={PROZESS_INTERESSENTEN} variant="vertical" />
+              </div>
+            )}
           </div>
+        </div>
+      </section>
 
-          <div className={styles.storyTimeline}>
-            {/* SCHRITT 1: Anfrage einreichen */}
-            <div className={styles.storyStep}>
-              <div className={styles.stepMarker}>
-                <div className={styles.stepNumber}>1</div>
-                <div className={styles.stepLabel}>Anfrage</div>
-              </div>
-
-              <div className={styles.stepContent}>
-                <div className={styles.anfrageCard}>
-                  <div className={styles.anfrageHeader}>
-                    <span className={styles.anfrageFlag}>{BEISPIEL_ANFRAGE.land}</span>
-                    <h3>{BEISPIEL_ANFRAGE.unternehmen}</h3>
-                  </div>
-                  <p className={styles.anfrageBeschreibung}>{BEISPIEL_ANFRAGE.beschreibung}</p>
-                  <p className={styles.anfrageGesucht}>
-                    <strong>Gesucht:</strong> {BEISPIEL_ANFRAGE.gesucht}
-                  </p>
-                  <ul className={styles.anfrageDetails}>
-                    {BEISPIEL_ANFRAGE.details.map((d, i) => (
-                      <li key={i}>{d}</li>
-                    ))}
-                  </ul>
-                  <div className={styles.anfrageHint}>
-                    <span>💡</span> Je konkreter die Anfrage, desto besser können passende Kontakte gefunden werden.
-                  </div>
-                </div>
-
-                <div className={styles.detailsPreview}>
-                  <p className={styles.detailsLabel}>Eine Anfrage enthält normalerweise:</p>
-                  <div className={styles.detailsGrid}>
-                    {ANFRAGE_DETAILS.map((detail, i) => (
-                      <div key={i} className={styles.detailTag}>{detail}</div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+      {/* ── DETAILLIERTES BEISPIEL: STORY TIMELINE (Suchende) ── */}
+      {activeRole === 'suchende' && (
+        <section className={styles.storySection}>
+          <div className={styles.sectionContent}>
+            <div className={styles.storyHeader}>
+              <h2>Beispiel: So könnte eine Kooperation entstehen</h2>
+              <p className={styles.storySubtitle}>
+                Ein beispielhafter Ablauf vom ersten Gesuch bis zur passenden deutsch-dänischen Verbindung – aus Sicht eines Suchenden.
+              </p>
             </div>
 
-            {/* SCHRITT 2: Prüfung */}
-            <div className={styles.storyStep}>
-              <div className={styles.stepMarker}>
-                <div className={styles.stepNumber}>2</div>
-                <div className={styles.stepLabel}>Prüfung</div>
-              </div>
+            <div className={styles.storyTimeline}>
+              {/* SCHRITT 1: Anfrage einreichen */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>1</div>
+                  <div className={styles.stepLabel}>Anfrage</div>
+                </div>
 
-              <div className={styles.stepContent}>
-                <div className={styles.pruefungCard}>
-                  <h3>Easy-B2B prüft persönlich</h3>
-                  <p>Wir prüfen, ob die Anfrage realistisch, verständlich und sinnvoll aufgebaut ist – und helfen bei Bedarf bei der Optimierung.</p>
-                  <div className={styles.pruefungItems}>
-                    <div className={styles.pruefungItem}>✓ Plausibilitätscheck</div>
-                    <div className={styles.pruefungItem}>✓ Verständnis des deutsch-dänischen Marktes</div>
-                    <div className={styles.pruefungItem}>✓ Sprachliche Optimierung</div>
-                    <div className={styles.pruefungItem}>✓ Rückfragen bei Bedarf</div>
-                  </div>
-                  <p className={styles.pruefungNote}>
-                    <strong>Wichtig:</strong> Easy-B2B ist keine offene Kontaktbörse. Wir prüfen, nicht nur durchreichen.
-                  </p>
+                <div className={styles.stepContent}>
+                  <h3>Anfrage einreichen</h3>
+                  <p>Du beschreibst konkret, was du suchst: Kooperationsart, Zielmarkt, Anforderungen, Branche.</p>
                 </div>
               </div>
-            </div>
 
-            {/* SCHRITT 3: Veröffentlichung */}
-            <div className={styles.storyStep}>
-              <div className={styles.stepMarker}>
-                <div className={styles.stepNumber}>3</div>
-                <div className={styles.stepLabel}>Netzwerk</div>
-              </div>
+              {/* SCHRITT 2: Prüfung */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>2</div>
+                  <div className={styles.stepLabel}>Prüfung</div>
+                </div>
 
-              <div className={styles.stepContent}>
-                <div className={styles.veroeffentlichungCard}>
-                  <h3>Veröffentlichung & gezielter Kontakt</h3>
-                  <div className={styles.netzwerkItems}>
-                    <div className={styles.netzwerkItem}>
-                      <span>🌐</span> Im Marktplatz veröffentlicht
-                    </div>
-                    <div className={styles.netzwerkItem}>
-                      <span>📧</span> An passende Kontakte weitergeleitet
-                    </div>
-                    <div className={styles.netzwerkItem}>
-                      <span>🔒</span> Anonymisiert oder offen – du entscheidest
-                    </div>
-                  </div>
+                <div className={styles.stepContent}>
+                  <h3>Easy-B2B prüft die Anfrage</h3>
+                  <p>Persönlich, nicht automatisiert. Wir verstehen dein Gesuch und aktivieren es dann.</p>
                 </div>
               </div>
-            </div>
 
-            {/* SCHRITT 4: Interessenten */}
-            <div className={styles.storyStep}>
-              <div className={styles.stepMarker}>
-                <div className={styles.stepNumber}>4</div>
-                <div className={styles.stepLabel}>Interessenten</div>
-              </div>
+              {/* SCHRITT 3: Interessenten finden */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>3</div>
+                  <div className={styles.stepLabel}>Sichtbarkeit</div>
+                </div>
 
-              <div className={styles.stepContent}>
-                <div className={styles.interessentenContainer}>
-                  {BEISPIEL_INTERESSENTEN.map((interessent) => (
-                    <div key={interessent.id} className={styles.interessentCard}>
-                      <div className={styles.interessentHeader}>
-                        <span className={styles.interessentFlag}>{interessent.land}</span>
-                        <div>
-                          <div className={styles.interessentStadt}>{interessent.stadt}</div>
-                          <div className={styles.interessentRolle}>{interessent.rolle}</div>
-                        </div>
-                      </div>
-                      <p className={styles.interessentInteresse}>→ {interessent.interesse}</p>
-                      <p className={styles.interessentBeschreibung}>{interessent.beschreibung}</p>
-                      <div className={styles.interessentMatch}>{interessent.match}</div>
-                    </div>
-                  ))}
+                <div className={styles.stepContent}>
+                  <h3>Deine Anfrage ist im Marktplatz sichtbar</h3>
+                  <p>Potenzielle Partner entdecken dein Gesuch und melden Interesse an.</p>
                 </div>
               </div>
-            </div>
 
-            {/* SCHRITT 5: Prüfung Interessenten */}
-            <div className={styles.storyStep}>
-              <div className={styles.stepMarker}>
-                <div className={styles.stepNumber}>5</div>
-                <div className={styles.stepLabel}>Qualitätscheck</div>
-              </div>
-
-              <div className={styles.stepContent}>
-                <div className={styles.qualitaetCard}>
-                  <h3>Auch die Interessenten werden geprüft</h3>
-                  <p>Nicht einfach nur Kontaktdaten weiterleiten. Wir fragen:</p>
-                  <div className={styles.qualitaetFragen}>
-                    <div className={styles.frage}>Wer passt fachlich?</div>
-                    <div className={styles.frage}>Wer passt menschlich?</div>
-                    <div className={styles.frage}>Macht die Kooperation Sinn?</div>
-                    <div className={styles.frage}>Welche Erwartungen bestehen?</div>
-                  </div>
+              {/* SCHRITT 4: Kontakt & Matching */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>4</div>
+                  <div className={styles.stepLabel}>Kontakt</div>
                 </div>
-              </div>
-            </div>
 
-            {/* SCHRITT 6: Kontakt */}
-            <div className={styles.storyStep}>
-              <div className={styles.stepMarker}>
-                <div className={styles.stepNumber}>6</div>
-                <div className={styles.stepLabel}>Erstes Gespräch</div>
-              </div>
-
-              <div className={styles.stepContent}>
-                <div className={styles.kontaktCard}>
-                  <h3>Kontaktaufnahme & Zusammenarbeit</h3>
-                  <p className={styles.kontaktText}>
-                    Erstes Gespräch, Kennenlernen, Online-Meeting oder persönlicher Austausch.
-                  </p>
-                  <div className={styles.möglichkeiten}>
-                    <div className={styles.moeglichkeit}>💬 Direkter Kontakt</div>
-                    <div className={styles.moeglichkeit}>📞 Erstes Gespräch</div>
-                    <div className={styles.moeglichkeit}>🤝 Pilotprojekt</div>
-                    <div className={styles.moeglichkeit}>✓ Oder langfristige Kooperation</div>
-                  </div>
-                  <p className={styles.kontaktRealitaet}>
-                    Manchmal entsteht direkt eine Zusammenarbeit. Manchmal beginnt erstmal nur ein erstes Gespräch oder ein gemeinsamer Markt-Test.
-                  </p>
+                <div className={styles.stepContent}>
+                  <h3>Du erhältst qualifizierte Interessenten</h3>
+                  <p>Easy-B2B stellt vor oder gibt den Kontakt frei. Von da an läuft es direkt zwischen euch.</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* ── DETAILLIERTES BEISPIEL: STORY TIMELINE (Interessierte) ── */}
+      {activeRole === 'interessierte' && (
+        <section className={styles.storySection}>
+          <div className={styles.sectionContent}>
+            <div className={styles.storyHeader}>
+              <h2>Beispiel: So entdeckst du passende Anfragen</h2>
+              <p className={styles.storySubtitle}>
+                Ein beispielhafter Ablauf vom Marktplatz bis zur ersten Zusammenarbeit – aus Sicht eines Interessierten.
+              </p>
+            </div>
+
+            <div className={styles.storyTimeline}>
+              {/* SCHRITT 1: Entdecken */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>1</div>
+                  <div className={styles.stepLabel}>Entdecken</div>
+                </div>
+
+                <div className={styles.stepContent}>
+                  <h3>Du entdeckst eine interessante Anfrage</h3>
+                  <p>Im Marktplatz findest du ein Gesuch, das zu deinem Unternehmen, Produkt oder Netzwerk passt.</p>
+                </div>
+              </div>
+
+              {/* SCHRITT 2: Interesse bekunden */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>2</div>
+                  <div className={styles.stepLabel}>Interesse</div>
+                </div>
+
+                <div className={styles.stepContent}>
+                  <h3>Du bekkundest Interesse</h3>
+                  <p>Du erklärst kurz, warum du zur Anfrage passt und wie du zusammenarbeiten möchtest.</p>
+                </div>
+              </div>
+
+              {/* SCHRITT 3: Prüfung */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>3</div>
+                  <div className={styles.stepLabel}>Prüfung</div>
+                </div>
+
+                <div className={styles.stepContent}>
+                  <h3>Easy-B2B prüft das Match</h3>
+                  <p>Persönliche Prüfung: Passt ihr wirklich zusammen? Sind die Anforderungen erfüllt?</p>
+                </div>
+              </div>
+
+              {/* SCHRITT 4: Kontakt */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>4</div>
+                  <div className={styles.stepLabel}>Kontakt</div>
+                </div>
+
+                <div className={styles.stepContent}>
+                  <h3>Kontakt wird hergestellt</h3>
+                  <p>Easy-B2B stellt euch vor oder gibt den Kontakt frei. Von da an läuft es direkt zwischen euch.</p>
+                </div>
+              </div>
+
+              {/* SCHRITT 5: Erstes Gespräch */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>5</div>
+                  <div className={styles.stepLabel}>Gespräch</div>
+                </div>
+
+                <div className={styles.stepContent}>
+                  <h3>Ihr lernt euch kennen</h3>
+                  <p>Erste Gespräche entstehen. Ihr überprüft, ob eine echte Zusammenarbeit sinnvoll ist.</p>
+                </div>
+              </div>
+
+              {/* SCHRITT 6: Zusammenarbeit */}
+              <div className={styles.storyStep}>
+                <div className={styles.stepMarker}>
+                  <div className={styles.stepNumber}>6</div>
+                  <div className={styles.stepLabel}>Start</div>
+                </div>
+
+                <div className={styles.stepContent}>
+                  <h3>Direkte Abstimmung</h3>
+                  <p>Alles Weitere läuft direkt zwischen euch. Easy-B2B hat den Kontakt erfolgreich ermöglicht.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── FAQ ── */}
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.sectionContent}>
           <h2>Häufig gestellte Fragen</h2>
           <div className={styles.faqList}>
@@ -256,25 +264,20 @@ export default function SoFunktioniertEsPage() {
         </div>
       </section>
 
-      {/* ── DSGVO NOTICE ── */}
-      <section className={styles.section}>
-        <div className={styles.sectionContent}>
-          <h2>Datenschutz & Sicherheit</h2>
-          <p>
-            Bei EasyB2B werden deine Daten mit höchster Sorgfalt behandelt. Wir halten uns strikt an die DSGVO und alle geltenden Datenschutzgesetze in Deutschland und Dänemark.
-          </p>
-          <ul className={styles.privacyList}>
-            <li>Persönliche Daten werden nur mit deinem expliziten Einverständnis weitergegeben</li>
-            <li>Du kannst jederzeit einsehen, welche Daten wir speichern und diese löschen</li>
-            <li>Alle Anfragen und Interessenten-Daten werden persönlich überprüft</li>
-            <li>Sichere SSL-Verschlüsselung für alle Übertragungen</li>
-          </ul>
-          <p className={styles.linkNote}>
-            Vollständige Informationen findest du in unserer{' '}
-            <a href="/datenschutz" className={styles.link}>Datenschutzerklärung</a>
-            .
-          </p>
-        </div>
+      {/* ── CTA BANNER ── */}
+      <section className={styles.ctaBanner}>
+        <h2>Bereit, den nächsten Schritt zu machen?</h2>
+        <p>
+          {activeRole === 'suchende'
+            ? 'Stelle deine Anfrage ein und finde qualifizierte Kooperationspartner.'
+            : 'Entdecke interessante Anfragen und melde dein Interesse an.'}
+        </p>
+        <Link
+          href={activeRole === 'suchende' ? '/anfrage-einreichen' : '/marktplatz'}
+          className="btn-primary"
+        >
+          {activeRole === 'suchende' ? 'Anfrage stellen →' : 'Zum Marktplatz →'}
+        </Link>
       </section>
 
       <Footer />

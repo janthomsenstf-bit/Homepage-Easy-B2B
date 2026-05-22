@@ -125,6 +125,76 @@
   color: #003366;
 }
 
+.choiceCard.active {
+  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  color: white;
+  border-color: #003366;
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.2);
+}
+
+.choiceCard.active .choiceTitle,
+.choiceCard.active .choiceText {
+  color: white;
+}
+
+.choiceCard.active .choiceButton {
+  color: #FFD4B8;
+}
+
+/* ── TIMELINE SECTION ── */
+.timelineSection {
+  padding: 60px 48px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 600px;
+}
+
+.timelineContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline {
+  animation: fadeInScale 0.4s ease;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.timelineEnter {
+  animation: fadeInScale 0.4s ease;
+}
+
+.timelineHeader {
+  margin-bottom: 48px;
+}
+
+.timelineHeader h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.timelineIntro {
+  font-size: 15px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
 /* ── FAQ ── */
 .faqList {
   display: flex;
@@ -675,6 +745,15 @@
 
   .choiceCard {
     padding: 28px;
+  }
+
+  .timelineSection {
+    padding: 40px 24px;
+    min-height: auto;
+  }
+
+  .timelineHeader h2 {
+    font-size: 24px;
   }
 
   .privacyList li {
