@@ -65,7 +65,14 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.heroImg}>
-            <div className={styles.heroPlaceholder}>🤝</div>
+            <Image
+              src="/Stickman/Titelbild.png"
+              alt="Deutsch-dänische Kooperationen"
+              width={500}
+              height={400}
+              priority
+              className={styles.heroImage}
+            />
           </div>
         </div>
       </section>
