@@ -517,6 +517,19 @@
   margin: 0;
 }
 
+/* Highlighted fun-fact card */
+.whatWeAskCardHighlighted {
+  background: linear-gradient(135deg, #FFF8F3 0%, #F9F5F0 100%);
+  border: 1px solid #FFD4B8;
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.1);
+}
+
+.whatWeAskCardHighlighted:hover {
+  border-color: #FF9900;
+  box-shadow: 0 8px 24px rgba(255, 153, 0, 0.15);
+  transform: translateY(-3px);
+}
+
 /* Reifegrad-Skala */
 .reifeGradSection {
   background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);

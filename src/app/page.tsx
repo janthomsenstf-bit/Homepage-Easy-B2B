@@ -162,7 +162,7 @@ export default function Home() {
           {/* Hauptpunkte (12 Fragen mit Icons) */}
           <div className={styles.whatWeAskGrid}>
             {WHAT_WE_ASK.map((item, idx) => (
-              <div key={idx} className={styles.whatWeAskCard}>
+              <div key={idx} className={`${styles.whatWeAskCard} ${item.highlighted ? styles.whatWeAskCardHighlighted : ''}`}>
                 <div className={styles.askCardIcon}>{item.icon}</div>
                 <h3 className={styles.askCardQuestion}>{item.frage}</h3>
                 <p className={styles.askCardExplanation}>{item.erklärung}</p>
@@ -190,8 +190,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 5. KULTUR & MENSCHEN ── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
+      {/* ── 5. KULTUR & MENSCHEN ── (vorerst ausgeblendet, Inhalte sind in andere Bereiche eingeflossen) */}
+      {/* <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className={styles.sectionContent}>
           <h2>Kultur & Menschen</h2>
           <p className={styles.sectionIntro}>
@@ -206,7 +206,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── 6. AKTUELLE GESUCHE ── */}
       <section className={styles.section}>

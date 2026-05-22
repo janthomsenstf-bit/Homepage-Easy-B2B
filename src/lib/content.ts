@@ -798,6 +798,7 @@ export const WHAT_WE_ASK = [
     icon: '🎉',
     frage: 'Wie würdest du eine neue Kooperation feiern?',
     erklärung: 'Das zeigt: Bei Easy-B2B geht es um Menschen, nicht nur um Firmen.',
+    highlighted: true,
   },
   {
     icon: '✅',
