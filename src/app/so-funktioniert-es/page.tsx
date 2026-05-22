@@ -52,40 +52,7 @@ export default function AblaufPage() {
         </div>
       </section>
 
-      {/* ── TIMELINE BEREICH (Dynamisch) ── */}
-      <section className={styles.timelineSection}>
-        <div className={styles.sectionContent}>
-          <div className={styles.timelineContainer}>
-            {/* SUCHENDE TIMELINE */}
-            {activeRole === 'suchende' && (
-              <div className={`${styles.timeline} ${styles.timelineEnter}`}>
-                <div className={styles.timelineHeader}>
-                  <h2>Ablauf für Suchende</h2>
-                  <p className={styles.timelineIntro}>
-                    Du hast eine konkrete Anfrage? Hier sind die Schritte von der Einreichung bis zu qualifizierten Kooperationspartnern.
-                  </p>
-                </div>
-                <ProcessSteps steps={PROZESS_SUCHENDE} variant="vertical" />
-              </div>
-            )}
-
-            {/* INTERESSIERTE TIMELINE */}
-            {activeRole === 'interessierte' && (
-              <div className={`${styles.timeline} ${styles.timelineEnter}`}>
-                <div className={styles.timelineHeader}>
-                  <h2>Ablauf für Interessierte</h2>
-                  <p className={styles.timelineIntro}>
-                    Du möchtest auf Gesuche antworten? Hier sind die Schritte von der Anfrage-Entdeckung bis zur Zusammenarbeit.
-                  </p>
-                </div>
-                <ProcessSteps steps={PROZESS_INTERESSENTEN} variant="vertical" />
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* ── DETAILLIERTES BEISPIEL: STORY TIMELINE (Suchende) ── */}
+      {/* ── STORY TIMELINE (Suchende) ── */}
       {activeRole === 'suchende' && (
         <section className={styles.storySection}>
           <div className={styles.sectionContent}>
