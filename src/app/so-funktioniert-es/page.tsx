@@ -52,69 +52,38 @@ export default function AblaufPage() {
         </div>
       </section>
 
-      {/* ── STORY TIMELINE (Suchende) ── */}
+      {/* ── STORY TIMELINE (Suchende) – DETAILLIERT & VERTRAUENSAUFBAU ── */}
       {activeRole === 'suchende' && (
         <section className={styles.storySection}>
           <div className={styles.sectionContent}>
             <div className={styles.storyHeader}>
-              <h2>Beispiel: So könnte eine Kooperation entstehen</h2>
+              <h2>So läuft deine Anfrage ab</h2>
               <p className={styles.storySubtitle}>
-                Ein beispielhafter Ablauf vom ersten Gesuch bis zur passenden deutsch-dänischen Verbindung – aus Sicht eines Suchenden.
+                Von der ersten Idee bis zum ersten Kontakt – wir begleiten dich persönlich. Vertrauensvoll, transparent, menschlich.
               </p>
             </div>
 
             <div className={styles.storyTimeline}>
-              {/* SCHRITT 1: Anfrage einreichen */}
-              <div className={styles.storyStep}>
-                <div className={styles.stepMarker}>
-                  <div className={styles.stepNumber}>1</div>
-                  <div className={styles.stepLabel}>Anfrage</div>
-                </div>
+              {PROZESS_SUCHENDE.map((step) => (
+                <div key={step.nr} className={styles.storyStep}>
+                  <div className={styles.stepMarker}>
+                    <div className={styles.stepNumber}>{step.nr}</div>
+                    <div className={styles.stepLabel}>{step.icon}</div>
+                  </div>
 
-                <div className={styles.stepContent}>
-                  <h3>Anfrage einreichen</h3>
-                  <p>Du beschreibst konkret, was du suchst: Kooperationsart, Zielmarkt, Anforderungen, Branche.</p>
+                  <div className={styles.stepContent}>
+                    <h3>{step.title}</h3>
+                    <p className={styles.stepShortDesc}>{step.shortDesc}</p>
+                    {step.details && step.details.length > 0 && (
+                      <ul className={styles.stepDetails}>
+                        {step.details.map((detail, idx) => (
+                          <li key={idx}>{detail}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
-              </div>
-
-              {/* SCHRITT 2: Prüfung */}
-              <div className={styles.storyStep}>
-                <div className={styles.stepMarker}>
-                  <div className={styles.stepNumber}>2</div>
-                  <div className={styles.stepLabel}>Prüfung</div>
-                </div>
-
-                <div className={styles.stepContent}>
-                  <h3>Easy-B2B prüft die Anfrage</h3>
-                  <p>Persönlich, nicht automatisiert. Wir verstehen dein Gesuch und aktivieren es dann.</p>
-                </div>
-              </div>
-
-              {/* SCHRITT 3: Interessenten finden */}
-              <div className={styles.storyStep}>
-                <div className={styles.stepMarker}>
-                  <div className={styles.stepNumber}>3</div>
-                  <div className={styles.stepLabel}>Sichtbarkeit</div>
-                </div>
-
-                <div className={styles.stepContent}>
-                  <h3>Deine Anfrage ist im Marktplatz sichtbar</h3>
-                  <p>Potenzielle Partner entdecken dein Gesuch und melden Interesse an.</p>
-                </div>
-              </div>
-
-              {/* SCHRITT 4: Kontakt & Matching */}
-              <div className={styles.storyStep}>
-                <div className={styles.stepMarker}>
-                  <div className={styles.stepNumber}>4</div>
-                  <div className={styles.stepLabel}>Kontakt</div>
-                </div>
-
-                <div className={styles.stepContent}>
-                  <h3>Du erhältst qualifizierte Interessenten</h3>
-                  <p>Easy-B2B stellt vor oder gibt den Kontakt frei. Von da an läuft es direkt zwischen euch.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>

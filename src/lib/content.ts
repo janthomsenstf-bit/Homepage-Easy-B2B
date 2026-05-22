@@ -19,8 +19,8 @@ export const SITE = {
   },
 }
 
-// ── PROZESS FÜR SUCHENDE (4 Schritte) ──
-export const PROZESS_SUCHENDE = [
+// ── PROZESS FÜR ANFRAGE-FORMULAR (Kurz – 4 Schritte) ──
+export const PROZESS_SUCHENDE_KURZ = [
   {
     nr: 1,
     icon: '✏️',
@@ -44,6 +44,105 @@ export const PROZESS_SUCHENDE = [
     icon: '🤝',
     title: 'Wir stellen vor',
     desc: 'Du bekommst qualifizierte Interessenten. Der Kontakt ist dein.',
+  },
+]
+
+// ── PROZESS FÜR SUCHENDE (8 Schritte – Detailliert & Vertrauensaufbau) ──
+export const PROZESS_SUCHENDE = [
+  {
+    nr: 1,
+    icon: '✏️',
+    title: 'Die Idee oder Anfrage einreichen',
+    shortDesc: 'Du brauchst kein perfektes Konzept.',
+    details: [
+      'Wichtig ist erst mal: Was suchst du überhaupt? Einen Vertriebspartner? Einen Lieferanten? Ein Projektteam?',
+      'Wir fragen auch: Wie weit ist deine Idee schon? Ist es noch eine Skizze oder bereits ein funktionierendes Konzept?',
+      'Warum wir bestimmte Informationen abfragen: Damit aus einer Idee eine verständliche Anfrage wird, die es wirklich wert ist, bearbeitet zu werden.',
+      'Dauer: ca. 10 Minuten.',
+    ],
+  },
+  {
+    nr: 2,
+    icon: '🔍',
+    title: 'Wir schauen uns die Anfrage persönlich an',
+    shortDesc: 'Die Anfrage wird nicht einfach automatisch veröffentlicht.',
+    details: [
+      'Wir prüfen: Ist sie verständlich? Konkret genug? Fehlen wichtige Infos?',
+      'Manchmal ergänzen wir deine Anfrage mit dir. Kleine Anpassungen machen oft einen großen Unterschied.',
+      'Es geht nicht um Perfektion – sondern darum, dass die richtigen Partner deine Anfrage verstehen.',
+      'Diese persönliche Prüfung ist einer der Gründe, warum Easy-B2B anders ist als eine anonyme Plattform.',
+    ],
+  },
+  {
+    nr: 3,
+    icon: '💬',
+    title: 'Kurzes Kennenlernen',
+    shortDesc: 'Ein persönlicher Austausch – kein Verkaufsgespräch.',
+    details: [
+      'Du führst ein kurzes Gespräch mit uns – meist online, ca. 15 Minuten.',
+      'Wir hören dir zu. Wir verstehen deine Idee wirklich. Wir klären offene Fragen.',
+      'Es geht um Vertrauen und Verständnis – nicht um Checklisten.',
+      'Wir schauen auch auf kulturelle und sprachliche Besonderheiten: Wie direkt magst du kommuniziert werden? Wie schnell sollten Entscheidungen fallen? Was ist dir wichtig bei der Zusammenarbeit mit Menschen über die Grenze hinweg?',
+    ],
+  },
+  {
+    nr: 4,
+    icon: '📝',
+    title: 'Die Anfrage wird sinnvoll aufbereitet',
+    shortDesc: 'Öffentlich oder anonym – wie du es magst.',
+    details: [
+      'Basierend auf deinem Gespräch mit uns bereiten wir deine Anfrage auf.',
+      'Öffentlich oder anonym – du entscheidest. Anonyme Anfragen sind genauso wertvoll, werden aber ohne Namen veröffentlicht.',
+      'Verständliche Formulierung statt Marketing-Blabla. Konkrete Darstellung statt Werbetext.',
+      'Ziel: Passende Kontakte sollen schnell verstehen, worum es geht – ohne 3 Seiten Text lesen zu müssen.',
+    ],
+  },
+  {
+    nr: 5,
+    icon: '📢',
+    title: 'Die Anfrage wird gezielt sichtbar gemacht',
+    shortDesc: 'Nicht wahllos, sondern strategisch.',
+    details: [
+      'Deine Anfrage landet nicht einfach im digitalen Schwarzloch.',
+      'Wir platzieren sie gezielt im Netzwerk – bei passenden Kontakten, in relevanten Veranstaltungen, über persönliche Empfehlungen.',
+      'Das ist keine Spam-Plattform. Es geht darum, dass die richtigen Menschen deine Anfrage sehen.',
+      'Manchmal dauert es länger, bis der perfekte Match dabei ist – aber wenn, dann passt es wirklich.',
+    ],
+  },
+  {
+    nr: 6,
+    icon: '✅',
+    title: 'Interessenten werden nicht ungefiltert weitergegeben',
+    shortDesc: 'Das ist ein großer Vertrauenspunkt.',
+    details: [
+      'Nicht jeder Kontakt, der Interesse bekundet, wird direkt an dich weitergegeben.',
+      'Wir prüfen: Passt das überhaupt zusammen? Ist das Interesse ernst gemeint?',
+      'Ziel: Weniger Unsinn, mehr relevante Gespräche. Du sparst Zeit mit Menschen, die wirklich passen.',
+      'Du bekommst hochwertige Vorschläge – nicht einfach eine Liste von Kontakten, die irgendwie vielleicht passen könnten.',
+    ],
+  },
+  {
+    nr: 7,
+    icon: '🤝',
+    title: 'Wenn es passt, entsteht der erste Kontakt',
+    shortDesc: 'Vorstellung und erstes Gespräch.',
+    details: [
+      'Wir stellen dich dem passenden Unternehmen vor – oder geben den Kontakt frei.',
+      'Das erste Gespräch entsteht. Ihr lernt euch kennen. Ihr überprüft, ob eine echte Zusammenarbeit sinnvoll ist.',
+      'Easy-B2B sitzt bei diesem Gespräch nicht mit am Tisch – das ist zwischen euch.',
+    ],
+  },
+  {
+    nr: 8,
+    icon: '💼',
+    title: 'Die Zusammenarbeit gehört euch',
+    shortDesc: 'Easy-B2B soll nicht dauerhaft dazwischenfunken.',
+    details: [
+      'Von diesem Punkt an sprechen die Unternehmen direkt miteinander.',
+      'Wir helfen beim Einstieg. Beim ersten Match. Beim ersten Kontakt.',
+      'Danach ist es euer Geschäft. Eure Beziehung. Eure Entscheidung.',
+      'Das ist der Punkt: Easy-B2B öffnet die Tür – aber die Reise gehört euch.',
+    ],
   },
 ]
 

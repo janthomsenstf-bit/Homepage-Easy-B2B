@@ -3,7 +3,7 @@ import ProcessSteps from '@/components/ProcessSteps'
 import FAQItem from '@/components/FAQItem'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
-import { PROZESS_SUCHENDE, FAQ } from '@/lib/content'
+import { PROZESS_SUCHENDE_KURZ, FAQ } from '@/lib/content'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -30,7 +30,7 @@ export default function AnfrageEinreichenPage() {
       <section className={styles.section}>
         <div className={styles.sectionContent}>
           <h2>Was passiert nach deinem Einreichen?</h2>
-          <ProcessSteps steps={PROZESS_SUCHENDE} variant="vertical" />
+          <ProcessSteps steps={PROZESS_SUCHENDE_KURZ} variant="vertical" />
         </div>
       </section>
 
