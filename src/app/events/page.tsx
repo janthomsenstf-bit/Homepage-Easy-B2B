@@ -9,6 +9,9 @@ import styles from './page.module.css'
 export default function EventsPage() {
   const [activeEvent, setActiveEvent] = useState(0)
 
+  // ── ACTIVE EVENT FORMATS (Reduziert auf 3 Hauptformate) ──
+  // Weitere Formate vorerst ausgeblendet: Betriebsbesichtigungen, Branchentage, Interviews & Podcasts
+  // Können später leicht wieder hinzugefügt werden.
   const eventDetails = [
     {
       icon: '🎤',
@@ -26,6 +29,39 @@ export default function EventsPage() {
       why: 'Nicht online oder per Email – sondern von Angesicht zu Angesicht. Das baut Vertrauen auf.',
       cta: 'Mehr über Pitch & Meet →'
     },
+    {
+      icon: '🚗',
+      name: 'Connect in Car',
+      shortDesc: 'Netzwerken auf der Fahrt zwischen Hamburg und Kopenhagen – 10 Min pro Kontakt.',
+      fullDesc: 'Ungewöhnlich, effektiv, persönlich. Netzwerken während einer Luxus-Fahrt über die Grenze.',
+      forWhom: 'Für Unternehmer, die Netzwerken mal etwas natürlicher mögen – ohne starre Konferenz-Atmosphäre.',
+      whatHappens: [
+        '🚙 Luxus-Fahrzeuge (Mercedes, etc.)',
+        '⏱ 10 Minuten pro Gesprächs-Runde',
+        '🔄 Wechsel zu neuem Gesprächspartner',
+        '☕ Getränke & informelle Atmosphäre',
+        '🏁 Am Ziel: Neue Kontakte & Synergien',
+      ],
+      why: 'Netzwerken fühlt sich natürlich an. Echte, ungezwungene Gespräche entstehen.',
+      cta: null
+    },
+    {
+      icon: '🤝',
+      name: 'Netzwerktreffen',
+      shortDesc: 'Kleine Gruppen, persönlicher Austausch, echte Kontakte aufbauen.',
+      fullDesc: 'Persönliche Treffen in regionalen Zentren. Lockerer Austausch, deutsch-dänische Gespräche, Kennenlernen und Kontakte knüpfen. Von kleineren Formaten bis zu spontanen Begegnungen.',
+      forWhom: 'Für Unternehmen, die auf unkomplizierte Weise Kontakte knüpfen und tiefe Beziehungen schaffen möchten.',
+      whatHappens: [
+        '👥 Kleine bis mittlere Gruppen',
+        '🍽 Informeller Austausch (Dinner, Lunch, Kaffee)',
+        '💬 Echte Gespräche – keine Formalitäten',
+        '🌍 Regionale Fokus – lokal und persönlich',
+      ],
+      why: 'Persönlich, unkompliziert, vertraut. Die beste Basis für langfristige Kooperationen.',
+      cta: null
+    },
+
+    /* ── AUSGEBLENDETE FORMATE (können später wieder aktiviert werden) ──
     {
       icon: '🏭',
       name: 'Betriebsbesichtigungen',
@@ -57,37 +93,6 @@ export default function EventsPage() {
       cta: null
     },
     {
-      icon: '🚗',
-      name: 'Connect in Car',
-      shortDesc: 'Netzwerken auf der Fahrt zwischen Hamburg und Kopenhagen – 10 Min pro Kontakt.',
-      fullDesc: 'Ungewöhnlich, effektiv, persönlich. Netzwerken während einer Luxus-Fahrt über die Grenze.',
-      forWhom: 'Für Unternehmer, die Netzwerken mal etwas natürlicher mögen – ohne starre Konferenz-Atmosphäre.',
-      whatHappens: [
-        '🚙 Luxus-Fahrzeuge (Mercedes, etc.)',
-        '⏱ 10 Minuten pro Gesprächs-Runde',
-        '🔄 Wechsel zu neuem Gesprächspartner',
-        '☕ Getränke & informelle Atmosphäre',
-        '🏁 Am Ziel: Neue Kontakte & Synergien',
-      ],
-      why: 'Netzwerken fühlt sich natürlich an. Echte, ungezwungene Gespräche entstehen.',
-      cta: null
-    },
-    {
-      icon: '🤝',
-      name: 'Persönliche Netzwerktreffen',
-      shortDesc: 'Kleine Gruppen, kleine Städte, großes Ziel: echte Kontakte aufbauen.',
-      fullDesc: 'Persönliche Treffen in regionalen Zentren (Hamburg, Kiel, Odense, etc.).',
-      forWhom: 'Für Unternehmen, die regionale Netzwerke aufbauen und tiefe Beziehungen schaffen möchten.',
-      whatHappens: [
-        '👥 Kleine Gruppe (8-15 Personen)',
-        '🍽 Informelles Treffen (Dinner, Lunch)',
-        '💬 Echte Gespräche über Herausforderungen',
-        '🌍 Regionale Fokus',
-      ],
-      why: 'Persönlich, vertraut, effektiv. Die beste Basis für längerfristige Kooperationen.',
-      cta: null
-    },
-    {
       icon: '🎙',
       name: 'Interviews & Podcasts',
       shortDesc: 'Erfolgsgeschichten von deutsch-dänischen Partnerschaften – zum Hören und Lernen.',
@@ -102,6 +107,7 @@ export default function EventsPage() {
       why: 'Lernen von echten Menschen. Verstehen, wie Kooperationen entstehen und wachsen.',
       cta: null
     },
+    **/
   ]
 
   const current = eventDetails[activeEvent]
