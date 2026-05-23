@@ -9,6 +9,7 @@ import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
 import {
   SITE,
+  QUICK_PROCESS_FLOW,
   DEMO_ANFRAGEN,
   PROZESS_HOMEPAGE,
   PROZESS_HINWEIS,
@@ -73,6 +74,24 @@ export default function Home() {
               priority
               className={styles.heroImage}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 1.5 QUICK PROCESS FLOW – Orientierungs-Balken ── */}
+      <section className={styles.quickFlow}>
+        <div className={styles.sectionContent}>
+          <div className={styles.flowContainer}>
+            {QUICK_PROCESS_FLOW.map((item, idx) => (
+              <div key={idx} className={styles.flowItem}>
+                <div className={styles.flowIcon}>{item.icon}</div>
+                <div className={styles.flowLabel}>{item.label}</div>
+                <p className={styles.flowDescription}>{item.description}</p>
+                {idx < QUICK_PROCESS_FLOW.length - 1 && (
+                  <div className={styles.flowArrow}>→</div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

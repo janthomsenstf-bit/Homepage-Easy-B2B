@@ -67,6 +67,80 @@
   border-radius: 12px;
 }
 
+/* ── 1.5 QUICK PROCESS FLOW – Orientierungs-Balken ── */
+.quickFlow {
+  padding: 60px 48px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.flowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.flowItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 140px;
+  max-width: 180px;
+  text-align: center;
+  position: relative;
+}
+
+.flowIcon {
+  font-size: 40px;
+  line-height: 1;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.flowLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.flowDescription {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 400;
+}
+
+.flowArrow {
+  position: absolute;
+  right: -18px;
+  top: 40px;
+  font-size: 22px;
+  color: #FF9900;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.flowItem:last-child .flowArrow {
+  display: none;
+}
+
 /* ── SECTIONS (shared) ── */
 .section {
   padding: 100px 48px;
@@ -1280,5 +1354,40 @@
   .whatHappensRightImage {
     width: 240px;
     height: 240px;
+  }
+
+  /* Quick Flow Mobile */
+  .quickFlow {
+    padding: 40px 24px;
+  }
+
+  .flowContainer {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .flowItem {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .flowArrow {
+    position: static;
+    font-size: 28px;
+    transform: rotate(90deg);
+    margin: 8px 0;
+    opacity: 0.4;
+  }
+
+  .flowIcon {
+    font-size: 36px;
+  }
+
+  .flowLabel {
+    font-size: 13px;
+  }
+
+  .flowDescription {
+    font-size: 11px;
   }
 }

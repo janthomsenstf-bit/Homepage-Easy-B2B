@@ -19,6 +19,34 @@ export const SITE = {
   },
 }
 
+// ── QUICK PROCESS FLOW (Homepage Orientierungs-Balken) ──
+export const QUICK_PROCESS_FLOW = [
+  {
+    nr: 1,
+    icon: '💡',
+    label: 'Anfrage teilen',
+    description: 'Deine Idee oder Gesuch einreichen',
+  },
+  {
+    nr: 2,
+    icon: '🔍',
+    label: 'Kontakte finden',
+    description: 'Passende Partner entdecken',
+  },
+  {
+    nr: 3,
+    icon: '🤝',
+    label: 'Kennenlernen',
+    description: 'Erstes Gespräch & Austausch',
+  },
+  {
+    nr: 4,
+    icon: '🚀',
+    label: 'Kooperation starten',
+    description: 'Deutsch-dänische Zusammenarbeit',
+  },
+]
+
 // ── PROZESS FÜR ANFRAGE-FORMULAR (Kurz – 4 Schritte) ──
 export const PROZESS_SUCHENDE_KURZ = [
   {
