@@ -235,6 +235,61 @@
   box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
 }
 
+/* ── PROCESS STEPS (Pitch & Meet) ── */
+.processSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.processStep {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 3px solid #FF9900;
+}
+
+.stepNumber {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FF9900;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  background: rgba(255, 153, 0, 0.1);
+  border-radius: 50%;
+}
+
+.stepContent h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 6px 0;
+}
+
+.stepContent p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── APPLICATION HEADLINE ── */
+.applicationHeadline {
+  font-size: 24px;
+  font-weight: 700;
+  color: #003366;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
 /* ── CTA SECTION ── */
 .ctaSection {
   background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);

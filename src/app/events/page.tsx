@@ -16,18 +16,71 @@ export default function EventsPage() {
     {
       icon: '🎤',
       name: 'Pitch & Meet',
-      shortDesc: 'Deutsch-dänische Unternehmen pitchen ihre Idee live vor Publikum.',
-      fullDesc: 'Unternehmer stellen ihre Idee, ihr Produkt oder ihre Kooperationssuche live vor. Vorbereitet durch kurze Interviews, sichtbar vor dem Event, mit direktem Netzwerken danach.',
-      forWhom: 'Für Unternehmen, die eine konkrete Idee haben und auf der anderen Seite der Grenze Partner suchen.',
-      whatHappens: [
-        '🎬 Kurze Vorbereitung: Interviews mit den Pitch-Unternehmen',
-        '📢 Sichtbarkeit: Vorstellung im Netzwerk, Social Media, Newsletter',
-        '🎤 Live Event: 10-15 Min Pitch pro Unternehmen + Q&A',
-        '🚗 Connect in Car: Netzwerken in Luxus-Fahrzeugen',
-        '🤝 Direkte Gespräche: Kooperationen entstehen',
+      isPitchAndMeet: true,
+      shortDesc: 'Deutsche und dänische Unternehmen treffen sich live. Ideen werden geteilt. Kooperationen entstehen.',
+      fullDesc: 'Pitch & Meet ist keine Konferenz. Es ist ein Ort, an dem deutsche und dänische Unternehmen sich begegnen – nicht online, sondern von Angesicht zu Angesicht. Hier präsentieren Gründer*innen und Unternehmer*innen ihre Ideen, Produkte und Kooperationschancen live vor realen Menschen. Nicht mit PowerPoint-Schlachten, sondern mit Persönlichkeit, Energie und echtem Interesse.',
+      whySpecial: 'Sprache und Kultur sind oft die größten Barrieren, wenn Deutschland und Dänemark zusammenarbeiten möchten. Pitch & Meet baut genau diese Hemmschwellen ab – indem Menschen zusammenkommen, miteinander reden und feststellen: „Ach, wir verstehen uns ja viel besser als erwartet." Das ist der Moment, in dem Kooperationen entstehen.',
+      forWhomIntro: 'Du solltest dabei sein, wenn du…',
+      forWhomList: [
+        'eine konkrete Idee, ein Produkt oder eine Dienstleistung hast und den deutschen oder dänischen Markt erobern möchtest',
+        'auf Partnersuche bist – ob Vertrieb, Produktion, Projekte oder Innovationen',
+        'offen für neue Kontakte, Inspirationen und unerwartete Chancen bist',
+        'glaubst, dass die beste Geschäfte über echte Begegnungen entstehen – nicht per Email',
+        'mutig genug bist, deine Idee vor anderen zu vertreten und dabei dazuzulernen',
+        'von erfolgreichen Entrepreneur*innen auf der anderen Seite der Grenze lernen möchtest',
       ],
-      why: 'Nicht online oder per Email – sondern von Angesicht zu Angesicht. Das baut Vertrauen auf.',
-      cta: 'Mehr über Pitch & Meet →'
+      whyBenefits: [
+        '🌍 Neue Märkte entdecken – direkt von den Menschen, die sie kennen',
+        '🤝 Echte Kontakte knüpfen – nicht digitale Netzwerk-Illusion, sondern persönliche Beziehungen',
+        '💡 Inspiration & Austausch – von Unternehmen, die ähnliche Herausforderungen haben',
+        '📍 Sichtbarkeit – dein Unternehmen wird im Netzwerk, Social Media und Newsletter vorgestellt',
+        '🚀 Konkrete Geschäftsmöglichkeiten – viele Kooperationen entstehen direkt nach den Pitches',
+        '🎯 Vertrauen aufbauen – indem man sich kennenlernt und versteht',
+      ],
+      whatHappens: [
+        '🎤 Live vor Publikum: Unternehmen präsentieren ihre Idee in kurzen, persönlichen Pitches – nicht steif, sondern authentisch',
+        '💬 Kurz und persönlich: Keine 50-Folien-Präsentation. Sondern Persönlichkeit, Energie und Gestik – das überzeugt echte Menschen',
+        '👥 Deutsch-dänische Begegnung: Ein Raum, in dem Menschen zusammentreffen – zum Austausch, zum Diskutieren, zum Nachdenken',
+        '🚗 Connect in Car: Anschließend: Netzwerken in Luxus-Fahrzeugen auf der Fahrt über die Grenze – informell, effektiv, lustig',
+        '🤝 Direkte Gespräche: Nach den Pitches entstehen echte Kooperationsgespräche – zwischen Menschen, die sich jetzt kennen',
+      ],
+      process: [
+        {
+          nr: 1,
+          step: 'Bewerbung',
+          desc: 'Dein Unternehmen bewirbt sich, um seine Idee, sein Produkt oder seine Kooperationssuche vorzustellen.'
+        },
+        {
+          nr: 2,
+          step: 'Interviews',
+          desc: 'Wir führen kurze, persönliche Interviews – nicht aus Bürokratie, sondern um deine Idee wirklich zu verstehen und die richtigen Gäste einzuladen.'
+        },
+        {
+          nr: 3,
+          step: 'Vorbereitung & Sichtbarkeit',
+          desc: 'Dein Unternehmen wird vor dem Event sichtbar gemacht – in unserem Netzwerk, auf Social Media, im Newsletter. Schon vorher entstehen erste Kontakte.'
+        },
+        {
+          nr: 4,
+          step: 'Live Pitch',
+          desc: '10-15 Minuten: Du erzählst deine Geschichte vor echtem Publikum. Danach: Fragen, Diskussion, echtes Interesse.'
+        },
+        {
+          nr: 5,
+          step: 'Netzwerken & Gespräche',
+          desc: 'Nach den Pitches: Austausch mit anderen Unternehmen, potenzielle Partner, spannende Menschen aus beiden Ländern.'
+        },
+        {
+          nr: 6,
+          step: 'Kooperationen entstehen',
+          desc: 'Manche Kooperationen entstehen am Abend selbst. Andere brauchen Zeit. Aber: Der Grundstein ist gelegt.'
+        }
+      ],
+      regularity: 'Pitch & Meet ist nicht einmalig. Wir planen regelmäßige deutsch-dänische Veranstaltungen – im Abstand von etwa zwei Monaten. Das schafft Verbindlichkeit, Kontinuität und echte Netzwerk-Dynamik.',
+      applicationHeadline: 'Mit deinem Unternehmen dabei sein',
+      applicationText: 'Dein Unternehmen kann sich bewerben, um seine Idee, sein Produkt, seine Dienstleistung oder seine Kooperationssuche zu präsentieren. Wichtig: Du wirst vorbereitet und begleitet. Das ist kein „spontan auf die Bühne" – sondern ein persönlich betreuter Prozess, der dich und deine Idee in den besten Licht setzt.',
+      why: 'Wenn Deutsche und Dänen echte Sache machen – dann nicht online, nicht per Email, sondern von Angesicht zu Angesicht. Genau da entsteht Vertrauen. Genau da entstehen echte Kooperationen.',
+      cta: 'Mit deinem Unternehmen dabei sein →'
     },
     {
       icon: '🚗',
@@ -158,36 +211,119 @@ export default function EventsPage() {
             </div>
 
             <div className={styles.detailBody}>
-              <div className={styles.detailSection_}>
-                <h3>Beschreibung</h3>
-                <p className={styles.description}>{current.fullDesc}</p>
-              </div>
+              {/* ── PITCH & MEET SPEZIFISCHE STRUKTUR ── */}
+              {current.isPitchAndMeet ? (
+                <>
+                  <div className={styles.detailSection_}>
+                    <h3>Das Format</h3>
+                    <p className={styles.description}>{current.fullDesc}</p>
+                  </div>
 
-              <div className={styles.detailSection_}>
-                <h3>Für wen?</h3>
-                <p className={styles.description}>{current.forWhom}</p>
-              </div>
+                  <div className={styles.detailSection_}>
+                    <h3>Warum Pitch & Meet wichtig ist</h3>
+                    <p className={styles.description}>{current.whySpecial}</p>
+                  </div>
 
-              <div className={styles.detailSection_}>
-                <h3>Was passiert dort?</h3>
-                <ul className={styles.whatHappensList}>
-                  {current.whatHappens.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+                  <div className={styles.detailSection_}>
+                    <h3>{current.forWhomIntro}</h3>
+                    <ul className={styles.whatHappensList}>
+                      {current.forWhomList.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-              <div className={styles.detailSection_}>
-                <h3>Warum sinnvoll?</h3>
-                <p className={styles.description}>{current.why}</p>
-              </div>
+                  <div className={styles.detailSection_}>
+                    <h3>Das bringt dir Pitch & Meet</h3>
+                    <ul className={styles.whatHappensList}>
+                      {current.whyBenefits.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-              {current.cta && (
-                <div className={styles.ctaContainer}>
-                  <Link href="#kontakt" className={styles.ctaButton}>
-                    {current.cta}
-                  </Link>
-                </div>
+                  <div className={styles.detailSection_}>
+                    <h3>Was passiert dort?</h3>
+                    <ul className={styles.whatHappensList}>
+                      {current.whatHappens.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Der Ablauf: Von der Bewerbung zum Pitch</h3>
+                    <div className={styles.processSteps}>
+                      {current.process.map((p, idx) => (
+                        <div key={idx} className={styles.processStep}>
+                          <div className={styles.stepNumber}>{p.nr}</div>
+                          <div className={styles.stepContent}>
+                            <h4>{p.step}</h4>
+                            <p>{p.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Regelmäßiges Format</h3>
+                    <p className={styles.description}>{current.regularity}</p>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h2 className={styles.applicationHeadline}>{current.applicationHeadline}</h2>
+                    <p className={styles.description}>{current.applicationText}</p>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Der Kern von Pitch & Meet</h3>
+                    <p className={styles.description}>{current.why}</p>
+                  </div>
+
+                  {current.cta && (
+                    <div className={styles.ctaContainer}>
+                      <Link href="/kontakt" className={styles.ctaButton}>
+                        {current.cta}
+                      </Link>
+                    </div>
+                  )}
+                </>
+              ) : (
+                /* ── NORMALE STRUKTUR FÜR ANDERE EVENTS ── */
+                <>
+                  <div className={styles.detailSection_}>
+                    <h3>Beschreibung</h3>
+                    <p className={styles.description}>{current.fullDesc}</p>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Für wen?</h3>
+                    <p className={styles.description}>{current.forWhom}</p>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Was passiert dort?</h3>
+                    <ul className={styles.whatHappensList}>
+                      {current.whatHappens.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Warum sinnvoll?</h3>
+                    <p className={styles.description}>{current.why}</p>
+                  </div>
+
+                  {current.cta && (
+                    <div className={styles.ctaContainer}>
+                      <Link href="#kontakt" className={styles.ctaButton}>
+                        {current.cta}
+                      </Link>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </div>
