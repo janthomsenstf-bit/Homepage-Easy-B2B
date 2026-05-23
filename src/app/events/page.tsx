@@ -85,17 +85,31 @@ export default function EventsPage() {
     {
       icon: '🚗',
       name: 'Connect in Car',
-      shortDesc: 'Netzwerken auf der Fahrt zwischen Hamburg und Kopenhagen – 10 Min pro Kontakt.',
-      fullDesc: 'Ungewöhnlich, effektiv, persönlich. Netzwerken während einer Luxus-Fahrt über die Grenze.',
-      forWhom: 'Für Unternehmer, die Netzwerken mal etwas natürlicher mögen – ohne starre Konferenz-Atmosphäre.',
-      whatHappens: [
-        '🚙 Luxus-Fahrzeuge (Mercedes, etc.)',
-        '⏱ 10 Minuten pro Gesprächs-Runde',
-        '🔄 Wechsel zu neuem Gesprächspartner',
-        '☕ Getränke & informelle Atmosphäre',
-        '🏁 Am Ziel: Neue Kontakte & Synergien',
+      isConnectInCar: true,
+      shortDesc: 'Netzwerken im Auto: 10 Minuten ungestörte Gespräche, lockere Atmosphäre, echte Begegnungen.',
+      fullDesc: 'Connect in Car ist kein klassisches Netzwerk-Event. Es ist eine ganz eigene Erfahrung: Du sitzt in einem modernen Auto mit interessanten Menschen aus Deutschland und Dänemark. Kaffee, offene Gespräche, kein Small Talk, keine Geschäftskarten-Schlacht. Nur zwei Menschen, ein gutes Auto, und ungefähr zehn Minuten Zeit, um zu sehen, ob eine echte Chemie da ist.',
+      whySpecial: 'In einem Auto sitzt man automatisch anders zusammen als an einem Stehtisch. Das Gespräch wird ruhiger, ehrlicher, direkter – persönlicher. Die Fahrt über die Grenze schafft eine gemeinsame Erfahrung, die Hemmschwellen abbaut und echte Verbindungen entstehen lässt.',
+      forWhomIntro: 'Connect in Car ist für dich, wenn du…',
+      forWhomList: [
+        'unkompliziert netzwerken möchtest – ohne Anzug-Klischees',
+        'dich für deutsch-dänische Begegnungen interessierst',
+        'offene, interessante Menschen magst',
+        'neue Märkte kennenlernen oder neue Geschäftspartner finden möchtest',
+        'glaubst, dass die besten Ideen in guten Gesprächen entstehen',
+        'Lust auf eine moderne, etwas andere Networkingform hast'
       ],
-      why: 'Netzwerken fühlt sich natürlich an. Echte, ungezwungene Gespräche entstehen.',
+      atmosphere: 'Modernes Autohaus in Grenzregion, entspannte Stimmung, Kaffee und Getränke, kleine Gruppen, spontane Wechsel von Auto zu Auto, echte deutsch-dänische Atmosphäre.',
+      whatHappens: [
+        '🚗 Zwei Personen in einem hochwertigen Auto',
+        '☕ Kaffee, entspannte Umgebung, lockerer Austausch',
+        '⏱ 10 Minuten ungestörter Gesprächszeit',
+        '🚙 Danach: Wechsel zum nächsten Auto, nächstem Gesprächspartner',
+        '🌍 Deutsche und Dänen treffen sich auf Augenhöhe',
+        '💡 Echte Gespräche entstehen – ohne Pitch-Druck'
+      ],
+      whyFun: 'Das ist keine klassische Businessveranstaltung. Es ist angenehm anders: entspannt, unkompliziert, spielerisch. Die Fahrt schafft Gemeinsamkeit, die Kürze macht das Kennenlernen fokussiert, und die Atmosphäre im Auto fördert echte, offene Gespräche. Du merkst schnell, ob die Chemie stimmt – und das macht es einfach.',
+      regularity: 'Connect in Car findet regelmäßig statt – abwechselnd in Deutschland und Dänemark, immer in grenznah gelegenen Autohäusern mit entspannter Atmosphäre. Das Format wird zum echten Netzwerk-Termin, auf den sich Menschen freuen.',
+      why: 'Manchmal entstehen die besten Kooperationen nicht auf der Bühne – sondern in einem guten Gespräch. Connect in Car schafft genau diese Momente: ungestört, persönlich, ehrlich.',
       cta: null
     },
     {
@@ -278,6 +292,60 @@ export default function EventsPage() {
 
                   <div className={styles.detailSection_}>
                     <h3>Der Kern von Pitch & Meet</h3>
+                    <p className={styles.description}>{current.why}</p>
+                  </div>
+
+                  {current.cta && (
+                    <div className={styles.ctaContainer}>
+                      <Link href="/kontakt" className={styles.ctaButton}>
+                        {current.cta}
+                      </Link>
+                    </div>
+                  )}
+                </>
+              ) : current.isConnectInCar ? (
+                /* ── CONNECT IN CAR SPEZIELLES LAYOUT ── */
+                <>
+                  <div className={styles.detailSection_}>
+                    <h3>Das Format</h3>
+                    <p className={styles.description}>{current.fullDesc}</p>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Warum Connect in Car besonders ist</h3>
+                    <p className={styles.description}>{current.whySpecial}</p>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>{current.forWhomIntro}</h3>
+                    <ul className={styles.whatHappensList}>
+                      {current.forWhomList.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Was passiert bei Connect in Car?</h3>
+                    <ul className={styles.whatHappensList}>
+                      {current.whatHappens.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Warum macht das Spaß?</h3>
+                    <p className={styles.description}>{current.whyFun}</p>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Regelmäßiges Format</h3>
+                    <p className={styles.description}>{current.regularity}</p>
+                  </div>
+
+                  <div className={styles.detailSection_}>
+                    <h3>Der Kern von Connect in Car</h3>
                     <p className={styles.description}>{current.why}</p>
                   </div>
 
