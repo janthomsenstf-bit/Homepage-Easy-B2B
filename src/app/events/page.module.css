@@ -4,7 +4,7 @@
 
 /* ── HERO SECTION ── */
 .hero {
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   color: white;
   padding: 60px 48px;
   position: relative;
@@ -87,9 +87,9 @@
 }
 
 .eventTab.active {
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   color: white;
-  border-color: #003366;
+  border-color: #0066CC;
   box-shadow: 0 8px 24px rgba(0, 51, 102, 0.2);
 }
 
@@ -158,7 +158,7 @@
 .detailTitle {
   font-size: 36px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 8px 0;
   line-height: 1.2;
 }
@@ -185,7 +185,7 @@
 .detailSection_ h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
 }
 
@@ -270,7 +270,7 @@
 .stepContent h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 6px 0;
 }
 
@@ -285,14 +285,14 @@
 .applicationHeadline {
   font-size: 24px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 12px 0;
   line-height: 1.3;
 }
 
 /* ── CTA SECTION ── */
 .ctaSection {
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   padding: 80px 20px;
   text-align: center;
 }
@@ -336,7 +336,7 @@
 .formatHeadline {
   font-size: 40px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 8px 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   text-align: center;
@@ -361,7 +361,7 @@
 .formatPoint {
   font-size: 18px;
   font-weight: 500;
-  color: #003366;
+  color: #0066CC;
   line-height: 1.5;
   text-align: center;
   padding: 20px 0;
@@ -391,7 +391,7 @@
 .connectHeadline {
   font-size: 48px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   line-height: 1.2;
@@ -467,7 +467,7 @@
 .timelineTitle {
   font-size: 40px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 80px 0;
   text-align: center;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -490,7 +490,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #FF9900 0%, #003366 100%);
+  background: linear-gradient(180deg, #FF9900 0%, #0066CC 100%);
   transform: translateX(-1px);
   z-index: 0;
 }
@@ -540,7 +540,7 @@
 .timelineItemTitle {
   font-size: 18px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 8px 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -556,7 +556,7 @@
 .cultureTitle {
   font-size: 40px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 32px 0;
   text-align: center;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -606,7 +606,7 @@
 .forWhomTitle {
   font-size: 40px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 24px 0;
   text-align: center;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -656,7 +656,7 @@
 .personaName {
   font-size: 16px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -670,7 +670,7 @@
 
 /* ── CTA SECTION ── */
 .ctaSection {
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   color: white;
   padding: 120px 20px;
   text-align: center;
@@ -731,7 +731,7 @@
 }
 
 .footerNotes strong {
-  color: #003366;
+  color: #0066CC;
   font-weight: 600;
 }
 

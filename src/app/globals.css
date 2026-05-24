@@ -4,8 +4,8 @@
 
 :root {
   /* BVMW-Style Farben — Professionell, Vertrauensvoll, B2B */
-  --color-primary:      #003366;        /* Navy Dunkelblau — Primär */
-  --color-primary-light: #1a4d7a;       /* Navy Light — Hover States */
+  --color-primary:      #0066CC;        /* Navy Dunkelblau — Primär */
+  --color-primary-light: #3399FF;       /* Navy Light — Hover States */
   --color-primary-dark:  #001a33;       /* Navy Dark — Aktiv States */
 
   --color-accent:       #FF9900;        /* Orange — CTAs & Akzente */

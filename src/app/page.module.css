@@ -3,7 +3,7 @@
 
 /* ── 1. HERO ── */
 .hero {
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   padding: 100px 48px;
   color: white;
 }
@@ -114,7 +114,7 @@
 .flowLabel {
   font-size: 14px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
   line-height: 1.3;
 }
@@ -190,7 +190,7 @@
   font-size: clamp(36px, 5vw, 48px);
   font-weight: 700;
   margin-bottom: 20px;
-  color: #003366;
+  color: #0066CC;
   font-family: var(--font-sans);
   line-height: 1.2;
 }
@@ -272,7 +272,7 @@
 .editorialBlockTitle {
   font-size: 28px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
   line-height: 1.3;
   font-family: var(--font-sans);
@@ -364,7 +364,7 @@
 .stepNumber {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -383,7 +383,7 @@
 .stepTitle {
   font-size: 18px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
   line-height: 1.3;
   padding: 0 8px;
@@ -399,7 +399,7 @@
 }
 
 .stepDesc strong {
-  color: #003366;
+  color: #0066CC;
   font-weight: 600;
 }
 
@@ -453,7 +453,7 @@
 .previewNumber {
   width: 40px;
   height: 40px;
-  background: #003366;
+  background: #0066CC;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -579,7 +579,7 @@
 .askCardQuestion {
   font-size: 15px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
   line-height: 1.4;
 }
@@ -616,7 +616,7 @@
 .reifeGradTitle {
   font-size: 18px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 12px 0;
 }
 
@@ -647,7 +647,7 @@
 .reifeGradBubble {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -660,7 +660,7 @@
 .reifeGradLabel {
   font-size: 13px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
 }
 
@@ -787,7 +787,7 @@
 .trustNote {
   background: rgba(0, 51, 102, 0.04);
   border: 1px solid #e0e0e0;
-  border-left: 4px solid #003366;
+  border-left: 4px solid #0066CC;
   border-radius: 8px;
   padding: 24px;
   margin-top: 32px;
@@ -849,7 +849,7 @@
 .pricingCardTitle {
   font-size: 18px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
   line-height: 1.3;
 }
@@ -871,7 +871,7 @@
 
 .pricingCardGoal {
   font-size: 14px;
-  color: #003366;
+  color: #0066CC;
   line-height: 1.7;
   margin: 0;
 }
@@ -889,7 +889,7 @@
 
 .pricingButton {
   display: inline-block;
-  background: #003366;
+  background: #0066CC;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -901,7 +901,7 @@
 }
 
 .pricingButton:hover {
-  background: #1a4d7a;
+  background: #3399FF;
   box-shadow: 0 4px 12px rgba(0, 51, 102, 0.2);
 }
 
@@ -950,7 +950,7 @@
 
 /* ── CTA BANNER ── */
 .ctaBanner {
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   padding: 100px 48px;
   text-align: center;
   color: white;

@@ -1,6 +1,6 @@
 /* ── HERO ── */
 .hero {
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   padding: 60px 48px;
   color: white;
 }
@@ -99,7 +99,7 @@
 .choiceTitle {
   font-size: 20px;
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0;
   line-height: 1.3;
 }
@@ -122,13 +122,13 @@
 }
 
 .choiceCard:hover .choiceButton {
-  color: #003366;
+  color: #0066CC;
 }
 
 .choiceCard.active {
-  background: linear-gradient(135deg, #003366 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
   color: white;
-  border-color: #003366;
+  border-color: #0066CC;
   box-shadow: 0 8px 24px rgba(0, 51, 102, 0.2);
 }
 
@@ -182,7 +182,7 @@
   font-size: clamp(28px, 4vw, 36px);
   font-family: var(--font-sans);
   font-weight: 600;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 12px 0;
   line-height: 1.2;
 }
@@ -243,7 +243,7 @@
 }
 
 .link:hover {
-  color: #1a4d7a;
+  color: #3399FF;
   text-decoration: underline;
 }
 
@@ -263,7 +263,7 @@
   font-size: clamp(32px, 5vw, 44px);
   font-weight: 700;
   margin-bottom: 16px;
-  color: #003366;
+  color: #0066CC;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   line-height: 1.2;
 }
@@ -294,7 +294,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #FF9900 0%, #1a4d7a 50%, #FF9900 100%);
+    background: linear-gradient(180deg, #FF9900 0%, #3399FF 50%, #FF9900 100%);
     transform: translateX(-1px);
   }
 }
@@ -339,7 +339,7 @@
 .stepNumber {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, #FF9900 0%, #1a4d7a 100%);
+  background: linear-gradient(135deg, #FF9900 0%, #3399FF 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -379,7 +379,7 @@
 .stepContent h3 {
   font-size: 18px;
   font-weight: 700;
-  color: #003366;
+  color: #0066CC;
   margin: 0 0 8px 0;
   line-height: 1.3;
 }
