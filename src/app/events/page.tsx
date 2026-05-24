@@ -295,10 +295,10 @@ export default function EventsPage() {
                     <p className={styles.description}>{current.why}</p>
                   </div>
 
-                  {current.cta && (
+                  {(current as any).cta && (
                     <div className={styles.ctaContainer}>
                       <Link href="/kontakt" className={styles.ctaButton}>
-                        {current.cta}
+                        {(current as any).cta}
                       </Link>
                     </div>
                   )}
@@ -349,10 +349,10 @@ export default function EventsPage() {
                     <p className={styles.description}>{current.why}</p>
                   </div>
 
-                  {current.cta && (
+                  {(current as any).cta && (
                     <div className={styles.ctaContainer}>
                       <Link href="/kontakt" className={styles.ctaButton}>
-                        {current.cta}
+                        {(current as any).cta}
                       </Link>
                     </div>
                   )}
