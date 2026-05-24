@@ -199,6 +199,7 @@ export default function EventsPage() {
             {eventDetails.map((event, idx) => (
               <button
                 key={idx}
+                id={event.name.toLowerCase().replace(/\s+/g, '-').replace('&', '')}
                 className={`${styles.eventTab} ${activeEvent === idx ? styles.active : ''}`}
                 onClick={() => setActiveEvent(idx)}
               >
