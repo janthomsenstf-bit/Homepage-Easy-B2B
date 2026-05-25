@@ -1,8 +1,3 @@
-'use client'
-
-import Link from 'next/link'
-import styles from './EventCard.module.css'
-
 interface EventCardProps {
   icon: string
   name: string
@@ -12,30 +7,33 @@ interface EventCardProps {
 }
 
 export default function EventCard({ icon, name, beschreibung, status, href }: EventCardProps) {
-  const content = (
-    <>
-      <div className={styles.header}>
-        <div className={styles.icon}>{icon}</div>
-        <div className={styles.titleArea}>
-          <h3 className={styles.name}>{name}</h3>
-          <div className={`${styles.status} ${styles[status.toLowerCase().replace(/\s+/g, '-')]}`}>
-            {status}
-          </div>
-        </div>
+  const statusColor = status === 'Aktiv' ? '#10b981' : '#f59e0b'
+  
+  return (
+    <div style={{
+      background: 'white',
+      border: '1px solid #e0e0e0',
+      borderRadius: '12px',
+      padding: '24px',
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '12px' }}>
+        <div style={{ fontSize: '32px' }}>{icon}</div>
+        <span style={{
+          fontSize: '11px',
+          fontWeight: '600',
+          color: statusColor,
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em',
+        }}>
+          {status}
+        </span>
       </div>
-      <p className={styles.beschreibung}>{beschreibung}</p>
-    </>
+      <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a1a', margin: '0 0 8px 0' }}>
+        {name}
+      </h3>
+      <p style={{ fontSize: '14px', color: '#666666', margin: 0, lineHeight: '1.6' }}>
+        {beschreibung}
+      </p>
+    </div>
   )
-
-  if (href) {
-    return (
-      <Link href={href} className={styles.cardLink}>
-        <div className={styles.card}>
-          {content}
-        </div>
-      </Link>
-    )
-  }
-
-  return <div className={styles.card}>{content}</div>
 }
