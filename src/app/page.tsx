@@ -1,414 +1,135 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import AnzeigeCard from '@/components/AnzeigeCard'
-import UseCaseCard from '@/components/UseCaseCard'
-import ChecklistCard from '@/components/ChecklistCard'
-import EventCard from '@/components/EventCard'
-import FAQItem from '@/components/FAQItem'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
-import {
-  SITE,
-  QUICK_PROCESS_FLOW,
-  DEMO_ANFRAGEN,
-  PROZESS_HOMEPAGE,
-  PROZESS_HINWEIS,
-  BEISPIEL_ANFRAGE,
-  BEISPIEL_INTERESSENTEN,
-  WHAT_IS_POSSIBLE,
-  WHAT_WE_ASK,
-  WHAT_WE_ASK_INTRO,
-  REIFEGRAD_SKALA,
-  KULTUR_HINTS,
-  TRUST_VALUES,
-  QUICK_REQUEST_TEMPLATES,
-  EVENTS_FORMATS,
-  PRICING_INFO,
-  FAQ,
-} from '@/lib/content'
-import styles from './page.module.css'
 
 export const metadata = {
   title: 'EasyB2B – Deutsche und dänische Kooperationen',
-  description: 'Deutsch-dänische Kooperationen. Persönlich verbunden. Easy-B2B vermittelt Unternehmen für Vertrieb, Projekte, Produkte und neue Marktchancen.',
-}
-
-// Hilfsfunktion: Konvertiert **text** zu <strong>text</strong>
-function parseHighlight(text: string) {
-  const parts = text.split(/\*\*([^*]+)\*\*/g)
-  return parts.map((part, idx) =>
-    idx % 2 === 1 ? <strong key={idx}>{part}</strong> : part
-  )
+  description: 'Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark für Vertrieb, Projekte, Produkte und neue Marktchancen.',
 }
 
 export default function Home() {
-  const featuredAnzeigen = DEMO_ANFRAGEN.slice(0, 3)
-
   return (
     <>
       <Nav />
 
-      {/* ── 1. HERO ── */}
-      <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          <div className={styles.heroText}>
-            <h1>Deutsch-dänische Kooperationen.<br />Persönlich verbunden.</h1>
-            <p className={styles.heroSub}>
+      <main style={{ minHeight: '100vh' }}>
+        {/* Hero Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #0066cc 0%, #3399ff 100%)',
+          color: 'white',
+          padding: '80px 48px',
+          textAlign: 'center',
+        }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h1 style={{
+              fontSize: '48px',
+              fontFamily: "'Playfair Display', Georgia, serif",
+              marginBottom: '16px',
+              fontWeight: 400,
+            }}>
+              Deutsch-dänische Kooperationen. Persönlich verbunden.
+            </h1>
+            <p style={{
+              fontSize: '18px',
+              marginBottom: '32px',
+              opacity: 0.9,
+              lineHeight: 1.6,
+            }}>
               Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark für Vertrieb, Projekte, Produkte und neue Marktchancen.
             </p>
-            <div className={styles.heroBtns}>
-              <Link href="/anfrage-einreichen" className="btn-primary">
-                Anfrage stellen
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link href="/marktplatz" style={{
+                padding: '12px 32px',
+                background: 'white',
+                color: '#0066cc',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: 600,
+                fontSize: '16px',
+              }}>
+                Marktplatz durchsuchen
               </Link>
-              <Link href="/so-funktioniert-es" className="btn-outline">
-                So funktioniert's
+              <Link href="/anfrage-einreichen" style={{
+                padding: '12px 32px',
+                border: '2px solid white',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: 600,
+                fontSize: '16px',
+              }}>
+                Anfrage stellen
               </Link>
             </div>
           </div>
-          <div className={styles.heroImg}>
-            <Image
-              src="/Stickman/Titelbild.png"
-              alt="Deutsch-dänische Kooperationen"
-              width={500}
-              height={400}
-              priority
-              className={styles.heroImage}
-            />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── 1.5 QUICK PROCESS FLOW – Orientierungs-Balken ── */}
-      <section className={styles.quickFlow}>
-        <div className={styles.sectionContent}>
-          <div className={styles.flowContainer}>
-            {QUICK_PROCESS_FLOW.map((item, idx) => (
-              <div key={idx} className={styles.flowItem}>
-                <div className={styles.flowIcon}>{item.icon}</div>
-                <div className={styles.flowLabel}>{item.label}</div>
-                <p className={styles.flowDescription}>{item.description}</p>
-                {idx < QUICK_PROCESS_FLOW.length - 1 && (
-                  <div className={styles.flowArrow}>→</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* Features */}
+        <section style={{ padding: '80px 48px', background: '#f9f9f9' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: '36px',
+              fontFamily: "'Playfair Display', Georgia, serif",
+              marginBottom: '48px',
+              textAlign: 'center',
+              fontWeight: 400,
+            }}>
+              Was ist Easy-B2B?
+            </h2>
 
-      {/* ── 2. WAS PASSIERT HIER? – EDITORIAL STYLE ── */}
-      <section className={styles.whatHappensEditorialSection}>
-        <div className={styles.sectionContent}>
-          <div className={styles.whatHappensEditorialHeader}>
-            <h2>Was passiert hier?</h2>
-            <p className={styles.whatHappensEditorialIntro}>
-              Easy-B2B verbindet Unternehmen aus Deutschland und Dänemark. Hier sind vier konkrete Möglichkeiten, wie das funktioniert.
-            </p>
-          </div>
-
-          <div className={styles.whatHappensEditorialContent}>
-            {WHAT_IS_POSSIBLE.map((item, idx) => (
-              <div
-                key={idx}
-                className={`${styles.whatHappensEditorialBlock} ${
-                  idx % 2 === 0 ? styles.blockImageLeft : styles.blockImageRight
-                }`}
-              >
-                {/* IMAGE SIDE */}
-                <div className={styles.editorialImageSide}>
-                  <Image
-                    src={`/Stickman/Block${idx + 1}.png`}
-                    alt={item.title}
-                    width={380}
-                    height={380}
-                    className={styles.editorialImage}
-                    priority={idx === 0}
-                  />
-                </div>
-
-                {/* TEXT SIDE */}
-                <div className={styles.editorialTextSide}>
-                  <h3 className={styles.editorialBlockTitle}>{item.title}</h3>
-                  <p className={styles.editorialBlockExpl}>{item.erklärung}</p>
-
-                  <ul className={styles.editorialExamples}>
-                    {item.beispiele.map((beispiel, bidx) => (
-                      <li key={bidx} className={styles.editorialExample}>
-                        {parseHighlight(beispiel)}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3. WIE FUNKTIONIERT EASY-B2B? ── */}
-      <section className={styles.section}>
-        <div className={styles.sectionContent}>
-          <h2>Wie funktioniert Easy-B2B?</h2>
-          <p className={styles.sectionIntro}>
-            4 persönliche Schritte vom Gesuch zur echten Zusammenarbeit.
-          </p>
-
-          <div className={styles.processStepsContainer}>
-            {PROZESS_HOMEPAGE.map((step, idx) => (
-              <div key={step.nr}>
-                <div className={styles.processStepItem}>
-                  <div className={styles.stepNumber}>{step.nr}</div>
-                  <div className={styles.stepIcon}>{step.icon}</div>
-                  <h3 className={styles.stepTitle}>{step.title}</h3>
-                  <p className={styles.stepDesc}>{parseHighlight(step.desc)}</p>
-                </div>
-                {idx < PROZESS_HOMEPAGE.length - 1 && (
-                  <div className={styles.stepArrow}>→</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* ── 4. WAS WOLLEN WIR VON DIR WISSEN? ── */}
-      <section className={styles.section}>
-        <div className={styles.sectionContent}>
-          <h2>Was wollen wir von dir wissen?</h2>
-          <p className={styles.sectionIntro}>
-            {WHAT_WE_ASK_INTRO}
-          </p>
-
-          {/* Hauptpunkte (12 Fragen mit Icons) */}
-          <div className={styles.whatWeAskGrid}>
-            {WHAT_WE_ASK.map((item, idx) => (
-              <div key={idx} className={`${styles.whatWeAskCard} ${item.highlighted ? styles.whatWeAskCardHighlighted : ''}`}>
-                <div className={styles.askCardIcon}>{item.icon}</div>
-                <h3 className={styles.askCardQuestion}>{item.frage}</h3>
-                <p className={styles.askCardExplanation}>{item.erklärung}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Reifegrad-Skala */}
-          <div className={styles.reifeGradSection}>
-            <h3 className={styles.reifeGradTitle}>Wie weit ist deine Idee bereits?</h3>
-            <p className={styles.reifeGradIntro}>
-              Wir versuchen einzuschätzen, wie konkret und realistisch deine Anfrage ist.
-            </p>
-            <div className={styles.reifeGradScale}>
-              {REIFEGRAD_SKALA.map((stufe) => (
-                <div key={stufe.stufe} className={styles.reifeGradStep}>
-                  <div className={styles.reifeGradBubble}>{stufe.stufe}</div>
-                  <h4 className={styles.reifeGradLabel}>{stufe.label}</h4>
-                  <p className={styles.reifeGradDesc}>{stufe.beschreibung}</p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '32px',
+            }}>
+              {[
+                { icon: '🔍', title: 'Finde Partner', desc: 'Durchsuche verifizierte Anfragen aus Deutschland und Dänemark' },
+                { icon: '🤝', title: 'Echte Kontakte', desc: 'Wir vermitteln persönlich, nicht automatisiert' },
+                { icon: '📈', title: 'Wachstum', desc: 'Erschließe neue Märkte über die Grenze hinweg' },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  background: 'white',
+                  padding: '32px',
+                  borderRadius: '12px',
+                  border: '1px solid #e0e0e0',
+                  textAlign: 'center',
+                }}>
+                  <div style={{ fontSize: '48px', marginBottom: '16px' }}>{item.icon}</div>
+                  <h3 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '12px' }}>{item.title}</h3>
+                  <p style={{ color: '#666666', fontSize: '14px', lineHeight: 1.6 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
+        </section>
 
-        </div>
-      </section>
-
-      {/* ── 5. KULTUR & MENSCHEN ── (vorerst ausgeblendet, Inhalte sind in andere Bereiche eingeflossen) */}
-      {/* <section className={`${styles.section} ${styles.sectionAlt}`}>
-        <div className={styles.sectionContent}>
-          <h2>Kultur & Menschen</h2>
-          <p className={styles.sectionIntro}>
-            Gute Kooperationen entstehen zwischen Menschen – nicht nur zwischen Firmen.
+        {/* CTA */}
+        <section style={{ padding: '60px 48px', textAlign: 'center' }}>
+          <h2 style={{
+            fontSize: '32px',
+            fontFamily: "'Playfair Display', Georgia, serif",
+            marginBottom: '20px',
+            fontWeight: 400,
+          }}>
+            Bereit zu starten?
+          </h2>
+          <p style={{ fontSize: '16px', color: '#666666', marginBottom: '32px' }}>
+            Werde Teil des deutsch-dänischen Netzwerks
           </p>
-          <div className={styles.kulturGrid}>
-            {KULTUR_HINTS.map((hint, idx) => (
-              <div key={idx} className={styles.kulturCard}>
-                <h3 className={styles.kulturFrage}>{hint.frage}</h3>
-                <p className={styles.kulturHinweis}>{hint.hinweis}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* ── 6. AKTUELLE GESUCHE ── */}
-      <section className={styles.section}>
-        <div className={styles.sectionContent}>
-          <h2>Aktuelle Anfragen im Netzwerk</h2>
-          <p className={styles.sectionIntro}>
-            Einige aktuelle Anfragen aus unserem Netzwerk – hochwertig kuratiert, nicht automatisiert.
-          </p>
-          <div className={styles.anzeigeGrid}>
-            {featuredAnzeigen.map((anzeige) => (
-              <AnzeigeCard
-                key={anzeige.id}
-                id={anzeige.id}
-                richtung={anzeige.richtung}
-                branche={anzeige.branche}
-                beschreibung={anzeige.beschreibung}
-                reifegrad={anzeige.reifegrad}
-                gueltigBis={anzeige.gueltigBis}
-              />
-            ))}
-          </div>
-          <Link href="/marktplatz" className={styles.moreLink}>
-            Alle {DEMO_ANFRAGEN.length} Anfragen im Marktplatz ansehen →
+          <Link href="/marktplatz" style={{
+            display: 'inline-block',
+            padding: '14px 40px',
+            background: '#0066cc',
+            color: 'white',
+            textDecoration: 'none',
+            borderRadius: '8px',
+            fontWeight: 600,
+            fontSize: '16px',
+          }}>
+            Zum Marktplatz →
           </Link>
-        </div>
-      </section>
-
-      {/* ── 7. VERTRAUEN & WERTE ── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
-        <div className={styles.sectionContent}>
-          <h2>Vertrauen & Werte</h2>
-          <p className={styles.sectionIntro}>
-            Das ist uns wichtig bei Easy-B2B.
-          </p>
-          <div className={styles.trustGrid}>
-            {TRUST_VALUES.map((value, idx) => (
-              <div key={idx} className={styles.trustCard}>
-                <div className={styles.trustIcon}>{value.icon}</div>
-                <h3 className={styles.trustTitle}>{value.statement}</h3>
-                <p className={styles.trustDesc}>{value.erklärung}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.trustNote}>
-            <p>
-              <strong>Easy-B2B ist ein Service von Etablering Tyskland</strong> – einer Organisation die Unternehmen beim Einstieg in den deutsch-dänischen Markt hilft.
-              Die Idee: Erste Kontakte einfacher machen, Vertrauen aufbauen, echte Geschäfte ermöglichen.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 8. VORBEREITETE ANFRAGEN ── */}
-      <section className={styles.section}>
-        <div className={styles.sectionContent}>
-          <h2>Schneller Einstieg</h2>
-          <p className={styles.sectionIntro}>
-            Hier sind vorgefertigte Anfrage-Vorlagen. Klick eine an und los geht's.
-          </p>
-          <div className={styles.quickRequestsGrid}>
-            {QUICK_REQUEST_TEMPLATES.map((template, idx) => (
-              <Link
-                key={idx}
-                href={template.href}
-                className="btn-primary"
-                style={{ textDecoration: 'none' }}
-              >
-                {template.title} →
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9. VERANSTALTUNGEN & TREFFEN VOR ORT ── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
-        <div className={styles.sectionContent}>
-          <h2>Veranstaltungen & Treffen vor Ort</h2>
-          <p className={styles.sectionIntro}>
-            Easy-B2B existiert nicht nur online. Wir treffen uns persönlich.
-          </p>
-          <div className={styles.eventsGrid}>
-            {EVENTS_FORMATS.map((event, idx) => (
-              <EventCard
-                key={idx}
-                icon={event.icon}
-                name={event.name}
-                beschreibung={event.beschreibung}
-                status={event.status}
-                href={event.href}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 10. KOSTEN ── */}
-      <section className={styles.section}>
-        <div className={styles.sectionContent}>
-          <h2>Kosten</h2>
-          <p className={styles.sectionIntro}>
-            Warum ist Easy-B2B kostenfrei – und wann könnten trotzdem Kosten entstehen?
-          </p>
-
-          {/* Zwei-Block Layout */}
-          <div className={styles.pricingGrid}>
-
-            {/* LINKER BLOCK – Kostenfrei */}
-            <div className={styles.pricingCard}>
-              <div className={styles.pricingCardIcon}>{PRICING_INFO.free.icon}</div>
-              <h3 className={styles.pricingCardTitle}>{PRICING_INFO.free.title}</h3>
-
-              <p className={styles.pricingCardText}>
-                {PRICING_INFO.free.intro}
-              </p>
-
-              <p className={styles.pricingCardStory}>
-                {PRICING_INFO.free.story}
-              </p>
-
-              <p className={styles.pricingCardGoal}>
-                <strong>{PRICING_INFO.free.goal}</strong>
-              </p>
-
-              <p className={styles.pricingCardPartnership}>
-                {PRICING_INFO.free.partnership}
-              </p>
-
-              <Link href={PRICING_INFO.free.button.link} className={styles.pricingButton}>
-                {PRICING_INFO.free.button.text} →
-              </Link>
-            </div>
-
-            {/* RECHTER BLOCK – Kosten können entstehen */}
-            <div className={styles.pricingCard}>
-              <div className={styles.pricingCardIcon}>{PRICING_INFO.costs.icon}</div>
-              <h3 className={styles.pricingCardTitle}>{PRICING_INFO.costs.title}</h3>
-
-              <p className={styles.pricingCardText}>
-                {PRICING_INFO.costs.intro}
-              </p>
-
-              <ul className={styles.pricingList}>
-                {PRICING_INFO.costs.examples.map((example, idx) => (
-                  <li key={idx}>{example}</li>
-                ))}
-              </ul>
-
-              <p className={styles.pricingCardNote}>
-                {PRICING_INFO.costs.note}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── 11. FAQ ── */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
-        <div className={styles.sectionContent}>
-          <h2>Häufig gestellte Fragen</h2>
-          <div className={styles.faqList}>
-            {FAQ.map((item, idx) => (
-              <FAQItem
-                key={idx}
-                frage={item.frage}
-                antwort={item.antwort}
-                defaultOpen={idx === 0}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA BANNER ── */}
-      <section className={styles.ctaBanner}>
-        <h2>Bereit für neue Partnerschaften?</h2>
-        <p>Konkrete B2B-Anfragen treffen auf echte Unternehmen.</p>
-        <Link href="/anfrage-einreichen" className="btn-amber">
-          Jetzt Anfrage stellen →
-        </Link>
-      </section>
+        </section>
+      </main>
 
       <Footer />
     </>
