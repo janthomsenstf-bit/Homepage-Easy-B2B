@@ -5,10 +5,11 @@ import { useState } from 'react'
 interface FAQItemProps {
   frage: string
   antwort: string
+  defaultOpen?: boolean
 }
 
-export default function FAQItem({ frage, antwort }: FAQItemProps) {
-  const [isOpen, setIsOpen] = useState(false)
+export default function FAQItem({ frage, antwort, defaultOpen = false }: FAQItemProps) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
     <div style={{
