@@ -1,0 +1,191 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.error {
+  padding: 16px 20px;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  color: #c00;
+  font-size: 14px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.formGroup input,
+.formGroup textarea {
+  padding: 12px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333333;
+  transition: all 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.formGroup input:disabled,
+.formGroup textarea:disabled {
+  background: #f9f9f9;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.hint {
+  font-size: 12px;
+  color: #999999;
+  margin-top: 4px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.actions :global(.btn-primary) {
+  flex: 1;
+}
+
+.cancelLink {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.cancelLink:hover {
+  color: #004999;
+  text-decoration: underline;
+}
+
+.privacy {
+  font-size: 12px;
+  color: #999999;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.privacy a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.privacy a:hover {
+  text-decoration: underline;
+}
+
+/* Success Message */
+.successMessage {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.successMessage h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.successMessage > p {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.nextSteps {
+  font-weight: 600 !important;
+  margin-bottom: 12px !important;
+}
+
+.successMessage ul {
+  text-align: left;
+  display: inline-block;
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.successMessage li {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.8;
+}
+
+.contact {
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 24px !important;
+  font-style: italic;
+}
+
+.successMessage :global(.btn-primary) {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions :global(.btn-primary) {
+    width: 100%;
+  }
+
+  .successMessage {
+    padding: 32px 24px;
+  }
+
+  .successMessage h2 {
+    font-size: 20px;
+  }
+}

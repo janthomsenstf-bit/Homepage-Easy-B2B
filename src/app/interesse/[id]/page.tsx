@@ -1,76 +1,105 @@
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import Nav from '@/components/ui/Nav'
-import Footer from '@/components/ui/Footer'
-import { getAnfrageById } from '@/lib/content'
-import styles from './page.module.css'
+import { prisma } from "@/lib/prisma";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import Nav from "@/components/ui/Nav";
+import Footer from "@/components/ui/Footer";
+import InteresseForm from "@/components/InteresseForm";
+import styles from "./page.module.css";
 
-interface PageProps {
-  params: { id: string }
+interface InteressePageProps {
+  params: {
+    id: string;
+  };
 }
 
-export function generateMetadata({ params }: PageProps) {
-  return {
-    title: `Interesse an ${params.id} – EasyB2B`,
-  }
-}
-
-export default function InteressePage({ params }: PageProps) {
-  const anfrage = getAnfrageById(params.id)
+export default async function InteressePage({ params }: InteressePageProps) {
+  const anfrage = await prisma.anfrage.findFirst({
+    where: {
+      OR: [
+        { id: params.id },
+        { anzeigenId: params.id },
+      ],
+    },
+    include: { branche: true },
+  });
 
   if (!anfrage) {
-    notFound()
+    notFound();
   }
 
-  // Tally Form URL mit Referenz-ID
-  const tallyFormUrl = `https://tally.so/r/w5lPzG?referenz_id=${params.id}&titel=${encodeURIComponent(anfrage.art)}`
+  if (
+    anfrage.status !== "aktiv" ||
+    (anfrage.sichtbarkeit !== "oeffentlich" && anfrage.sichtbarkeit !== "anonym")
+  ) {
+    notFound();
+  }
+
+  const getRichtungDisplay = (dbRichtung: string): string => {
+    if (dbRichtung === "de_dk") return "🇩🇪 → 🇩🇰 Deutschland → Dänemark";
+    if (dbRichtung === "dk_de") return "🇩🇰 → 🇩🇪 Dänemark → Deutschland";
+    return dbRichtung;
+  };
 
   return (
     <>
       <Nav />
 
-      <section className={styles.page}>
-        <div className={styles.content}>
-          {/* Back Link */}
-          <Link href="/marktplatz" className={styles.backLink}>
-            ← Zurück zum Marktplatz
-          </Link>
+      <div className={styles.container}>
+        <div className={styles.back}>
+          <Link href={`/anzeige/${anfrage.anzeigenId}`}>← Zurück zur Anfrage</Link>
+        </div>
 
-          <div className={styles.header}>
-            <div className={styles.icon}>🤝</div>
-            <h1>Dein Interesse bekunden</h1>
-            <p>Anfrage: {anfrage.id}</p>
-          </div>
-
-          <div className={styles.info}>
-            <div className={styles.infoCard}>
-              <span className={styles.label}>Art:</span>
-              <span className={styles.value}>{anfrage.art}</span>
+        <div className={styles.grid}>
+          {/* Info Sidebar */}
+          <aside className={styles.sidebar}>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Anfrage</h3>
+              {anfrage.sichtbarkeit === "oeffentlich" && (
+                <p className={styles.firmaName}>{anfrage.firmenname}</p>
+              )}
+              {anfrage.sichtbarkeit === "anonym" && (
+                <p className={styles.firmaName}>Anonym</p>
+              )}
+              <p className={styles.branche}>{anfrage.branche.name}</p>
+              <p className={styles.richtung}>
+                {getRichtungDisplay(anfrage.richtung)}
+              </p>
             </div>
-            <div className={styles.infoCard}>
-              <span className={styles.label}>Branche:</span>
-              <span className={styles.value}>{anfrage.branche}</span>
-            </div>
-            <div className={styles.infoCard}>
-              <span className={styles.label}>Richtung:</span>
-              <span className={styles.value}>{anfrage.richtung}</span>
-            </div>
-          </div>
 
-          <p className={styles.description}>{anfrage.beschreibung}</p>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Wie funktioniert es?</h3>
+              <ol className={styles.stepList}>
+                <li>Du füllst dieses Formular aus</li>
+                <li>Wir prüfen dein Unternehmen</li>
+                <li>Wir stellen euch vor</li>
+                <li>Ihr einigt euch selbst</li>
+              </ol>
+            </div>
 
-          <div className={styles.cta}>
-            <h2>Passt zu dir?</h2>
-            <p>Erzähl uns kurz warum ihr zusammenpasst. Dann kümmern wir uns um den Rest.</p>
-            <a href={tallyFormUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Zum Interesse-Formular →
-            </a>
-            <p className={styles.note}>Öffnet in neuem Tab. Dauert ca. 5 Minuten.</p>
+            <div className={styles.card} style={{ background: "#f0f7ff" }}>
+              <h3 className={styles.cardTitle}>💡 Tipp</h3>
+              <p className={styles.cardText}>
+                Je ausführlicher deine Antworten, desto besser können wir einschätzen,
+                ob ihr zusammenpasst.
+              </p>
+            </div>
+          </aside>
+
+          {/* Form */}
+          <div className={styles.formSection}>
+            <div className={styles.formHeader}>
+              <h1>Interesse bekunden</h1>
+              <p>
+                Erzähl uns, warum dein Unternehmen gut zu dieser Anfrage passt.
+              </p>
+            </div>
+
+            <InteresseForm anfrageId={anfrage.id} anzeigenId={anfrage.anzeigenId} />
           </div>
         </div>
-      </section>
+      </div>
 
       <Footer />
     </>
-  )
+  );
 }
