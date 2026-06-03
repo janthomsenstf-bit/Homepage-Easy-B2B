@@ -1,32 +1,25 @@
 import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
+import { mailNeueAnfrage, mailAnfrageBestaetigung } from "@/lib/email";
 
-// Generiere eindeutige Anzeigen-ID
 function generateAnzeigenId(): string {
   const year = new Date().getFullYear();
-  const random = Math.floor(Math.random() * 1000)
-    .toString()
-    .padStart(3, "0");
-  return `ANZ-${year}-${random}`;
+  const random = Math.floor(Math.random() * 9000 + 1000).toString();
+  return `EB-${year}-${random}`;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Prüfe ob Branche existiert
     const branche = await prisma.branche.findUnique({
       where: { id: body.brancheId },
     });
 
     if (!branche) {
-      return NextResponse.json(
-        { error: "Branche nicht gefunden" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Branche nicht gefunden" }, { status: 400 });
     }
 
-    // Erstelle Anfrage
     const anfrage = await prisma.anfrage.create({
       data: {
         anzeigenId: generateAnzeigenId(),
@@ -37,12 +30,12 @@ export async function POST(request: NextRequest) {
         standort: body.standort,
         beschreibung: body.beschreibung,
         ziel: body.ziel,
-        persönlicherTouch: body.persönlicherTouch,
-        mustHaves: body.mustHaves,
-        niceToHaves: body.niceToHaves,
-        reifegrad: body.reifegrad,
-        gueltigBis: new Date(body.gueltigBis),
-        sichtbarkeit: body.sichtbarkeit,
+        persönlicherTouch: body.persönlicherTouch || "",
+        mustHaves: body.mustHaves || null,
+        niceToHaves: body.niceToHaves || null,
+        reifegrad: body.reifegrad || "bereit",
+        gueltigBis: body.gueltigBis ? new Date(body.gueltigBis) : new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+        sichtbarkeit: body.sichtbarkeit || "eingehend",
         ansprechpartner: body.ansprechpartner,
         email: body.email,
         telefon: body.telefon || null,
@@ -50,13 +43,31 @@ export async function POST(request: NextRequest) {
       include: { branche: true },
     });
 
+    // E-Mails asynchron senden
+    Promise.all([
+      mailNeueAnfrage({
+        anzeigenId: anfrage.anzeigenId,
+        firmenname: anfrage.firmenname,
+        richtung: anfrage.richtung,
+        branche: branche.name,
+        ziel: anfrage.ziel,
+        ansprechpartner: anfrage.ansprechpartner,
+        email: anfrage.email,
+        telefon: anfrage.telefon,
+      }),
+      mailAnfrageBestaetigung({
+        anzeigenId: anfrage.anzeigenId,
+        firmenname: anfrage.firmenname,
+        ziel: anfrage.ziel,
+        ansprechpartner: anfrage.ansprechpartner,
+        email: anfrage.email,
+      }),
+    ]).catch(err => console.error("[Email] Fehler:", err));
+
     return NextResponse.json(anfrage, { status: 201 });
   } catch (error) {
     console.error("API Error:", error);
-    return NextResponse.json(
-      { error: "Fehler beim Erstellen der Anfrage" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Fehler beim Erstellen der Anfrage" }, { status: 500 });
   }
 }
 
@@ -66,13 +77,9 @@ export async function GET() {
       include: { branche: true },
       orderBy: { createdAt: "desc" },
     });
-
     return NextResponse.json(anfragen);
   } catch (error) {
     console.error("API Error:", error);
-    return NextResponse.json(
-      { error: "Fehler beim Abrufen der Anfragen" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Fehler beim Abrufen der Anfragen" }, { status: 500 });
   }
 }
