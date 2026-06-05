@@ -11,9 +11,18 @@ interface AnzeigeDetailProps {
   };
 }
 
-export default async function AnzeigeDetailPage({
-  params,
-}: AnzeigeDetailProps) {
+interface Vorbereitung {
+  produktunterlagen?: boolean;
+  preislisten?: boolean;
+  zertifikate?: boolean;
+  produktproben?: boolean;
+  marketingmaterial?: boolean;
+  referenzen?: boolean;
+  webseiteDeutsch?: boolean;
+  notiz?: string;
+}
+
+export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) {
   const anfrage = await prisma.anfrage.findFirst({
     where: {
       OR: [
@@ -30,9 +39,7 @@ export default async function AnzeigeDetailPage({
     },
   });
 
-  if (!anfrage) {
-    notFound();
-  }
+  if (!anfrage) notFound();
 
   if (
     anfrage.status !== "aktiv" ||
@@ -55,16 +62,50 @@ export default async function AnzeigeDetailPage({
   };
 
   const gueltigBis = new Intl.DateTimeFormat("de-DE", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
+    year: "numeric", month: "2-digit", day: "2-digit",
   }).format(new Date(anfrage.gueltigBis));
 
   const createdAt = new Intl.DateTimeFormat("de-DE", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    year: "numeric", month: "long", day: "numeric",
   }).format(new Date(anfrage.createdAt));
+
+  const formatMonth = (d?: Date | null): string => {
+    if (!d) return "";
+    return new Intl.DateTimeFormat("de-DE", { month: "long", year: "numeric" }).format(new Date(d));
+  };
+
+  const formatDay = (d?: Date | null): string => {
+    if (!d) return "";
+    return new Intl.DateTimeFormat("de-DE", { day: "2-digit", month: "long", year: "numeric" }).format(new Date(d));
+  };
+
+  // ── Klärungs-Checkliste (abgeleitet aus DB-Feldern) ──
+  const klaerung: { titel: string; erfuellt: boolean }[] = [
+    { titel: "Ansprechpartner vorhanden",          erfuellt: !!anfrage.ansprechpartner },
+    { titel: "Suchziel definiert",                 erfuellt: !!anfrage.ziel },
+    { titel: "Zielregion definiert",               erfuellt: !!anfrage.standort },
+    { titel: "Kommunikationssprachen geklärt",     erfuellt: (anfrage.sprachen?.length || 0) > 0 },
+    { titel: "Zeitfenster abgestimmt",             erfuellt: !!anfrage.projektEndDatum || !!anfrage.gueltigBis },
+    { titel: "Motivation beschrieben",             erfuellt: !!anfrage.motivation },
+    { titel: "Erwartungen an Partner beschrieben", erfuellt: (anfrage.partnerErwartungen?.length || 0) > 0 || !!anfrage.mustHaves },
+    { titel: "Erstgespräch grundsätzlich erwünscht", erfuellt: !!anfrage.erstgespraechFristDatum },
+    { titel: "Vorbereitung dokumentiert",          erfuellt: !!anfrage.vorbereitung },
+  ];
+  const klaerungErfuellt = klaerung.filter(k => k.erfuellt).length;
+
+  const vorbereitung = anfrage.vorbereitung as Vorbereitung | null;
+  const vorbereitungsLabel: Record<keyof Vorbereitung, string> = {
+    produktunterlagen: "Produktunterlagen",
+    preislisten: "Preislisten",
+    zertifikate: "Zertifikate",
+    produktproben: "Produktproben",
+    marketingmaterial: "Marketingmaterial",
+    referenzen: "Referenzen",
+    webseiteDeutsch: "Deutsche Website",
+    notiz: "",
+  };
+
+  const titel = anfrage.sichtbarkeit === "anonym" ? "Anonyme Anfrage" : anfrage.firmenname;
 
   return (
     <>
@@ -77,32 +118,23 @@ export default async function AnzeigeDetailPage({
 
         <div className={styles.grid}>
           <div className={styles.main}>
+            {/* Header */}
             <div className={styles.header}>
               <div>
                 <div className={styles.badge}>
-                  <span
-                    className={styles.statusDot}
-                    style={{
-                      background:
-                        reifegrad_colors[anfrage.reifegrad] || "#ccc",
-                    }}
-                  />
+                  <span className={styles.statusDot} style={{ background: reifegrad_colors[anfrage.reifegrad] || "#ccc" }} />
                   <span>{anfrage.reifegrad}</span>
                 </div>
-
-                {anfrage.sichtbarkeit === "oeffentlich" && (
-                  <h1 className={styles.title}>{anfrage.firmenname}</h1>
-                )}
-
-                {anfrage.sichtbarkeit === "anonym" && (
-                  <h1 className={styles.title}>Anonyme Anfrage</h1>
-                )}
-
+                <h1 className={styles.title}>{titel}</h1>
                 <p className={styles.subtitle}>
                   {getRichtungDisplay(anfrage.richtung)} • {anfrage.branche.name}
                 </p>
+                {anfrage.ziel && (
+                  <p style={{ marginTop: "12px", fontSize: "18px", color: "#0a3d2e", fontWeight: 500, lineHeight: 1.4 }}>
+                    {anfrage.ziel}
+                  </p>
+                )}
               </div>
-
               <div className={styles.meta}>
                 <div className={styles.metaItem}>
                   <span className={styles.metaLabel}>Art</span>
@@ -119,32 +151,140 @@ export default async function AnzeigeDetailPage({
               </div>
             </div>
 
+            {/* 1. Was wird gesucht? */}
             <section className={styles.section}>
               <h2>Was wird gesucht?</h2>
               <p className={styles.content}>{anfrage.beschreibung}</p>
             </section>
 
-            {anfrage.ziel && (
+            {/* 2. Von Easy-B2B vorbereitet */}
+            <section className={styles.section} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "24px 28px" }}>
+              <h2 style={{ color: "#0a3d2e", marginBottom: "8px" }}>✓ Von Easy-B2B vorbereitet</h2>
+              <p style={{ fontSize: "14px", color: "#15803d", marginBottom: "16px", fontWeight: 500 }}>
+                {klaerungErfuellt} von {klaerung.length} Punkten bereits geklärt — das spart Ihnen Zeit beim Erstkontakt.
+              </p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "10px" }}>
+                {klaerung.map((p, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", color: p.erfuellt ? "#15803d" : "#999" }}>
+                    <span style={{ width: "18px", height: "18px", borderRadius: "50%", backgroundColor: p.erfuellt ? "#16a34a" : "transparent", border: p.erfuellt ? "none" : "2px solid #ccc", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "11px", fontWeight: 700, flexShrink: 0 }}>{p.erfuellt ? "✓" : ""}</span>
+                    <span>{p.titel}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 3. Warum dieses Projekt gestartet wurde */}
+            {anfrage.motivation && (
               <section className={styles.section}>
-                <h2>Ziel & Vision</h2>
-                <p className={styles.content}>{anfrage.ziel}</p>
+                <h2>Warum dieses Projekt gestartet wurde</h2>
+                <p className={styles.content}>{anfrage.motivation}</p>
               </section>
             )}
 
+            {/* 4. Was ein gutes Ergebnis wäre */}
+            {anfrage.ziele && anfrage.ziele.length > 0 && (
+              <section className={styles.section}>
+                <h2>Was ein gutes Ergebnis wäre</h2>
+                <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                  {anfrage.ziele.map((z: string, i: number) => (
+                    <li key={i} style={{ display: "flex", gap: "12px", padding: "8px 0", fontSize: "15px", color: "#333", lineHeight: 1.6 }}>
+                      <span style={{ color: "#e8a020", fontWeight: 700, flexShrink: 0, fontSize: "18px" }}>→</span>
+                      <span>{z}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* 5. Aktuelles Zeitfenster */}
+            {(anfrage.projektStartDatum || anfrage.projektEndDatum || anfrage.erstgespraechFristDatum) && (
+              <section className={styles.section}>
+                <h2>Aktuelles Zeitfenster</h2>
+                {(anfrage.projektStartDatum || anfrage.projektEndDatum) && (
+                  <p className={styles.content} style={{ marginBottom: "8px" }}>
+                    📅 <strong>Aktive Suche:</strong> {formatMonth(anfrage.projektStartDatum)}
+                    {anfrage.projektEndDatum && ` – ${formatMonth(anfrage.projektEndDatum)}`}
+                  </p>
+                )}
+                {anfrage.erstgespraechFristDatum && (
+                  <p className={styles.content}>
+                    💬 <strong>Erste Gespräche gewünscht bis:</strong> {formatDay(anfrage.erstgespraechFristDatum)}
+                  </p>
+                )}
+              </section>
+            )}
+
+            {/* 6. Was wir uns von einem Partner wünschen */}
+            {anfrage.partnerErwartungen && anfrage.partnerErwartungen.length > 0 && (
+              <section className={styles.section}>
+                <h2>Was wir uns von einem Partner wünschen</h2>
+                <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                  {anfrage.partnerErwartungen.map((e: string, i: number) => (
+                    <li key={i} style={{ display: "flex", gap: "12px", padding: "8px 0", fontSize: "15px", color: "#333", lineHeight: 1.6 }}>
+                      <span style={{ color: "#0a3d2e", fontWeight: 700, flexShrink: 0 }}>●</span>
+                      <span>{e}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* 7. Was bereits vorhanden ist */}
+            {vorbereitung && (
+              <section className={styles.section}>
+                <h2>Was bereits vorhanden ist</h2>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "10px", marginBottom: vorbereitung.notiz ? "16px" : 0 }}>
+                  {(Object.keys(vorbereitungsLabel) as (keyof Vorbereitung)[])
+                    .filter(k => k !== "notiz")
+                    .map(k => {
+                      const erfuellt = !!vorbereitung[k];
+                      return (
+                        <div key={k} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", color: erfuellt ? "#0a3d2e" : "#999" }}>
+                          <span style={{ width: "16px", fontSize: "16px", flexShrink: 0 }}>{erfuellt ? "✓" : "○"}</span>
+                          <span>{vorbereitungsLabel[k]}</span>
+                        </div>
+                      );
+                    })}
+                </div>
+                {vorbereitung.notiz && (
+                  <div style={{ padding: "12px 16px", backgroundColor: "#fef3c7", borderRadius: "8px", fontSize: "14px", color: "#78350f", fontStyle: "italic" }}>
+                    💡 {vorbereitung.notiz}
+                  </div>
+                )}
+              </section>
+            )}
+
+            {/* 8. Für wen besonders interessant */}
+            {anfrage.zielgruppe && anfrage.zielgruppe.length > 0 && (
+              <section className={styles.section}>
+                <h2>Für wen dieses Projekt besonders interessant ist</h2>
+                <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+                  {anfrage.zielgruppe.map((z: string, i: number) => (
+                    <span key={i} style={{ padding: "8px 16px", backgroundColor: "#e3f2fd", color: "#0d47a1", borderRadius: "24px", fontSize: "14px", fontWeight: 600 }}>
+                      🏷 {z}
+                    </span>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* 9. Persönlicher Touch */}
             {anfrage.persönlicherTouch && (
               <section className={styles.section}>
                 <h2>Persönlicher Touch</h2>
-                <p className={styles.content}>{anfrage.persönlicherTouch}</p>
+                <div style={{ padding: "16px 20px", backgroundColor: "#fafafa", borderLeft: "4px solid #e8a020", fontSize: "15px", fontStyle: "italic", color: "#444", lineHeight: 1.7 }}>
+                  „{anfrage.persönlicherTouch}"
+                </div>
               </section>
             )}
 
+            {/* 10. Must-Haves / Nice-to-Haves (Legacy — wenn vorhanden) */}
             {anfrage.mustHaves && (
               <section className={styles.section}>
                 <h2>Must-Haves</h2>
                 <p className={styles.content}>{anfrage.mustHaves}</p>
               </section>
             )}
-
             {anfrage.niceToHaves && (
               <section className={styles.section}>
                 <h2>Nice-to-Haves</h2>
@@ -152,11 +292,33 @@ export default async function AnzeigeDetailPage({
               </section>
             )}
 
+            {/* 11. Bevor Sie Ihr Interesse bekunden */}
+            <section className={styles.section} style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "12px", padding: "24px 28px" }}>
+              <h2 style={{ color: "#1e3a8a", marginBottom: "12px" }}>Bevor Sie Ihr Interesse bekunden</h2>
+              <p style={{ fontSize: "14px", color: "#1e40af", marginBottom: "14px", fontWeight: 500 }}>
+                Folgende Informationen werden im Anschluss abgefragt — wir empfehlen, diese vor dem Klick kurz zu überlegen:
+              </p>
+              <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                {[
+                  "Warum passt Ihr Unternehmen zu diesem Projekt?",
+                  "Welche Erfahrung bringen Sie mit?",
+                  "Welche Regionen decken Sie ab?",
+                  "Welche Kontakte oder Netzwerke sind vorhanden?",
+                ].map((f, i) => (
+                  <li key={i} style={{ display: "flex", gap: "12px", padding: "6px 0", fontSize: "14px", color: "#1e3a8a" }}>
+                    <span style={{ flexShrink: 0 }}>→</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* CTA */}
             <div className={styles.ctaBlock}>
-              <h3>Passt dein Unternehmen?</h3>
+              <h3>Passt das zu Ihrem Unternehmen?</h3>
               <p>
-                Wenn du denkst, dass du ein guter Match bist, teile dein
-                Interesse – und wir schauen gemeinsam, ob es funktioniert.
+                Wenn Sie denken, dass Sie ein guter Match sind, teilen Sie Ihr
+                Interesse — und wir schauen gemeinsam, ob es funktioniert.
               </p>
               <Link href={`/interesse/${anfrage.anzeigenId}`} className="btn-primary">
                 Interesse bekunden →
@@ -164,6 +326,7 @@ export default async function AnzeigeDetailPage({
             </div>
           </div>
 
+          {/* Sidebar */}
           <aside className={styles.sidebar}>
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>Anfrage-Info</h3>
@@ -187,10 +350,10 @@ export default async function AnzeigeDetailPage({
               </div>
             </div>
 
-            <div className={styles.card}>
-              <h3 className={styles.cardTitle}>Interesse bekunden</h3>
-              <p className={styles.cardText}>
-                Erzähl uns kurz, warum ihr ein gutes Match seid – und wir
+            <div className={styles.card} style={{ background: "#0a3d2e", color: "white" }}>
+              <h3 className={styles.cardTitle} style={{ color: "white" }}>Interesse bekunden</h3>
+              <p className={styles.cardText} style={{ color: "rgba(255,255,255,0.85)" }}>
+                Erzählen Sie uns kurz, warum Sie ein gutes Match sind — wir
                 kümmern uns um den Kontakt.
               </p>
               <Link href={`/interesse/${anfrage.anzeigenId}`} className="btn-primary">
@@ -202,9 +365,8 @@ export default async function AnzeigeDetailPage({
               <div className={styles.card} style={{ background: "#f0f7ff" }}>
                 <h3 className={styles.cardTitle}>🔒 Anonyme Anfrage</h3>
                 <p className={styles.cardText}>
-                  Diese Anfrage wurde anonym eingereicht. Du kannst Interesse
-                  bekunden, ohne den Namen der Firma zu kennen. Das schützt
-                  Vertraulichkeit auf beiden Seiten.
+                  Diese Anfrage wurde anonym eingereicht. Sie können Interesse
+                  bekunden, ohne den Namen der Firma zu kennen.
                 </p>
               </div>
             )}
@@ -212,7 +374,7 @@ export default async function AnzeigeDetailPage({
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>Weitere Anfragen</h3>
               <p className={styles.cardText}>
-                Entdecke weitere interessante Anfragen im Marktplatz.
+                Entdecken Sie weitere interessante Anfragen im Marktplatz.
               </p>
               <Link href="/marktplatz" className="btn-outline">
                 Marktplatz →

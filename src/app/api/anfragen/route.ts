@@ -39,6 +39,15 @@ export async function POST(request: NextRequest) {
         ansprechpartner: body.ansprechpartner,
         email: body.email,
         telefon: body.telefon || null,
+        // Marktplatz-Reichinhalt (optional bei der Einreichung)
+        motivation: body.motivation || null,
+        ziele: Array.isArray(body.ziele) ? body.ziele : [],
+        partnerErwartungen: Array.isArray(body.partnerErwartungen) ? body.partnerErwartungen : [],
+        zielgruppe: Array.isArray(body.zielgruppe) ? body.zielgruppe : [],
+        vorbereitung: body.vorbereitung || null,
+        projektStartDatum: body.projektStartDatum ? new Date(body.projektStartDatum) : null,
+        projektEndDatum: body.projektEndDatum ? new Date(body.projektEndDatum) : null,
+        erstgespraechFristDatum: body.erstgespraechFristDatum ? new Date(body.erstgespraechFristDatum) : null,
       },
       include: { branche: true },
     });

@@ -71,6 +71,15 @@ model Anfrage {
   interessenten   Interessent[]
   reviewOk        Boolean       @default(false)
   reviewNotiz     String?
+  // ── Marktplatz-Reichinhalt (öffentlich auf der Anzeige sichtbar) ──
+  motivation              String?
+  ziele                   String[]
+  partnerErwartungen      String[]
+  zielgruppe              String[]
+  vorbereitung            Json?
+  projektStartDatum       DateTime?
+  projektEndDatum         DateTime?
+  erstgespraechFristDatum DateTime?
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
 }
