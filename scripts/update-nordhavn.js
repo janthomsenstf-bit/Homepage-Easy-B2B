@@ -25,6 +25,8 @@ const NORDHAVN_DATA = {
   mustHaves: 'Bestehende Einzelhandels-Kontakte, eigene Kühlkette, mindestens 5 Jahre Branchenerfahrung.',
   niceToHaves: 'Erfahrung mit skandinavischen Marken, persönlicher Bezug zum Food-Bereich.',
   reifegrad: 'bereit',
+  reifegradScore: 8,
+  reifegradBeschreibung: 'Gut vorbereitet — Produktunterlagen, Zertifikate und Marketingmaterial liegen vor. Deutsche Preislisten und Website werden derzeit erstellt. Partner für den Markteintritt können sofort mit konkreten Unterlagen versorgt werden.',
   gueltigBis: new Date('2027-03-31'),
   sichtbarkeit: 'oeffentlich',
   status: 'aktiv',
@@ -97,6 +99,7 @@ async function run() {
           "motivation" = $19, "ziele" = $20, "partnerErwartungen" = $21,
           "zielgruppe" = $22, "vorbereitung" = $23,
           "projektStartDatum" = $24, "projektEndDatum" = $25, "erstgespraechFristDatum" = $26,
+          "reifegradScore" = $28, "reifegradBeschreibung" = $29,
           "updatedAt" = NOW()
         WHERE id = $27
       `, [
@@ -110,6 +113,7 @@ async function run() {
         NORDHAVN_DATA.zielgruppe, NORDHAVN_DATA.vorbereitung,
         NORDHAVN_DATA.projektStartDatum, NORDHAVN_DATA.projektEndDatum, NORDHAVN_DATA.erstgespraechFristDatum,
         id,
+        NORDHAVN_DATA.reifegradScore, NORDHAVN_DATA.reifegradBeschreibung,
       ]);
       console.log('✓ aktualisiert');
     } else {
@@ -122,7 +126,8 @@ async function run() {
           "ansprechpartner", "email", "telefon",
           "beschreibung", "ziel", "persönlicherTouch",
           "mustHaves", "niceToHaves",
-          "reifegrad", "gueltigBis", "sichtbarkeit", "status",
+          "reifegrad", "reifegradScore", "reifegradBeschreibung",
+          "gueltigBis", "sichtbarkeit", "status",
           "motivation", "ziele", "partnerErwartungen", "zielgruppe", "vorbereitung",
           "projektStartDatum", "projektEndDatum", "erstgespraechFristDatum",
           "kiStrukturiert", "reviewOk", "createdAt", "updatedAt"
@@ -132,7 +137,8 @@ async function run() {
           $8, $9, $10,
           $11, $12, $13,
           $14, $15,
-          $16::"Reifegrad", $17, $18::"Sichtbarkeit", $19::"AnfrageStatus",
+          $16::"Reifegrad", $28, $29,
+          $17, $18::"Sichtbarkeit", $19::"AnfrageStatus",
           $20, $21, $22, $23, $24,
           $25, $26, $27,
           false, true, NOW(), NOW()
@@ -147,12 +153,13 @@ async function run() {
         NORDHAVN_DATA.motivation, NORDHAVN_DATA.ziele, NORDHAVN_DATA.partnerErwartungen,
         NORDHAVN_DATA.zielgruppe, JSON.stringify(NORDHAVN_DATA.vorbereitung),
         NORDHAVN_DATA.projektStartDatum, NORDHAVN_DATA.projektEndDatum, NORDHAVN_DATA.erstgespraechFristDatum,
+        NORDHAVN_DATA.reifegradScore, NORDHAVN_DATA.reifegradBeschreibung,
       ]);
       console.log('✓ angelegt');
     }
 
     // Anzeigen
-    const { rows: pruef } = await client.query(`SELECT id, "anzeigenId", "firmenname", "motivation" IS NOT NULL AS hat_motivation, array_length(ziele, 1) AS anzahl_ziele FROM "Anfrage" WHERE "anzeigenId" = $1`, [NORDHAVN_DATA.anzeigenId]);
+    const { rows: pruef } = await client.query(`SELECT id, "anzeigenId", "firmenname", "motivation" IS NOT NULL AS hat_motivation, array_length(ziele, 1) AS anzahl_ziele, "reifegradScore", "reifegradBeschreibung" IS NOT NULL AS hat_reifegrad_beschreibung FROM "Anfrage" WHERE "anzeigenId" = $1`, [NORDHAVN_DATA.anzeigenId]);
     console.log('Prüfung:', pruef[0]);
   } finally {
     client.release();

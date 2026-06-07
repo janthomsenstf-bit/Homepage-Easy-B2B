@@ -58,6 +58,8 @@ model Anfrage {
   mustHaves       String?
   niceToHaves     String?
   reifegrad       Reifegrad
+  reifegradScore  Int?                // Numerischer Reifegrad 1-10 (neu)
+  reifegradBeschreibung String?       // Öffentliche Erklärung zum Reifegrad
   gueltigBis      DateTime
   sichtbarkeit    Sichtbarkeit
   status          AnfrageStatus @default(eingehend)

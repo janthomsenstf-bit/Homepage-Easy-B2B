@@ -61,6 +61,46 @@ export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) 
     Sofort: "#10b981",
   };
 
+  // ── Reifegrad / Konkretisierungsgrad (1-10 Skala) ──
+  const reifegradScore: number = anfrage.reifegradScore || (() => {
+    // Fallback: alten Enum auf Zahlenwert mappen
+    const map: Record<string, number> = { idee: 2, konzept: 5, bereit: 7, sofort: 10 };
+    return map[anfrage.reifegrad] || 5;
+  })();
+
+  const getReifegradLabel = (score: number): string => {
+    if (score <= 3) return "Erste Idee";
+    if (score <= 6) return "Konkrete Richtung";
+    if (score <= 8) return "Gut vorbereitet";
+    return "Startklar";
+  };
+
+  const getReifegradColor = (score: number): string => {
+    if (score <= 3) return "#94a3b8";
+    if (score <= 6) return "#f59e0b";
+    if (score <= 8) return "#3b82f6";
+    return "#10b981";
+  };
+
+  const getReifegradBg = (score: number): string => {
+    if (score <= 3) return "#f1f5f9";
+    if (score <= 6) return "#fffbeb";
+    if (score <= 8) return "#eff6ff";
+    return "#ecfdf5";
+  };
+
+  const getReifegradBorder = (score: number): string => {
+    if (score <= 3) return "#cbd5e1";
+    if (score <= 6) return "#fde68a";
+    if (score <= 8) return "#bfdbfe";
+    return "#a7f3d0";
+  };
+
+  const reifegradLabel = getReifegradLabel(reifegradScore);
+  const reifegradColor = getReifegradColor(reifegradScore);
+  const reifegradBg = getReifegradBg(reifegradScore);
+  const reifegradBorder = getReifegradBorder(reifegradScore);
+
   const gueltigBis = new Intl.DateTimeFormat("de-DE", {
     year: "numeric", month: "2-digit", day: "2-digit",
   }).format(new Date(anfrage.gueltigBis));
@@ -122,8 +162,8 @@ export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) 
             <div className={styles.header}>
               <div>
                 <div className={styles.badge}>
-                  <span className={styles.statusDot} style={{ background: reifegrad_colors[anfrage.reifegrad] || "#ccc" }} />
-                  <span>{anfrage.reifegrad}</span>
+                  <span className={styles.statusDot} style={{ background: reifegradColor }} />
+                  <span>{reifegradScore}/10 — {reifegradLabel}</span>
                 </div>
                 <h1 className={styles.title}>{titel}</h1>
                 <p className={styles.subtitle}>
@@ -150,6 +190,53 @@ export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) 
                 </div>
               </div>
             </div>
+
+            {/* Reifegrad / Konkretisierungsgrad */}
+            <section className={styles.section} style={{ background: reifegradBg, border: `1px solid ${reifegradBorder}`, borderRadius: "12px", padding: "24px 28px" }}>
+              <h2 style={{ color: "#0a3d2e", marginBottom: "16px", fontSize: "18px" }}>Wie konkret ist das Vorhaben?</h2>
+
+              {/* Score + Label */}
+              <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px" }}>
+                <span style={{ fontSize: "36px", fontWeight: 800, color: reifegradColor, lineHeight: 1 }}>
+                  {reifegradScore}
+                </span>
+                <span style={{ fontSize: "14px", color: "#555" }}>von 10</span>
+                <span style={{ padding: "5px 14px", backgroundColor: reifegradColor, color: "white", borderRadius: "20px", fontSize: "13px", fontWeight: 700, marginLeft: "4px" }}>
+                  {reifegradLabel}
+                </span>
+              </div>
+
+              {/* Grafische Darstellung: Horizontaler Balken 1-10 */}
+              <div style={{ display: "flex", gap: "4px", marginBottom: "12px" }}>
+                {Array.from({ length: 10 }, (_, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      flex: 1,
+                      height: "10px",
+                      borderRadius: i === 0 ? "5px 0 0 5px" : i === 9 ? "0 5px 5px 0" : "0",
+                      backgroundColor: i < reifegradScore ? reifegradColor : "#e2e8f0",
+                      transition: "background-color 0.3s",
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Skala-Beschriftung */}
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#888", marginBottom: anfrage.reifegradBeschreibung ? "16px" : "0" }}>
+                <span>Erste Idee</span>
+                <span>Konkrete Richtung</span>
+                <span>Gut vorbereitet</span>
+                <span>Startklar</span>
+              </div>
+
+              {/* Optionale Beschreibung */}
+              {anfrage.reifegradBeschreibung && (
+                <div style={{ padding: "12px 16px", backgroundColor: "rgba(255,255,255,0.7)", borderRadius: "8px", fontSize: "14px", color: "#333", lineHeight: 1.6 }}>
+                  {anfrage.reifegradBeschreibung}
+                </div>
+              )}
+            </section>
 
             {/* 1. Was wird gesucht? */}
             <section className={styles.section}>
@@ -268,17 +355,7 @@ export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) 
               </section>
             )}
 
-            {/* 9. Persönlicher Touch */}
-            {anfrage.persönlicherTouch && (
-              <section className={styles.section}>
-                <h2>Persönlicher Touch</h2>
-                <div style={{ padding: "16px 20px", backgroundColor: "#fafafa", borderLeft: "4px solid #e8a020", fontSize: "15px", fontStyle: "italic", color: "#444", lineHeight: 1.7 }}>
-                  „{anfrage.persönlicherTouch}"
-                </div>
-              </section>
-            )}
-
-            {/* 10. Must-Haves / Nice-to-Haves (Legacy — wenn vorhanden) */}
+            {/* Must-Haves / Nice-to-Haves (Legacy — wenn vorhanden) */}
             {anfrage.mustHaves && (
               <section className={styles.section}>
                 <h2>Must-Haves</h2>
@@ -341,7 +418,7 @@ export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) 
                 </div>
                 <div className={styles.infoItem}>
                   <span className={styles.infoLabel}>Reifegrad</span>
-                  <span className={styles.infoValue}>{anfrage.reifegrad}</span>
+                  <span className={styles.infoValue} style={{ color: reifegradColor, fontWeight: 700 }}>{reifegradScore}/10 · {reifegradLabel}</span>
                 </div>
                 <div className={styles.infoItem}>
                   <span className={styles.infoLabel}>Eingegangen</span>

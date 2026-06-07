@@ -34,6 +34,8 @@ export async function POST(request: NextRequest) {
         mustHaves: body.mustHaves || null,
         niceToHaves: body.niceToHaves || null,
         reifegrad: body.reifegrad || "bereit",
+        reifegradScore: body.reifegradScore ? parseInt(body.reifegradScore) : null,
+        reifegradBeschreibung: body.reifegradBeschreibung || null,
         gueltigBis: body.gueltigBis ? new Date(body.gueltigBis) : new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
         sichtbarkeit: body.sichtbarkeit || "eingehend",
         ansprechpartner: body.ansprechpartner,
