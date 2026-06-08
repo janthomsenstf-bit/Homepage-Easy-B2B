@@ -13,7 +13,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 20px 60px rgba(13, 31, 53, 0.3);
   max-width: 500px;
   width: 90%;
@@ -202,7 +202,7 @@
   .modal {
     width: 95%;
     max-height: 95vh;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
   }
 
   .row {

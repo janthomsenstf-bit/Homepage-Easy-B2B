@@ -1,6 +1,6 @@
 /* ── HERO ── */
 .hero {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
   padding: 60px 48px;
   color: white;
 }
@@ -12,28 +12,28 @@
 
 .hero h1 {
   font-size: clamp(36px, 5vw, 48px);
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 12px;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .hero p {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.75);
   max-width: 600px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ── FILTER BAR ── */
 .filterBar {
-  background: white;
-  border-bottom: 1px solid #e0e0e0;
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
   padding: 24px 48px;
-  sticky: top;
   position: sticky;
+  top: 72px;
   z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(26, 54, 93, 0.04);
 }
 
 .filterContent {
@@ -57,40 +57,40 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #999999;
+  color: var(--color-text-muted);
   font-weight: 600;
 }
 
 .filterSelect {
   padding: 10px 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   font-family: inherit;
   font-size: 14px;
-  color: #1a1a1a;
-  background: white;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .filterSelect:focus {
   outline: none;
-  border-color: #FF9900;
-  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-muted);
 }
 
 .filterSelect:hover {
-  border-color: #d0d0d0;
+  border-color: var(--color-text-muted);
 }
 
 .clearFiltersBtn {
   padding: 10px 14px;
-  background: #f0f0f0;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  background: var(--color-bg-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   font-size: 12px;
   font-weight: 600;
-  color: #FF9900;
+  color: var(--color-accent);
   cursor: pointer;
   transition: all 0.2s ease;
   text-transform: uppercase;
@@ -98,15 +98,15 @@
 }
 
 .clearFiltersBtn:hover {
-  background: #e0e0e0;
-  border-color: #d0d0d0;
+  background: var(--color-bg-cream);
+  border-color: var(--color-border);
 }
 
 /* ── SECTION ── */
 .section {
   padding: 48px;
-  background: #f9f9f9;
-  border-bottom: 1px solid #e0e0e0;
+  background: var(--color-bg-warm);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .sectionContent {
@@ -120,22 +120,22 @@
 
 .resultHeader h2 {
   font-size: clamp(28px, 4vw, 36px);
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 400;
-  color: #1a1a1a;
+  font-weight: 600;
+  color: var(--color-text-primary);
   margin-bottom: 6px;
+  letter-spacing: -0.02em;
 }
 
 .resultInfo {
   font-size: 13px;
-  color: #999999;
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
 /* ── ANZEIGE GRID ── */
 .anzeigeGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
 }
 
@@ -143,8 +143,9 @@
 .emptyState {
   text-align: center;
   padding: 60px 32px;
-  background: white;
-  border-radius: 12px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
 }
 
 .emptyIcon {
@@ -155,14 +156,13 @@
 .emptyState h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin-bottom: 8px;
-  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .emptyState p {
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin-bottom: 24px;
 }
 
@@ -173,7 +173,7 @@
 
 /* ── CTA SECTION ── */
 .ctaSection {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   padding: 64px 48px;
   text-align: center;
 }
@@ -186,17 +186,17 @@
 
 .ctaContent h2 {
   font-size: clamp(28px, 4vw, 36px);
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 12px;
   color: white;
+  letter-spacing: -0.02em;
 }
 
 .ctaContent p {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 28px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .ctaContent :global(.btn-primary) {
@@ -214,6 +214,7 @@
 
   .filterBar {
     padding: 18px 24px;
+    top: 64px;
   }
 
   .filterContent {

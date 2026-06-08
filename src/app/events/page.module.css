@@ -4,7 +4,7 @@
 
 /* ── HERO SECTION ── */
 .hero {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
   padding: 60px 48px;
   position: relative;
@@ -50,7 +50,7 @@
 .tabsSection {
   padding: 60px 20px;
   background: white;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .eventTabs {
@@ -68,12 +68,12 @@
   gap: 12px;
   padding: 20px 16px;
   background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  color: #333333;
+  color: var(--color-text-primary);
   font-family: inherit;
   font-size: 13px;
   font-weight: 600;
@@ -81,16 +81,16 @@
 }
 
 .eventTab:hover {
-  border-color: #FF9900;
-  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(26, 54, 93, 0.1);
   transform: translateY(-2px);
 }
 
 .eventTab.active {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
-  border-color: #0066CC;
-  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.2);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(26, 54, 93, 0.2);
 }
 
 .tabIcon {
@@ -113,7 +113,7 @@
 /* ── DETAIL SECTION ── */
 .detailSection {
   padding: 60px 20px;
-  background: #f9f9f9;
+  background: var(--color-bg-warm);
   min-height: 400px;
 }
 
@@ -126,8 +126,8 @@
   background: white;
   border-radius: 16px;
   padding: 48px;
-  box-shadow: 0 2px 12px rgba(0, 51, 102, 0.08);
-  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(26, 54, 93, 0.08);
+  border: 1px solid var(--color-border);
   animation: fadeIn 0.3s ease;
 }
 
@@ -158,14 +158,14 @@
 .detailTitle {
   font-size: 36px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 8px 0;
   line-height: 1.2;
 }
 
 .detailTagline {
   font-size: 16px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.5;
 }
@@ -185,13 +185,13 @@
 .detailSection_ h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0;
 }
 
 .description {
   font-size: 15px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin: 0;
 }
@@ -207,7 +207,7 @@
 
 .whatHappensList li {
   font-size: 15px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   padding-left: 0;
 }
@@ -215,16 +215,16 @@
 .ctaContainer {
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--color-border);
 }
 
 .ctaButton {
   display: inline-block;
   padding: 12px 24px;
-  background: #FF9900;
+  background: var(--color-accent);
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 14px;
   transition: all 0.2s;
@@ -232,7 +232,7 @@
 
 .ctaButton:hover {
   background: #E68A00;
-  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(200, 132, 44, 0.3);
 }
 
 /* ── PROCESS STEPS (Pitch & Meet) ── */
@@ -248,35 +248,35 @@
   grid-template-columns: 40px 1fr;
   gap: 16px;
   padding: 16px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  border-left: 3px solid #FF9900;
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-accent);
 }
 
 .stepNumber {
   font-size: 20px;
   font-weight: 700;
-  color: #FF9900;
+  color: var(--color-accent);
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 40px;
   height: 40px;
-  background: rgba(255, 153, 0, 0.1);
+  background: rgba(200, 132, 44, 0.1);
   border-radius: 50%;
 }
 
 .stepContent h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 6px 0;
 }
 
 .stepContent p {
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
 }
@@ -285,14 +285,14 @@
 .applicationHeadline {
   font-size: 24px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 12px 0;
   line-height: 1.3;
 }
 
 /* ── CTA SECTION ── */
 .ctaSection {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   padding: 80px 20px;
   text-align: center;
 }
@@ -329,14 +329,14 @@
 }
 
 .sectionAlt {
-  background: #f9f9f9;
+  background: var(--color-bg-warm);
 }
 
 /* ── FORMAT SECTION ── */
 .formatHeadline {
   font-size: 40px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 8px 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   text-align: center;
@@ -345,7 +345,7 @@
 .formatTagline {
   font-size: 24px;
   font-weight: 500;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin: 0 0 60px 0;
   text-align: center;
   line-height: 1.3;
@@ -361,7 +361,7 @@
 .formatPoint {
   font-size: 18px;
   font-weight: 500;
-  color: #0066CC;
+  color: var(--color-primary);
   line-height: 1.5;
   text-align: center;
   padding: 20px 0;
@@ -391,7 +391,7 @@
 .connectHeadline {
   font-size: 48px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   line-height: 1.2;
@@ -400,14 +400,14 @@
 .connectTagline {
   font-size: 24px;
   font-weight: 500;
-  color: #FF9900;
+  color: var(--color-accent);
   margin: 0;
   line-height: 1.3;
 }
 
 .connectDescription {
   font-size: 18px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.6;
   margin: 0;
   font-weight: 500;
@@ -419,12 +419,12 @@
   gap: 16px;
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--color-border);
 }
 
 .connectFeelingItem {
   font-size: 16px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.5;
   margin: 0;
   padding-left: 24px;
@@ -435,7 +435,7 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: 700;
   font-size: 18px;
 }
@@ -449,7 +449,7 @@
 .connectPlaceholder {
   width: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+  background: linear-gradient(135deg, var(--color-border-light) 0%, #e8e8e8 100%);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -460,14 +460,14 @@
 .placeholderIcon {
   font-size: 120px;
   line-height: 1;
-  color: rgba(0, 51, 102, 0.15);
+  color: rgba(26, 54, 93, 0.15);
 }
 
 /* ── TIMELINE SECTION ── */
 .timelineTitle {
   font-size: 40px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 80px 0;
   text-align: center;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -490,7 +490,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #FF9900 0%, #0066CC 100%);
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-primary) 100%);
   transform: translateX(-1px);
   z-index: 0;
 }
@@ -520,14 +520,14 @@
 .timelineTime {
   font-size: 16px;
   font-weight: 700;
-  color: #FF9900;
+  color: var(--color-accent);
   margin: 0;
 }
 
 .timelineDot {
   width: 16px;
   height: 16px;
-  background: #FF9900;
+  background: var(--color-accent);
   border: 4px solid white;
   border-radius: 50%;
   flex-shrink: 0;
@@ -540,14 +540,14 @@
 .timelineItemTitle {
   font-size: 18px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 8px 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 .timelineItemDesc {
   font-size: 15px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
 }
@@ -556,7 +556,7 @@
 .cultureTitle {
   font-size: 40px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 32px 0;
   text-align: center;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -564,7 +564,7 @@
 
 .cultureMessage {
   font-size: 18px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.7;
   margin: 0 0 60px 0;
   text-align: center;
@@ -584,12 +584,12 @@
 
 .cultureExample {
   font-size: 16px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.6;
   margin: 0;
   padding: 16px 0 16px 28px;
   position: relative;
-  border-left: 3px solid #FF9900;
+  border-left: 3px solid var(--color-accent);
   padding-left: 28px;
 }
 
@@ -597,7 +597,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: 700;
   font-size: 16px;
 }
@@ -606,7 +606,7 @@
 .forWhomTitle {
   font-size: 40px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 24px 0;
   text-align: center;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -614,7 +614,7 @@
 
 .forWhomIntro {
   font-size: 18px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.7;
   margin: 0 0 60px 0;
   text-align: center;
@@ -631,8 +631,8 @@
 
 .personaCard {
   background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 40px 32px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -643,8 +643,8 @@
 }
 
 .personaCard:hover {
-  border-color: #FF9900;
-  box-shadow: 0 8px 20px rgba(255, 153, 0, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 20px rgba(200, 132, 44, 0.15);
   transform: translateY(-4px);
 }
 
@@ -656,21 +656,21 @@
 .personaName {
   font-size: 16px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 .personaStory {
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
 }
 
 /* ── CTA SECTION ── */
 .ctaSection {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
   padding: 120px 20px;
   text-align: center;
@@ -685,7 +685,7 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 153, 0, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200, 132, 44, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -725,13 +725,13 @@
 
 .footerNotes p {
   font-size: 15px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.7;
   margin: 0;
 }
 
 .footerNotes strong {
-  color: #0066CC;
+  color: var(--color-primary);
   font-weight: 600;
 }
 

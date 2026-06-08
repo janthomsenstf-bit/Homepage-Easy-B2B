@@ -4,7 +4,7 @@
 
 /* ── HERO SECTION ── */
 .hero {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
   padding: 100px 20px;
   position: relative;
@@ -18,7 +18,7 @@
   right: -200px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255, 153, 0, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200, 132, 44, 0.15) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -76,7 +76,7 @@
 }
 
 .sectionAlt {
-  background: #f9f9f9;
+  background: var(--color-bg-warm);
 }
 
 .sectionContent {
@@ -86,7 +86,7 @@
 
 .sectionIntro {
   font-size: 16px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 16px 0 48px 0;
 }
@@ -99,8 +99,8 @@
   align-items: start;
   background: white;
   padding: 48px;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -114,21 +114,21 @@
 .formatText h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 16px 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 .formatDescription {
   font-size: 15px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.6;
   margin: 0 0 16px 0;
 }
 
 .formatMessage {
   font-size: 15px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
   font-style: italic;
@@ -153,8 +153,8 @@
 
 .ablaufCard {
   background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 32px 28px;
   text-align: center;
   width: 100%;
@@ -167,8 +167,8 @@
 }
 
 .ablaufCard:hover {
-  border-color: #FF9900;
-  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 20px rgba(26, 54, 93, 0.15);
 }
 
 .ablaufIcon {
@@ -179,7 +179,7 @@
 .ablaufNumber {
   font-size: 12px;
   font-weight: 600;
-  color: #FF9900;
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -187,14 +187,14 @@
 .ablaufTitle {
   font-size: 18px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 8px 0 0 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 .ablaufDesc {
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.5;
   margin: 0;
   flex: 1;
@@ -203,16 +203,16 @@
 .ablaufArrow {
   display: none;
   font-size: 28px;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: 300;
   margin: -8px 0;
 }
 
 /* ── CONNECT IN CAR SECTION ── */
 .connectInCarBlock {
-  background: linear-gradient(135deg, rgba(255, 153, 0, 0.08) 0%, rgba(0, 51, 102, 0.05) 100%);
-  border: 2px solid #FF9900;
-  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(200, 132, 44, 0.08) 0%, rgba(26, 54, 93, 0.05) 100%);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
   padding: 48px;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -230,14 +230,14 @@
 .connectInCarContent h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 16px 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 .connectInCarContent p {
   font-size: 15px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.6;
   margin: 0 0 12px 0;
 }
@@ -245,10 +245,10 @@
 .connectInCarNote {
   background: white;
   padding: 16px 20px;
-  border-left: 4px solid #FF9900;
+  border-left: 4px solid var(--color-accent);
   margin-top: 16px;
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
 }
 
 /* ── BVMW PARTNERSHIP ── */
@@ -259,8 +259,8 @@
   align-items: start;
   background: white;
   padding: 48px;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -274,20 +274,20 @@
 .bvmwContent h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 16px 0;
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 .bvmwContent p {
   font-size: 15px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.6;
   margin: 0 0 16px 0;
 }
 
 .bvmwNote {
-  color: #666666;
+  color: var(--color-text-secondary);
   font-style: italic;
 }
 
@@ -296,27 +296,27 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  background: #f9f9f9;
+  background: var(--color-bg-warm);
   padding: 40px;
-  border-radius: 12px;
-  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
 }
 
 .costsExplanation p {
   margin: 0;
   font-size: 15px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.6;
 }
 
 .costsExplanation strong {
-  color: #0066CC;
+  color: var(--color-primary);
   font-weight: 700;
 }
 
 /* ── CTA SECTION ── */
 .ctaSection {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -331,7 +331,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 153, 0, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200, 132, 44, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -371,8 +371,8 @@
 
 .formatCard {
   background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 28px;
   display: flex;
   flex-direction: column;
@@ -383,20 +383,20 @@
 }
 
 .formatCard:hover {
-  border-color: #FF9900;
-  box-shadow: 0 8px 16px rgba(255, 153, 0, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 16px rgba(200, 132, 44, 0.15);
 }
 
 .formatBullet {
   font-size: 18px;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: 600;
 }
 
 .formatText {
   font-size: 15px;
   font-weight: 600;
-  color: #0066CC;
+  color: var(--color-primary);
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
@@ -404,13 +404,13 @@
 .backSection {
   padding: 60px 20px;
   background: white;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--color-border);
 }
 
 .backLink {
   font-size: 15px;
   font-weight: 600;
-  color: #0066CC;
+  color: var(--color-primary);
   text-decoration: none;
   display: inline-flex;
   align-items: center;

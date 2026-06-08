@@ -12,7 +12,7 @@
 
 .hero h1 {
   font-size: clamp(36px, 5vw, 48px);
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-base);
   font-weight: 400;
   margin-bottom: 12px;
   line-height: 1.2;
@@ -43,10 +43,10 @@
 
 .section h2 {
   font-size: clamp(28px, 4vw, 36px);
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-base);
   font-weight: 400;
   margin-bottom: 40px;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
 }
 
 /* ── TIPS GRID ── */
@@ -59,7 +59,7 @@
 .tipCard {
   background: white;
   border: 1px solid #e0dcd4;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 24px;
   position: relative;
   overflow: hidden;
@@ -96,7 +96,7 @@
   width: 32px;
   height: 32px;
   background: #e8a020;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   border-radius: 50%;
   font-weight: 700;
   font-size: 16px;
@@ -106,7 +106,7 @@
 .tipTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin-bottom: 8px;
 }
 
@@ -127,7 +127,7 @@
 .visCard {
   background: #f7f5f0;
   border: 2px solid #e0dcd4;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 28px;
   transition: all 0.3s ease;
 }
@@ -140,7 +140,7 @@
 .visTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin-bottom: 12px;
 }
 
@@ -166,7 +166,7 @@
 
 .ctaContent h2 {
   font-size: clamp(28px, 4vw, 36px);
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-base);
   font-weight: 400;
   margin-bottom: 12px;
   color: white;

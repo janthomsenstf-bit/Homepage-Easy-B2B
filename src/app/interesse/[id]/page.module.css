@@ -9,7 +9,7 @@
 }
 
 .back a {
-  color: #0066cc;
+  color: var(--color-primary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -17,7 +17,7 @@
 }
 
 .back a:hover {
-  color: #004999;
+  color: var(--color-primary-dark);
   text-decoration: underline;
 }
 
@@ -39,23 +39,23 @@
 
 .card {
   background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 24px;
 }
 
 .cardTitle {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-base);
   font-size: 16px;
   font-weight: 400;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin-bottom: 12px;
   margin-top: 0;
 }
 
 .cardText {
   font-size: 13px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
 }
@@ -63,13 +63,13 @@
 .firmaName {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin: 0 0 8px 0;
 }
 
 .branche {
   font-size: 12px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin: 0 0 4px 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -77,7 +77,7 @@
 
 .richtung {
   font-size: 13px;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin: 0;
 }
 
@@ -89,34 +89,34 @@
 
 .stepList li {
   font-size: 13px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.8;
 }
 
 /* Form Section */
 .formSection {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 32px;
 }
 
 .formHeader {
   margin-bottom: 32px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: 24px;
 }
 
 .formHeader h1 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-base);
   font-size: 36px;
   font-weight: 400;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin: 0 0 12px 0;
 }
 
 .formHeader p {
   font-size: 15px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.6;
 }

@@ -8,7 +8,7 @@
   padding: 16px 20px;
   background: #fee;
   border: 1px solid #fcc;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   color: #c00;
   font-size: 14px;
 }
@@ -22,31 +22,31 @@
 .formGroup label {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
 }
 
 .formGroup input,
 .formGroup textarea {
   padding: 12px 14px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   font-family: inherit;
   font-size: 14px;
-  color: #333333;
+  color: var(--color-text-primary);
   transition: all 0.2s ease;
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: #0066cc;
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
 
 .formGroup input:disabled,
 .formGroup textarea:disabled {
-  background: #f9f9f9;
-  color: #999999;
+  background: var(--color-bg-warm);
+  color: var(--color-text-muted);
   cursor: not-allowed;
 }
 
@@ -57,7 +57,7 @@
 
 .hint {
   font-size: 12px;
-  color: #999999;
+  color: var(--color-text-muted);
   margin-top: 4px;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .cancelLink {
-  color: #0066cc;
+  color: var(--color-primary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -87,19 +87,19 @@
 }
 
 .cancelLink:hover {
-  color: #004999;
+  color: var(--color-primary-dark);
   text-decoration: underline;
 }
 
 .privacy {
   font-size: 12px;
-  color: #999999;
+  color: var(--color-text-muted);
   margin-top: 12px;
   line-height: 1.6;
 }
 
 .privacy a {
-  color: #0066cc;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -111,7 +111,7 @@
 .successMessage {
   background: #f0fdf4;
   border: 1px solid #dcfce7;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 40px 32px;
   text-align: center;
 }
@@ -122,16 +122,16 @@
 }
 
 .successMessage h2 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-base);
   font-size: 28px;
   font-weight: 400;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin-bottom: 12px;
 }
 
 .successMessage > p {
   font-size: 15px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -151,13 +151,13 @@
 
 .successMessage li {
   font-size: 14px;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.8;
 }
 
 .contact {
   font-size: 13px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin-bottom: 24px !important;
   font-style: italic;
 }

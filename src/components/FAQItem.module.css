@@ -1,13 +1,13 @@
 .item {
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.2s ease;
 }
 
 .item.open {
-  border-color: #FF9900;
-  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(200, 132, 44, 0.1);
 }
 
 .header {
@@ -16,7 +16,7 @@
   align-items: center;
   width: 100%;
   padding: 20px 22px;
-  background: #f9f9f9;
+  background: var(--color-bg-warm);
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -25,23 +25,23 @@
 }
 
 .item.open .header {
-  background: #f0f0f0;
+  background: var(--color-border-light);
 }
 
 .header:hover {
-  background: #f0f0f0;
+  background: var(--color-border-light);
 }
 
 .frage {
   font-size: 15px;
   font-weight: 600;
-  color: #333333;
+  color: var(--color-text-primary);
   line-height: 1.4;
 }
 
 .icon {
   font-size: 20px;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: bold;
   margin-left: 12px;
   flex-shrink: 0;
@@ -56,7 +56,7 @@
   padding: 20px 22px;
   background: white;
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.65;
   animation: slideDown 0.2s ease;
 }

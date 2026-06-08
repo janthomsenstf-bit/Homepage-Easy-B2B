@@ -6,7 +6,7 @@
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 32px;
-  color: #333333;
+  color: var(--color-text-primary);
   font-family: var(--font-sans);
 }
 
@@ -56,19 +56,19 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #999999;
+  color: var(--color-text-muted);
   font-weight: 600;
 }
 
 .stepTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #333333;
+  color: var(--color-text-primary);
 }
 
 .stepDesc {
   font-size: 13px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.55;
 }
 
@@ -77,7 +77,7 @@
   right: -14px;
   top: 20px;
   font-size: 18px;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: bold;
   width: 8px;
   text-align: center;

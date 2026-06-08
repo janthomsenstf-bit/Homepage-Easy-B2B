@@ -12,8 +12,8 @@ export default function EventCard({ icon, name, beschreibung, status, href }: Ev
   return (
     <div style={{
       background: 'white',
-      border: '1px solid #e0e0e0',
-      borderRadius: '12px',
+      border: '1px solid #e2ddd5',
+      borderRadius: '16px',
       padding: '24px',
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '12px' }}>
@@ -28,10 +28,10 @@ export default function EventCard({ icon, name, beschreibung, status, href }: Ev
           {status}
         </span>
       </div>
-      <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a1a', margin: '0 0 8px 0' }}>
+      <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1a202c', margin: '0 0 8px 0' }}>
         {name}
       </h3>
-      <p style={{ fontSize: '14px', color: '#666666', margin: 0, lineHeight: '1.6' }}>
+      <p style={{ fontSize: '14px', color: '#4a5568', margin: 0, lineHeight: '1.6' }}>
         {beschreibung}
       </p>
     </div>

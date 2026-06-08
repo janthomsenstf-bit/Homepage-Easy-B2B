@@ -13,8 +13,8 @@ export default function FAQItem({ frage, antwort, defaultOpen = false }: FAQItem
 
   return (
     <div style={{
-      border: '1px solid #e0e0e0',
-      borderRadius: '12px',
+      border: '1px solid #e2ddd5',
+      borderRadius: '16px',
       overflow: 'hidden',
     }}>
       <button
@@ -30,10 +30,10 @@ export default function FAQItem({ frage, antwort, defaultOpen = false }: FAQItem
           alignItems: 'center',
           fontSize: '15px',
           fontWeight: '600',
-          color: '#1a1a1a',
+          color: '#1a202c',
           transition: 'all 0.2s ease',
         }}
-        onMouseEnter={(e) => e.currentTarget.style.background = '#f9f9f9'}
+        onMouseEnter={(e) => e.currentTarget.style.background = '#faf8f5'}
         onMouseLeave={(e) => e.currentTarget.style.background = 'white'}
       >
         {frage}
@@ -49,10 +49,10 @@ export default function FAQItem({ frage, antwort, defaultOpen = false }: FAQItem
       {isOpen && (
         <div style={{
           padding: '20px',
-          background: '#f9f9f9',
-          borderTop: '1px solid #e0e0e0',
+          background: '#faf8f5',
+          borderTop: '1px solid #e2ddd5',
           fontSize: '14px',
-          color: '#666666',
+          color: '#4a5568',
           lineHeight: '1.6',
         }}>
           {antwort}

@@ -1,6 +1,6 @@
 /* ── HERO ── */
 .hero {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   padding: 60px 48px;
   color: white;
 }
@@ -12,7 +12,7 @@
 
 .hero h1 {
   font-size: clamp(36px, 5vw, 48px);
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-base);
   font-weight: 400;
   margin-bottom: 12px;
   line-height: 1.2;
@@ -29,11 +29,11 @@
 .section {
   padding: 60px 48px;
   background: white;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .section.sectionAlt {
-  background: #f9f9f9;
+  background: var(--color-bg-warm);
 }
 
 .sectionContent {
@@ -43,15 +43,15 @@
 
 .section h2 {
   font-size: clamp(28px, 4vw, 36px);
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-base);
   font-weight: 400;
   margin-bottom: 12px;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
 }
 
 .intro {
   font-size: 15px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin-bottom: 40px;
   line-height: 1.6;
 }
@@ -60,7 +60,7 @@
 .choiceSection {
   padding: 60px 48px;
   background: white;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .choiceGrid {
@@ -77,17 +77,17 @@
   gap: 16px;
   padding: 40px;
   background: white;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--color-border);
   border-radius: 16px;
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.05);
+  box-shadow: 0 2px 8px rgba(26, 54, 93, 0.05);
 }
 
 .choiceCard:hover {
-  border-color: #FF9900;
-  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 24px rgba(26, 54, 93, 0.12);
   transform: translateY(-4px);
 }
 
@@ -99,14 +99,14 @@
 .choiceTitle {
   font-size: 20px;
   font-weight: 600;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0;
   line-height: 1.3;
 }
 
 .choiceText {
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.6;
   flex-grow: 1;
@@ -115,21 +115,21 @@
 .choiceButton {
   font-size: 13px;
   font-weight: 600;
-  color: #FF9900;
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: color 0.2s;
 }
 
 .choiceCard:hover .choiceButton {
-  color: #0066CC;
+  color: var(--color-primary);
 }
 
 .choiceCard.active {
-  background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: white;
-  border-color: #0066CC;
-  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.2);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(26, 54, 93, 0.2);
 }
 
 .choiceCard.active .choiceTitle,
@@ -145,7 +145,7 @@
 .timelineSection {
   padding: 60px 48px;
   background: white;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
   min-height: 600px;
 }
 
@@ -182,14 +182,14 @@
   font-size: clamp(28px, 4vw, 36px);
   font-family: var(--font-sans);
   font-weight: 600;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 12px 0;
   line-height: 1.2;
 }
 
 .timelineIntro {
   font-size: 15px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.6;
   max-width: 700px;
@@ -214,7 +214,7 @@
 
 .privacyList li {
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   padding-left: 28px;
   position: relative;
@@ -231,19 +231,19 @@
 
 .linkNote {
   font-size: 14px;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin-top: 24px;
 }
 
 .link {
-  color: #FF9900;
+  color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
 }
 
 .link:hover {
-  color: #3399FF;
+  color: var(--color-primary-light);
   text-decoration: underline;
 }
 
@@ -251,7 +251,7 @@
 .storySection {
   padding: 100px 48px;
   background: white;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .storyHeader {
@@ -263,14 +263,14 @@
   font-size: clamp(32px, 5vw, 44px);
   font-weight: 700;
   margin-bottom: 16px;
-  color: #0066CC;
+  color: var(--color-primary);
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   line-height: 1.2;
 }
 
 .storySubtitle {
   font-size: 17px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   max-width: 700px;
   font-weight: 400;
@@ -294,7 +294,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #FF9900 0%, #3399FF 50%, #FF9900 100%);
+    background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-primary-light) 50%, var(--color-accent) 100%);
     transform: translateX(-1px);
   }
 }
@@ -316,7 +316,7 @@
   top: 80px;
   bottom: -56px;
   width: 2px;
-  background: linear-gradient(180deg, #FF9900 0%, rgba(255, 153, 0, 0) 100%);
+  background: linear-gradient(180deg, var(--color-accent) 0%, rgba(200, 132, 44, 0) 100%);
   z-index: 0;
 }
 
@@ -339,7 +339,7 @@
 .stepNumber {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, #FF9900 0%, #3399FF 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary-light) 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -365,21 +365,21 @@
   gap: 16px;
   background: white;
   padding: 32px;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.04);
+  box-shadow: 0 2px 8px rgba(26, 54, 93, 0.04);
 }
 
 .stepContent:hover {
-  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.08);
-  border-color: #FF9900;
+  box-shadow: 0 8px 24px rgba(26, 54, 93, 0.08);
+  border-color: var(--color-accent);
 }
 
 .stepContent h3 {
   font-size: 18px;
   font-weight: 700;
-  color: #0066CC;
+  color: var(--color-primary);
   margin: 0 0 8px 0;
   line-height: 1.3;
 }
@@ -387,10 +387,10 @@
 .stepShortDesc {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin: 0 0 16px 0;
   padding-bottom: 12px;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid var(--color-border-light);
   line-height: 1.5;
 }
 
@@ -405,7 +405,7 @@
 
 .stepDetails li {
   font-size: 13px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   padding-left: 24px;
   position: relative;
@@ -416,22 +416,22 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: 700;
   font-size: 14px;
 }
 
 /* ── ANFRAGE CARD ── */
 .anfrageCard {
-  background: linear-gradient(135deg, #f9f9f9 0%, #f0ede8 100%);
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-bg-warm) 0%, #f0ede8 100%);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 28px;
   transition: all 0.3s ease;
 }
 
 .anfrageCard:hover {
-  border-color: #FF9900;
+  border-color: var(--color-accent);
   box-shadow: 0 12px 32px rgba(232, 160, 32, 0.12);
 }
 
@@ -451,14 +451,14 @@
 .anfrageHeader h3 {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin: 0;
   line-height: 1.4;
 }
 
 .anfrageBeschreibung {
   font-size: 13px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0 0 12px 0;
   font-style: italic;
@@ -466,12 +466,12 @@
 
 .anfrageGesucht {
   font-size: 13px;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin: 12px 0;
 }
 
 .anfrageGesucht strong {
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: 700;
 }
 
@@ -486,7 +486,7 @@
 
 .anfrageDetails li {
   font-size: 12px;
-  color: #666666;
+  color: var(--color-text-secondary);
   padding-left: 16px;
   position: relative;
 }
@@ -495,17 +495,17 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: bold;
 }
 
 .anfrageHint {
   background: rgba(46, 204, 138, 0.08);
   padding: 12px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   border-left: 3px solid #2ecc8a;
   font-size: 12px;
-  color: #666666;
+  color: var(--color-text-secondary);
   display: flex;
   gap: 8px;
   align-items: flex-start;
@@ -521,8 +521,8 @@
 /* ── DETAILS PREVIEW ── */
 .detailsPreview {
   background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: 16px;
 }
 
@@ -542,13 +542,13 @@
 }
 
 .detailTag {
-  background: #f9f9f9;
+  background: var(--color-bg-warm);
   padding: 8px 10px;
   border-radius: 6px;
   font-size: 11px;
-  color: #666666;
+  color: var(--color-text-secondary);
   font-weight: 500;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--color-border);
 }
 
 /* ── PRÜFUNG, VERÖFFENTLICHUNG, QUALITÄTS, KONTAKT CARDS ── */
@@ -556,9 +556,9 @@
 .veroeffentlichungCard,
 .qualitaetCard,
 .kontaktCard {
-  background: linear-gradient(135deg, #f9f9f9 0%, #f0ede8 100%);
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-bg-warm) 0%, #f0ede8 100%);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 28px;
   transition: all 0.3s ease;
 }
@@ -567,7 +567,7 @@
 .veroeffentlichungCard:hover,
 .qualitaetCard:hover,
 .kontaktCard:hover {
-  border-color: #FF9900;
+  border-color: var(--color-accent);
   box-shadow: 0 12px 32px rgba(232, 160, 32, 0.12);
 }
 
@@ -577,7 +577,7 @@
 .kontaktCard h3 {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   margin: 0 0 14px 0;
   line-height: 1.4;
 }
@@ -587,7 +587,7 @@
 .qualitaetCard p,
 .kontaktCard p {
   font-size: 13px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin: 0 0 12px 0;
 }
@@ -601,7 +601,7 @@
 
 .pruefungItem {
   font-size: 13px;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   padding-left: 20px;
   position: relative;
 }
@@ -617,14 +617,14 @@
 .pruefungNote {
   background: rgba(232, 160, 32, 0.08);
   padding: 12px;
-  border-radius: 8px;
-  border-left: 3px solid #FF9900;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-accent);
   margin-top: 14px !important;
   font-size: 12px !important;
 }
 
 .pruefungNote strong {
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: 700;
 }
 
@@ -638,7 +638,7 @@
 
 .netzwerkItem {
   font-size: 13px;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   padding-left: 28px;
   position: relative;
   line-height: 1.6;
@@ -653,14 +653,14 @@
 
 .interessentCard {
   background: white;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--color-border);
   border-radius: 10px;
   padding: 16px;
   transition: all 0.2s ease;
 }
 
 .interessentCard:hover {
-  border-color: #FF9900;
+  border-color: var(--color-accent);
   box-shadow: 0 8px 16px rgba(232, 160, 32, 0.1);
   transform: translateY(-2px);
 }
@@ -689,20 +689,20 @@
 .interessentRolle {
   font-size: 13px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   line-height: 1.3;
 }
 
 .interessentInteresse {
   font-size: 12px;
-  color: #FF9900;
+  color: var(--color-accent);
   font-weight: 600;
   margin: 8px 0;
 }
 
 .interessentBeschreibung {
   font-size: 11px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.5;
   margin: 8px 0;
 }
@@ -731,16 +731,16 @@
   padding: 10px;
   border-radius: 6px;
   font-size: 12px;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   font-weight: 500;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--color-border);
   text-align: center;
 }
 
 /* ── KONTAKT CARD ── */
 .kontaktText {
   font-size: 13px;
-  color: #666666;
+  color: var(--color-text-secondary);
   line-height: 1.7;
 }
 
@@ -754,11 +754,11 @@
 .moeglichkeit {
   background: white;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   font-size: 12px;
-  color: #1a1a1a;
+  color: var(--color-text-primary);
   font-weight: 500;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--color-border);
   text-align: center;
   line-height: 1.5;
 }
@@ -766,10 +766,10 @@
 .kontaktRealitaet {
   background: rgba(232, 160, 32, 0.08);
   padding: 12px;
-  border-radius: 8px;
-  border-left: 3px solid #FF9900;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-accent);
   font-size: 12px !important;
-  color: #666666;
+  color: var(--color-text-secondary);
   margin-top: 14px !important;
 }
 
