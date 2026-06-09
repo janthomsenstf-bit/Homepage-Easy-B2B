@@ -193,7 +193,8 @@ export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) 
 
             {/* Reifegrad / Konkretisierungsgrad */}
             <section className={styles.section} style={{ background: reifegradBg, border: `1px solid ${reifegradBorder}`, borderRadius: "12px", padding: "24px 28px" }}>
-              <h2 style={{ color: "#0a3d2e", marginBottom: "16px", fontSize: "18px" }}>Wie konkret ist das Vorhaben?</h2>
+              <h2 style={{ color: "#0a3d2e", marginBottom: "6px", fontSize: "18px" }}>Wie konkret ist das Vorhaben?</h2>
+              <p style={{ fontSize: "12px", color: "#888", marginBottom: "16px", fontStyle: "italic" }}>Einschätzung des suchenden Unternehmens</p>
 
               {/* Score + Label */}
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px" }}>
@@ -244,11 +245,12 @@ export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) 
               <p className={styles.content}>{anfrage.beschreibung}</p>
             </section>
 
-            {/* 2. Von Easy-B2B vorbereitet */}
+            {/* 2. Von Easy-B2B geklärt */}
             <section className={styles.section} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "24px 28px" }}>
-              <h2 style={{ color: "#0a3d2e", marginBottom: "8px" }}>✓ Von Easy-B2B vorbereitet</h2>
+              <h2 style={{ color: "#0a3d2e", marginBottom: "6px" }}>✓ Von Easy-B2B geklärt</h2>
+              <p style={{ fontSize: "12px", color: "#666", marginBottom: "12px", fontStyle: "italic" }}>Diese Angaben wurden im Rahmen der Anfrage mit dem Unternehmen besprochen.</p>
               <p style={{ fontSize: "14px", color: "#15803d", marginBottom: "16px", fontWeight: 500 }}>
-                {klaerungErfuellt} von {klaerung.length} Punkten bereits geklärt — das spart Ihnen Zeit beim Erstkontakt.
+                {klaerungErfuellt} von {klaerung.length} Punkten geklärt — das spart Ihnen Zeit beim Erstkontakt.
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "10px" }}>
                 {klaerung.map((p, i) => (
