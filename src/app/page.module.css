@@ -117,32 +117,16 @@
 .heroVisual {
   flex-shrink: 0;
   text-align: center;
-}
-
-.heroFlags {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 16px;
+  justify-content: center;
 }
 
-.flagDE, .flagDK {
-  font-size: 56px;
-  line-height: 1;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
-}
-
-.flagBridge {
-  font-size: 28px;
-  color: var(--color-accent-light);
-  font-weight: 300;
-}
-
-.heroVisualLabel {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.08em;
-  font-weight: 400;
+.heroImage {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
 }
 
 /* ══════════════════════════════════════════════
@@ -705,8 +689,7 @@
   .heroEyebrow { font-size: 11px; }
   .heroBtns { flex-direction: column; align-items: center; }
   .heroVisual { order: -1; }
-  .flagDE, .flagDK { font-size: 40px; }
-  .flagBridge { font-size: 20px; }
+  .heroImage { max-width: 280px; }
 
   .sectionIntro { font-size: 15px; margin-bottom: 32px; }
 

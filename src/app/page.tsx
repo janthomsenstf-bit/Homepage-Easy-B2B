@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
 import ProcessSection from '@/components/ProcessSection'
@@ -135,12 +136,14 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.heroVisual}>
-            <div className={styles.heroFlags}>
-              <span className={styles.flagDE}>🇩🇪</span>
-              <span className={styles.flagBridge}>⟷</span>
-              <span className={styles.flagDK}>🇩🇰</span>
-            </div>
-            <p className={styles.heroVisualLabel}>Hamburg · Kopenhagen</p>
+            <Image
+              src="/images/hero-dosentelefon.png"
+              alt="Zwei Strichmännchen kommunizieren über ein Dosentelefon mit dänischer und deutscher Flagge"
+              width={420}
+              height={280}
+              priority
+              className={styles.heroImage}
+            />
           </div>
         </div>
       </section>
