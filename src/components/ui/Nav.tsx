@@ -5,11 +5,12 @@ import { usePathname } from 'next/navigation'
 import styles from './Nav.module.css'
 
 const links = [
-  { href: '/',                     label: 'Start' },
-  { href: '/marktplatz',           label: 'Marktplatz' },
-  { href: '/so-funktioniert-es',   label: 'Ablauf' },
-  { href: '/events',               label: 'Events' },
-  { href: '/kontakt',              label: 'Kontakt' },
+  { href: '/',                       label: 'Start' },
+  { href: '/marktplatz',             label: 'Marktplatz' },
+  { href: '/so-funktioniert-es',     label: 'Ablauf' },
+  { href: '/kooperationsbeispiele',  label: 'Beispiele' },
+  { href: '/warum-wir',              label: 'Warum wir' },
+  { href: '/kontakt',                label: 'Kontakt' },
 ]
 
 export default function Nav() {

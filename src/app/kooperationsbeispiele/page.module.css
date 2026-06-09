@@ -1,27 +1,45 @@
 /* ── HERO ── */
 .hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0a3d2e 100%);
-  padding: 60px 48px;
+  background: linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+  padding: 100px 48px 80px;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 132, 44, 0.06) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .heroContent {
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-size: clamp(32px, 5vw, 48px);
   font-family: var(--font-base);
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 16px;
   line-height: 1.2;
+  color: white;
+  letter-spacing: -0.02em;
 }
 
 .hero p {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
   max-width: 700px;
 }
 
