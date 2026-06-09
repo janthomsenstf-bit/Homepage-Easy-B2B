@@ -1,0 +1,491 @@
+/* ══════════════════════════════════════════════
+   PROCESS SECTION – Zigzag Timeline Journey
+   Nordic Trust Design
+   ══════════════════════════════════════════════ */
+
+.process {
+  padding: 100px 48px;
+  background: var(--color-bg-warm);
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.heading {
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  font-size: 17px;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+/* ══════════════════════════════════════════════
+   TAB SWITCHER
+   ══════════════════════════════════════════════ */
+
+.tabBar {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full, 999px);
+  padding: 4px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-full, 999px);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.tab:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg-warm);
+}
+
+.tabActive {
+  background: var(--color-primary) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(26, 54, 93, 0.15);
+}
+
+.tabEmoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.tabHint {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0 0 48px 0;
+  font-style: italic;
+}
+
+/* ══════════════════════════════════════════════
+   TIMELINE
+   ══════════════════════════════════════════════ */
+
+.timeline {
+  position: relative;
+  padding: 8px 0;
+  animation: fadeInUp 0.35s ease;
+}
+
+/* Central vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent) 0%,
+    var(--color-border) 20%,
+    var(--color-border) 80%,
+    var(--color-accent) 100%
+  );
+  transform: translateX(-50%);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Step row ── */
+
+.step {
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Center dot ── */
+
+.stepCenter {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.stepDot {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-bg-primary);
+  border: 3px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.stepNr {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-accent);
+  transition: color 0.3s ease;
+}
+
+/* Dot highlight on step hover */
+.step:hover .stepDot {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 6px rgba(200, 132, 44, 0.12);
+}
+
+.step:hover .stepNr {
+  color: white;
+}
+
+/* ── Card positioning ── */
+
+.stepCardWrap {
+  display: flex;
+  align-items: center;
+}
+
+/* Card on right side (steps 1, 3, 5) */
+.stepAlignRight .stepCardWrap {
+  grid-column: 3;
+  grid-row: 1;
+  padding-left: 24px;
+  justify-content: flex-start;
+}
+
+/* Card on left side (steps 2, 4, 6) */
+.stepAlignLeft .stepCardWrap {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: 24px;
+  justify-content: flex-end;
+}
+
+/* ══════════════════════════════════════════════
+   STEP CARD
+   ══════════════════════════════════════════════ */
+
+.stepCard {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px;
+  max-width: 420px;
+  width: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.stepCard:hover {
+  box-shadow: 0 12px 40px rgba(26, 54, 93, 0.08);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.stepIcon {
+  font-size: 26px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.stepDesc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Channel chips (Step 3 Suchende) ── */
+
+.stepChannels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.channelChip {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-accent-dark, #8b5e1a);
+  background: var(--color-accent-muted, rgba(200, 132, 44, 0.08));
+  border: 1px solid rgba(200, 132, 44, 0.15);
+  padding: 3px 10px;
+  border-radius: var(--radius-full, 999px);
+  white-space: nowrap;
+}
+
+/* ── Trust badge ── */
+
+.stepTrustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.trustBadgeCheck {
+  width: 18px;
+  height: 18px;
+  background: var(--color-accent-muted, rgba(200, 132, 44, 0.08));
+  color: var(--color-accent);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════
+   TRUST BAR
+   ══════════════════════════════════════════════ */
+
+.trustBar {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 56px;
+  padding: 24px 32px;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg, 16px);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.trustCheck {
+  width: 24px;
+  height: 24px;
+  background: var(--color-accent-muted, rgba(200, 132, 44, 0.08));
+  color: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── CTA ── */
+
+.processCta {
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE – Tablet
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 960px) {
+  /* Switch to single-column timeline with dots on left */
+  .timeline::before {
+    left: 19px;
+  }
+
+  .step {
+    grid-template-columns: 40px 1fr;
+    margin-bottom: 12px;
+  }
+
+  .stepCenter {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .stepDot {
+    width: 38px;
+    height: 38px;
+  }
+
+  .stepNr {
+    font-size: 14px;
+  }
+
+  /* All cards on right side regardless of alignment class */
+  .stepAlignRight .stepCardWrap,
+  .stepAlignLeft .stepCardWrap {
+    grid-column: 2;
+    grid-row: 1;
+    padding-left: 20px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+
+  .stepCard {
+    max-width: 100%;
+  }
+
+  .trustBar {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE – Mobile
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .process {
+    padding: 64px 24px;
+  }
+
+  .intro {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .tabBar {
+    display: flex;
+    width: 100%;
+  }
+
+  .tab {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .tabHint {
+    font-size: 13px;
+    margin-bottom: 36px;
+  }
+
+  .timeline::before {
+    left: 16px;
+  }
+
+  .step {
+    grid-template-columns: 34px 1fr;
+    margin-bottom: 10px;
+  }
+
+  .stepDot {
+    width: 32px;
+    height: 32px;
+    border-width: 2px;
+  }
+
+  .stepNr {
+    font-size: 12px;
+  }
+
+  .stepAlignRight .stepCardWrap,
+  .stepAlignLeft .stepCardWrap {
+    padding-left: 14px;
+  }
+
+  .stepCard {
+    padding: 18px;
+  }
+
+  .stepIcon {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .stepTitle {
+    font-size: 15px;
+  }
+
+  .stepDesc {
+    font-size: 13px;
+  }
+
+  .channelChip {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .trustBar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  .trustItem {
+    font-size: 13px;
+  }
+
+  .trustCheck {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+}

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Nav from '@/components/ui/Nav'
 import Footer from '@/components/ui/Footer'
+import ProcessSection from '@/components/ProcessSection'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -65,13 +66,6 @@ const POSSIBILITIES = [
     tags: ['Marktanalyse', 'Branchenkontakte', 'Regulatorik', 'Kulturwissen'],
     richtung: 'DE ⟷ DK',
   },
-]
-
-const PROCESS = [
-  { nr: 1, icon: '✏️', title: 'Anfrage teilen', desc: 'Beschreiben Sie konkret, wen oder was Sie suchen. Kein perfektes Konzept nötig — eine klare Idee reicht.' },
-  { nr: 2, icon: '💬', title: 'Persönlich kennenlernen', desc: 'Ein kurzes Gespräch mit uns — online, ca. 15 Minuten. Wir verstehen Ihr Vorhaben und klären offene Fragen.' },
-  { nr: 3, icon: '🎯', title: 'Passende Kontakte erhalten', desc: 'Wir nutzen unser Netzwerk, Empfehlungen, LinkedIn und gezielte Ansprache. Jeder Kontakt wird persönlich geprüft.' },
-  { nr: 4, icon: '🤝', title: 'Zusammenarbeit starten', desc: 'Das erste Gespräch entsteht. Die Zusammenarbeit gehört Ihnen — wir öffnen die Tür.' },
 ]
 
 const EXAMPLES = [
@@ -180,30 +174,7 @@ export default function Home() {
       </section>
 
       {/* ── 3. SO FUNKTIONIERT EASY-B2B ── */}
-      <section className={styles.process}>
-        <div className={styles.inner}>
-          <p className={styles.eyebrow}>In vier Schritten</p>
-          <h2>So funktioniert Easy-B2B</h2>
-          <p className={styles.sectionIntro}>
-            Von der ersten Idee bis zum persönlichen Kontakt — wir begleiten Sie.
-          </p>
-          <div className={styles.processGrid}>
-            {PROCESS.map((step) => (
-              <div key={step.nr} className={styles.processCard}>
-                <div className={styles.processNumber}>{step.nr}</div>
-                <span className={styles.processIcon}>{step.icon}</span>
-                <h3 className={styles.processTitle}>{step.title}</h3>
-                <p className={styles.processDesc}>{step.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className={styles.processCta}>
-            <Link href="/so-funktioniert-es" className="more">
-              Ausführliche Beschreibung des Ablaufs →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ProcessSection />
 
       {/* ── 4. PRAXISBEISPIELE ── */}
       <section className={styles.examples}>
