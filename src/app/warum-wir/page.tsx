@@ -166,6 +166,20 @@ export default function WarumWirPage() {
               Der grundlegende Service bleibt zug&auml;nglich.
             </p>
           </div>
+
+          <div className={styles.networkHint}>
+            <h3 className={styles.networkHintTitle}>Ausblick: Pers&ouml;nliche Netzwerkformate</h3>
+            <p className={styles.prose}>
+              Neben dem digitalen Marktplatz m&ouml;chten wir langfristig auch pers&ouml;nliche
+              Begegnungen erm&ouml;glichen &mdash; zum Beispiel Netzwerkveranstaltungen,
+              Unternehmer-Treffen oder Fachformate rund um den deutsch-d&auml;nischen Markt.
+            </p>
+            <p className={styles.prose}>
+              Einige dieser Formate werden voraussichtlich gemeinsam mit Partnern und
+              bestehenden Unternehmernetzwerken organisiert. Ob und wie man daran teilnimmt,
+              bleibt jedem selbst &uuml;berlassen.
+            </p>
+          </div>
         </div>
       </section>
 
