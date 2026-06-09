@@ -8,12 +8,63 @@ export const metadata = {
   description: 'Kuratiertes B2B-Netzwerk für deutsch-dänische Kooperationen. Persönlich begleitet, nicht automatisiert.',
 }
 
-const USE_CASES = [
-  { icon: '🐟', title: 'Vertriebspartner finden', desc: 'Dänischer Lebensmittelhersteller sucht Zugang zum deutschen Einzelhandel', tag: 'DK → DE' },
-  { icon: '⚙️', title: 'Servicepartner aufbauen', desc: 'Deutscher Maschinenbauer sucht technischen Partner in Skandinavien', tag: 'DE → DK' },
-  { icon: '💻', title: 'Pilotkunden gewinnen', desc: 'Dänische Softwarefirma sucht erste Kunden im deutschen Markt', tag: 'DK → DE' },
-  { icon: '📦', title: 'Neue Produkte entdecken', desc: 'Deutscher Großhändler sucht skandinavische Hersteller für sein Sortiment', tag: 'DE → DK' },
-  { icon: '🏗️', title: 'Kommunale Kontakte', desc: 'Dänischer Hersteller sucht Zugang zu deutschen Kommunen und Stadtwerken', tag: 'DK → DE' },
+const POSSIBILITIES = [
+  {
+    icon: '🛒',
+    title: 'Deutschland-Vertrieb',
+    teaser: 'Ihre Produkte in deutschen Regalen',
+    tags: ['Einzelhandel', 'Großhandel', 'Edeka & Rewe', 'Fachhandel'],
+    richtung: 'DK → DE',
+  },
+  {
+    icon: '🚀',
+    title: 'Erste Kunden gewinnen',
+    teaser: 'Den Markteintritt greifbar machen',
+    tags: ['Pilotkunden', 'Referenzprojekte', 'Testmärkte', 'Erstaufträge'],
+    richtung: 'DK → DE',
+  },
+  {
+    icon: '🔧',
+    title: 'Service & After-Sales',
+    teaser: 'Technische Präsenz vor Ort aufbauen',
+    tags: ['Servicepartner', 'Wartung', 'Ersatzteile', 'Schulung'],
+    richtung: 'DE → DK',
+  },
+  {
+    icon: '📦',
+    title: 'Neue Produkte & Lieferanten',
+    teaser: 'Skandinavische Qualität ins Sortiment holen',
+    tags: ['Hersteller', 'Import', 'Eigenmarken', 'Spezialitäten'],
+    richtung: 'DE → DK',
+  },
+  {
+    icon: '🏛️',
+    title: 'Öffentliche Auftraggeber',
+    teaser: 'Kommunen, Stadtwerke, Infrastruktur',
+    tags: ['Ausschreibungen', 'Kommunen', 'Stadtwerke', 'Behörden'],
+    richtung: 'DK → DE',
+  },
+  {
+    icon: '🏭',
+    title: 'Produktion & Fertigung',
+    teaser: 'Kapazitäten jenseits der Grenze nutzen',
+    tags: ['Lohnfertigung', 'Zulieferer', 'Co-Manufacturing', 'Standorte'],
+    richtung: 'DE → DK',
+  },
+  {
+    icon: '🤝',
+    title: 'Strategische Kooperation',
+    teaser: 'Gemeinsam neue Märkte erschließen',
+    tags: ['Joint Ventures', 'Lizenzpartner', 'Co-Branding', 'Allianzen'],
+    richtung: 'DE ⟷ DK',
+  },
+  {
+    icon: '📊',
+    title: 'Markt verstehen',
+    teaser: 'Wissen aufbauen, bevor Sie starten',
+    tags: ['Marktanalyse', 'Branchenkontakte', 'Regulatorik', 'Kulturwissen'],
+    richtung: 'DE ⟷ DK',
+  },
 ]
 
 const PROCESS = [
@@ -103,19 +154,24 @@ export default function Home() {
       {/* ── 2. WAS IST HIER MÖGLICH? ── */}
       <section className={styles.possibilities}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>Konkrete Beispiele</p>
-          <h2>Was ist hier möglich?</h2>
+          <p className={styles.eyebrow}>Möglichkeiten entdecken</p>
+          <h2>Was andere Unternehmen hier suchen</h2>
           <p className={styles.sectionIntro}>
-            Keine abstrakten Versprechen. So sehen echte Anfragen bei Easy-B2B aus.
+            Jede Geschäftsidee beginnt anders. Diese Möglichkeiten nutzen Unternehmen bereits — welche passt zu Ihnen?
           </p>
           <div className={styles.useCaseGrid}>
-            {USE_CASES.map((uc, i) => (
+            {POSSIBILITIES.map((p, i) => (
               <div key={i} className={styles.useCaseCard}>
-                <span className={styles.useCaseIcon}>{uc.icon}</span>
-                <div>
-                  <div className={styles.useCaseTag}>{uc.tag}</div>
-                  <h3 className={styles.useCaseTitle}>{uc.title}</h3>
-                  <p className={styles.useCaseDesc}>{uc.desc}</p>
+                <div className={styles.useCaseHeader}>
+                  <span className={styles.useCaseIcon}>{p.icon}</span>
+                  <span className={styles.useCaseRichtung}>{p.richtung}</span>
+                </div>
+                <h3 className={styles.useCaseTitle}>{p.title}</h3>
+                <p className={styles.useCaseTeaser}>{p.teaser}</p>
+                <div className={styles.useCaseTags}>
+                  {p.tags.map((tag, j) => (
+                    <span key={j} className={styles.useCaseChip}>{tag}</span>
+                  ))}
                 </div>
               </div>
             ))}
