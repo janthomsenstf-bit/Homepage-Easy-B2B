@@ -13,7 +13,7 @@ export const SITE = {
   jan: {
     name: 'Jan Thomsen',
     role: 'Gründer & Matchmaker',
-    bio: 'In Dänemark aufgewachsen, seit vielen Jahren in Deutschland. Jan kennt beide Kulturen und nutzt diese Erfahrung um echte, nachhaltige Partnerschaften zu vermitteln.',
+    bio: 'Lebt in Deutschland und arbeitet seit vielen Jahren mit deutschen und dänischen Unternehmen. Kennt beide Geschäftskulturen und bringt passende Kontakte zusammen.',
     linkedin: 'https://linkedin.com/in/janthomsen',
     linkedinLabel: 'LinkedIn-Profil',
   },

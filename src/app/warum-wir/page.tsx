@@ -5,7 +5,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'Warum Easy-B2B? Hintergrund & Preise – Easy-B2B',
-  description: 'Warum gibt es Easy-B2B, wer steht dahinter und was kostet es? Ehrliche Antworten ohne Verkaufsdruck.',
+  description: 'Warum gibt es Easy-B2B, wer steht dahinter und was kostet es?',
 }
 
 export default function WarumWirPage() {
@@ -19,7 +19,7 @@ export default function WarumWirPage() {
           <p className={styles.eyebrow}>Hintergrund</p>
           <h1>Warum gibt es Easy-B2B?</h1>
           <p className={styles.heroSub}>
-            Ehrliche Antworten auf berechtigte Fragen &mdash; ohne Verkaufsdruck, ohne Marketing-Sprache.
+            Eine Frage, die uns immer wieder gestellt wird.
           </p>
         </div>
       </section>
@@ -29,38 +29,32 @@ export default function WarumWirPage() {
         <div className={styles.inner}>
           <p className={styles.eyebrow}>Die Idee</p>
           <h2 className={styles.sectionHeading}>
-            Menschen zusammenbringen, die sich sonst nie getroffen h&auml;tten
+            Manchmal fehlt nur der erste Kontakt
           </h2>
 
           <p className={styles.prose}>
-            Viele Unternehmen auf beiden Seiten der deutsch-d&auml;nischen Grenze haben gute Produkte,
-            echtes Know-how und konkretes Interesse an Zusammenarbeit. Trotzdem passiert oft nichts &mdash;
-            weil der erste Kontakt fehlt.
+            Wir sehen regelm&auml;&szlig;ig Unternehmen auf beiden Seiten der deutsch-d&auml;nischen Grenze,
+            die eigentlich gut zueinander passen w&uuml;rden. Gute Produkte, echtes Interesse
+            an Zusammenarbeit &mdash; aber keinen Kontakt zueinander.
           </p>
 
           <p className={styles.prose}>
-            Wen ruft man an? Wer kennt den Markt? Wer kann einsch&auml;tzen, ob eine Idee
-            realistisch ist? Genau an diesem Punkt scheitern viele Vorhaben &mdash;
-            nicht an der Idee selbst, sondern an der T&uuml;r, die niemand &ouml;ffnet.
+            Wen ruft man an, wenn man den Markt auf der anderen Seite nicht kennt?
+            Wer kann einsch&auml;tzen, ob eine Idee dort funktioniert?
+            An diesem Punkt bleiben viele Vorhaben einfach stecken.
           </p>
 
           <div className={styles.highlightBox}>
             <p>
-              Easy-B2B wurde gegr&uuml;ndet, um genau diese T&uuml;r zu &ouml;ffnen:
-              pers&ouml;nlich, kuratiert, mit Verst&auml;ndnis f&uuml;r beide Kulturen.
+              Easy-B2B soll dabei helfen, diesen ersten Schritt einfacher zu machen.
+              Nicht automatisiert, nicht &uuml;ber eine anonyme Plattform &mdash; sondern pers&ouml;nlich.
             </p>
           </div>
 
           <p className={styles.prose}>
-            Kein Algorithmus entscheidet, wer zu wem passt. Stattdessen h&ouml;ren wir zu,
-            stellen Fragen und bringen Menschen zusammen, bei denen wir glauben,
-            dass ein gutes Gespr&auml;ch entstehen kann.
-          </p>
-
-          <p className={styles.prose}>
-            Das ist kein Technologie-Startup. Das ist eine &Uuml;berzeugung:
-            Gute Gesch&auml;ftsbeziehungen beginnen mit echten Gespr&auml;chen &mdash;
-            nicht mit Datenbanken.
+            Wir h&ouml;ren zu, stellen Fragen und schauen, ob wir jemanden kennen oder
+            finden k&ouml;nnen, der passen k&ouml;nnte. Manchmal klappt das schnell,
+            manchmal dauert es. Aber wenn es passt, freut uns das.
           </p>
         </div>
       </section>
@@ -72,34 +66,31 @@ export default function WarumWirPage() {
           <h2 className={styles.sectionHeading}>Wer steht hinter Easy-B2B?</h2>
 
           <p className={styles.prose}>
+            Hinter Easy-B2B steht Jan Thomsen. Er lebt in Deutschland und arbeitet seit vielen
+            Jahren mit deutschen und d&auml;nischen Unternehmen. Grenz&uuml;berschreitende Themen
+            sind sein Alltag &mdash; er kennt die Unterschiede und Gemeinsamkeiten
+            beider Gesch&auml;ftskulturen.
+          </p>
+
+          <p className={styles.prose}>
             Easy-B2B ist ein Projekt von <strong>Etablering Tyskland</strong> &mdash; einem Service,
             der d&auml;nische Unternehmen beim Markteintritt in Deutschland begleitet.
+            Bei dieser Arbeit f&auml;llt regelm&auml;&szlig;ig auf: Viele Unternehmen suchen
+            eigentlich das Gleiche &mdash; einen passenden Kontakt auf der anderen Seite.
+            Easy-B2B ist aus genau dieser Beobachtung entstanden.
           </p>
 
           <p className={styles.prose}>
-            Gegr&uuml;ndet von Jan Thomsen, der in D&auml;nemark aufgewachsen ist und seit vielen
-            Jahren in Deutschland lebt. Jemand, der beide Kulturen kennt und wei&szlig;,
-            wie unterschiedlich Gesch&auml;ft auf beiden Seiten der Grenze funktioniert.
-          </p>
-
-          <p className={styles.prose}>
-            Mit Easy-B2B geht Etablering Tyskland bewusst in Vorleistung: Wir bauen Kontakte auf,
-            betreiben den Marktplatz und investieren Zeit in jede einzelne Anfrage &mdash;
-            ohne daf&uuml;r sofort eine Gegenleistung zu erwarten.
+            Wir helfen gerne. Wenn daraus sp&auml;ter mehr entsteht, umso besser.
           </p>
 
           <div className={styles.highlightBox}>
             <p>
-              Die Hoffnung dahinter ist einfach: Wenn Unternehmen positive Erfahrungen mit Easy-B2B machen
-              und sp&auml;ter Unterst&uuml;tzung brauchen &mdash; beim Markteintritt, bei der Gr&uuml;ndung,
-              bei Steuerfragen &mdash; dann erinnern sie sich an uns.
+              Wenn daraus auch eine Zusammenarbeit mit Etablering Tyskland entsteht &mdash;
+              zum Beispiel bei Gr&uuml;ndung, Steuerfragen oder Administration &mdash;
+              freuen wir uns nat&uuml;rlich. Wenn nicht, ist das v&ouml;llig in Ordnung.
             </p>
           </div>
-
-          <p className={styles.prose}>
-            Das ist kein verstecktes Gesch&auml;ftsmodell. Das ist einfach der Gedanke:
-            Wer hilfreich ist, wird weiterempfohlen.
-          </p>
 
           <div className={styles.etCard}>
             <p className={styles.etLabel}>Ein Projekt von</p>
@@ -133,7 +124,7 @@ export default function WarumWirPage() {
           <h2 className={styles.sectionHeading}>Was kostet Easy-B2B?</h2>
 
           <p className={styles.prose}>
-            Eine berechtigte Frage &mdash; und eine ehrliche Antwort:
+            Kurze Antwort:
           </p>
 
           <div className={styles.pricingCard}>
@@ -181,10 +172,10 @@ export default function WarumWirPage() {
       {/* ── CTA ── */}
       <section className={styles.cta}>
         <div className={styles.ctaInner}>
-          <h2>Bereit f&uuml;r den ersten Schritt?</h2>
+          <h2>Haben Sie eine Idee oder ein Vorhaben?</h2>
           <p>
-            Ob Sie einen Partner suchen oder einfach nur neugierig sind &mdash;
-            wir freuen uns &uuml;ber jede Anfrage.
+            Ob Sie einen konkreten Partner suchen oder einfach nur eine Frage haben &mdash;
+            melden Sie sich gerne.
           </p>
           <div className={styles.ctaBtns}>
             <Link href="/anfrage-einreichen" className="btn-amber">
