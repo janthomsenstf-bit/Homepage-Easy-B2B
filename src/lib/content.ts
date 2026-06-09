@@ -6,7 +6,7 @@
 export const SITE = {
   name: 'EasyB2B',
   tagline: 'Konkrete B2B-Anfragen. Echte Unternehmen. Direkte Vermittlung.',
-  kernsatz: 'Wir verbinden konkrete Anfragen mit qualifizierten Unternehmen – persönlich geprüft, nicht automatisiert.',
+  kernsatz: 'Wir verbinden konkrete Anfragen mit passenden Unternehmen – persönlich geprüft, nicht automatisiert.',
   email: 'anfragen@easyb2b.de',
   phone: '+49 40 123456',
   address: 'Grindelberg 20, Hamburg, 20144 Deutschland',
@@ -31,7 +31,7 @@ export const QUICK_PROCESS_FLOW = [
     nr: 2,
     icon: '🔍',
     label: 'Kontakte finden',
-    description: 'Passende Partner entdecken',
+    description: 'Passende Partner gezielt suchen',
   },
   {
     nr: 3,
@@ -132,8 +132,8 @@ export const PROZESS_SUCHENDE = [
     shortDesc: 'Nicht wahllos, sondern strategisch.',
     details: [
       'Deine Anfrage landet nicht einfach im digitalen Schwarzloch.',
-      'Wir platzieren sie gezielt im Netzwerk – bei passenden Kontakten, in relevanten Veranstaltungen, über persönliche Empfehlungen.',
-      'Das ist keine Spam-Plattform. Es geht darum, dass die richtigen Menschen deine Anfrage sehen.',
+      'Je nach Anfrage nutzen wir verschiedene Wege: persönliche Kontakte, Netzwerkpartner, Verbände, LinkedIn, Social Media oder gezielte Ansprache.',
+      'Das ist keine Spam-Plattform. Es geht darum, dass die richtigen Menschen deine Anfrage sehen — egal ob sie bereits in unserem Netzwerk sind oder nicht.',
       'Manchmal dauert es länger, bis der perfekte Match dabei ist – aber wenn, dann passt es wirklich.',
     ],
   },
@@ -192,7 +192,7 @@ export const PROZESS_HOMEPAGE = [
     nr: 3,
     icon: '📬',
     title: 'Passende Kontakte erhalten',
-    desc: 'Basierend auf deiner Anfrage und unserem Gespräch suchen wir im Netzwerk nach **echten Matches**. Das heißt: Wir filtern gezielt – nicht einfach alle Kontakte verschicken, die irgendwie passen könnten. Du bekommst **hochwertige Vorschläge**, nicht Masse. Jeder Kontakt wurde von uns überprüft und passt zu dem, was du gesucht hast. **Qualität vor Quantität** – das ist uns wichtig.',
+    desc: 'Basierend auf deiner Anfrage und unserem Gespräch suchen wir über **verschiedene Wege** nach echten Matches — über persönliche Kontakte, Netzwerkpartner, LinkedIn und gezielte Ansprache. Das heißt: Wir filtern gezielt – nicht einfach alle Kontakte verschicken, die irgendwie passen könnten. Du bekommst **hochwertige Vorschläge**, nicht Masse. Jeder Kontakt wurde von uns überprüft. **Qualität vor Quantität** – das ist uns wichtig.',
   },
   {
     nr: 4,
@@ -446,7 +446,7 @@ export const FAQ = [
   },
   {
     frage: 'Wie funktioniert das Matchmaking?',
-    antwort: 'Jede Anfrage wird persönlich geprüft. Dann suchen wir aktiv nach passenden Unternehmen – nicht automatisiert, sondern von Hand.',
+    antwort: 'Jede Anfrage wird persönlich geprüft. Dann suchen wir aktiv nach passenden Unternehmen — über unser Netzwerk, Empfehlungen, LinkedIn, Verbände und gezielte Ansprache. Nicht automatisiert, sondern von Hand.',
   },
   {
     frage: 'Wie lange dauert die Prüfung?',
@@ -462,7 +462,7 @@ export const FAQ = [
   },
   {
     frage: 'Wie werden Kontakte geprüft?',
-    antwort: 'Wir schauen uns die Webseite an, sprechen mit Gründer und Geschäftsführer, und prüfen ob die Anfrage realistisch ist und zum Netzwerk passt.',
+    antwort: 'Wir schauen uns die Webseite an, sprechen mit Gründer und Geschäftsführer, und prüfen ob die Anfrage realistisch ist und zur Kooperation passt. Auch Kontakte, die über LinkedIn oder andere Kanäle entstehen, durchlaufen denselben Qualifizierungsprozess.',
   },
   {
     frage: 'Muss meine Anfrage öffentlich sein?',
@@ -744,7 +744,7 @@ export const WERTE = [
   {
     title: 'Persönlich',
     icon: '🤝',
-    text: 'Keine Automatik. Jede Vermittlung ist persönlich geprüft.',
+    text: 'Keine Automatik. Jede Vermittlung ist persönlich geprüft — egal über welchen Weg der Kontakt entstanden ist.',
   },
   {
     title: 'Konkret',
@@ -1134,7 +1134,7 @@ export const TRUST_VALUES = [
   {
     icon: '🔍',
     statement: 'Persönlichkeit vor Masse',
-    erklärung: 'Wir prüfen jede Anfrage persönlich. Keine Spam, keine Automatik, keine irrelevanten Kontakte.',
+    erklärung: 'Wir prüfen jede Anfrage und jeden Kontakt persönlich — ob über unser Netzwerk, LinkedIn oder gezielte Ansprache. Keine Spam, keine Automatik.',
   },
   {
     icon: '🔒',

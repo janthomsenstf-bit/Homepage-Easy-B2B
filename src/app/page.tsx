@@ -5,7 +5,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'Easy-B2B – Geschäftsmöglichkeiten zwischen Deutschland und Dänemark',
-  description: 'Kuratiertes B2B-Netzwerk für deutsch-dänische Kooperationen. Persönlich begleitet, nicht automatisiert.',
+  description: 'Kuratierte B2B-Vermittlung für deutsch-dänische Kooperationen. Persönlich begleitet, nicht automatisiert.',
 }
 
 const POSSIBILITIES = [
@@ -70,7 +70,7 @@ const POSSIBILITIES = [
 const PROCESS = [
   { nr: 1, icon: '✏️', title: 'Anfrage teilen', desc: 'Beschreiben Sie konkret, wen oder was Sie suchen. Kein perfektes Konzept nötig — eine klare Idee reicht.' },
   { nr: 2, icon: '💬', title: 'Persönlich kennenlernen', desc: 'Ein kurzes Gespräch mit uns — online, ca. 15 Minuten. Wir verstehen Ihr Vorhaben und klären offene Fragen.' },
-  { nr: 3, icon: '🎯', title: 'Passende Kontakte erhalten', desc: 'Wir suchen gezielt im Netzwerk. Jeder Kontakt wird persönlich geprüft. Qualität vor Quantität.' },
+  { nr: 3, icon: '🎯', title: 'Passende Kontakte erhalten', desc: 'Wir nutzen unser Netzwerk, Empfehlungen, LinkedIn und gezielte Ansprache. Jeder Kontakt wird persönlich geprüft.' },
   { nr: 4, icon: '🤝', title: 'Zusammenarbeit starten', desc: 'Das erste Gespräch entsteht. Die Zusammenarbeit gehört Ihnen — wir öffnen die Tür.' },
 ]
 
@@ -122,14 +122,14 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
-            <p className={styles.heroEyebrow}>Deutsch-dänisches B2B-Netzwerk</p>
+            <p className={styles.heroEyebrow}>Deutsch-dänische B2B-Vermittlung</p>
             <h1 className={styles.heroTitle}>
               Geschäftsmöglichkeiten,<br />
               <span className={styles.heroAccent}>die wirklich passen.</span>
             </h1>
             <p className={styles.heroSub}>
-              Wir verbinden konkrete Anfragen mit qualifizierten Unternehmen — persönlich geprüft, nicht automatisiert.
-              Für Unternehmen, die den deutschen oder dänischen Markt erschließen möchten.
+              Wir finden passende Geschäftspartner — über persönliche Kontakte, Netzwerke, LinkedIn und gezielte Ansprache.
+              Persönlich geprüft, nicht automatisiert.
             </p>
             <div className={styles.heroBtns}>
               <Link href="/marktplatz" className="btn-primary">
@@ -346,6 +346,13 @@ export default function Home() {
                     <p>Geschäftskultur in Deutschland und Dänemark unterscheidet sich. Wir berücksichtigen das.</p>
                   </div>
                 </div>
+                <div className={styles.whyPoint}>
+                  <span className={styles.whyCheck}>✓</span>
+                  <div>
+                    <strong>Intelligente Reichweite</strong>
+                    <p>Wir kombinieren persönliche Kontakte, Netzwerke, LinkedIn und gezielte Ansprache — je nach Anfrage über verschiedene Wege.</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className={styles.whyQuote}>
@@ -368,7 +375,7 @@ export default function Home() {
           <h2>Bereit für neue Geschäftsmöglichkeiten?</h2>
           <p>
             Ob Vertriebspartner, Lieferant oder Kooperationspartner —
-            beschreiben Sie, was Sie suchen. Wir kümmern uns um den Rest.
+            beschreiben Sie, was Sie suchen. Wir finden die richtigen Kontakte, über welchen Weg auch immer.
           </p>
           <div className={styles.ctaBtns}>
             <Link href="/anfrage-einreichen" className="btn-amber">
