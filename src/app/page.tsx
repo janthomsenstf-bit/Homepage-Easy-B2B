@@ -210,7 +210,7 @@ export default function Home() {
           </div>
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
             <Link href="/kooperationsbeispiele" className="more">
-              Weitere Beispiele ansehen →
+              Suchideen &amp; Praxisbeispiele ansehen &rarr;
             </Link>
           </div>
         </div>
