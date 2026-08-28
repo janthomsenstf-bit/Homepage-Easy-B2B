@@ -43,3 +43,13 @@ yarn-error.log*
 *~
 
 /src/generated/prisma
+
+# Lokale Notizen und Zugangsdaten (nie committen!)
+# Der Backslash escaped das fuehrende Rautezeichen im Dateinamen —
+# ohne ihn waere die Zeile ein Kommentar und die Datei nicht ignoriert.
+\# Supabase.md
+*Supabase*.md
+Untitled-*.txt
+
+# Build-Artefakte
+tsconfig.tsbuildinfo
