@@ -276,3 +276,97 @@ export async function mailIntroAnInteressenten(data: {
 
   return sende(data.interessentEmail, `🤝 Easy-B2B: Kontakt zu ${data.anfrageFirma} freigegeben (${data.anfrageAnzeigenId})`, html, 'intro_interessent');
 }
+
+// ─── 7. Konto-Verifizierung ─────────────────────────────────────
+
+export async function mailVerifizierung(data: {
+  email: string;
+  ansprechpartner: string;
+  firmenname: string;
+  bestaetigungsLink: string;
+}) {
+  const html = `
+    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333">
+      <div style="background:#1a365d;padding:20px 24px;border-radius:8px 8px 0 0">
+        <h1 style="color:white;margin:0;font-size:20px">Willkommen bei Easy-B2B</h1>
+        <p style="color:#a8c4e0;margin:4px 0 0 0;font-size:13px">Nur noch ein Schritt</p>
+      </div>
+      <div style="background:white;padding:24px;border:1px solid #e0e0e0;border-top:none">
+        <p style="font-size:15px">Hallo ${data.ansprechpartner},</p>
+        <p style="line-height:1.6">Sie haben ein Konto für <strong>${data.firmenname}</strong> angelegt. Bitte bestaetigen Sie Ihre E-Mail-Adresse, dann kann es losgehen.</p>
+        <div style="text-align:center;margin:28px 0">
+          <a href="${data.bestaetigungsLink}" style="display:inline-block;background:#c8842c;color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:bold;font-size:15px">E-Mail-Adresse bestaetigen</a>
+        </div>
+        <p style="font-size:13px;color:#666;line-height:1.6">Der Link ist 48 Stunden gueltig. Falls der Button nicht funktioniert, kopieren Sie diese Adresse in Ihren Browser:</p>
+        <p style="font-size:12px;color:#1a365d;word-break:break-all;background:#faf8f5;padding:10px;border-radius:6px">${data.bestaetigungsLink}</p>
+        <p style="font-size:13px;color:#666;line-height:1.6;margin-top:20px">Sie haben kein Konto angelegt? Dann ignorieren Sie diese E-Mail einfach.</p>
+      </div>
+      <div style="padding:12px 24px;font-size:11px;color:#999;text-align:center">Easy-B2B - Deutsch-Daenisches Matchmaking-Netzwerk</div>
+    </div>`;
+
+  return sende(data.email, 'Easy-B2B: Bitte bestaetigen Sie Ihre E-Mail-Adresse', html, 'verifizierung');
+}
+
+// ─── 8. Passwort zuruecksetzen ──────────────────────────────────
+
+export async function mailPasswortReset(data: {
+  email: string;
+  ansprechpartner: string;
+  resetLink: string;
+}) {
+  const html = `
+    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333">
+      <div style="background:#1a365d;padding:20px 24px;border-radius:8px 8px 0 0">
+        <h1 style="color:white;margin:0;font-size:20px">Passwort zuruecksetzen</h1>
+        <p style="color:#a8c4e0;margin:4px 0 0 0;font-size:13px">Easy-B2B Konto</p>
+      </div>
+      <div style="background:white;padding:24px;border:1px solid #e0e0e0;border-top:none">
+        <p style="font-size:15px">Hallo ${data.ansprechpartner},</p>
+        <p style="line-height:1.6">Sie haben angefordert, Ihr Passwort zurueckzusetzen. Klicken Sie auf den Button, um ein neues Passwort zu vergeben.</p>
+        <div style="text-align:center;margin:28px 0">
+          <a href="${data.resetLink}" style="display:inline-block;background:#c8842c;color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:bold;font-size:15px">Neues Passwort vergeben</a>
+        </div>
+        <p style="font-size:13px;color:#666;line-height:1.6">Dieser Link ist aus Sicherheitsgruenden nur <strong>eine Stunde</strong> gueltig.</p>
+        <p style="font-size:12px;color:#1a365d;word-break:break-all;background:#faf8f5;padding:10px;border-radius:6px">${data.resetLink}</p>
+        <div style="margin-top:20px;padding:12px 16px;background:#fff8e1;border-radius:6px;font-size:13px;color:#8a6d00">
+          <strong>Sie haben das nicht angefordert?</strong> Dann ignorieren Sie diese E-Mail. Ihr Passwort bleibt unveraendert.
+        </div>
+      </div>
+      <div style="padding:12px 24px;font-size:11px;color:#999;text-align:center">Easy-B2B - Deutsch-Daenisches Matchmaking-Netzwerk</div>
+    </div>`;
+
+  return sende(data.email, 'Easy-B2B: Passwort zuruecksetzen', html, 'passwort_reset');
+}
+
+// ─── 9. Anzeige eingereicht (Bestaetigung an Unternehmen) ───────
+
+export async function mailAnzeigeEingereicht(data: {
+  email: string;
+  ansprechpartner: string;
+  anzeigenId: string;
+  ziel: string;
+  meinBereichLink: string;
+}) {
+  const html = `
+    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333">
+      <div style="background:#1a365d;padding:20px 24px;border-radius:8px 8px 0 0">
+        <h1 style="color:white;margin:0;font-size:20px">Ihre Anzeige wird geprueft</h1>
+        <p style="color:#a8c4e0;margin:4px 0 0 0;font-size:13px">${data.anzeigenId}</p>
+      </div>
+      <div style="background:white;padding:24px;border:1px solid #e0e0e0;border-top:none">
+        <p style="font-size:15px">Hallo ${data.ansprechpartner},</p>
+        <p style="line-height:1.6">wir haben Ihre Anzeige erhalten und schauen sie uns an. Sie hoeren innerhalb von <strong>48 Stunden</strong> von uns.</p>
+        <div style="margin:20px 0;padding:16px;background:#faf8f5;border-left:3px solid #c8842c;border-radius:0 6px 6px 0">
+          <div style="font-size:11px;color:#8a6d00;font-weight:bold;letter-spacing:0.5px;margin-bottom:6px">IHR GESUCH</div>
+          <div style="font-size:14px;line-height:1.6">${data.ziel}</div>
+        </div>
+        <p style="line-height:1.6;font-size:14px">Wenn etwas unklar ist, melden wir uns mit Rueckfragen. Sobald alles passt, geht Ihre Anzeige auf den Marktplatz.</p>
+        <div style="text-align:center;margin:24px 0">
+          <a href="${data.meinBereichLink}" style="display:inline-block;background:#1a365d;color:white;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:bold;font-size:14px">Zu meinem Bereich</a>
+        </div>
+      </div>
+      <div style="padding:12px 24px;font-size:11px;color:#999;text-align:center">Easy-B2B - Deutsch-Daenisches Matchmaking-Netzwerk</div>
+    </div>`;
+
+  return sende(data.email, `Easy-B2B: Anzeige ${data.anzeigenId} eingereicht`, html, 'anzeige_eingereicht');
+}

@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "dev-server",
+      "name": "easyb2b-homepage",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3001

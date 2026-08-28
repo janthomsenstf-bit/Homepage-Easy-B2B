@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import { mailNeueAnfrage, mailAnfrageBestaetigung } from "@/lib/email";
+import { OEFFENTLICHE_STATUS } from "@/lib/anzeigen";
 
 function generateAnzeigenId(): string {
   const year = new Date().getFullYear();
@@ -37,7 +38,13 @@ export async function POST(request: NextRequest) {
         reifegradScore: body.reifegradScore ? parseInt(body.reifegradScore) : null,
         reifegradBeschreibung: body.reifegradBeschreibung || null,
         gueltigBis: body.gueltigBis ? new Date(body.gueltigBis) : new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-        sichtbarkeit: body.sichtbarkeit || "eingehend",
+        sichtbarkeit: ["intern", "anonym", "oeffentlich"].includes(body.sichtbarkeit)
+          ? body.sichtbarkeit
+          : "oeffentlich",
+        // Über das öffentliche Formular eingereichte Anfragen gehen direkt in die
+        // Prüfung — anders als Entwürfe aus "Mein Bereich".
+        status: "eingereicht",
+        eingereichtAm: new Date(),
         ansprechpartner: body.ansprechpartner,
         email: body.email,
         telefon: body.telefon || null,
@@ -82,13 +89,56 @@ export async function POST(request: NextRequest) {
   }
 }
 
+/**
+ * GET — öffentliche Marktplatz-Anzeigen.
+ *
+ * Diese Route ist unauthentifiziert erreichbar. Sie liefert deshalb ausschließlich
+ * freigegebene Anzeigen und nur Felder, die ohnehin öffentlich sind. Kontaktdaten
+ * (E-Mail, Telefon, Ansprechpartner) werden bewusst NICHT ausgeliefert — die gibt
+ * es erst nach beidseitiger Zustimmung im Match.
+ */
 export async function GET() {
   try {
     const anfragen = await prisma.anfrage.findMany({
-      include: { branche: true },
+      where: {
+        status: { in: OEFFENTLICHE_STATUS },
+        sichtbarkeit: { in: ["oeffentlich", "anonym"] },
+        gueltigBis: { gte: new Date() },
+      },
+      select: {
+        id: true,
+        anzeigenId: true,
+        richtung: true,
+        art: true,
+        firmenname: true,
+        standort: true,
+        beschreibung: true,
+        ziel: true,
+        motivation: true,
+        mustHaves: true,
+        niceToHaves: true,
+        gesuchteBranche: true,
+        ziele: true,
+        partnerErwartungen: true,
+        zielgruppe: true,
+        reifegrad: true,
+        reifegradScore: true,
+        reifegradBeschreibung: true,
+        gueltigBis: true,
+        status: true,
+        sichtbarkeit: true,
+        createdAt: true,
+        branche: { select: { id: true, name: true, slug: true } },
+      },
       orderBy: { createdAt: "desc" },
     });
-    return NextResponse.json(anfragen);
+
+    // Bei anonymen Anzeigen bleibt der Firmenname verdeckt.
+    const oeffentlich = anfragen.map((a) =>
+      a.sichtbarkeit === "anonym" ? { ...a, firmenname: "Anonymes Unternehmen" } : a
+    );
+
+    return NextResponse.json(oeffentlich);
   } catch (error) {
     console.error("API Error:", error);
     return NextResponse.json({ error: "Fehler beim Abrufen der Anfragen" }, { status: 500 });

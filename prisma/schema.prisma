@@ -6,6 +6,46 @@ datasource db {
   provider = "postgresql"
 }
 
+// ─── BENUTZERKONTEN ──────────────────────────────────────────────
+
+model User {
+  id                  String    @id @default(cuid())
+  email               String    @unique
+  passwortHash        String
+  firmenname          String
+  ansprechpartner     String
+  telefon             String?
+  land                Land      @default(deutschland)
+  rolle               Rolle     @default(unternehmen)
+
+  // E-Mail-Verifizierung
+  emailVerifiziert    DateTime?
+  verifizierungsToken String?   @unique
+  tokenAblauf         DateTime?
+
+  // Passwort-Reset
+  resetToken          String?   @unique
+  resetTokenAblauf    DateTime?
+
+  anfragen            Anfrage[]
+  interessenten       Interessent[]
+
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@index([email])
+}
+
+enum Rolle {
+  unternehmen
+  operator
+}
+
+enum Land {
+  deutschland
+  daenemark
+}
+
 // ─── BRANCHEN & WISSENSBASIS ─────────────────────────────────────
 
 model Branche {
@@ -43,29 +83,31 @@ enum WissensQuelle {
 model Anfrage {
   id              String        @id @default(cuid())
   anzeigenId      String        @unique
+  user            User?         @relation(fields: [userId], references: [id])
+  userId          String?
   richtung        Richtung
   art             AnfrageArt
   branche         Branche       @relation(fields: [brancheId], references: [id])
   brancheId       String
   gesuchteBranche String?
   firmenname      String
-  standort        String
+  standort        String        @default("")
   website         String?
   sprachen        Sprache[]
-  beschreibung    String
-  ziel            String
-  persönlicherTouch String
+  beschreibung    String        @default("")
+  ziel            String        @default("")
+  persönlicherTouch String      @default("")
   mustHaves       String?
   niceToHaves     String?
-  reifegrad       Reifegrad
+  reifegrad       Reifegrad     @default(bereit)
   reifegradScore  Int?                // Numerischer Reifegrad 1-10 (neu)
   reifegradBeschreibung String?       // Öffentliche Erklärung zum Reifegrad
   gueltigBis      DateTime
-  sichtbarkeit    Sichtbarkeit
-  status          AnfrageStatus @default(eingehend)
+  sichtbarkeit    Sichtbarkeit  @default(oeffentlich)
+  status          AnfrageStatus @default(entwurf)
   kontaktTimer    DateTime?
-  ansprechpartner String
-  email           String
+  ansprechpartner String        @default("")
+  email           String        @default("")
   telefon         String?
   kiAnzeigentext  String?
   kiStrukturiert  Boolean       @default(false)
@@ -73,6 +115,15 @@ model Anfrage {
   interessenten   Interessent[]
   reviewOk        Boolean       @default(false)
   reviewNotiz     String?
+
+  // ── Prüf-Workflow (Operator ↔ Unternehmen) ──
+  eingereichtAm   DateTime?
+  freigegebenAm   DateTime?
+  rueckfragen     String?           // Vom Operator gestellte Rückfragen
+  rueckfragenAm   DateTime?
+  rueckfragenKiGestuetzt Boolean @default(false)  // Art. 50 Abs. 1 KI-VO
+  antwortAufRueckfragen  String?
+  ablehnungsGrund String?
   // ── Marktplatz-Reichinhalt (öffentlich auf der Anzeige sichtbar) ──
   motivation              String?
   ziele                   String[]
@@ -118,6 +169,10 @@ enum Sprache {
 }
 
 enum AnfrageStatus {
+  entwurf
+  eingereicht
+  rueckfragen_offen
+  abgelehnt
   eingehend
   aktiv
   interessent_vorhanden
@@ -183,6 +238,8 @@ model Interessent {
   id              String              @id @default(cuid())
   anfrage         Anfrage             @relation(fields: [anfrageId], references: [id])
   anfrageId       String
+  user            User?               @relation(fields: [userId], references: [id])
+  userId          String?
   firmenname      String
   ansprechpartner String
   email           String

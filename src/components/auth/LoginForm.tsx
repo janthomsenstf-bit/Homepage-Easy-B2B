@@ -1,90 +1,90 @@
-"use client";
+'use client'
 
-import { signIn } from "next-auth/react";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { signIn } from 'next-auth/react'
+import { useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import Link from 'next/link'
+import styles from '@/app/konto.module.css'
 
 export default function LoginForm() {
-  const router = useRouter();
-  const [email, setEmail] = useState("operator@easyb2b.de");
-  const [password, setPassword] = useState("test123");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const router = useRouter()
+  const params = useSearchParams()
+  const weiter = params.get('weiter')
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+  const [email, setEmail] = useState('')
+  const [passwort, setPasswort] = useState('')
+  const [laedt, setLaedt] = useState(false)
+  const [fehler, setFehler] = useState('')
 
-    const result = await signIn("credentials", {
+  async function absenden(e: React.FormEvent) {
+    e.preventDefault()
+    setLaedt(true)
+    setFehler('')
+
+    const ergebnis = await signIn('credentials', {
       email,
-      password,
+      password: passwort,
       redirect: false,
-    });
+    })
 
-    if (result?.error) {
-      setError("Email oder Passwort falsch");
-      setLoading(false);
-    } else {
-      router.push("/dashboard");
+    if (ergebnis?.error) {
+      if (ergebnis.error.includes('email_nicht_bestaetigt')) {
+        setFehler(
+          'Ihr Konto ist noch nicht bestätigt. Bitte klicken Sie auf den Link in unserer Willkommens-E-Mail.'
+        )
+      } else {
+        setFehler('E-Mail oder Passwort stimmen nicht.')
+      }
+      setLaedt(false)
+      return
     }
+
+    // Die Middleware schickt Unternehmen ohnehin in den richtigen Bereich.
+    router.push(weiter || '/mein-bereich')
+    router.refresh()
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md">
-        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
-          <h1 className="text-2xl font-bold mb-6 text-center">Easy-B2B Dashboard</h1>
+    <div className={styles.wrap}>
+      <div className={styles.card}>
+        <div className={styles.kicker}>Anmelden</div>
+        <h1 className={styles.title}>Willkommen zurück</h1>
+        <p className={styles.lead}>
+          Melden Sie sich an, um Ihre Gesuche zu verwalten und den Stand Ihrer Anzeigen zu sehen.
+        </p>
 
-          {error && (
-            <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
-              {error}
-            </div>
-          )}
+        {fehler && <div className={styles.fehler}>{fehler}</div>}
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email
-            </label>
+        <form onSubmit={absenden}>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="email">E-Mail</label>
             <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="operator@easyb2b.de"
+              id="email" type="email" className={styles.input} value={email}
+              onChange={e => setEmail(e.target.value)}
+              required autoComplete="email" placeholder="name@firma.de"
             />
           </div>
 
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Passwort
-            </label>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="passwort">Passwort</label>
             <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="test123"
+              id="passwort" type="password" className={styles.input} value={passwort}
+              onChange={e => setPasswort(e.target.value)}
+              required autoComplete="current-password"
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-600 text-white py-2 rounded-md font-medium hover:bg-blue-700 disabled:bg-gray-400"
-          >
-            {loading ? "Wird angemeldet..." : "Anmelden"}
+          <button type="submit" className={styles.button} disabled={laedt}>
+            {laedt ? 'Wird angemeldet …' : 'Anmelden'}
           </button>
-
-          <p className="mt-4 text-sm text-gray-600 text-center">
-            Test-Credentials:
-            <br />
-            Email: operator@easyb2b.de
-            <br />
-            Passwort: test123
-          </p>
         </form>
+
+        <p className={styles.fusszeile}>
+          <Link href="/passwort-vergessen" className={styles.link}>Passwort vergessen?</Link>
+          <br />
+          Noch kein Konto? <Link href="/registrieren" className={styles.link}>Jetzt anlegen</Link>
+        </p>
       </div>
     </div>
-  );
+  )
 }

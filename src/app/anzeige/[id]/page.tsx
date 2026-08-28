@@ -4,6 +4,7 @@ import Link from "next/link";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import styles from "./page.module.css";
+import { OEFFENTLICHE_STATUS } from "@/lib/anzeigen";
 
 interface AnzeigeDetailProps {
   params: {
@@ -42,7 +43,7 @@ export default async function AnzeigeDetailPage({ params }: AnzeigeDetailProps) 
   if (!anfrage) notFound();
 
   if (
-    anfrage.status !== "aktiv" ||
+    !OEFFENTLICHE_STATUS.includes(anfrage.status) ||
     (anfrage.sichtbarkeit !== "oeffentlich" && anfrage.sichtbarkeit !== "anonym")
   ) {
     notFound();

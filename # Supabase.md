@@ -1,0 +1,16 @@
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://heottzuyuwttblkgqhuw.supabase.co 
+NEXT_PUBLIC_SUPABASE_ANON_KEY= sb_publishable_JNVT_gsIMyu021J29CMuDg_RqfSXaJ9
+SUPABASE_SERVICE_ROLE_KEY= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhlb3R0enV5dXd0dGJsa2dxaHV3Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTY2NTQyMiwiZXhwIjoyMDk1MjQxNDIyfQ.F1AqZyylwoqn1fVYmE4hKMAzc5jWAlt1S8Q3sqxVZnY
+
+
+# Anthropic (später)
+ANTHROPIC_API_KEY=sk-xxxxx
+
+# Resend (später)
+RESEND_API_KEY=xxxxx
+
+# NextAuth (später)
+NEXTAUTH_SECRET=generate-this-later
+NEXTAUTH_URL=http://localhost:3000
+npm install
